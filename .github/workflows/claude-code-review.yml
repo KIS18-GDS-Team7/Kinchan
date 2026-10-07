@@ -10,6 +10,8 @@
 #   @claude 経由のpushでは起動者がbotになりActionが失敗するため
 # - 再レビュー: PRに claude-review ラベルを付けると実行する。ラベルを付けた人が
 #   起動者になるため、bot起因の失敗も起きない
+# - ラベルによる起動は draft PR でも実行する。明示的な依頼なので、作業途中でも
+#   レビューを求めていると判断する(自動実行の draft 除外とは扱いを分ける)
 # - ラベルはレビュー終了時に(成否にかかわらず)workflowが外す。次の再レビューは
 #   ラベルを付けるだけでよい。外す処理はClaudeではなくworkflowのstepが
 #   GITHUB_TOKEN(pull-requests: write)で行う。unlabeled は起動条件に含めないので再起動しない
@@ -38,8 +40,8 @@ concurrency:
 jobs:
   claude-review:
     if: >-
-      github.event.pull_request.draft == false &&
-      (github.event.action != 'labeled' || github.event.label.name == 'claude-review')
+      (github.event.action == 'labeled' && github.event.label.name == 'claude-review') ||
+      (github.event.action != 'labeled' && github.event.pull_request.draft == false)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:

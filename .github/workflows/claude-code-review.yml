@@ -4,11 +4,15 @@
 # - 方式: 明示promptで指示する。以前のcode-reviewプラグイン方式
 #   (/code-review:code-review --comment)は全runが2ターン・数秒で終了し
 #   PRに何も投稿されなかったため廃止
-# - 起動: opened / synchronize / ready_for_review / reopened。draft PRは対象外
+# - 起動: opened / ready_for_review / reopened の区切りでのみ自動実行。draft PRは対象外
 #   (作業途中の差分にコメントがつくとノイズになるため)
-# - 同一PRへの連続pushは concurrency で先行runをキャンセルし、二重レビューを防ぐ
+# - pushごと(synchronize)には実行しない。修正途中のコミットにも指摘がつきノイズになり、
+#   @claude 経由のpushでは起動者がbotになりActionが失敗するため
+# - 再レビュー: PRに claude-review ラベルを付けると実行する。2回目以降は
+#   ラベルを外して付け直す。ラベルを付けた人が起動者になるため、bot起因の失敗も起きない
+# - 同一PRで連続して起動した場合は concurrency で先行runをキャンセルし、二重レビューを防ぐ
 # - コメント: track_progress + use_sticky_comment で、PRごとに1つの
-#   コメントをレビュー結果で更新する。pushのたびにコメントが増えない
+#   コメントをレビュー結果で更新する。再レビューのたびにコメントが増えない
 # - 指摘箇所は inline comment、総評は sticky comment に書く
 # - 認証: Claude GitHub App のトークンを使う(github_token は指定しない)
 # - 許可ツール: gh pr diff / view と inline comment のみ(approve・編集は許可しない)
@@ -18,15 +22,21 @@ name: Claude Code Review
 
 on:
   pull_request:
-    types: [opened, synchronize, ready_for_review, reopened]
+    types: [opened, ready_for_review, reopened, labeled]
 
 concurrency:
-  group: claude-review-${{ github.event.pull_request.number }}
+  # claude-review 以外のラベル付与は別グループにし、実行中のレビューをキャンセルしない
+  group: >-
+    claude-review-${{ github.event.pull_request.number }}${{
+      github.event.action == 'labeled' && github.event.label.name != 'claude-review'
+      && format('-skip-{0}', github.run_id) || '' }}
   cancel-in-progress: true
 
 jobs:
   claude-review:
-    if: github.event.pull_request.draft == false
+    if: >-
+      github.event.pull_request.draft == false &&
+      (github.event.action != 'labeled' || github.event.label.name == 'claude-review')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:

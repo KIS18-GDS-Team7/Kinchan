@@ -8,8 +8,11 @@
 #   (作業途中の差分にコメントがつくとノイズになるため)
 # - pushごと(synchronize)には実行しない。修正途中のコミットにも指摘がつきノイズになり、
 #   @claude 経由のpushでは起動者がbotになりActionが失敗するため
-# - 再レビュー: PRに claude-review ラベルを付けると実行する。2回目以降は
-#   ラベルを外して付け直す。ラベルを付けた人が起動者になるため、bot起因の失敗も起きない
+# - 再レビュー: PRに claude-review ラベルを付けると実行する。ラベルを付けた人が
+#   起動者になるため、bot起因の失敗も起きない
+# - ラベルはレビュー終了時に(成否にかかわらず)workflowが外す。次の再レビューは
+#   ラベルを付けるだけでよい。外す処理はClaudeではなくworkflowのstepが
+#   GITHUB_TOKEN(pull-requests: write)で行う。unlabeled は起動条件に含めないので再起動しない
 # - 同一PRで連続して起動した場合は concurrency で先行runをキャンセルし、二重レビューを防ぐ
 # - コメント: track_progress + use_sticky_comment で、PRごとに1つの
 #   コメントをレビュー結果で更新する。再レビューのたびにコメントが増えない
@@ -90,3 +93,14 @@ jobs:
             - すべて日本語で書く
           claude_args: >-
             --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr diff:*),Bash(gh pr view:*)"
+
+      # 次の再レビューをラベルの付け直し1回で起動できるよう、成否にかかわらず外す。
+      # ラベルが既に外されている場合(404)は無視する
+      - name: Remove claude-review label
+        if: always() && github.event.action == 'labeled'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh api -X DELETE "repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/labels/claude-review" \
+            || echo "claude-review label was already removed"

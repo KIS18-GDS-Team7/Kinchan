@@ -7,6 +7,6 @@ docs/
 └── usecase/
     ├── README.md
     ├── usecase.asta  ユースケース図
-    ├── 0001-hoge.md     hoge ドキュメント
-    └── 0002-fuga.md     fuga ドキュメント
+    ├── UC-001-hoge.md     hoge ドキュメント
+    └── UC-002-fuga.md     fuga ドキュメント
 ```

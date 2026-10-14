@@ -32,14 +32,14 @@
       K.go(K.HOME[u.role]); // 権限に応じた画面を表示(#18)
     }
 
-    const demo = ui.scaffold('デモアカウント(パスワードはすべて password)',
+    const demo = ui.scaffold('デモアカウント(パスワードはすべて password。1ユーザー1権限 #11)',
       h('div', { class: 'demo-accounts' }, ['管理者', '勤怠管理者', '従業員'].map((role) => h('div', { class: 'demo-group' },
         h('div', { class: 'demo-role' }, role),
         store.activeUsers().filter((u) => u.role === role).map((u) => h('button', {
           type: 'button', class: 'demo-account',
           onclick: () => { id.value = u.loginId; pw.value = u.password; msg.replaceChildren(); },
         }, h('span', null, u.name), h('small', null, `${u.loginId}${u.role === '勤怠管理者' ? ` / 担当: ${u.chargeStoreIds.map(store.storeName).join('・')}` : u.storeId ? ` / ${store.storeName(u.storeId)}` : ' / 店舗未設定'}`)))))),
-      h('p', { class: 'muted' }, '入力欄に値を入れるだけです。ログインボタンを押すと UC-001 のフローを通ります。画面上部の「ロール切替(デモ)」を使えば、ログイン画面を経由せずに切り替えられます。'));
+      h('p', { class: 'muted' }, ui.tbd(11, 'ロールの兼務'), ' 入力欄に値を入れるだけです。ログインボタンを押すと UC-001 のフローを通ります。画面上部の「ロール切替(デモ)」を使えば、ログイン画面を経由せずに切り替えられます。'));
 
     return h('div', { class: 'auth-wrap' },
       ui.screen({ title: 'ログイン画面', uc: ['UC-001'], notes: [ui.tbd(17, '全ロール共通フローは未記述')] },

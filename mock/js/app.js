@@ -165,7 +165,7 @@ window.K = window.K || {};
           onchange: (ev) => { st.settings.wishAccepting = ev.target.checked; store.event('デモ', `シフト希望の受付期間: ${ev.target.checked ? '期間内' : '期間外'}`); K.rerender(); } }),
         ` ${store.fmtMonth(st.settings.wishPeriod)}分を受付期間内にする`)),
       h('section', null,
-        h('h4', null, 'イベントログ(通知 #5・履歴 #12・デモ操作)'),
+        h('h4', null, 'イベントログ ', ui.tbd(5, '通知'), ui.tbd(12, '履歴')),
         st.events.length ? h('ol', { class: 'eventlog' }, st.events.map((e) => h('li', null,
           h('span', { class: 'ev-at' }, e.at.slice(11)), ui.badge(e.kind, e.kind === '通知' ? 'pending' : e.kind === '履歴' ? 'ok' : 'muted'), ' ', e.text)))
           : h('p', { class: 'muted' }, 'まだイベントはありません')),

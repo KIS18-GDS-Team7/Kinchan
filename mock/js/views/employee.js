@@ -344,7 +344,8 @@ K.views = K.views || {};
       var init = ctx.edit
         ? { clockIn: ctx.c.after.clockIn, clockOut: ctx.c.after.clockOut, breakMinutes: ctx.c.after.breakMinutes, reason: ctx.c.reason }
         : { clockIn: r.clockIn ? r.clockIn.slice(0, 5) : '', clockOut: r.clockOut ? r.clockOut.slice(0, 5) : '',
-          breakMinutes: r.breakMinutes === null ? '' : r.breakMinutes, reason: '' };
+          // 休憩が不明(打刻漏れ)ならシフトの予定休憩を初期値にする(#81)
+          breakMinutes: r.breakMinutes !== null ? r.breakMinutes : (sh.length ? S.plannedBreak(me, sh[0].start, sh[sh.length - 1].end) : 0), reason: '' };
       var current = card('現在の勤怠記録(修正前) ' + (r.corrected ? ui.status('修正済み') : ''),
         '<dl class="kv">' +
         '<dt>対象日</dt><dd>' + dayLabel(ctx.date) + '</dd>' +
@@ -365,7 +366,7 @@ K.views = K.views || {};
         ui.field('退勤時刻', '<input type="time" name="clockOut" value="' + esc(init.clockOut || '') + '">', 'clockOut', sh.length ? 'シフト終了 ' + sh[sh.length - 1].end : '') +
         '</div>' +
         ui.field('休憩時間(分)', '<input type="number" name="breakMinutes" min="0" step="1" inputmode="numeric" value="' + esc(init.breakMinutes) + '">', 'breakMinutes',
-          '休憩の合計時間。休憩打刻ごとの修正は対象外') +
+          '休憩の合計時間。休憩打刻ごとの修正は対象外' + (r.breakMinutes === null && sh.length ? '。初期値はシフトの予定休憩' : '')) +
         ui.field('申請理由 ' + ui.badge('必須', 'ng'), '<textarea name="reason" placeholder="例: 閉店作業のあと退勤の打刻を忘れました">' + esc(init.reason) + '</textarea>', 'reason',
           '新規・編集とも必須(UC-306 備考)') +
         '<div class="form-error" data-form-error hidden></div>' +

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kinchan UC モック</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --fg: #1f2328; --muted: #656d76; --card: #ffffff; --border: #d0d7de;
+    --accent-a: #0969da; --accent-b: #8250df;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --card: #161b22; --border: #30363d;
+      --accent-a: #58a6ff; --accent-b: #bc8cff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif; line-height: 1.6; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .lead { color: var(--muted); margin: 0 0 24px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .card h2 { font-size: 1.1rem; margin: 0; display: flex; align-items: center; gap: 8px; }
+  .tag { font-size: .75rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; color: #fff; }
+  .tag-a { background: var(--accent-a); } .tag-b { background: var(--accent-b); }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .card ul { margin: 0; padding-left: 1.2em; font-size: .9rem; }
+  .actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; padding-top: 6px; }
+  .btn { display: inline-block; padding: 8px 14px; border-radius: 6px; border: 1px solid var(--border); text-decoration: none; color: var(--fg); background: var(--card); font-size: .9rem; }
+  .btn-primary { color: #fff; border-color: transparent; }
+  .btn-a { background: var(--accent-a); } .btn-b { background: var(--accent-b); }
+  section.howto { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 20px; }
+  section.howto h3 { font-size: 1rem; margin: 0 0 8px; }
+  section.howto ol { margin: 0; padding-left: 1.4em; }
+  footer { margin-top: 24px; color: var(--muted); font-size: .85rem; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kinchan UC モック</h1>
+  <p class="lead">UC の洗い出しと認識合わせのための、見た目だけ動作するモック 2 種。同じドキュメントから異なる方針で作成し、差分で曖昧な箇所を炙り出す。</p>
+
+  <div class="cards">
+    <article class="card">
+      <h2><span class="tag tag-a">A</span>一般的な勤怠アプリに寄せる</h2>
+      <p>ドキュメントに明記された振る舞いには従い、曖昧・未定義な箇所だけを一般的な勤怠 SaaS の慣行で補完。</p>
+      <ul>
+        <li>補完箇所にはバッジ <strong>補完 #n</strong>(ホバー / クリックで理由)</li>
+        <li><code>#/decisions</code> に判断ログ一覧</li>
+        <li><code>?as=&lt;ユーザーID&gt;</code> で自動ログイン</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-primary btn-a" href="./generic/">モックを開く</a>
+        <a class="btn" href="https://github.com/KIS18-GDS-Team7/Kinchan/blob/mock/generic-kintai/mock/README.md">README・判断ログ</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2><span class="tag tag-b">B</span>ドキュメントに忠実</h2>
+      <p>requirements.md / ADR / UC 詳細に書かれていることだけを画面化。書かれていないものは補完せず、未定義として残す。</p>
+      <ul>
+        <li>未定義箇所は破線枠 <strong>TBD #n</strong>、矛盾箇所は <strong>矛盾 #n</strong></li>
+        <li>記載のない分岐に到達すると「未定義」ダイアログ</li>
+        <li>画面上部「デモ操作」で例外フロー・受付期間を切替</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-primary btn-b" href="./faithful/">モックを開く</a>
+        <a class="btn" href="https://github.com/KIS18-GDS-Team7/Kinchan/blob/mock/doc-faithful/mock/README.md">README・判断ログ</a>
+      </div>
+    </article>
+  </div>
+
+  <section class="howto">
+    <h3>見方</h3>
+    <ol>
+      <li>ログイン画面でロール(従業員 / 管理者 / 勤怠管理者)のデモアカウントを選ぶ。従業員画面はスマホ幅、他は PC 幅を想定</li>
+      <li>同じ UC を A と B で開き、A の「補完」と B の「TBD / 矛盾」が付いている箇所を比べる。そこがドキュメントで決まっていない箇所</li>
+      <li>各 README の「判断ログ」の # と画面上のバッジ番号は対応している</li>
+    </ol>
+  </section>
+
+  <footer>
+    ソース: <a href="https://github.com/KIS18-GDS-Team7/Kinchan">KIS18-GDS-Team7/Kinchan</a>(ブランチ <code>mock/generic-kintai</code> / <code>mock/doc-faithful</code>)・
+    配信中のコミット: <a href="./VERSIONS.txt">VERSIONS.txt</a>
+  </footer>
+</main>
+</body>
+</html>

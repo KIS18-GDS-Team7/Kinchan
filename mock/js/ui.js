@@ -15,7 +15,7 @@ window.K = window.K || {};
   // ---------- バッジ類 ----------
   // 補完バッジ(判断ログ #n)。ホバー/クリックで理由を表示
   ui.hokan = function (n) {
-    return '<button type="button" class="hokan" data-hokan="' + n + '" aria-label="補完 #' + n + ' の判断理由を表示">補完 #' + n + '</button>';
+    return '<span class="hokan" role="button" tabindex="0" data-hokan="' + n + '" aria-label="補完 #' + n + ' の判断理由を表示">補完 #' + n + '</span>';
   };
   ui.hokans = function (list) { return (list || []).map(ui.hokan).join(''); };
 
@@ -227,7 +227,7 @@ window.K = window.K || {};
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('.hokan');
     if (b) {
-      e.preventDefault(); e.stopPropagation();
+      e.preventDefault(); e.stopPropagation(); // label 内でも入力欄を操作しない
       if (pinned === b) { hidePop(); return; }
       showPop(b); pinned = b;
       return;
@@ -235,7 +235,15 @@ window.K = window.K || {};
     if (pop && !pop.hidden && !pop.contains(e.target)) hidePop();
     if (pop && e.target.closest && e.target.closest('.hp-link')) hidePop();
   }, true);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hidePop(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { hidePop(); return; }
+    var b = e.target.closest && e.target.closest('.hokan');
+    if (b && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      if (pinned === b) { hidePop(); return; }
+      showPop(b); pinned = b;
+    }
+  });
   window.addEventListener('hashchange', hidePop);
 
   K.ui = ui;

@@ -98,6 +98,7 @@ p { margin: .4em 0; }
 .page-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .section { margin-top: 20px; }
 .section-title { font-size: 15px; margin: 0 0 8px; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.section-title.section { margin-top: 20px; }
 .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 12px; }
 .toolbar .field { margin: 0; }
 .flow-note { display: inline-block; margin-left: 6px; font-size: 11px; color: var(--muted); border: 1px solid var(--border); border-radius: 4px; padding: 0 4px; background: #fff; white-space: nowrap; }
@@ -142,6 +143,7 @@ p { margin: .4em 0; }
 .card-title { font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
 .card-body { padding: 14px 16px; }
 .card + .card { margin-top: 14px; }
+.grid-2 > .card + .card, .grid-3 > .card + .card { margin-top: 0; }
 .kpis { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
 .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; box-shadow: var(--shadow); display: block; color: inherit; }
 a.kpi:hover { border-color: var(--primary); text-decoration: none; }
@@ -185,6 +187,7 @@ input:disabled, select:disabled, textarea:disabled { background: var(--surface-2
 .table tr.selected td { background: var(--primary-weak); }
 .table tr.muted-row td { color: var(--muted); }
 .table td.actions { white-space: nowrap; text-align: right; }
+.table .num { text-align: right; }
 
 /* ---------- アラート・空表示 ---------- */
 .alert { padding: 10px 12px; border-radius: 7px; font-size: 13px; border: 1px solid transparent; margin-bottom: 12px; }
@@ -204,9 +207,9 @@ input:disabled, select:disabled, textarea:disabled { background: var(--surface-2
 
 /* ---------- タブ ---------- */
 .tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 14px; flex-wrap: wrap; }
-.tabs a, .tabs button { font: 600 13px/1 var(--font); padding: 10px 14px; border: 0; background: none; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
-.tabs a.active, .tabs button.active { color: var(--primary); border-bottom-color: var(--primary); }
-.tabs a:hover { text-decoration: none; color: var(--text); }
+.tabs > a, .tabs > button { font: 600 13px/1 var(--font); padding: 10px 14px; border: 0; background: none; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tabs > a.active, .tabs > button.active { color: var(--primary); border-bottom-color: var(--primary); }
+.tabs > a:hover { text-decoration: none; color: var(--text); }
 
 /* ---------- 一覧+詳細 ---------- */
 .split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr); gap: 16px; align-items: start; }
@@ -275,6 +278,7 @@ input:disabled, select:disabled, textarea:disabled { background: var(--surface-2
 .topbar .view-switch { color: #c6d0e2; }
 .view-switch { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; }
 .view-switch select { width: auto; min-height: 28px; padding: 2px 6px; font-size: 12px; }
+.topbar .view-switch select { color: var(--text); background: #fff; }
 .pc-body { flex: 1; display: grid; grid-template-columns: 200px minmax(0, 1fr); }
 .sidenav { background: #fff; border-right: 1px solid var(--border); padding: 12px 8px; display: flex; flex-direction: column; gap: 2px; }
 .sidenav a { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 6px; color: var(--text); font-weight: 600; font-size: 13px; }

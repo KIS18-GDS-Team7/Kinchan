@@ -179,7 +179,7 @@ K.views = K.views || {};
       '<nav class="tabbar">' + EMP_TABS.map(function (t) {
         return '<a href="#/' + t[2] + '" class="' + (view.tab === t[0] ? 'active' : '') + '">' + t[1] + '</a>';
       }).join('') + ui.hokan(76) + '</nav>' +
-      '</div><p class="phone-caption">従業員画面はスマホ幅で表示(店頭のスマホでの打刻を想定)</p></div>';
+      '</div><p class="phone-caption">従業員画面はスマホ幅で表示(店頭のスマホでの打刻を想定)。画面名は UC 名から命名 ' + ui.hokan(9) + '</p></div>';
   }
 
   function pcNav(view) {
@@ -207,7 +207,8 @@ K.views = K.views || {};
     return '<nav class="sidenav">' + items.map(function (it) {
       return '<a href="#/' + it[2] + '" class="' + (view.nav === it[0] ? 'active' : '') + '">' + esc(it[1]) +
         (it[3] ? '<span class="nav-count">' + it[3] + '</span>' : '') + '</a>';
-    }).join('') + (v === '勤怠管理者' ? '<div class="nav-note">件数は未処理(申請中)の件数 ' + ui.hokan(4) + '</div>' : '') + '</nav>';
+    }).join('') + (v === '勤怠管理者' ? '<div class="nav-note">件数は未処理(申請中)の件数 ' + ui.hokan(4) + '</div>' : '') +
+      '<div class="nav-note">画面名は UC 名から命名 ' + ui.hokan(9) + '</div></nav>';
   }
   function pcLayout(view, title, content) {
     var me = S.me();
@@ -293,7 +294,7 @@ K.views = K.views || {};
         '<div class="form-error" data-login-error hidden></div>' +
         '<button type="submit" class="btn btn-primary btn-block">ログイン</button>' +
         '</form>' +
-        '<p class="login-note">パスワードを忘れた場合は管理者に連絡してください ' + ui.hokan(13) + '</p>' +
+        '<p class="login-note">パスワードを忘れた場合は管理者に連絡してください ' + ui.hokan(13) + '<br>ログイン試行回数の制限なし ' + ui.hokan(14) + '</p>' +
         '</div>' +
         '<div class="login-demo"><h2>デモアカウント</h2><p class="muted">選ぶと ID・パスワードを入力してログインします</p>' +
         '<div class="demo-accounts">' + DEMO_ACCOUNTS.map(function (d) {
@@ -310,7 +311,7 @@ K.views = K.views || {};
             '</td><td class="mono">' + esc(u.loginId) + ' / ' + esc(u.password) + '</td>' +
             '<td><button type="button" class="btn btn-ghost btn-sm" data-login-as="' + u.id + '">ログイン</button></td></tr>';
         }).join('') + '</tbody></table></details>' +
-        '<p class="muted small">エラー表示の確認: 存在しない ID は「アカウントが存在しません」(docx UC-001 Ex-2)、パスワード誤りは「ログイン情報が正しくありません」(Ex-1)</p>' +
+        '<p class="muted small">エラー表示の例: 存在しない ID は「アカウントが存在しません」(docx UC-001 Ex-2)、パスワード誤りは「ログイン情報が正しくありません」(Ex-1)</p>' +
         '</div></div>';
     },
     mount: function (el) {

@@ -175,6 +175,16 @@ K.seed = function () {
     return p ? p.at.slice(11, 16) : null;
   }
 
+  function breakOf(uid, date) {
+    var ps = attendance[uid][date].punches, total = 0, st = null;
+    ps.forEach(function (p) {
+      if (p.type === '休憩開始') st = T.toMin(p.at.slice(11));
+      if (p.type === '休憩終了' && st !== null) { total += T.toMin(p.at.slice(11)) - st; st = null; }
+    });
+    return total;
+  }
+  var suzukiBreak = breakOf('u04', '2026-10-13');
+
   var corrections = [
     { id: 'cr1', userId: 'u03', date: '2026-10-02',
       before: { clockIn: null, clockOut: outAt, breakMinutes: 0 },
@@ -190,18 +200,19 @@ K.seed = function () {
       processedAt: '2026-10-06T11:00:00', processedBy: 'u02',
       rejectReason: 'シフト開始前の作業は指示されていないため。必要な場合は事前に相談してください' },
     { id: 'cr3', userId: 'u04', date: '2026-10-13',
-      before: { clockIn: firstPunch('u04', '2026-10-13', '出勤'), clockOut: null, breakMinutes: 60 },
-      after: { clockIn: firstPunch('u04', '2026-10-13', '出勤'), clockOut: '22:06', breakMinutes: 60 },
+      before: { clockIn: firstPunch('u04', '2026-10-13', '出勤'), clockOut: null, breakMinutes: suzukiBreak },
+      after: { clockIn: firstPunch('u04', '2026-10-13', '出勤'), clockOut: '22:06', breakMinutes: suzukiBreak },
       reason: '閉店作業のあと退勤の打刻を忘れました',
       status: '申請中', createdAt: '2026-10-14T09:10:00', updatedAt: '2026-10-14T09:10:00',
       processedAt: null, processedBy: null, rejectReason: null },
     { id: 'cr4', userId: 'u08', date: '2026-10-07',
       before: { clockIn: '10:25', clockOut: firstPunch('u08', '2026-10-07', '退勤'), breakMinutes: 0 },
-      after: { clockIn: '09:58', clockOut: firstPunch('u08', '2026-10-07', '退勤'), breakMinutes: 0 },
+      after: { clockIn: '09:58', clockOut: firstPunch('u08', '2026-10-07', '退勤'), breakMinutes: 45 },
       reason: '出勤時に打刻画面が開かず、10:25 に打刻しました。実際の出勤は 9:58 です',
       status: '申請中', createdAt: '2026-10-07T16:20:00', updatedAt: '2026-10-07T16:20:00',
       processedAt: null, processedBy: null, rejectReason: null },
   ];
+
 
   function findShift(uid, date) {
     return shifts.filter(function (s) { return s.userId === uid && s.date === date; })[0];

@@ -25,6 +25,8 @@ window.K = window.K || {};
   S.OT_LIMIT = 45 * 60; // 36 協定 月 45 時間 #57
   S.OT_WARN = 36 * 60;  // 上限の 80% #57
   S.FAULT_MSG = '通信エラーが発生しました。画面を読み込み直してください';
+  // UC-306 Ex-2(文言は docs のまま、括弧のみ揃えた)
+  S.CORRECTION_DUP_MSG = '該当日の修正申請はすでに送信されています。内容を修正する場合は『勤怠修正申請内容を一覧表示する（UC-310）』から編集してください';
 
   S.reset = function () { state = K.seed(); seq = 1000; S.state = state; };
   S.reset();
@@ -609,8 +611,7 @@ window.K = window.K || {};
   };
   S.submitCorrection = function (userId, input) {
     if (S.pendingCorrection(userId, input.date)) {
-      // UC-306 Ex-2(文言は docs のまま、括弧のみ揃えた)
-      return ng('該当日の修正申請はすでに送信されています。内容を修正する場合は『勤怠修正申請内容を一覧表示する（UC-310）』から編集してください', { code: 'duplicate' });
+      return ng(S.CORRECTION_DUP_MSG, { code: 'duplicate' });
     }
     var errors = validateCorrectionInput(input);
     if (hasErrors(errors)) return ng('入力内容に不備があります', { code: 'invalid', errors: errors }); // UC-306 Ex-1

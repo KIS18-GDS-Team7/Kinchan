@@ -154,7 +154,7 @@ K.views = K.views || {};
   function viewSwitch(me) {
     var views = S.viewsOf(me);
     if (views.length < 2) return '';
-    return '<label class="view-switch"><span>表示する画面</span><select data-act="switch-view">' +
+    return '<label class="view-switch"><span>表示する画面</span><select data-layout-act="switch-view">' +
       ui.options(views, S.view()) + '</select></label>' + ui.hokan(1);
   }
 
@@ -218,19 +218,19 @@ K.views = K.views || {};
       '<div class="brand">Kinchan<span class="brand-sub">' + esc(v) + '</span></div>' + storeTxt +
       '<div class="spacer"></div>' + viewSwitch(me) +
       '<span class="topbar-user">' + esc(me.name) + '</span>' +
-      '<button type="button" class="btn btn-ghost btn-sm" data-act="password">パスワードを変更</button>' +
-      '<button type="button" class="btn btn-secondary btn-sm" data-act="logout">ログアウト</button>' +
+      '<button type="button" class="btn btn-ghost btn-sm" data-layout-act="password">パスワードを変更</button>' +
+      '<button type="button" class="btn btn-secondary btn-sm" data-layout-act="logout">ログアウト</button>' +
       '</header>' +
       '<div class="pc-body">' + pcNav(view) + '<main class="pc-main" data-view-root>' + content + '</main></div>' +
       '</div>';
   }
   function bindLayout() {
-    ui.on(root, 'change', '[data-act="switch-view"]', function (e, el) {
+    ui.on(root, 'change', '[data-layout-act="switch-view"]', function (e, el) {
       S.setView(el.value);
       app.go(app.home());
     });
-    ui.on(root, 'click', '[data-act="logout"]', function () { app.logout(); });
-    ui.on(root, 'click', '[data-act="password"]', function () { app.passwordModal(); });
+    ui.on(root, 'click', '[data-layout-act="logout"]', function () { app.logout(); });
+    ui.on(root, 'click', '[data-layout-act="password"]', function () { app.passwordModal(); });
   }
 
   // ---------------- ログアウト(UC-002) ----------------

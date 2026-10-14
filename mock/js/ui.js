@@ -121,10 +121,18 @@ window.K = window.K || {};
       '<div class="modal-body">' + (o.body || '') + '</div>' +
       '<div class="modal-actions"></div></div>';
     document.body.appendChild(wrap);
+    var closed = false;
     var m = {
       el: wrap,
       body: wrap.querySelector('.modal-body'),
-      close: function () { wrap.remove(); document.removeEventListener('keydown', onKey); if (o.onClose) o.onClose(); },
+      close: function () {
+        if (closed) return;
+        closed = true;
+        wrap.remove();
+        document.removeEventListener('keydown', onKey);
+        window.removeEventListener('hashchange', m.close);
+        if (o.onClose) o.onClose();
+      },
       setBody: function (html) { m.body.innerHTML = html; },
       setError: function (msg) {
         var e = wrap.querySelector('.modal-error');
@@ -149,6 +157,7 @@ window.K = window.K || {};
     };
     function onKey(e) { if (e.key === 'Escape') m.close(); }
     document.addEventListener('keydown', onKey);
+    window.addEventListener('hashchange', m.close); // 画面遷移したら閉じる
     wrap.querySelector('.modal-x').addEventListener('click', m.close);
     m.setActions(o.actions);
     if (o.onMount) o.onMount(m);

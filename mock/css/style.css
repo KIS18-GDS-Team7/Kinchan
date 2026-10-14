@@ -262,7 +262,9 @@ input:disabled, select:disabled, textarea:disabled { background: var(--surface-2
 .decisions tr.focus td { background: #fff3e6; }
 
 /* ---------- PC レイアウト(管理者・勤怠管理者) ---------- */
-.pc { min-height: calc(100vh - 36px); display: flex; flex-direction: column; }
+#app { min-height: 100vh; display: flex; flex-direction: column; }
+#app > [data-view-root], #app > .doc-wrap { flex: 1; }
+.pc { flex: 1; display: flex; flex-direction: column; }
 .topbar { display: flex; align-items: center; gap: 12px; padding: 8px 18px; background: #14213d; color: #e7ecf5; flex-wrap: wrap; }
 .brand { font-weight: 800; font-size: 17px; letter-spacing: .04em; }
 .brand-sub { font-size: 11.5px; font-weight: 600; margin-left: 8px; padding: 1px 8px; border-radius: 999px; background: rgba(255, 255, 255, .14); }

@@ -37,7 +37,9 @@ window.K = window.K || {};
     '管理者': 'role-adm', '勤怠管理者': 'role-mgr', '従業員': 'role-emp',
     '未設定': 'gray', '設定済み': 'ok', '削除済み': 'gray', '修正済み': 'info', '自動': 'gray',
   };
+  // cls 省略時はラベルから色を決める(Array#map に直接渡しても index を cls と誤解しない)
   ui.badge = function (label, cls) {
+    if (typeof cls !== 'string') cls = null;
     return '<span class="badge badge-' + (cls || STATUS_CLASS[label] || 'gray') + '">' + esc(label) + '</span>';
   };
   ui.status = function (label) { return ui.badge(label); };

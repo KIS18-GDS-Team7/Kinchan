@@ -12,6 +12,11 @@
 #   inline comment の投稿も App トークンで行うため、workflow の pull-requests は read のまま
 # - 許可ツール: gh issue view / list、gh pr view / diff、inline comment のみ
 #   (approve・issue/PRの編集・closeは許可しない)
+# - 他ブランチの閲覧: UC記述やモックは未マージのブランチにあり、PRがないと gh pr diff でも読めないため、
+#   checkout を fetch-depth: 0 にして全ブランチを取得し、各ブランチを .branches/<ブランチ名>/ に
+#   ファイルとして展開する。Claude は tag mode で既定許可の Read / Grep / Glob で読む。
+#   git show / grep / log を許可しないのは、-O<コマンド> や --output=<ファイル> などのオプションで
+#   コマンド実行・ファイル書き込みができ、前方一致の許可では防げないため
 # - 議論の方針: --append-system-prompt で、issueの論点から外れない・未定義の語を持ち込まない・
 #   要件定義と画面設計を混ぜない、といった応答方針を与える。
 #   発言の引用・要約では --json comments で投稿者と日時を確認させる
@@ -48,7 +53,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
+
+      - name: Expand other branches
+        run: |
+          git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin |
+            grep -v -x -e HEAD -e main |
+            while read -r branch; do
+              mkdir -p ".branches/$branch"
+              git archive "origin/$branch" | tar -x -C ".branches/$branch"
+            done
 
       - name: Run Claude Code
         id: claude
@@ -74,4 +88,5 @@ jobs:
             - 定義されていない語を自分から持ち込まない。議論に出てきた場合は、指す内容を具体的に確認するか、requirements.md の用語集や既存のUC名で言い換える
             - 提案された案に同調するだけで終えない。既存のUC・FRとの重複や矛盾を確認し、あれば指摘する
             - 決めるべき点が残る場合は、選択肢(A/Bなど)で答えられる形で質問する
-            - issueやPRの発言を引用・要約するときは、gh issue view --json comments(PRは gh pr view --json comments)で各コメントの author と createdAt を確認し、発言者と時系列を取り違えない"
+            - issueやPRの発言を引用・要約するときは、gh issue view --json comments(PRは gh pr view --json comments)で各コメントの author と createdAt を確認し、発言者と時系列を取り違えない
+            - 資料が main にない場合は、.branches/<ブランチ名>/ 以下を Grep / Glob で探して Read で読む(main 以外の全ブランチを展開してある)。UC記述やモックは未マージのブランチにあることが多い。引用するときはブランチ名とパスを示す"

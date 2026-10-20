@@ -10,12 +10,13 @@
 #   ここで明示する必要がある(claude-code-action src/mcp/install-mcp-server.ts)
 # - 認証: Claude GitHub App のトークンを使う(github_token は指定しない)。
 #   inline comment の投稿も App トークンで行うため、workflow の pull-requests は read のまま
-# - 許可ツール: gh issue view / list、gh pr view / diff、inline comment、
-#   git の閲覧コマンド(branch -r / show / log / ls-tree / grep)のみ
-#   (approve・issue/PRの編集・close、git の fetch・commit・push は許可しない)
+# - 許可ツール: gh issue view / list、gh pr view / diff、inline comment のみ
+#   (approve・issue/PRの編集・closeは許可しない)
 # - 他ブランチの閲覧: UC記述やモックは未マージのブランチにあり、PRがないと gh pr diff でも読めないため、
-#   checkout を fetch-depth: 0 にして全ブランチを取得し、git show <ブランチ>:<パス> で読めるようにする。
-#   取得は checkout のステップで済ませ、Claude には fetch を許可しない
+#   checkout を fetch-depth: 0 にして全ブランチを取得し、各ブランチを .branches/<ブランチ名>/ に
+#   ファイルとして展開する。Claude は tag mode で既定許可の Read / Grep / Glob で読む。
+#   git show / grep / log を許可しないのは、-O<コマンド> や --output=<ファイル> などのオプションで
+#   コマンド実行・ファイル書き込みができ、前方一致の許可では防げないため
 # - 議論の方針: --append-system-prompt で、issueの論点から外れない・未定義の語を持ち込まない・
 #   要件定義と画面設計を混ぜない、といった応答方針を与える。
 #   発言の引用・要約では --json comments で投稿者と日時を確認させる
@@ -54,6 +55,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Expand other branches
+        run: |
+          git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin |
+            grep -v -x -e HEAD -e main |
+            while read -r branch; do
+              mkdir -p ".branches/$branch"
+              git archive "origin/$branch" | tar -x -C ".branches/$branch"
+            done
+
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
@@ -71,7 +81,7 @@ jobs:
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
           # or https://code.claude.com/docs/en/cli-reference for available options
           claude_args: |
-            --allowed-tools "mcp__github_inline_comment__create_inline_comment,Bash(gh issue view:*),Bash(gh issue list:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(git branch -r:*),Bash(git show:*),Bash(git log:*),Bash(git ls-tree:*),Bash(git grep:*)"
+            --allowed-tools "mcp__github_inline_comment__create_inline_comment,Bash(gh issue view:*),Bash(gh issue list:*),Bash(gh pr view:*),Bash(gh pr diff:*)"
             --append-system-prompt "issue上の議論に応答するときは、次の方針に従ってください。
             - 回答の前にissue本文を読み、そのissueの論点を把握する。メンションした人の依頼が論点から外れている場合は、そのことを指摘したうえで論点に沿って答える
             - 要件定義(docs/requirements/requirements.md)では、システムで何ができるか(UC・FR)と用語の定義を扱う。画面の構成・ボタン配置・メニューは画面設計で扱う内容なので、要件定義の議論に混ぜず、別の論点として切り分ける
@@ -79,4 +89,4 @@ jobs:
             - 提案された案に同調するだけで終えない。既存のUC・FRとの重複や矛盾を確認し、あれば指摘する
             - 決めるべき点が残る場合は、選択肢(A/Bなど)で答えられる形で質問する
             - issueやPRの発言を引用・要約するときは、gh issue view --json comments(PRは gh pr view --json comments)で各コメントの author と createdAt を確認し、発言者と時系列を取り違えない
-            - 資料が main にない場合は、git branch -r でブランチを確認し、git ls-tree / git grep で探して git show <ブランチ>:<パス> で読む。UC記述やモックは未マージのブランチにあることが多い。引用するときはブランチ名とパスを示す"
+            - 資料が main にない場合は、.branches/<ブランチ名>/ 以下を Grep / Glob で探して Read で読む(main 以外の全ブランチを展開してある)。UC記述やモックは未マージのブランチにあることが多い。引用するときはブランチ名とパスを示す"

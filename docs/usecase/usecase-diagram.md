@@ -1,8 +1,14 @@
-# ユースケース図(Mermaid 版)
+# ユースケース図(SVG 版・Mermaid 版)
 
 `usecase.asta` を更新するまでの暫定版。UC ドキュメント(`UC-XXX.md`)43 件の内容から起こしたもので、astah に起こすときの元資料として使う。
 
-## 図
+## SVG 版
+
+`usecase.svg` は、`usecase.asta` の従来の図と同じ配置(アクターが上、システム境界の中にアクターごとのレーン、«Abstract» への汎化)で描いたもの。内容は下の Mermaid 版・一覧と同じ。
+
+![ユースケース図](usecase.svg)
+
+## Mermaid 版
 
 - 実線(矢印なし): アクターと UC の関連
 - 実線の矢印: 汎化(矢印の先が親)。アクターの汎化と、«Abstract» の UC への汎化

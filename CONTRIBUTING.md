@@ -60,11 +60,13 @@ feat/<name>/<topic> ─PR─┘
 4. 承認の返信を受けたら、同じ commit に `approved/<YYYYMMDD>` タグと GitHub Release を作り、返信の日時と要旨を記録する。リポジトリは public なので、メールの原文や個人情報は書かない。
 
    ```sh
-   gh release create approved/20261022 --target "$(git rev-parse review/20261022^{commit})" \
-     --title "教員承認 2026-10-22" --notes "2026-10-22 のメールで承認。対象: review/20261022。指摘事項: なし"
+   sha=$(git rev-parse 'review/20261022^{commit}')   # review/ タグが無い場合は対象 commit の SHA を直接書く
+   gh release create approved/20261022 --target "$sha" \
+     --title "教員承認 2026-10-22" --notes "2026-10-22 のメールで承認。対象: ${sha:0:7} (review/20261022)。指摘事項: なし"
    ```
 
 5. 差し戻しの場合はタグを打たず、`main` で修正して 1 からやり直す。
+6. 手順 2 を経ずにレビューを受けた場合 (例: #102 は `develop` の内容でレビューを受け、マージ後の `main` に `approved/` だけを作る) は、Release notes に対象の commit と経緯を書く。
 
 `review/*` `approved/*` タグの作成・変更・削除は pm-qa チームのみ。
 

@@ -12,7 +12,7 @@
   - チームのレビューと教員のレビューを分ける。教員レビュー待ちの間もチームの統合を止めない。教員が承認した状態を後から特定できるようにする。
   - 他チームの管轄に触れる PR は、その管轄チームのレビューを必須にする。
   - PM が緊急時に使える迂回経路を残す。
-- 教員は GitHub 上のファイルを読み、メールで返す。GitHub の利用経験が少なく、PR やブランチ、タグの操作は求められない。
+- 教員は GitHub 上のファイルを読み、メールで返す。GitHub の利用経験が少なく、PR やブランチ、タグの操作は求められない。本来のレビューは Google Docs 上で行う運用で、この班は GitHub 上での閲覧を例外的に認められている。完成品は Google Drive への納品が必要で、`main` から CI で自動反映する案は、教員が権限を持つフォルダへ書き込めるトークンを発行できるかが未確認。
 - 検討して退けた案。
   - `develop` を単一のチームゲートにし、`develop` から `main` への PR を教員ゲートにする案。`develop` が `main` から離れ、取り込みの PR が必要になる。frontend と backend の変更が同じ PR に同居し、片方の差し戻しがもう片方を止める。
   - チーム別の `develop` を置く案。両方に跨る変更の行き先が決まらない。
@@ -34,6 +34,7 @@
   - `.github/**` `database/**` `deploy/**` `compose*.yaml`、および任意の階層の `Dockerfile*` `.dockerignore`: platform (例: `backend/Dockerfile` は backend と platform の両方)
 - org Team として frontend、backend、platform (infra と database を統合)、pm-qa を置く。CODEOWNERS は所有の宣言と review request の自動化に使い、承認の強制は Rulesets の required reviewers で行う。
 - 教員レビューは次の手順で記録する。送付時に PM が `review/<日付>` タグを `main` の commit に打ち、メールにはその commit を固定した permalink を書く。承認の返信を受けたら同じ commit に `approved/<日付>` タグと GitHub Release を作り、返信の日時と要旨を記録する。差し戻しは `main` で修正して再送付する。`review/*` `approved/*` の作成・変更・削除は pm-qa のみとする。
+- 完成品の Google Drive への納品はレビューとは別の手順とし、決まり次第 CONTRIBUTING.md に書く。
 - `main` は常に教員に見せられる状態に保つ。未完成の変更は `dev/feat/<name>` に置き、`main` に入れない。
 - Repository admin は PR のマージ時に限り Rulesets を bypass できる。直接 push はできない。緊急時以外は使わない。
 - Rulesets の内容は `.github/rulesets/*.json` に置き、変更は PR で行う。適用は PM が行う。

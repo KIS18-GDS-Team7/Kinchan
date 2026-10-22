@@ -1,16 +1,20 @@
 # CODEOWNERS
 #
-# 所有者が付いたパスを PR で変更すると、owner チームの誰かの承認が必須になる
-# (dev/** 向け PR で "Require review from Code Owners" を有効化済み)。
-# 後の行が前の行を上書きする (追加ではない) ので、具体的なパスほど下に書く。
-# ここに無いパス (docs/ など) は owner なし。通常の approval 1 件で通る。
+# 所有者チームには、その範囲のファイルを変更する PR で自動的に review request が飛ぶ。
+# 承認を必須にするかどうかは Rulesets 側の設定に従う。
+# 後の行が前の行を上書きする (追加ではない) ので、具体的なパターンほど下に書く。
+# ここに無いパス (docs/ など) は owner なし。
 #
 # Teams: https://github.com/orgs/KIS18-GDS-Team7/teams
 
-# Infra / CI (CODEOWNERS 自身も含む)
-/.github/    @KIS18-GDS-Team7/infra
-
 # ドメイン別。ディレクトリ構成が確定したら実際のパスに合わせて更新する。
-/frontend/   @KIS18-GDS-Team7/frontend
-/backend/    @KIS18-GDS-Team7/backend
-/database/   @KIS18-GDS-Team7/database
+/frontend/        @KIS18-GDS-Team7/frontend
+/backend/         @KIS18-GDS-Team7/backend
+
+# Platform (Infra / CI / Database)。ドメイン配下の Dockerfile 等も platform 所有。
+/.github/         @KIS18-GDS-Team7/platform
+/database/        @KIS18-GDS-Team7/platform
+/deploy/          @KIS18-GDS-Team7/platform
+/compose*.yaml    @KIS18-GDS-Team7/platform
+**/Dockerfile*    @KIS18-GDS-Team7/platform
+**/.dockerignore  @KIS18-GDS-Team7/platform

@@ -29,6 +29,8 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 | `frontend/**` | frontend |
 | `backend/**` | backend |
 | `.github/**` `database/**` `deploy/**` `compose*.yaml`、および任意の階層の `Dockerfile*` `.dockerignore` | platform (Infra / CI / Database) |
+| `tools/drive-delivery/**` (manifest.json を除く) | pm-qa (PM)。納品スクリプトは PM の Google アカウントで動くため |
+| `tools/drive-delivery/manifest.json` | platform (納品対象の変更) |
 | 上記以外 (`docs/` など) | 指定なし。作者以外の承認 1 件で通る |
 
 - 例: `backend/Dockerfile` を変更する PR は backend と platform の両方の承認が必要。

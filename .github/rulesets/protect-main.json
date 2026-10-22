@@ -60,12 +60,24 @@
               "Dockerfile*",
               "**/Dockerfile*",
               ".dockerignore",
-              "**/.dockerignore"
+              "**/.dockerignore",
+              "tools/drive-delivery/manifest.json"
             ],
             "minimum_approvals": 1,
             "reviewer": {
               "type": "Team",
               "id": 20255558
+            }
+          },
+          {
+            "file_patterns": [
+              "tools/drive-delivery/**/*",
+              "!tools/drive-delivery/manifest.json"
+            ],
+            "minimum_approvals": 1,
+            "reviewer": {
+              "type": "Team",
+              "id": 20253187
             }
           }
         ]

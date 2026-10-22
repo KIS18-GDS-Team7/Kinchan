@@ -1,0 +1,18 @@
+{
+  // リポジトリのパス (main の approved/* タグ時点) と Google Drive 上の置き場所の対応表。
+  // ここに書いたものだけが納品される。書いていないものは同期しない。Drive 側の削除は行わない。
+  // 行頭が // の行はコメント。
+  //
+  // mode: "update"   = 固定の置き場所を上書きする (Google Docs の URL と版履歴を保つ)
+  //       "snapshot" = approved-<日付>/ 配下に毎回新しく置く
+  // src : リポジトリのパス。glob 可 (* はディレクトリ内、** は階層をまたぐ)
+  // dest: Drive 上の相対パス。末尾 / または src が glob ならフォルダ、それ以外はファイル名そのもの
+  // convert: "gdoc" = Markdown を Google Docs に変換 / "none" = そのまま置く (既定)
+  "mode": "update",
+  "entries": [
+    {"src": "docs/requirements/requirements.md", "dest": "要件定義書", "convert": "gdoc"},
+    {"src": "docs/usecase/*.md", "dest": "ユースケース/", "convert": "gdoc"},
+    {"src": "docs/usecase/*.svg", "dest": "ユースケース/", "convert": "none"},
+    {"src": "docs/usecase/*.png", "dest": "ユースケース/", "convert": "none"}
+  ]
+}

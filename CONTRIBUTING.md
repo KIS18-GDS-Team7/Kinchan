@@ -34,9 +34,10 @@ feat/<name>/<topic> ─PR─┘
 |---|---|
 | `frontend/**` | frontend |
 | `backend/**` | backend |
-| `.github/**` `database/**` `deploy/**` `compose*.yaml` `Dockerfile*` `.dockerignore` | platform (Infra / CI / Database) |
+| `.github/**` `database/**` `deploy/**` `compose*.yaml`、および任意の階層の `Dockerfile*` `.dockerignore` | platform (Infra / CI / Database) |
 | 上記以外 (`docs/` など) | 指定なし。作者以外の承認 1 件で通る |
 
+- 例: `backend/Dockerfile` を変更する PR は backend と platform の両方の承認が必要。
 - 承認後に push すると承認は無効になる。再度レビューを依頼する。
 - 自分の PR は自分で承認できない。必須チームのメンバーが自分だけの場合は、同じチームの他のメンバーに依頼する。
 - マージ方法は merge / squash / rebase のいずれも可。これまでの PR は merge commit で揃えている。

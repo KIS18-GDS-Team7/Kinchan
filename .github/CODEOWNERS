@@ -18,3 +18,7 @@
 /compose*.yaml    @KIS18-GDS-Team7/platform
 **/Dockerfile*    @KIS18-GDS-Team7/platform
 **/.dockerignore  @KIS18-GDS-Team7/platform
+
+# 納品スクリプト。コードは PM の Google アカウントで動くため PM、納品対象 (manifest) は platform
+/tools/drive-delivery/              @unrealkinoko
+/tools/drive-delivery/manifest.json @KIS18-GDS-Team7/platform

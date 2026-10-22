@@ -56,9 +56,13 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 3. メールには commit を固定したリンク (permalink) を書く。GitHub でファイルを開いて `y` を押すと URL が `blob/<commit>/...` の形になる。この URL は後で `main` が進んでも同じ内容を表示する。
 4. 承認の返信を受けたら、同じ commit に `approved/<YYYYMMDD>` タグと GitHub Release を作り、返信の日時と要旨を記録する。リポジトリは public なので、メールの原文や個人情報は書かない。
 
+   タグは annotated で打つ (日時・作成者・メッセージが不変の証跡になる)。Release はその上に載せる読める記録で、notes は後から編集できる。
+
    ```sh
    sha=$(git rev-parse 'review/20261022^{commit}')   # review/ タグが無い場合は対象 commit の SHA を直接書く
-   gh release create approved/20261022 --target "$sha" \
+   git tag -a approved/20261022 -m "教員承認 2026-10-22 (対象: review/20261022)" "$sha"
+   git push origin approved/20261022
+   gh release create approved/20261022 \
      --title "教員承認 2026-10-22" --notes "2026-10-22 のメールで承認。対象: ${sha:0:7} (review/20261022)。指摘事項: なし"
    ```
 

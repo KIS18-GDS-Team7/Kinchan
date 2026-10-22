@@ -52,48 +52,6 @@ function poll() {
   });
 }
 
-// manifest 読み込み（先頭が // の行はコメントとして除去）
-function parseManifest_(text) {
-  return JSON.parse(text.split("\n").filter(l => l.trim().indexOf("//") !== 0).join("\n"));
-}
-
-// entries を {src, destPath, convert} のリストへ展開（src 重複は先勝ち）
-function expandEntries_(entries, blobs) {
-  const seen = {};
-  const out = [];
-  entries.forEach(e => {
-    const convert = e.convert || "none";
-    const dest = e.dest || "";
-    const isGlob = e.src.indexOf("*") >= 0;
-    let paths;
-    if (isGlob) {
-      const re = globToRegExp_(e.src);
-      paths = blobs.filter(p => re.test(p));
-      if (!paths.length) Logger.log("WARNING: glob matched nothing: " + e.src);
-    } else {
-      if (blobs.indexOf(e.src) < 0) throw new Error("Path not found in tree: " + e.src);
-      paths = [e.src];
-    }
-    const dirForm = isGlob || /\/$/.test(dest);
-    // ** の場合は最初のワイルドカードより前のディレクトリ部分を基準にサブパスを保つ
-    const fixed = e.src.slice(0, e.src.indexOf("*") < 0 ? 0 : e.src.indexOf("*"));
-    const prefix = fixed.slice(0, fixed.lastIndexOf("/") + 1);
-    paths.forEach(p => {
-      if (seen[p]) return;
-      seen[p] = true;
-      let destPath = dest;
-      if (dirForm) {
-        const dir = dest && !/\/$/.test(dest) ? dest + "/" : dest;
-        let rel = e.src.indexOf("**") >= 0 ? p.slice(prefix.length) : p.split("/").pop();
-        if (convert === "gdoc" && /\.md$/.test(rel)) rel = rel.replace(/\.md$/, "");
-        destPath = dir + rel;
-      }
-      out.push({ src: p, destPath: destPath, convert: convert });
-    });
-  });
-  return out;
-}
-
 // 1タグ分の配信: SHA 解決 → manifest 取得 → エントリ展開 → アップロード
 function deliverTag(tagName) {
   const repo = prop_("GITHUB_REPO", null, true);
@@ -120,7 +78,7 @@ function deliverTag(tagName) {
   if (tree.truncated) Logger.log("WARNING: git tree is truncated; some files may be missing");
   const blobs = tree.tree.filter(n => n.type === "blob").map(n => n.path);
 
-  // 4. エントリを配信対象 {path, asDoc, destDir, destName, rawName} に展開（src の重複は先勝ち）
+  // 4. エントリを配信対象 {path, asDoc, destDir, destName} に展開（src の重複は先勝ち）
   const seen = {};
   const targets = [];
   manifest.entries.forEach(entry => {
@@ -144,20 +102,19 @@ function deliverTag(tagName) {
       seen[p] = true;
       const base = p.split("/").pop();
       const asDoc = convert === "gdoc" && /\.md$/.test(base);
-      let destDir, destName, rawName;
+      let destDir, destName;
       if (dirForm) {
         const sub = isGlob ? p.slice(fixedPrefix.length) : base;
         const subParts = sub.split("/");
-        rawName = subParts.pop();
+        const subBase = subParts.pop();
         destDir = joinPath_(entry.dest.replace(/\/$/, ""), subParts.join("/"));
-        destName = asDoc ? rawName.replace(/\.md$/, "") : rawName;
+        destName = asDoc ? subBase.replace(/\.md$/, "") : subBase;
       } else {
         const dp = entry.dest.split("/");
         destName = dp.pop();
-        rawName = destName;
         destDir = dp.join("/");
       }
-      targets.push({ path: p, asDoc: asDoc, destDir: destDir, destName: destName, rawName: rawName });
+      targets.push({ path: p, asDoc: asDoc, destDir: destDir, destName: destName });
     });
   });
 
@@ -182,33 +139,19 @@ function deliverTag(tagName) {
       : Utilities.newBlob(res.getContent(), guessMime_(base), base);
 
     if (existing) {
-      try {
-        Drive.Files.update(meta, existing.id, blob, { supportsAllDrives: true });
-        Logger.log("updated: " + joinPath_(t.destDir, t.destName));
-        updated++;
-        return;
-      } catch (e) {
-        Logger.log("WARNING: update failed for " + t.path + ", creating new and trashing old: " + e);
-      }
+      // update モード: 既存ファイルの内容を差し替える（URL と版履歴を保つ）。失敗は例外にして通知させる
+      Drive.Files.update(meta, existing.id, blob, { supportsAllDrives: true });
+      Logger.log("updated: " + joinPath_(t.destDir, t.destName));
+      updated++;
+      return;
     }
 
+    // 新規作成。Docs 変換の失敗も例外にする（生ファイルで代替すると次回以降に重複するため）
     const resource = Object.assign({ name: t.destName, parents: [folderId] }, meta);
-    let done = false;
-    if (t.asDoc) {
-      try {
-        Drive.Files.create(Object.assign({ mimeType: DOC_MIME }, resource), blob, { supportsAllDrives: true });
-        done = true;
-      } catch (e) {
-        Logger.log("WARNING: gdoc conversion failed for " + t.path + ", uploading raw: " + e);
-      }
-    }
-    if (!done) {
-      resource.name = t.rawName;
-      Drive.Files.create(resource, blob, { supportsAllDrives: true });
-    }
+    if (t.asDoc) resource.mimeType = DOC_MIME;
+    Drive.Files.create(resource, blob, { supportsAllDrives: true });
     created++;
-    if (existing) Drive.Files.update({ trashed: true }, existing.id, null, { supportsAllDrives: true });
-    Logger.log("created: " + joinPath_(t.destDir, resource.name));
+    Logger.log("created: " + joinPath_(t.destDir, t.destName));
   });
 
   // 7. サマリ

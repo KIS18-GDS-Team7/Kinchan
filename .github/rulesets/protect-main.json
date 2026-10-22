@@ -60,8 +60,7 @@
               "Dockerfile*",
               "**/Dockerfile*",
               ".dockerignore",
-              "**/.dockerignore",
-              "tools/drive-delivery/**/*"
+              "**/.dockerignore"
             ],
             "minimum_approvals": 1,
             "reviewer": {

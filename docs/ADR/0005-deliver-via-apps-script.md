@@ -14,6 +14,9 @@
   - Google Workspace Studio の案。外部イベントを受ける custom starters と webhooks は管理者が既定で無効にしており、Education エディションでの提供は未確認。GitHub との連携はない。
   - Google Apps Script (GAS) の案。PM の学校アカウントとして動くため、Shared Drive の共有ポリシーに依存しない。リポジトリは public なので、GitHub の API を認証なしで読める。受け口も秘密情報も不要。学校アカウントで GAS が使えることを 2026/10/22 に確認した。
 - GAS には YAML パーサがなく、外部ライブラリなしで確実に読める設定形式は JSON のみ。
+- GAS の時間トリガーは最短 1 分だが、GitHub API は認証なしだと 1 時間に 60 回までで、納品に即時性は求められない。30 分間隔なら 1 回あたり数回の呼び出しで収まる。
+- 教員が Google Docs の URL をブックマークして読み返す使い方と、承認時点ごとの版を別のフォルダに残す使い方の両方がありうる。前者は同じ Docs を上書きし、後者はタグごとにフォルダを分ける必要がある。
+- Google Docs は SVG を埋め込めず、Markdown 内の相対パスで参照した画像は変換時に取り込まれない。
 - Drive API は取り込み時の形式変換に対応しており、Markdown を Google Docs として作成できる見込み。対応状況はアカウントごとに `checkImportFormats` で確認する。
 
 ## 決定

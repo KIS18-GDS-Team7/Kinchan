@@ -34,12 +34,8 @@ function setup() {
 function poll() {
   const repo = prop_("GITHUB_REPO", null, true);
   const prefix = prop_("TAG_PREFIX", "approved/");
-  const res = githubFetch_("https://api.github.com/repos/" + repo + "/git/matching-refs/tags/" + prefix);
   const done = getProcessed_();
-  const tags = JSON.parse(res.getContentText())
-    .map(r => r.ref.replace(/^refs\/tags\//, ""))
-    .filter(t => done.indexOf(t) < 0)
-    .sort();
+  const tags = listTags_(repo, prefix).filter(t => done.indexOf(t) < 0);
   Logger.log("new tags: " + JSON.stringify(tags));
   tags.forEach(tag => {
     try {
@@ -162,8 +158,7 @@ function deliverTag(tagName) {
 function deliverLatest() {
   const repo = prop_("GITHUB_REPO", null, true);
   const prefix = prop_("TAG_PREFIX", "approved/");
-  const res = githubFetch_("https://api.github.com/repos/" + repo + "/git/matching-refs/tags/" + prefix);
-  const tags = JSON.parse(res.getContentText()).map(r => r.ref.replace(/^refs\/tags\//, "")).sort();
+  const tags = listTags_(repo, prefix);
   if (!tags.length) throw new Error("No tags with prefix " + prefix);
   const latest = tags[tags.length - 1];
   deliverTag(latest);
@@ -180,6 +175,18 @@ function resetProcessed() {
 function checkImportFormats() {
   const formats = Drive.About.get({ fields: "importFormats" }).importFormats || {};
   Logger.log("text/markdown import: " + (formats["text/markdown"] ? JSON.stringify(formats["text/markdown"]) : "NOT supported"));
+}
+
+// prefix に一致するタグ名を全件取得して昇順に返す（100 件ずつページング）
+function listTags_(repo, prefix) {
+  const names = [];
+  for (let page = 1; ; page++) {
+    const url = "https://api.github.com/repos/" + repo + "/git/matching-refs/tags/" + prefix + "?per_page=100&page=" + page;
+    const refs = JSON.parse(githubFetch_(url).getContentText());
+    refs.forEach(r => names.push(r.ref.replace(/^refs\/tags\//, "")));
+    if (refs.length < 100) break;
+  }
+  return names.sort();
 }
 
 // GitHub API 呼び出し（raw=true で Accept/Authorization を付けない）

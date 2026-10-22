@@ -76,6 +76,7 @@ function deliverTag(tagName) {
 
   // 4. エントリを配信対象 {path, asDoc, destDir, destName} に展開（src の重複は先勝ち）
   const seen = {};
+  const destSeen = {};
   const targets = [];
   manifest.entries.forEach(entry => {
     if (!entry.src || entry.dest === undefined) throw new Error("Manifest entry needs src and dest: " + JSON.stringify(entry));
@@ -110,6 +111,9 @@ function deliverTag(tagName) {
         destName = dp.pop();
         destDir = dp.join("/");
       }
+      const destKey = joinPath_(destDir, destName);
+      if (destSeen[destKey]) throw new Error("Destination clash: " + destKey + " <- " + destSeen[destKey] + " and " + p);
+      destSeen[destKey] = p;
       targets.push({ path: p, asDoc: asDoc, destDir: destDir, destName: destName });
     });
   });
@@ -240,10 +244,10 @@ function guessMime_(name) {
   return map[(ext || "").toLowerCase()] || "application/octet-stream";
 }
 
-// 親フォルダ直下の名前でファイルまたはフォルダを検索（なければ null）
+// 親フォルダ直下の名前で検索（なければ null）。mimeType 指定なしならフォルダは除外する
 function findFile_(parentId, name, mimeType) {
   let q = "'" + parentId + "' in parents and name = '" + name.replace(/\\/g, "\\\\").replace(/'/g, "\\'") + "' and trashed = false";
-  if (mimeType) q += " and mimeType = '" + mimeType + "'";
+  q += mimeType ? " and mimeType = '" + mimeType + "'" : " and mimeType != '" + FOLDER_MIME + "'";
   const res = Drive.Files.list({
     q: q,
     supportsAllDrives: true,

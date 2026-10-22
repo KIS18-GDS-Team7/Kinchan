@@ -4,13 +4,7 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 
 ## ブランチ
 
-```
-<type>/<topic> ──PR──> main ──(教員レビュー)──> review/<日付>, approved/<日付> タグ
-                        ↑
-dev/feat/<name> ───PR───┘   複数人・複数 PR で進める feature の統合ブランチ (任意)
-      ↑
-feat/<name>/<topic> ─PR─┘
-```
+![ブランチの流れ: 作業ブランチ <type>/<topic> から main へ PR。複数 PR の feature は feat/<name>/<topic> から dev/feat/<name> に PR し、まとめて main へ PR。main の内容を教員に送付し (review/<日付> タグ)、承認で approved/<日付> タグと Release を作る](docs/img/branch-model.svg)
 
 | ブランチ | 役割 | 決まり |
 |---|---|---|

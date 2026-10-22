@@ -67,7 +67,7 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 
 ### Google Drive への納品
 
-完成品 (`docs/` 配下の指定の成果物) は Google Drive の指定フォルダに納める。`main` から CI で自動反映する案を検討中だが、教員が権限を持つフォルダへ書き込めるトークンを発行できるかが未確認のため、手順は TBD。決まり次第ここに追記する。
+`approved/<日付>` タグを打つと、Apps Script が 30 分以内に Shared Drive の指定フォルダに成果物を置く (Markdown は Google Docs に変換)。納品するファイルと置き場所は `tools/drive-delivery/manifest.json` に書いたものだけで、変更は PR で行う。仕組みと設定は [tools/drive-delivery/README.md](tools/drive-delivery/README.md) と [ADR-0005](docs/ADR/0005-deliver-via-apps-script.md) を参照。
 
 ## 困ったとき
 

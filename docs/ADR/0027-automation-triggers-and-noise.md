@@ -8,8 +8,10 @@
 
 - PR の自動レビューは、最初は code-review プラグインで動かしていた。過去の run はすべて 2 ターン・数秒で終わり、PR に何も投稿していなかった ([#29](https://github.com/KIS18-GDS-Team7/Kinchan/pull/29))。
 - push のたびにレビューすると、修正途中の commit にも指摘がつく。`@claude` が push すると起動者が bot になり、workflow が失敗した ([#51](https://github.com/KIS18-GDS-Team7/Kinchan/pull/51))。
+- draft の PR は作業途中なので、自動でコメントがつくとノイズになる。一方、ラベルは人が明示的にレビューを依頼するものなので、作業途中でもレビューを求めていると判断できる (`claude-code-review.yml` の冒頭のコメント)。
 - [#50](https://github.com/KIS18-GDS-Team7/Kinchan/pull/50) では、再レビューのたびに同じ指摘が新しいスレッドとして投稿され、それぞれ 4 回ずつ並んだ (#51)。重複したスレッドを整理のために解決済みにしたところ、直っていない指摘が総評から漏れた ([#52](https://github.com/KIS18-GDS-Team7/Kinchan/pull/52))。
 - issue の重複判定の最初のテストで、[#20](https://github.com/KIS18-GDS-Team7/Kinchan/issues/20) の下位タスクを重複として誤って検出した ([#24](https://github.com/KIS18-GDS-Team7/Kinchan/pull/24))。
+- すべての issue に「重複なし」とコメントすると、ノイズになる。重複した issue を close するか統合するかは、チームの文脈によって決まる (`issue-dedup.yml` の冒頭のコメント)。
 
 ## 決定
 

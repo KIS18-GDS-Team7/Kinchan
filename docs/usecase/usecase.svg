@@ -316,7 +316,7 @@
 <text x="3965.0" y="2533.8" font-size="14" fill="#333" dominant-baseline="middle">«extend»</text>
 <g stroke="#333" stroke-width="2" fill="none"><circle cx="640" cy="200" r="16" fill="#ffffcc"/><line x1="640" y1="216" x2="640" y2="260"/><line x1="614" y1="232" x2="666" y2="232"/><line x1="640" y1="260" x2="618" y2="292"/><line x1="640" y1="260" x2="662" y2="292"/></g>
 <rect x="564.0" y="300" width="152" height="26" fill="#fff"/>
-<text x="640" y="314" text-anchor="middle" dominant-baseline="middle" font-size="20">システム管理者</text>
+<text x="640" y="314" text-anchor="middle" dominant-baseline="middle" font-size="20">マスタ管理者</text>
 <g stroke="#333" stroke-width="2" fill="none"><circle cx="1580" cy="200" r="16" fill="#ffffcc"/><line x1="1580" y1="216" x2="1580" y2="260"/><line x1="1554" y1="232" x2="1606" y2="232"/><line x1="1580" y1="260" x2="1558" y2="292"/><line x1="1580" y1="260" x2="1602" y2="292"/></g>
 <rect x="1524.0" y="300" width="112" height="26" fill="#fff"/>
 <text x="1580" y="314" text-anchor="middle" dominant-baseline="middle" font-size="20">勤怠管理者</text>

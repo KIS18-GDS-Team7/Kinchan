@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="280" viewBox="0 0 820 280" font-family="sans-serif" font-size="13">
+  <title>ブランチの流れ</title>
+  <rect width="820" height="280" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <!-- 作業ブランチ (単発) -->
+  <rect x="20" y="40" width="200" height="46" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="120" y="59" text-anchor="middle" font-family="monospace" fill="#111">&lt;type&gt;/&lt;topic&gt;</text>
+  <text x="120" y="77" text-anchor="middle" fill="#555" font-size="11">作業ブランチ (1 PR で終わる変更)</text>
+
+  <!-- 作業ブランチ (feature 内) -->
+  <rect x="20" y="180" width="200" height="46" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="120" y="199" text-anchor="middle" font-family="monospace" fill="#111">feat/&lt;name&gt;/&lt;topic&gt;</text>
+  <text x="120" y="217" text-anchor="middle" fill="#555" font-size="11">作業ブランチ (feature 内)</text>
+
+  <!-- dev/feat -->
+  <rect x="270" y="180" width="200" height="46" rx="6" fill="#fef3c7" stroke="#d97706"/>
+  <text x="370" y="199" text-anchor="middle" font-family="monospace" fill="#111">dev/feat/&lt;name&gt;</text>
+  <text x="370" y="217" text-anchor="middle" fill="#555" font-size="11">統合ブランチ (任意・保護)</text>
+
+  <!-- main -->
+  <rect x="530" y="96" width="120" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="590" y="122" text-anchor="middle" font-family="monospace" font-weight="bold" fill="#111">main</text>
+  <text x="590" y="142" text-anchor="middle" fill="#555" font-size="11">統合先 (保護)</text>
+
+  <!-- 教員 -->
+  <rect x="700" y="96" width="100" height="60" rx="6" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="750" y="122" text-anchor="middle" fill="#111">教員</text>
+  <text x="750" y="142" text-anchor="middle" fill="#555" font-size="11">メールで返答</text>
+
+  <!-- 矢印: 単発 → main -->
+  <path d="M220,63 L530,116" fill="none" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="372" y="76" text-anchor="middle" fill="#333" font-size="11">PR: 承認 1 件 + 管轄チームの承認</text>
+
+  <!-- 矢印: feat/name/topic → dev/feat -->
+  <path d="M220,203 L270,203" fill="none" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="245" y="196" text-anchor="middle" fill="#333" font-size="11">PR</text>
+
+  <!-- 矢印: dev/feat → main -->
+  <path d="M470,203 L530,146" fill="none" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="488" y="166" text-anchor="start" fill="#333" font-size="11">PR</text>
+
+  <!-- 矢印: main → 教員 (送付) / 教員 → main (承認) -->
+  <path d="M650,114 L700,114" fill="none" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="675" y="108" text-anchor="middle" fill="#333" font-size="11">送付</text>
+  <path d="M700,138 L650,138" fill="none" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="675" y="152" text-anchor="middle" fill="#333" font-size="11">承認</text>
+
+  <!-- タグの注記 -->
+  <text x="590" y="196" text-anchor="middle" fill="#333" font-size="11">送付時: review/&lt;日付&gt; タグ</text>
+  <text x="590" y="214" text-anchor="middle" fill="#333" font-size="11">承認時: approved/&lt;日付&gt; タグ + Release</text>
+  <text x="590" y="244" text-anchor="middle" fill="#777" font-size="11">main は常に教員に見せられる状態に保つ</text>
+</svg>

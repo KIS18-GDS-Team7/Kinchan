@@ -24,3 +24,12 @@
 ## 開発に参加する
 
 ブランチの切り方、PR とレビューの決まり、教員レビューの手順は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+
+## 開発メンバー
+
+| 役割 | GitHub Team | GitHub アカウント |
+|---|---|---|
+| PM/オーナー | @kis18-gds-team7/pm-qa | @UnrealKinoko |
+| フロントエンド | @kis18-gds-team7/frontend | @Alveth @k024c0046 @GkGit0 |
+| バックエンド | @kis18-gds-team7/backend | @Luka-Jr2 @rrr1031 @UnrealKinoko |
+| プラットフォーム | @kis18-gds-team7/platform | @UnrealKinoko @Luka-Jr2 |

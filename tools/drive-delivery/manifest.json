@@ -36,7 +36,7 @@
             "convert": "none"
         },
         {
-            "src": "docs/screen-transition-diagram/*",
+            "src": "docs/screen-transition-diagram/screen_transition_diagram.*",
             "dest": "成果物/04画面遷移図/",
             "convert": "none"
         }

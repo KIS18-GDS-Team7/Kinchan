@@ -2,13 +2,14 @@
   "use strict";
   const M = globalThis.KinchanModel;
   const N = globalThis.KinchanNavigation;
+  const C = globalThis.KinchanCalendar;
   const { punchTypes, kindLabels, roleLabels, statusLabels, dateAt, inRange, monthRange, duration, shiftText, spanLabel } = M;
   const model = M.createModel();
   const app = document.querySelector("#app");
   const demoUsers = model.users.map((u) => ({ ...u }));
   const attendanceLabels = { off: "退勤中", working: "出勤中", break: "休憩中" };
   const views = { shifts: "published", requests: "own", records: "own" };
-  const state = { actor: null, route: "/login", view: "employee", dialog: null, toast: "", drawer: false, filters: {}, periods: {}, logoutNotice: "", calendar: false };
+  const state = { actor: null, route: "/login", view: "employee", dialog: null, toast: "", drawer: false, filters: {}, periods: {}, logoutNotice: "", calendars: {} };
   const screen = () => N.screens[state.route.split("?")[0]];
   const routeParams = () => new URLSearchParams(state.route.split("?")[1] || "");
   let toastTimer;
@@ -34,7 +35,7 @@
   const btn = (label, action, id = "", style = "ghost", extra = "") =>
     `<button type="button" class="btn btn-${style}" data-action="${action}" data-id="${val(id)}" ${extra}>${esc(label)}</button>`;
   const actions = (...parts) => '<div class="item-actions actions-row">' + parts.join("") + "</div>";
-  const card = (title, ids, body) => `<section class="card card-pad"><div class="card-head"><h3>${esc(title)}</h3>${badge(ids)}</div>${body}</section>`;
+  const card = (title, ids, body, css = "") => `<section class="card card-pad ${css}"><div class="card-head"><h3>${esc(title)}</h3>${badge(ids)}</div>${body}</section>`;
   const itemsList = (rows) => '<div class="list">' + rows.join("") + "</div>";
   const itemRow = (title, subtitle, more = "") => `<div class="list-item"><div class="item-main"><p class="item-title">${esc(title)}</p><p class="item-sub">${esc(subtitle)}</p></div>${more}</div>`;
   const table = (heads, rows, message = "条件に合うデータはありません。") => rows.length
@@ -195,8 +196,9 @@
         ? `<div class="filter-form">${field("管理先", select("unit", unitPairs(units), selectedUnit, 'data-team-filter="unit"'))}
            ${periods.length ? field("対象期間", select("period", periodPairs(periods), period?.id, 'data-team-filter="period"')) : ""}</div>` +
           actions(btn("シフトを登録する", "shift-new", selectedUnit, "primary"), btn("対象期間・受付期間を登録する", "period-new", selectedUnit, "secondary"),
-            period ? btn("下書きを公開する", "publish", period.id, "secondary") : "") + shiftRows(rows, true)
-        : empty("管理先が設定されていません。"));
+            period ? btn("下書きを公開する", "publish", period.id, "secondary") : "") +
+          (period ? shiftCalendar(period, rows, true) : empty("対象期間が登録されていません。"))
+        : empty("管理先が設定されていません。"), "shifts-card");
     } else if (views.shifts === "incoming") {
       body = inbox("wish");
     } else if (!current().unit) {
@@ -212,21 +214,80 @@
     } else {
       const [ps, p] = myPeriods("published");
       const rows = p ? model.shifts.filter((s) => s.published && s.unit === current().unit && model.user(s.userId)?.unit === s.unit && inRange(s.date, p.from, p.to)) : [];
-      body = card("所属単位の公開済みシフト", [308, 309], ps.length ? periodControl("published", ps, p)
-        + (p && rows.length ? actions(btn(state.calendar ? "一覧表示" : "カレンダー表示", "calendar", "", "secondary")) : "")
-        + (p ? (state.calendar && rows.length ? calendarShifts(p, rows) : shiftRows(rows)) : "") : empty("対象期間が登録されていません。"));
+      body = card("公開済みシフト", [308, 309], ps.length ? periodControl("published", ps, p)
+        + (p ? shiftCalendar(p, rows) : empty("対象期間を選択すると、公開済みシフトをカレンダーで表示します。"))
+        : empty("対象期間が登録されていません。"), "shifts-card");
     }
     return (single ? "" : tabs("shifts", choices)) + body;
   }
-  function calendarShifts(period, rows) {
-    const cells = [];
-    const first = new Date(period.from + "T00:00:00Z").getUTCDay();
-    for (let i = 0; i < first; i++) cells.push('<div aria-hidden="true"></div>');
-    for (let d = period.from; d <= period.to; d = dateAt(d, 1)) {
-      cells.push(`<div class="calendar-cell"><strong>${esc(d.slice(5))}</strong>${rows.filter((s) => s.date === d).sort(byDate)
-        .map((s) => btn(person(s.userId) + " " + s.start + "–" + s.end, "shift-detail", s.id)).join("")}</div>`);
+  const calendarKey = (team) => team ? "team" : "published";
+  const dateLabel = (date) => new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "long", day: "numeric", weekday: "short", timeZone: "UTC" }).format(new Date(date + "T00:00:00Z"));
+  const monthLabel = (month) => Number(month.slice(0, 4)) + "年" + Number(month.slice(5)) + "月";
+  const shiftTime = (s) => esc(s.start + "–" + s.end) + (s.end < s.start ? '<small class="shift-overnight">翌日終了</small>' : "");
+  function calendarState(period, team) {
+    const key = calendarKey(team);
+    const identity = period.unit + ":" + period.id;
+    if (state.calendars[key]?.identity !== identity) {
+      const day = C.initialDay(period, model.today());
+      state.calendars[key] = { identity, day, month: day.slice(0, 7), mode: "calendar" };
     }
-    return '<div class="shift-calendar">' + ["日", "月", "火", "水", "木", "金", "土"].map((d) => h("strong", d)).join("") + cells.join("") + "</div>";
+    return state.calendars[key];
+  }
+  function shiftCalendar(period, rows, team = false) {
+    const ui = calendarState(period, team);
+    const months = C.monthsInPeriod(period);
+    const monthIndex = months.indexOf(ui.month);
+    const sorted = [...rows].sort(byDate);
+    const modeControl = `<nav class="shift-mode" aria-label="シフトの表示形式">${[["calendar", "▦", "カレンダー"], ["list", "☷", "一覧"]].map(([mode, icon, label]) =>
+      `<button type="button" data-action="calendar-mode" data-id="${mode}" aria-pressed="${ui.mode === mode}"><span aria-hidden="true">${icon}</span>${label}</button>`).join("")}</nav>`;
+    const caption = `<p class="shift-caption">${esc(model.unitName(period.unit))}<span>${team ? "公開・下書きのシフト" : "公開済みのシフト"}</span></p>`;
+    const noRows = rows.length ? "" : empty(team ? "この対象期間にシフトはありません。" : "この対象期間に公開済みのシフトはありません。");
+    if (ui.mode === "list") return `<div class="shift-toolbar">${caption}${modeControl}</div>${shiftRows(rows, team)}`;
+    const cells = C.monthGrid(period, ui.month).map((cell) => {
+      if (!cell) return '<div class="shift-day-blank" aria-hidden="true"></div>';
+      const dayRows = sorted.filter((s) => s.date === cell.date);
+      const own = dayRows.some((s) => s.userId === current().key);
+      const today = cell.date === model.today();
+      const previews = dayRows.slice(0, 2).map((s) => `<span class="shift-event${s.userId === current().key ? " is-mine" : ""}${!s.published ? " is-draft" : ""}">
+        <strong>${esc(person(s.userId))}${s.userId === current().key ? '<span class="shift-self">自分</span>' : ""}</strong><span>${shiftTime(s)}</span>${team ? '<em>' + (s.published ? "公開" : "下書き") + '</em>' : ""}</span>`).join("");
+      const compact = dayRows.length ? `<span class="shift-day-count">${dayRows.length}件</span><span class="shift-day-dots">${dayRows.slice(0, 3).map((s) => '<i class="' + (s.userId === current().key ? "is-mine" : !s.published ? "is-draft" : "") + '"></i>').join("")}</span>` : "";
+      return `<button type="button" class="shift-day${today ? " is-today" : ""}${cell.date === ui.day ? " is-selected" : ""}" data-action="calendar-day" data-id="${cell.date}"
+        aria-label="${val(dateLabel(cell.date) + (today ? "、今日" : "") + (cell.inPeriod ? "、シフト" + dayRows.length + "件" + (own ? "、自分のシフトあり" : "") : "、対象期間外"))}"
+        aria-pressed="${cell.date === ui.day}" ${today ? 'aria-current="date"' : ""} ${!cell.inPeriod ? "disabled" : ""}>
+        <span class="shift-day-top" aria-hidden="true"><span class="shift-day-number">${cell.day}</span>${today ? '<span class="shift-today-label">今日</span>' : ""}</span>
+        <span class="shift-day-events" aria-hidden="true">${previews}${dayRows.length > 2 ? '<span class="shift-more">ほか' + (dayRows.length - 2) + '件</span>' : ""}</span><span class="shift-day-compact" aria-hidden="true">${compact}</span></button>`;
+    }).join("");
+    const dayRows = sorted.filter((s) => s.date === ui.day);
+    const details = dayRows.map((s) => `<article class="shift-detail-card${s.userId === current().key ? " is-mine" : ""}">
+      <div class="shift-detail-person"><strong>${esc(person(s.userId))}</strong>${s.userId === current().key ? '<span class="shift-self">自分</span>' : ""}${team ? status(s.published ? "公開" : "draft") : ""}</div>
+      <p class="shift-detail-time">${shiftTime(s)}</p><div class="shift-detail-footer"><span>${esc(model.unitName(s.unit))}</span>${btn("詳細を表示", "shift-detail", s.id, "ghost", team ? 'data-team="true"' : "")}</div></article>`).join("");
+    return `<div class="shift-toolbar">${caption}${modeControl}</div>${noRows}<div class="shift-calendar-layout">
+      <section class="shift-calendar-main" aria-labelledby="shift-month-title"><div class="shift-month-toolbar">
+        <h4 id="shift-month-title" aria-live="polite">${monthLabel(ui.month)}</h4>${months.length > 1 ? '<div class="shift-month-controls">' + btn("‹", "calendar-month", "-1", "ghost", 'aria-label="前の月"' + (monthIndex === 0 ? " disabled" : "")) + btn("›", "calendar-month", "1", "ghost", 'aria-label="次の月"' + (monthIndex === months.length - 1 ? " disabled" : "")) + '</div>' : ""}</div>
+        <div class="shift-legend"><span><i class="is-mine"></i>自分</span><span><i></i>ほかの従業員</span>${team ? '<span><i class="is-draft"></i>下書き</span>' : ""}</div>
+        <p class="shift-calendar-hint">日付を選ぶと、その日のシフトを表示します。</p><div class="shift-calendar-board">
+        <div class="shift-weekdays" aria-hidden="true">${["日", "月", "火", "水", "木", "金", "土"].map((d) => '<span>' + d + '</span>').join("")}</div>
+        <div class="shift-month-days" role="group" aria-label="${monthLabel(ui.month)}の日付">${cells}</div></div></section>
+      <section class="shift-day-panel" aria-labelledby="shift-day-title"><div class="shift-day-panel-head"><p>選択した日</p><h4 id="shift-day-title" aria-live="polite">${dateLabel(ui.day)}</h4><span>${dayRows.length}件のシフト</span></div>
+        <div class="shift-day-list">${details || empty(team ? "この日にシフトはありません。" : "この日に公開済みのシフトはありません。")}</div>
+        ${team && ui.day >= model.today() ? btn("この日にシフトを登録する", "shift-new", period.unit, "secondary", 'data-date="' + ui.day + '"') : ""}</section></div>`;
+  }
+  function updateCalendar(action, id) {
+    const team = views.shifts === "team";
+    const ui = state.calendars[calendarKey(team)];
+    const period = model.periods.find((p) => p.unit + ":" + p.id === ui?.identity);
+    if (!ui || !period) return;
+    if (action === "calendar-mode" && ["calendar", "list"].includes(id)) ui.mode = id;
+    if (action === "calendar-day" && C.monthGrid(period, ui.month).some((c) => c?.date === id && c.inPeriod)) ui.day = id;
+    if (action === "calendar-month") {
+      const months = C.monthsInPeriod(period);
+      const month = months[months.indexOf(ui.month) + Number(id)];
+      if (!month) return;
+      ui.month = month;
+      ui.day = C.initialDay(period, model.today(), month);
+    }
+    render();
+    app.querySelector(`[data-action="${action}"][data-id="${id}"]`)?.focus({ preventScroll: true });
   }
   function filtered(items, f) {
     return items.filter((i) => (!f.from || i.date >= f.from) && (!f.to || i.date <= f.to) &&
@@ -521,7 +582,7 @@
       state.filters = {};
       state.periods = {};
       Object.assign(views, { shifts: "published", requests: "own", records: "own" });
-      state.calendar = false;
+      state.calendars = {};
       state.route = "/login";
       location.hash = "#/login";
     }, "", "ログアウトする");
@@ -540,14 +601,14 @@
   }
   const shiftInput = (s, day) => fieldInput("勤務日", "date", "date", s?.date || day, "required")
     + fieldInput("開始時刻", "start", "time", s?.start, "required") + fieldInput("終了時刻", "end", "time", s?.end, "required");
-  function shiftForm(unit, id) {
+  function shiftForm(unit, id, day) {
     const s = id ? model.shiftById(id) : null;
     const members = managerUsers().filter((u) => u.unit === unit);
     if (s ? !model.manages(current(), s.unit) : !model.manages(current(), unit)) return;
     const title = s ? "シフトを変更する" : "シフトを登録する";
     form(title, [s ? 202 : 201], (s ? dl(["従業員", person(s.userId)], ["変更前", shiftText(s)]) :
       field("従業員", select("user", [["", "選択してください"], ...userPairs(members)], "", "required"))) +
-      '<div class="filter-form">' + shiftInput(s, model.today()) + "</div>", (f) => {
+      '<div class="filter-form">' + shiftInput(s, day || model.today()) + "</div>", (f) => {
       const key = s?.userId || pick(f, "user");
       const info = fields(f, ["date", "start", "end"]);
       model.shiftPlan(current(), key, info, id);
@@ -891,7 +952,9 @@
         "tab": () => goTab(id),
         "go-tab": () => goTab(id),
         "go-route": () => goRoute(id),
-        "calendar": () => { state.calendar = !state.calendar; render(); },
+        "calendar-mode": () => updateCalendar(action, id),
+        "calendar-day": () => updateCalendar(action, id),
+        "calendar-month": () => updateCalendar(action, id),
         "profile": profile, "logout": logout,
         "close-dialog": () => finish(state.dialog?.cancel || ""),
         "notifications": () => goRoute("/" + (state.view === "manager" ? "mgr" : state.view === "master" ? "adm" : "emp") + "/notifications"),
@@ -899,7 +962,7 @@
         "notification": () => openNotification(id),
         "punch": () => { const at = model.punch(current(), id); finish(id + "を " + at.replace("T", " ") + " に記録しました。"); },
         "shift-detail": () => shiftDetails(id, el.dataset.team === "true"),
-        "shift-new": () => shiftForm(id, ""),
+        "shift-new": () => shiftForm(id, "", el.dataset.date),
         "shift-edit": () => shiftForm(model.shiftById(id)?.unit, id),
         "shift-delete": () => deleteShift(id),
         "period-new": () => periodForm(id),

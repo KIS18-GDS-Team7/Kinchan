@@ -325,9 +325,95 @@ h1, h2, h3 { letter-spacing: -.025em; }
 .wish-entry:last-child, .punch-entry:last-child { border-bottom: 0; }
 .wish-entry .field, .punch-entry .field { margin: 0; }
 .wish-entry .status { justify-self: start; align-self: center; }
-.shift-calendar { display: grid; grid-template-columns: repeat(7, minmax(105px, 1fr)); gap: 6px; overflow-x: auto; padding-bottom: 8px; }
-.calendar-cell { min-height: 85px; padding: 6px; border: 1px solid var(--line); border-radius: 9px; }
-.calendar-cell .btn { display: block; width: 100%; margin-top: 5px; padding: 4px; font-size: 11px; white-space: normal; }
+.shift-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+.shifts-card > .card-head { flex-wrap: wrap; }
+.shift-caption { display: grid; gap: 3px; margin: 0; font-size: 15px; font-weight: 700; }
+.shift-caption span { color: var(--muted); font-size: 12px; font-weight: 400; }
+.shift-mode { display: flex; gap: 4px; padding: 4px; background: var(--canvas); border: 1px solid var(--line); border-radius: 12px; }
+.shift-mode button { display: flex; align-items: center; gap: 6px; padding: 8px 12px; border: 0; border-radius: 8px; color: var(--muted); background: transparent; font-size: 12px; font-weight: 700; }
+.shift-mode button[aria-pressed="true"] { color: var(--teal-700); background: #fff; box-shadow: 0 1px 4px #183d3714; }
+.shift-calendar-layout { display: grid; gap: 24px; align-items: start; }
+.shift-calendar-main, .shift-day-panel { min-width: 0; }
+.shift-month-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.shift-month-toolbar h4 { margin: 0; font-size: 24px; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.shift-month-controls { display: flex; gap: 6px; }
+.shift-month-controls .btn { min-width: 44px; padding: 4px 12px; font-size: 24px; line-height: 1; }
+.shift-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 16px 0 10px; color: var(--gray-700); font-size: 11px; }
+.shift-legend > span { display: flex; align-items: center; gap: 6px; }
+.shift-legend i, .shift-day-dots i { display: inline-block; width: 7px; height: 7px; flex-shrink: 0; border-radius: 50%; background: #6b7e7b; }
+.shift-legend i.is-mine, .shift-day-dots i.is-mine { background: var(--teal-600); }
+.shift-legend i.is-draft, .shift-day-dots i.is-draft { border: 1px solid var(--orange-700); border-radius: 2px; background: var(--orange-50); }
+.shift-calendar-hint { margin: 0 0 14px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.shift-calendar-board { overflow-x: auto; padding: 3px; margin: -3px; }
+.shift-weekdays, .shift-month-days { display: grid; min-width: 308px; grid-template-columns: repeat(7, minmax(44px, 1fr)); }
+.shift-weekdays { margin-bottom: 6px; text-align: center; font-size: 12px; font-weight: 700; color: var(--muted); }
+.shift-weekdays > span { padding-block: 10px; }
+.shift-weekdays > span:first-child { color: var(--red-700); }
+.shift-month-days { gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--line); }
+.shift-day, .shift-day-blank { min-width: 0; min-height: 108px; }
+.shift-day { position: relative; display: flex; flex-direction: column; gap: 8px; width: 100%; padding: 7px 5px; border: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: left; color: var(--ink); background: #fff; font-variant-numeric: tabular-nums; }
+.shift-day:nth-child(7n) { border-right: 0; }
+.shift-day-blank { background: #f6f8f7; }
+.shift-day:hover:not(:disabled) { background: #f0f7f5; }
+.shift-day.is-selected { z-index: 1; background: #edf7f4; box-shadow: inset 0 0 0 2px var(--teal-600); }
+.shift-day:focus-visible, .shift-mode button:focus-visible { z-index: 2; outline: 2px solid var(--teal-600); outline-offset: -2px; }
+.shift-day:disabled { opacity: 1; color: #84918d; background: #f6f8f7; }
+.shift-day-top { display: flex; min-height: 24px; align-items: center; justify-content: space-between; gap: 2px; }
+.shift-day-number { display: grid; width: 24px; height: 24px; place-items: center; font-size: 12px; font-weight: 600; }
+.shift-day.is-today .shift-day-number { color: #fff; background: var(--teal-600); border-radius: 50%; }
+.shift-today-label { color: var(--teal-700); font-size: 9px; font-weight: 700; }
+.shift-day-events { display: grid; width: 100%; gap: 5px; }
+.shift-event { display: grid; gap: 2px; padding: 5px; border-left: 2px solid #8a9e99; border-radius: 4px; background: #eff3f1; font-size: 10px; line-height: 1.5; }
+.shift-event.is-mine { border-color: var(--teal-600); color: var(--teal-700); background: var(--teal-50); }
+.shift-event.is-draft { border: 1px dashed #ae6614; border-left-width: 2px; color: var(--orange-700); background: #fff6e9; }
+.shift-event strong { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.shift-event > span { overflow-wrap: anywhere; }
+.shift-event .shift-overnight { display: block; }
+.shift-event em { font-size: 9px; font-style: normal; }
+.shift-event .shift-self { margin-left: 3px; padding: 0; color: inherit; background: transparent; font-size: 9px; }
+.shift-more { color: var(--muted); font-size: 10px; text-align: right; }
+.shift-day-compact { display: none; }
+.shift-self { display: inline-block; padding: 3px 7px; border-radius: 5px; color: var(--teal-700); background: var(--teal-50); font-size: 10px; font-weight: 700; }
+.shift-day-panel { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #f8faf9; }
+.shift-day-panel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 16px; }
+.shift-day-panel-head p { width: 100%; margin: 0; color: var(--muted); font-size: 11px; }
+.shift-day-panel-head h4 { margin: 0; font-size: 17px; }
+.shift-day-panel-head > span { color: var(--muted); font-size: 11px; }
+.shift-day-list { display: grid; gap: 10px; }
+.shift-detail-card { padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.shift-detail-card.is-mine { border-left: 3px solid var(--teal-600); }
+.shift-detail-person { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; }
+.shift-detail-person .status { margin-left: auto; font-size: 10px; }
+.shift-detail-time { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 12px 0; font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+.shift-overnight { font-size: 10px; font-weight: 400; }
+.shift-detail-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+.shift-detail-footer .btn { padding-inline: 10px; font-size: 11px; }
+.shift-day-panel > .btn { width: 100%; margin-top: 14px; font-size: 12px; }
+@media (min-width: 1250px) {
+  .layout-manager .shift-calendar-layout { grid-template-columns: minmax(0, 1fr) 286px; gap: 20px; }
+}
+@media (max-width: 560px) {
+  .shifts-card { padding: 14px; }
+  .shifts-card > .card-head { gap: 8px; margin-bottom: 12px; }
+  .shifts-card > .card-head h3 { font-size: 16px; }
+  .shift-toolbar { margin-block: 12px; }
+  .shift-mode button { padding-inline: 10px; }
+  .shift-caption { font-size: 13px; }
+  .shift-month-toolbar h4 { font-size: 22px; }
+  .shift-month-days { border-radius: 9px; }
+  .shift-legend { margin-top: 12px; }
+  .shift-calendar-hint { margin-bottom: 8px; font-size: 11px; }
+  .shift-weekdays > span { padding-block: 7px; }
+  .shift-day, .shift-day-blank { min-height: 64px; }
+  .shift-day { align-items: center; gap: 4px; padding: 5px 2px; }
+  .shift-today-label, .shift-day-events { display: none; }
+  .shift-day-compact { display: grid; justify-items: center; gap: 5px; }
+  .shift-day-count { color: var(--muted); font-size: 10px; }
+  .shift-day-dots { display: flex; justify-content: center; gap: 3px; }
+  .shift-day-dots i { width: 5px; height: 5px; }
+  .shift-day-panel { padding: 14px; }
+  .shift-day-panel-head h4 { font-size: 15px; }
+}
 .form-error:empty { display: none; }
 .notice { white-space: normal; }
 

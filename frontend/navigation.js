@@ -42,8 +42,10 @@
   };
   const labels = { employee: "従業員", manager: "勤怠管理者", master: "マスタ管理者" };
   const homes = { employee: "/emp/home", manager: "/mgr/home", master: "/adm/home" };
-  const allowedViews = (user) => user && !user.deleted ? ["master", "manager", "employee"].filter((v) =>
+  const allowedViews = (user) => user && !user.deleted ? ["employee", "manager", "master"].filter((v) =>
     v === "employee" || user.roles.includes(v)) : [];
+  // All users are employees. Login always starts with their own punch screen.
+  const loginDestination = () => homes.employee;
   function resolve(path, user, view) {
     if (!user || user.deleted) return { path: "/login", screen: null };
     const allowed = allowedViews(user);
@@ -56,7 +58,7 @@
     const destination = screen && allowed.includes(screen.view) ? actual : homes[selected];
     return { path: destination + (destination === actual && query ? "?" + query : ""), screen: screens[destination] };
   }
-  const api = { screens, menus, labels, homes, allowedViews, resolve };
+  const api = { screens, menus, labels, homes, allowedViews, loginDestination, resolve };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.KinchanNavigation = api;
 })(globalThis);

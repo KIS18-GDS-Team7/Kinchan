@@ -88,7 +88,9 @@
   function shell(content) {
     const u = current();
     const available = N.allowedViews(u);
-    const viewSwitch = available.length > 1 ? field("表示する画面", select("view", available.map((v) => [v, N.labels[v]]), state.view, 'data-view-switch="true"')) : "";
+    const viewSwitch = available.length > 1 ? `<nav class="view-switch" aria-label="表示する画面"><span class="view-switch-label">表示する画面</span>
+      <div class="view-switch-options">${available.map((v) =>
+        `<button type="button" class="view-switch-button" data-action="switch-view" data-id="${v}" aria-pressed="${state.view === v}">${N.labels[v]}</button>`).join("")}</div></nav>` : "";
     const mobileMenu = state.view !== "employee" ? field("画面", select("page", N.menus[state.view].map(([path, title]) => [path, title]),
       N.menus[state.view].find(([path]) => N.screens[path].section === screen()?.section)?.[0], 'data-page-switch="true"')) : "";
     return `<div class="app-shell layout-${state.view}"><aside class="sidebar"><div class="brand-mark"><span class="brand-logo">K</span> Kinchan</div>
@@ -107,10 +109,9 @@
     const choices = u.status === "working" ? ["休憩開始", "退勤"] : u.status === "break" ? ["休憩終了"] : ["出勤"];
     const canPunch = u.unit && (u.status !== "off" || shifts.length);
     const shiftLabel = shifts.length ? shifts.map((s) => s.start + "–" + s.end).join("、") : "当日の公開済みシフトなし";
-    return `<div class="page-head"><div><h2>${today.replace("-", "年").replace("-", "月")}日</h2><p>デモ日時</p></div></div>
-      <div class="grid">
+    return `<div class="grid">
         <section class="card card-pad clock-card"><div class="card-head"><div><h3>打刻</h3><p>${esc(shiftLabel)}</p></div>${badge([304, 312])}</div>
-        <div class="clock-time num">${model.now().slice(11)}</div><div class="clock-date">時刻</div>
+        <div class="clock-time num">${model.now().slice(11)}</div><div class="clock-date">デモ日時 ${today.replace("-", "年").replace("-", "月")}日</div>
         <div class="shift-summary"><div><span>勤務ステータス</span><strong>${attendanceLabels[u.status]}</strong></div><div><span>所属単位</span><strong>${esc(model.unitName(u.unit))}</strong></div></div>
         <div class="punch-actions">${choices.map((type) => `<button type="button" class="punch-btn" data-action="punch" data-id="${type}" ${canPunch ? "" : "disabled"}>${type}する</button>`).join("")}</div>
         ${!canPunch ? `<p class="punch-message">${u.unit ? "当日の公開済みシフトがないため、出勤を打刻できません。" : "所属が設定されていません。"}</p>` : ""}</section>
@@ -846,9 +847,9 @@
         const user = model.authenticate(pick(f, "userId"), String(f.get("password")));
         if (!user) throw new Error("ユーザーIDまたはパスワードが正しくありません。");
         state.actor = user;
-        state.view = N.allowedViews(user)[0];
+        state.view = "employee";
         state.logoutNotice = "";
-        location.hash = "#" + N.homes[state.view];
+        location.hash = "#" + N.loginDestination();
         syncRoute();
       } else if (formId === "dialog-form") state.dialog?.submit?.(f, event.submitter?.value, el);
       else if (formId === "page-form") pageForm?.submit?.(f, event.submitter?.value, el);
@@ -862,7 +863,6 @@
   });
   app.addEventListener("change", (event) => {
     const el = event.target;
-    if (el.dataset.viewSwitch && N.allowedViews(current()).includes(el.value)) { goRoute(N.homes[el.value]); return; }
     if (el.dataset.pageSwitch) { goRoute(el.value); return; }
     if (el.dataset.period) { state.periods[el.dataset.period] = el.value; render(); }
     if (el.dataset.teamFilter) {
@@ -887,6 +887,7 @@
       }
       const [key, day] = (id || "").split(":");
       const commands = {
+        "switch-view": () => { if (N.allowedViews(current()).includes(id)) goRoute(N.homes[id]); },
         "tab": () => goTab(id),
         "go-tab": () => goTab(id),
         "go-route": () => goRoute(id),

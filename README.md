@@ -2,6 +2,8 @@
 
 勤怠管理システム Kinchan の要件定義・設計・実装を管理するリポジトリです。
 
+[公開フロントエンドモックを開く](https://kis18-gds-team7.github.io/Kinchan/frontend/)（GitHub ログイン不要）
+
 ## 目的
 
 要件定義書「1.2 目的」より。
@@ -17,7 +19,7 @@
 | 要件定義書 | [docs/requirements/requirements.md](docs/requirements/requirements.md) |
 | ユースケース図・ユースケース記述 | [docs/usecase/](docs/usecase/) |
 | 設計判断の記録 (ADR) | [docs/ADR/](docs/ADR/) |
-| 画面モック (2 パターン) | https://kis18-gds-team7.github.io/Kinchan/ |
+| 画面モック一覧 | [GitHub Pages](https://kis18-gds-team7.github.io/Kinchan/) |
 | フロントエンドモックの起動方法とデモ用ログイン | [mock/README.md](mock/README.md#デモ用ログイン) |
 
 リンク先を開くと、ファイルの内容がそのまま表示されます。レビュー依頼のメールに記載したリンクは、依頼した時点の内容を表示します (その後の更新は反映されません)。

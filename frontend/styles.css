@@ -146,7 +146,6 @@ h1, h2, h3 { letter-spacing: -.025em; }
 .nav-icon { display: grid; place-items: center; width: 24px; font-size: 18px; }
 .sidebar-foot { margin-top: auto; padding: 16px 10px 0; border-top: 1px solid rgba(255,255,255,.12); }
 .sidebar-foot p { margin: 3px 0; font-size: 12px; color: #9fc2bc; }
-.sidebar-foot strong { color: #fff; font-size: 14px; }
 
 .workspace { min-height: 100vh; margin-left: 248px; }
 .topbar {
@@ -166,9 +165,7 @@ h1, h2, h3 { letter-spacing: -.025em; }
 .top-actions { display: flex; align-items: center; gap: 10px; }
 .icon-btn { position: relative; display: grid; place-items: center; width: 44px; min-width: 44px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: #fff; }
 .notification-dot { position: absolute; top: 7px; right: 7px; width: 8px; height: 8px; border-radius: 50%; border: 2px solid #fff; background: #d85b61; }
-.profile-chip { display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 5px 10px 5px 6px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
-.avatar { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: #fff; background: var(--teal-600); font-weight: 700; }
-.profile-chip span { font-size: 12px; font-weight: 700; }
+.profile-chip { display: flex; align-items: center; min-height: 44px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; }
 
 .content { width: min(100%, 1500px); margin: 0 auto; padding: 32px clamp(20px, 4vw, 52px) 72px; }
 .page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
@@ -263,7 +260,6 @@ h1, h2, h3 { letter-spacing: -.025em; }
   .sidebar { display: none; }
   .workspace { margin-left: 0; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
   .topbar { min-height: 66px; padding: 10px 18px; }
-  .profile-chip span { display: none; }
   .content { padding: 24px 16px 48px; }
   .page-head { align-items: flex-start; flex-direction: column; }
   .mobile-nav { position: fixed; z-index: 30; right: 0; bottom: 0; left: 0; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; padding: 7px 8px calc(7px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: rgba(255,255,255,.97); backdrop-filter: blur(14px); }

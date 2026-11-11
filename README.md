@@ -18,6 +18,7 @@
 | ユースケース図・ユースケース記述 | [docs/usecase/](docs/usecase/) |
 | 設計判断の記録 (ADR) | [docs/ADR/](docs/ADR/) |
 | 画面モック (2 パターン) | https://kis18-gds-team7.github.io/Kinchan/ |
+| フロントエンドモックの起動方法とデモ用ログイン | [mock/README.md](mock/README.md#デモ用ログイン) |
 
 リンク先を開くと、ファイルの内容がそのまま表示されます。レビュー依頼のメールに記載したリンクは、依頼した時点の内容を表示します (その後の更新は反映されません)。
 

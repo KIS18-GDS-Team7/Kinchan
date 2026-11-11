@@ -136,14 +136,14 @@
         <aside class="sidebar">
           <div class="brand-mark"><span class="brand-logo">K</span> Kinchan</div>
           ${navHtml("sidebar-nav")}
-          <div class="sidebar-foot"><strong>${escapeHtml(u.name)}</strong><p>${escapeHtml(u.unit)}</p><p>${roleText(u)}</p></div>
+          <div class="sidebar-foot"><p>${escapeHtml(u.unit)}</p><p>${roleText(u)}</p></div>
         </aside>
         <div class="workspace">
           <header class="topbar">
             <h1 class="page-title">${labels[state.route] ?? "Kinchan"}</h1>
             <div class="top-actions">
               <button class="icon-btn" id="notification-button" aria-label="通知を表示">♧${state.notifications.some((n) => n.unread) ? '<span class="notification-dot"></span>' : ""}</button>
-              <button class="profile-chip" id="profile-button" aria-label="アカウントメニュー"><span class="avatar">${escapeHtml(u.name.slice(0,1))}</span><span>${escapeHtml(u.name)}</span></button>
+              <button class="profile-chip" id="profile-button" aria-label="${escapeHtml(u.name)}のアカウントメニュー"><span>${escapeHtml(u.name)}</span></button>
             </div>
           </header>
           <main class="content">${content}</main>
@@ -163,7 +163,7 @@
   }
 
   function pageHead(title, description, action = "") {
-    return `<div class="page-head"><div><h2>${title}</h2><p>${description}</p></div>${action}</div>`;
+    return `<div class="page-head"><div><h2>${title}</h2>${description ? `<p>${description}</p>` : ""}</div>${action}</div>`;
   }
 
   function cardHead(title, description, ids = []) {
@@ -208,7 +208,7 @@
       </section>` : "";
 
     return shell(`
-      ${pageHead(`${u.name.split(" ")[0]}さん、おはようございます`, "2026年10月14日 水曜日")}
+      ${pageHead("2026年10月14日 水曜日", "")}
       <div class="grid ${hasRole("manager") ? "grid-2" : ""}">
         <section class="card card-pad clock-card">
           ${cardHead("打刻", u.shift ? `今日の公開済みシフト ${u.shift}` : "本日の公開済みシフトはありません", ["UC-304", "UC-312"])}
@@ -303,7 +303,7 @@
 
   function modalHtml() {
     const m = state.modal;
-    if (m.type === "profile") return `<div class="modal-backdrop" data-close-modal><section class="modal"><h2>${state.currentUser.name}</h2><p>${roleText(state.currentUser)}・${state.currentUser.unit}</p><div class="modal-actions"><button class="btn btn-ghost" data-close-modal>閉じる</button><button class="btn btn-danger" id="logout-button">ログアウト</button></div></section></div>`;
+    if (m.type === "profile") return `<div class="modal-backdrop" data-close-modal><section class="modal"><h2>アカウントメニュー</h2><p>${roleText(state.currentUser)}・${state.currentUser.unit}</p><div class="modal-actions"><button class="btn btn-ghost" data-close-modal>閉じる</button><button class="btn btn-danger" id="logout-button">ログアウト</button></div></section></div>`;
     if (m.type === "request") return `<div class="modal-backdrop" data-close-modal><form class="modal" id="request-form"><p class="eyebrow">${m.kind === "attendance" ? "UC-306" : "UC-309"}</p><h2>${m.kind === "attendance" ? "勤怠修正を申請" : "シフト日時変更を申請"}</h2><div class="field"><label>対象日</label><input class="input" name="date" type="date" value="${m.date ?? FIXED_DATE}" required /></div><div class="field"><label>変更前</label><input class="input" name="before" value="${m.kind === "attendance" ? "退勤 17:42" : "10:00–18:00"}" required /></div><div class="field"><label>変更後</label><input class="input" name="after" value="${m.kind === "attendance" ? "退勤 18:02" : "12:00–20:00"}" required /></div><div class="field"><label>申請理由</label><textarea class="textarea" name="reason" required></textarea></div><div class="modal-actions"><button class="btn btn-ghost" type="button" data-close-modal>キャンセル</button><button class="btn btn-primary" type="submit">送信する</button></div></form></div>`;
     return `<div class="modal-backdrop" data-close-modal><section class="modal"><h2>${m.title}</h2><p>${m.body}</p><div class="modal-actions"><button class="btn btn-ghost" data-close-modal>キャンセル</button><button class="btn ${m.danger ? "btn-danger" : "btn-primary"}" data-confirm-modal>${m.confirmLabel ?? "実行する"}</button></div></section></div>`;
   }

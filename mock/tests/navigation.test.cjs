@@ -1,15 +1,16 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { menus, screens, allowedViews, homes, resolve } = require("../navigation.js");
+const { menus, screens, allowedViews, homes, loginDestination, resolve } = require("../navigation.js");
 const { createModel } = require("../model.js");
 const m = createModel();
 
-test("login uses the reference order: master, manager, employee", () => {
+test("all users start on their own punch screen after login, including both administrator roles", () => {
   assert.equal(resolve("/", m.user("1")).path, "/emp/home");
-  assert.equal(resolve("/", m.user("3")).path, "/mgr/home");
-  assert.equal(resolve("/", m.user("4")).path, "/adm/home");
-  assert.deepEqual(allowedViews({ roles: ["manager", "master"] }), ["master", "manager", "employee"]);
+  assert.equal(resolve("/", m.user("3")).path, "/emp/home");
+  assert.equal(resolve("/", m.user("4")).path, "/emp/home");
+  assert.deepEqual(allowedViews({ roles: ["manager", "master"] }), ["employee", "manager", "master"]);
+  for (const user of m.users) assert.equal(resolve(loginDestination(), user, "manager").path, "/emp/home");
 });
 test("the employee navigation matches the five reference tabs", () => {
   assert.deepEqual(menus.employee.map(([, label]) => label), ["ホーム", "勤怠", "シフト", "申請", "メニュー"]);

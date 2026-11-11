@@ -174,8 +174,16 @@
       assert(info.date >= today(), "勤務日は当日以降を指定してください。");
       assert(periodAt(actorUnit, info.date), "勤務日が登録された対象期間に含まれていません。");
     }
-    const shiftConflict = (key, info, skip, publishedOnly = false) => shifts.find((s) =>
+    const shiftConflicts = (key, info, skip, publishedOnly = false) => shifts.filter((s) =>
       s.id !== skip && s.userId === key && (!publishedOnly || s.published) && overlaps(s, info));
+    const shiftConflict = (...args) => shiftConflicts(...args)[0];
+    function requireNoShiftConflicts(key, info, skip, message) {
+      const conflicts = shiftConflicts(key, info, skip);
+      if (!conflicts.length) return;
+      const error = new Error(message);
+      error.conflicts = conflicts.map((s) => ({ ...s }));
+      throw error;
+    }
     function shiftPlan(actor, key, info, existingId) {
       const u = user(key);
       assert(u && !u.deleted && manages(actor, u.unit), "管理先の従業員を選択してください。");
@@ -187,7 +195,7 @@
         assert(!shiftEqual(existing, info), "変更前と同じ内容です。");
       }
       checkShiftInput(u.unit, info);
-      assert(!shiftConflict(key, info, existingId), "登録済みのシフトと時刻が重複しています。");
+      requireNoShiftConflicts(key, info, existingId, "登録済みのシフトと時刻が重複しています。");
       return existing;
     }
     function saveShift(actor, key, info, existingId) {
@@ -305,7 +313,8 @@
       assert(reason.trim(), "申請理由を入力してください。");
       checkShiftInput(actor.unit, after);
       assert(!shiftEqual(s, after), "変更前と同じ日時です。");
-      return { shift: s, conflict: shiftConflict(actor.key, after, s.id, true) };
+      const conflicts = shiftConflicts(actor.key, after, s.id, true);
+      return { shift: s, conflict: conflicts[0], conflicts };
     }
     function submitChange(actor, shiftId, after, reason) {
       const { shift: s } = changePlan(actor, shiftId, after, reason);
@@ -352,7 +361,7 @@
       } else if (i.kind === "wish") {
         assert(!u.deleted && !changedUnit(i), "このシフト希望は承認できません。");
         checkShiftInput(u.unit, i);
-        assert(!shiftConflict(u.key, i), "登録済みのシフトと重複するため承認できません。");
+        requireNoShiftConflicts(u.key, i, undefined, "登録済みのシフトと重複するため承認できません。");
         const s = { id: id(), userId: u.key, unit: u.unit, date: i.date, start: i.start, end: i.end, published: true };
         shifts.push(s);
         target = { type: "shift", id: s.id };
@@ -364,7 +373,7 @@
         const s = shiftById(i.shiftId);
         assert(s && s.unit === u.unit && !changedUnit(i) && shiftBounds(s)[1] >= ms(now()), "変更前のシフトが勤務済み、削除済み、または現在の所属と異なります。");
         checkShiftInput(u.unit, i.after);
-        assert(!shiftConflict(u.key, i.after, s.id), "登録済みのシフトと重複するため承認できません。");
+        requireNoShiftConflicts(u.key, i.after, s.id, "登録済みのシフトと重複するため承認できません。");
         logShift(actor, s, "変更");
         Object.assign(s, i.after);
       }
@@ -469,13 +478,14 @@
       const sessions = summarize(i.after).sessions;
       if (!planned.length) return sessions.length ? ["矛盾：公開済みのシフトがない日に勤務があります。"] : ["矛盾なし"];
       const result = [];
-      // Compare each planned shift to an intersecting session; do not change the request.
+      // Show every comparison explicitly; do not infer a shift-to-session assignment.
       for (const s of planned) {
         const [start, end] = shiftBounds(s);
-        const session = sessions.find((m) => m.start && m.end && ms(m.start) < end && start < ms(m.end));
-        if (!session) result.push(shiftText(s) + "：対応する打刻なし");
-        else result.push(shiftText(s) + "：開始との差 " + (minutes(session.start) - start / 60000)
-          + "分、終了との差 " + (minutes(session.end) - end / 60000) + "分");
+        for (const session of sessions) {
+          if (!session.start || !session.end) continue;
+          result.push("シフト " + shiftText(s) + " ／ 修正後の勤務 " + session.start.replace("T", " ") + " ～ " + session.end.replace("T", " ")
+            + "：開始との差 " + (minutes(session.start) - start / 60000) + "分、終了との差 " + (minutes(session.end) - end / 60000) + "分");
+        }
       }
       return ["矛盾なし", ...result];
     }
@@ -485,7 +495,7 @@
       publishedOn, shiftPlan, saveShift, checkDeleteShift, removeShift, publishPlan, publish, checkPeriod, savePeriod,
       wishPlan, saveWishes, attendancePlan, submitAttendance, changePlan, submitChange, withdraw, correctionPlan, correct,
       decide, checkUserInfo, saveUser, adminTarget, deleteUser, setRoles, setUnit, setManaged, checkUnit, addUnit,
-      punch, dayRows, attendanceComparison, authenticate, shiftConflict };
+      punch, dayRows, attendanceComparison, authenticate, shiftConflict, shiftConflicts };
   }
 
   const api = { createModel, punchTypes, statusLabels, kindLabels, roleLabels, dateAt, inRange, monthRange, duration, overtimeAlert, shiftText, spanLabel, validDate };

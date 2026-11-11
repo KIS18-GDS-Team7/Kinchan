@@ -434,6 +434,12 @@ h1, h2, h3 { letter-spacing: -.025em; }
   .shift-roster th, .shift-roster td { width: 116px; min-width: 116px; }
 }
 .form-error:empty { display: none; }
+.conflict-shifts { margin-top: 14px; padding: 14px; border: 1px solid #e5b9ba; border-radius: 10px; color: var(--ink); background: #fff; }
+.conflict-shifts h3 { margin: 0 0 10px; font-size: 14px; }
+.conflict-shifts .table { min-width: 460px; }
+.conflict-shifts .table td, .conflict-shifts .table th { padding: 9px; }
+.conflict-shifts .table td { white-space: nowrap; }
+.list-item .details { margin-block: 8px 0; grid-template-columns: minmax(65px, auto) minmax(0, 1fr); gap: 6px 10px; font-size: 12px; }
 .notice { white-space: normal; }
 
 @media (max-width: 520px) {

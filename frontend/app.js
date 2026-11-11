@@ -8,6 +8,9 @@
   const app = document.querySelector("#app");
   const demoUsers = model.users.map((u) => ({ ...u }));
   const attendanceLabels = { off: "退勤中", working: "出勤中", break: "休憩中" };
+  // UC-206/209/214. Existing wording from mock/generic-kintai: mock/js/store.js REJECT_TEMPLATES.
+  // Keep only wording that does not depend on removed staffing/availability rules or TBD deadlines.
+  const rejectTemplates = ["申請内容とシフト・打刻記録が一致しないため"];
   const views = { shifts: "published", requests: "own", records: "own" };
   const state = { actor: null, route: "/login", view: "employee", dialog: null, toast: "", drawer: false, filters: {}, periods: {}, logoutNotice: "", calendars: {} };
   const screen = () => N.screens[state.route.split("?")[0]];
@@ -58,7 +61,7 @@
   const pick = (form, key) => String(form.get(key) ?? "").trim();
   const fields = (f, keys) => Object.fromEntries(keys.map((k) => [k, pick(f, k)]));
   const requestStates = (key, date) => [...new Set(model.items.filter((i) => i.kind === "attendance" && i.userId === key && i.date === date).map((i) => i.status))];
-  const errorLine = () => '<p class="form-error" data-error role="alert"></p>';
+  const errorLine = () => '<div class="form-error" data-error role="alert"></div>';
   const filterForm = (id, body, label = "表示する") => `<form class="filter-form" data-filter="${id}">${body}<button class="btn btn-secondary" type="submit">${label}</button>${errorLine()}</form>`;
   const dateFields = ({ from, to }, required = false) => fieldInput("開始日", "from", "date", from, required ? "required" : "")
     + fieldInput("終了日", "to", "date", to, required ? "required" : "");
@@ -314,9 +317,11 @@
   function itemList(rows, isManager) {
     return rows.length ? itemsList([...rows].sort((a, b) => (b.sentAt || b.date).localeCompare(a.sentAt || a.date)).map((i) => {
       const summary = i.kind === "change" ? shiftText(i.before) + " → " + shiftText(i.after)
-        : i.kind === "wish" ? i.start + "–" + i.end : i.after.map((p) => p.type + " " + p.at.slice(11)).join("、");
-      return itemRow((isManager ? person(i.userId) + "・" : "") + kindLabels[i.kind] + "・" + i.date,
-        summary + (i.sentAt ? " ／ 送信 " + i.sentAt.replace("T", " ") : ""), actions(status(i.status), btn("詳細", isManager ? "item-manager" : "item-own", i.id)));
+        : i.kind === "wish" ? i.start + "–" + i.end : punchesText(i.after);
+      const extra = isManager ? (i.kind === "wish" ? dl(["所属単位", model.unitName(model.user(i.userId)?.unit)]) : dl(["申請理由", i.reason])) : "";
+      return `<div class="list-item"><div class="item-main"><p class="item-title">${esc((isManager ? person(i.userId) + "・" : "") + kindLabels[i.kind] + "・" + i.date)}</p>
+        <p class="item-sub">${esc(summary + (i.sentAt ? " ／ 送信 " + i.sentAt.replace("T", " ") : ""))}</p>${extra}</div>
+        ${actions(status(i.status), btn("詳細", isManager ? "item-manager" : "item-own", i.id))}</div>`;
     })) : empty("条件に合う申請・希望はありません。");
   }
   function inbox(kind) {
@@ -458,9 +463,14 @@
     render();
   }
   function detail(title, ids, body) { showDialog({ title, ids, body }); }
-  function form(title, ids, body, submit, label = "内容を確認する") { showDialog({ title, ids, body, submit, label }); }
+  function form(title, ids, body, submit, label = "内容を確認する") { showDialog({ title, ids, body, submit, label, cancel: "操作をキャンセルしました。" }); }
   function confirm(title, ids, body, run, done, label = "確定する") {
     form(title, ids, body, () => { run(); finish(done); }, label);
+  }
+  function cancelDialog() {
+    const message = state.dialog?.cancel || "";
+    if (state.dialog?.submit) { state.pageDraft = null; state.followupRoute = null; }
+    finish(message);
   }
   function finish(message) {
     state.dialog = null;
@@ -547,7 +557,7 @@
         <div class="modal-actions">${btn(d.submit ? "キャンセル" : "閉じる", "close-dialog")}
         ${d.submit ? `<button class="btn btn-primary" type="submit" value="confirm">${esc(d.label)}</button>` : ""}</div></form></dialog>`);
       const dialog = app.querySelector("#dialog");
-      dialog.addEventListener("cancel", (event) => { event.preventDefault(); finish(d.cancel || ""); });
+      dialog.addEventListener("cancel", (event) => { event.preventDefault(); cancelDialog(); });
       dialog.showModal();
     }
   }
@@ -559,7 +569,7 @@
     if (!d) return empty("この画面は表示できません。");
     pageForm = d;
     return `<section class="card card-pad"><form id="page-form">${badge(d.ids)}<h2>${esc(d.title)}</h2>${d.body}${errorLine()}
-      <div class="modal-actions">${btn("一覧に戻る", "go-route", back)}
+      <div class="modal-actions">${btn(d.submit ? "キャンセル" : "一覧に戻る", d.submit ? "cancel-page" : "go-route", back)}
       ${d.submit ? `<button class="btn btn-primary" type="submit" value="confirm">${esc(d.label)}</button>` : ""}</div></form></section>`;
   }
   function syncRoute() {
@@ -589,11 +599,23 @@
   }
   function showError(node, error) {
     const el = node.querySelector("[data-error]");
-    if (el) el.textContent = error.message;
+    if (el) {
+      el.textContent = error.message;
+      if (error.conflicts?.length) el.insertAdjacentHTML("beforeend", conflictingShifts(error.conflicts));
+    }
     else {
       state.toast = error.message;
       render();
     }
+  }
+  function conflictingShifts(rows, team = true) {
+    const visible = rows.filter((s) => team ? model.manages(current(), s.unit)
+      : s.published && s.unit === current().unit && s.userId === current().key);
+    if (!visible.length) return "";
+    return `<section class="conflict-shifts" aria-label="重複しているシフト"><h3>重複しているシフト</h3>` +
+      table(["従業員名", "勤務日", "開始時刻", "終了時刻", ...(team ? ["状態"] : [])], [...visible].sort(byDate).map((s) => [
+        esc(person(s.userId)), esc(s.date), esc(s.start), esc(s.end) + (s.end < s.start ? "（翌日）" : ""), ...(team ? [status(s.published ? "公開" : "draft")] : []),
+      ])) + "</section>";
   }
   function profile() {
     detail("アカウントメニュー", [], dl(["所属単位", model.unitName(current().unit)], ["権限", roles(current())]) +
@@ -710,7 +732,7 @@
       const reason = pick(f, "reason");
       const plan = model.changePlan(current(), id, after, reason);
       confirm("シフト日時変更申請の送信確認", [309], dl(["変更前", shiftText(s)], ["変更後", shiftText(after)], ["申請理由", reason]) +
-        (plan.conflict ? note("他の公開済みシフトと重複しています。申請は送信できます。") : ""),
+        (plan.conflicts.length ? note("他の公開済みシフトと重複しています。申請は送信できます。") + conflictingShifts(plan.conflicts, false) : ""),
         () => model.submitChange(current(), id, after, reason), "シフト日時変更申請を送信しました。", "送信する");
     });
   }
@@ -732,7 +754,11 @@
       if (team) body += model.attendanceComparison(i).map(note).join("");
     } else {
       body += dl(["変更前のシフト", shiftText(i.before)], ["変更後のシフト", shiftText(i.after)]);
-      if (team) body += note(model.shiftConflict(i.userId, i.after, i.shiftId) ? "変更後の日時は登録済みシフトと重複しています。" : "登録済みシフトとの重複はありません。");
+      if (team) {
+        const conflicts = model.shiftConflicts(i.userId, i.after, i.shiftId);
+        body += conflicts.length ? note("変更後の日時は登録済みシフトと重複しています。") + conflictingShifts(conflicts)
+          : note("登録済みシフトとの重複はありません。");
+      }
     }
     if (!wish) body += dl(["申請理由", i.reason]);
     if (i.status === "pending") body += actions(team
@@ -751,7 +777,9 @@
     const content = itemPreview(i) + (i.userId === current().key ? note("対象は自分自身の" + kindLabels[i.kind] + "です。") : "");
     if (approve) confirm(kindLabels[i.kind] + "の承認確認", [a], content,
       () => model.decide(current(), id, true), "承認しました。", "承認する");
-    else form(kindLabels[i.kind] + "を却下する", [r], content + field("却下理由", textarea("reason")), (f) => {
+    else form(kindLabels[i.kind] + "を却下する", [r], content +
+      field("定型文", select("template", [["", "定型文を選んで挿入"], ...rejectTemplates.map((t) => [t, t])], "", 'data-reject-template="true"')) +
+      field("却下理由", textarea("reason")), (f) => {
       const reason = pick(f, "reason");
       if (!reason) throw new Error("却下理由を入力してください。");
       confirm(kindLabels[i.kind] + "の却下確認", [r], content + dl(["却下理由", reason]),
@@ -950,6 +978,15 @@
   });
   app.addEventListener("change", (event) => {
     const el = event.target;
+    if (el.dataset.rejectTemplate) {
+      const reason = el.form.elements.reason;
+      if (rejectTemplates.includes(el.value)) {
+        reason.value = [reason.value.trim(), el.value].filter(Boolean).join("\n");
+        reason.focus();
+      }
+      el.value = "";
+      return;
+    }
     if (el.dataset.pageSwitch) { goRoute(el.value); return; }
     if (el.dataset.period) { state.periods[el.dataset.period] = el.value; render(); }
     if (el.dataset.teamFilter) {
@@ -983,7 +1020,8 @@
         "calendar-month": () => updateCalendar(action, id),
         "roster-day": () => updateCalendar(action, id),
         "profile": profile, "logout": logout,
-        "close-dialog": () => finish(state.dialog?.cancel || ""),
+        "close-dialog": cancelDialog,
+        "cancel-page": () => { state.pageDraft = null; state.followupRoute = null; goRoute(id); finish("操作をキャンセルしました。"); },
         "notifications": () => goRoute("/" + (state.view === "manager" ? "mgr" : state.view === "master" ? "adm" : "emp") + "/notifications"),
         "close-notifications": () => { state.drawer = false; render(); },
         "notification": () => openNotification(id),

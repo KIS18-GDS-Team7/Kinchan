@@ -29,7 +29,27 @@
     const to = month ? [period.to, iso(new Date(Date.UTC(Number(month.slice(0, 4)), Number(month.slice(5)), 0)))].sort()[0] : period.to;
     return today >= from && today <= to ? today : from;
   }
-  const api = { monthsInPeriod, monthGrid, initialDay };
+  function groupByPerson(shifts) {
+    const groups = new Map();
+    for (const shift of [...shifts].sort((a, b) => (a.date + a.start).localeCompare(b.date + b.start))) {
+      if (!groups.has(shift.userId)) groups.set(shift.userId, { userId: shift.userId, shifts: [] });
+      groups.get(shift.userId).shifts.push(shift);
+    }
+    return [...groups.values()];
+  }
+  function rosterData(period, members, shifts) {
+    const dates = [];
+    const day = new Date(period.from + "T00:00:00Z");
+    while (iso(day) <= period.to) {
+      dates.push(iso(day));
+      day.setUTCDate(day.getUTCDate() + 1);
+    }
+    const groups = new Map(groupByPerson(shifts.filter((s) => s.date >= period.from && s.date <= period.to))
+      .map((g) => [g.userId, g.shifts]));
+    return { dates, people: members.map((user) => ({ user,
+      days: dates.map((date) => ({ date, shifts: (groups.get(user.key) || []).filter((s) => s.date === date) })) })) };
+  }
+  const api = { monthsInPeriod, monthGrid, initialDay, groupByPerson, rosterData };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.KinchanCalendar = api;
 })(globalThis);

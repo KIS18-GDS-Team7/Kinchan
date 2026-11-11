@@ -1,7 +1,7 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { monthsInPeriod, monthGrid, initialDay } = require("../calendar.js");
+const { monthsInPeriod, monthGrid, initialDay, groupByPerson, rosterData } = require("../calendar.js");
 
 test("calendar weekdays align for partial periods and include only valid selectable dates", () => {
   const period = { from: "2026-10-14", to: "2026-10-20" };
@@ -28,4 +28,35 @@ test("selected days stay in the chosen period and visible month", () => {
   assert.equal(initialDay(period, "2027-01-01"), "2026-10-14");
   assert.equal(initialDay(period, "2026-10-15", "2026-11"), "2026-11-01");
   assert.equal(initialDay(period, "2026-12-05", "2026-12"), "2026-12-01");
+});
+
+test("a roster retains every employee and multiple shifts on the same day without a display limit", () => {
+  const members = Array.from({ length: 40 }, (_, i) => ({ key: String(i), name: "従業員" + i }));
+  const shifts = members.map((u) => ({ id: "morning" + u.key, userId: u.key, date: "2026-10-14", start: "09:00", end: "12:00", published: true }));
+  shifts.push({ id: "night", userId: "0", date: "2026-10-14", start: "22:00", end: "06:00", published: false });
+  const grouped = groupByPerson(shifts);
+  assert.equal(grouped.length, 40);
+  assert.equal(grouped.reduce((n, g) => n + g.shifts.length, 0), 41);
+  assert.deepEqual(grouped.find((g) => g.userId === "0").shifts.map((s) => s.id), ["morning0", "night"]);
+  const roster = rosterData({ from: "2026-10-01", to: "2026-10-31" }, members, shifts);
+  assert.equal(roster.people.length, 40);
+  assert.equal(roster.dates.length, 31);
+  assert.equal(roster.people.flatMap((p) => p.days.flatMap((d) => d.shifts)).length, 41);
+  assert.equal(roster.people[0].days[13].shifts[1].end, "06:00");
+  assert.equal(roster.people[39].days[13].shifts[0].userId, "39");
+});
+
+test("a roster keeps employees with no shifts and excludes other employees or periods", () => {
+  const members = [{ key: "1", name: "同名" }, { key: "2", name: "同名" }, { key: "3", name: "シフトなし" }];
+  const rows = [
+    { id: "a", userId: "1", date: "2026-12-31", start: "09:00", end: "12:00" },
+    { id: "b", userId: "2", date: "2026-12-31", start: "13:00", end: "18:00" },
+    { id: "other-unit", userId: "4", date: "2026-12-31", start: "09:00", end: "18:00" },
+    { id: "outside-period", userId: "1", date: "2026-12-30", start: "09:00", end: "18:00" },
+  ];
+  const roster = rosterData({ from: "2026-12-31", to: "2027-01-02" }, members, rows);
+  assert.deepEqual(roster.dates, ["2026-12-31", "2027-01-01", "2027-01-02"]);
+  assert.equal(roster.people.length, 3);
+  assert.deepEqual(roster.people.map((p) => p.days[0].shifts.map((s) => s.id)), [["a"], ["b"], []]);
+  assert.ok(roster.people[2].days.every((d) => d.shifts.length === 0));
 });

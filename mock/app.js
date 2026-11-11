@@ -1,18 +1,20 @@
 (() => {
   "use strict";
   const M = globalThis.KinchanModel;
+  const N = globalThis.KinchanNavigation;
   const { punchTypes, kindLabels, roleLabels, statusLabels, dateAt, inRange, monthRange, duration, shiftText, spanLabel } = M;
   const model = M.createModel();
   const app = document.querySelector("#app");
   const demoUsers = model.users.map((u) => ({ ...u }));
-  const nav = [
-    ["/", "ホーム", "⌂"], ["/shifts", "シフト", "▦"], ["/requests", "申請", "✓"],
-    ["/records", "勤怠記録", "◫"], ["/users", "ユーザー管理", "♙"],
-  ];
   const attendanceLabels = { off: "退勤中", working: "出勤中", break: "休憩中" };
   const views = { shifts: "published", requests: "own", records: "own" };
-  const state = { actor: null, route: "/login", dialog: null, toast: "", drawer: false, filters: {}, periods: {}, logoutNotice: "", calendar: false };
+  const state = { actor: null, route: "/login", view: "employee", dialog: null, toast: "", drawer: false, filters: {}, periods: {}, logoutNotice: "", calendar: false };
+  const screen = () => N.screens[state.route.split("?")[0]];
+  const routeParams = () => new URLSearchParams(state.route.split("?")[1] || "");
   let toastTimer;
+  let capturingForm = false;
+  let capturedForm = null;
+  let pageForm = null;
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const val = (value) => esc(value);
   const time = (value) => value.length === 16 ? value + ":00" : value;
@@ -63,8 +65,10 @@
   const dl = (...entries) => '<dl class="details">' + entries.map(([title, value]) => entry(title, value)).join("") + "</dl>";
 
   function navHtml(css) {
-    return `<nav class="${css}" aria-label="主要メニュー">${nav.filter(([path]) => path !== "/users" || master()).map(([path, label, icon]) =>
-      `<a class="nav-link${path === state.route ? " active" : ""}" href="#${path}" ${path === state.route ? 'aria-current="page"' : ""}><span class="nav-icon" aria-hidden="true">${icon}</span><span>${label}</span></a>`).join("")}</nav>`;
+    return `<nav class="${css}" aria-label="主要メニュー">${N.menus[state.view].map(([path, label, icon]) => {
+      const active = N.screens[path].section === screen()?.section;
+      return `<a class="nav-link${active ? " active" : ""}" href="#${path}" ${active ? 'aria-current="page"' : ""}><span class="nav-icon" aria-hidden="true">${icon}</span><span>${label}</span></a>`;
+    }).join("")}</nav>`;
   }
   function loginPage() {
     return `<main class="login-shell">
@@ -83,12 +87,17 @@
   }
   function shell(content) {
     const u = current();
-    return `<div class="app-shell"><aside class="sidebar"><div class="brand-mark"><span class="brand-logo">K</span> Kinchan</div>
+    const available = N.allowedViews(u);
+    const viewSwitch = available.length > 1 ? field("表示する画面", select("view", available.map((v) => [v, N.labels[v]]), state.view, 'data-view-switch="true"')) : "";
+    const mobileMenu = state.view !== "employee" ? field("画面", select("page", N.menus[state.view].map(([path, title]) => [path, title]),
+      N.menus[state.view].find(([path]) => N.screens[path].section === screen()?.section)?.[0], 'data-page-switch="true"')) : "";
+    return `<div class="app-shell layout-${state.view}"><aside class="sidebar"><div class="brand-mark"><span class="brand-logo">K</span> Kinchan</div>
       ${navHtml("sidebar-nav")}<div class="sidebar-foot"><p>${esc(model.unitName(u.unit))}</p><p>${esc(roles(u) === "なし" ? "従業員" : "従業員・" + roles(u))}</p></div></aside>
-      <div class="workspace"><header class="topbar"><h1 class="page-title">${nav.find(([p]) => p === state.route)?.[1] || "Kinchan"}</h1>
+      <div class="workspace"><header class="topbar"><div><p class="screen-role">${N.labels[state.view]}</p><h1 class="page-title">${esc(screen()?.title || "Kinchan")}</h1></div>
       <div class="top-actions"><button class="icon-btn" type="button" data-action="notifications" aria-label="通知を表示">♧</button>
       <button type="button" class="profile-chip" data-action="profile" aria-label="${val(u.name)}のアカウントメニュー">${esc(u.name)}</button></div></header>
-      <main class="content">${content}</main>${navHtml("mobile-nav")}</div>
+      <div class="screen-controls">${viewSwitch}<div class="compact-menu">${mobileMenu}</div></div>
+      <main class="content">${content}</main>${state.view === "employee" ? navHtml("mobile-nav") : ""}</div>
       ${state.drawer ? notificationDrawer() : ""}${state.toast ? `<div class="toast" role="status">${esc(state.toast)}</div>` : ""}</div>`;
   }
   function home() {
@@ -97,21 +106,61 @@
     const shifts = model.publishedOn(u.key, today);
     const choices = u.status === "working" ? ["休憩開始", "退勤"] : u.status === "break" ? ["休憩終了"] : ["出勤"];
     const canPunch = u.unit && (u.status !== "off" || shifts.length);
-    const people = managerUsers();
-    const pending = model.items.filter((i) => i.status === "pending" && model.managedItem(u, i) && !model.user(i.userId).deleted);
     const shiftLabel = shifts.length ? shifts.map((s) => s.start + "–" + s.end).join("、") : "当日の公開済みシフトなし";
     return `<div class="page-head"><div><h2>${today.replace("-", "年").replace("-", "月")}日</h2><p>デモ日時</p></div></div>
-      <div class="grid ${manager() ? "grid-2" : ""}">
+      <div class="grid">
         <section class="card card-pad clock-card"><div class="card-head"><div><h3>打刻</h3><p>${esc(shiftLabel)}</p></div>${badge([304, 312])}</div>
         <div class="clock-time num">${model.now().slice(11)}</div><div class="clock-date">時刻</div>
         <div class="shift-summary"><div><span>勤務ステータス</span><strong>${attendanceLabels[u.status]}</strong></div><div><span>所属単位</span><strong>${esc(model.unitName(u.unit))}</strong></div></div>
         <div class="punch-actions">${choices.map((type) => `<button type="button" class="punch-btn" data-action="punch" data-id="${type}" ${canPunch ? "" : "disabled"}>${type}する</button>`).join("")}</div>
         ${!canPunch ? `<p class="punch-message">${u.unit ? "当日の公開済みシフトがないため、出勤を打刻できません。" : "所属が設定されていません。"}</p>` : ""}</section>
-        ${manager() ? card("管理先の勤務状況", [211], (people.length ? itemsList(people.map((p) => itemRow(p.name, model.unitName(p.unit), status(p.status)))) : empty("管理先の従業員はいません。")) +
-          actions(btn("管理先の勤務実態", "go-tab", "records:team", "secondary"), btn("管理先のシフト表", "go-tab", "shifts:team", "secondary"))) +
-          card("承認待ち", [204, 207, 212], `<div class="metric-row">${Object.entries(kindLabels).map(([kind, label]) => `<div class="metric"><span>${label}</span><strong class="num">${pending.filter((i) => i.kind === kind).length}</strong></div>`).join("")}</div>` +
-          actions(btn("届いたシフト希望", "go-tab", "shifts:incoming", "secondary"), btn("承認待ちの申請", "go-tab", "requests:incoming", "secondary"))) : ""}
-      </div>`;
+      </div>` + employeeShortcuts();
+  }
+
+  const routeLink = (label, path, hint = "") => `<a class="destination-link" href="#${path}"><span><strong>${esc(label)}</strong>${hint ? `<span class="item-sub">${esc(hint)}</span>` : ""}</span><span aria-hidden="true">›</span></a>`;
+  function employeeShortcuts() {
+    const pending = model.items.filter((i) => i.userId === current().key && i.status === "pending");
+    return card("本日のシフト", [308], model.publishedOn(current().key, model.today()).map((s) =>
+      itemRow(s.start + "–" + s.end, model.unitName(s.unit), btn("詳細", "shift-detail", s.id))).join("") || empty("本日の公開済みシフトはありません。")) +
+      card("申請", [310, 311, 318], Object.entries(kindLabels).map(([kind, label]) => routeLink(label + "一覧",
+        kind === "wish" ? "/emp/hopes" : kind === "attendance" ? "/emp/corrections" : "/emp/shift-change",
+        "未処理 " + pending.filter((i) => i.kind === kind).length + "件")).join("")) +
+      card("ショートカット", [], routeLink("シフト一覧", "/emp/shifts") + routeLink("勤怠記録", "/emp/attendance") + routeLink("通知", "/emp/notifications"));
+  }
+  function managerHome() {
+    const people = managerUsers();
+    const pending = model.items.filter((i) => i.status === "pending" && model.managedItem(current(), i) && !model.user(i.userId).deleted);
+    const [from, to] = monthRange(model.today().slice(0, 7));
+    const warnings = people.map((u) => {
+      const minutes = model.dayRows(u.key, from, to).reduce((n, row) => n + row.overtime, 0);
+      return { u, minutes, warning: M.overtimeAlert(minutes) };
+    }).filter((entry) => entry.warning);
+    return card("未処理の申請", [204, 207, 212], `<div class="metric-row">${Object.entries(kindLabels).map(([kind, label]) =>
+      `<a class="metric metric-link" href="#${kind === "wish" ? "/mgr/hopes" : kind === "attendance" ? "/mgr/corrections" : "/mgr/shift-changes"}"><span>${label}</span><strong class="num">${pending.filter((i) => i.kind === kind).length}</strong></a>`).join("")}</div>`) +
+      (warnings.length ? card("36協定の警告", [211], warnings.map(({ u, minutes, warning }) => note(u.name + "：" + warning + "（当月の残業時間 " + duration(minutes) + "）")).join("") + routeLink("勤務実態を表示する", "/mgr/work")) : "") +
+      card("本日の勤務状況", [211], table(["従業員", "所属単位", "本日のシフト", "勤務ステータス"], people.map((u) => [
+        esc(u.name), esc(model.unitName(u.unit)), esc(model.publishedOn(u.key, model.today()).map((s) => s.start + "–" + s.end).join("、") || "なし"), status(u.status),
+      ])) + routeLink("勤務実態を表示する", "/mgr/work")) +
+      card("シフト管理", [201, 215, 216], routeLink("シフト管理を開く", "/mgr/shifts", "登録・変更・削除、対象期間・受付期間の登録、下書きの公開"));
+  }
+  function requestHub() {
+    const pending = model.items.filter((i) => i.userId === current().key && i.status === "pending");
+    const [periods] = myPeriods("wishes", true);
+    const open = periods.filter(model.receptionOpen);
+    return card("申請", [306, 307, 310, 311, 318],
+      routeLink("勤怠修正申請一覧", "/emp/corrections", "未処理 " + pending.filter((i) => i.kind === "attendance").length + "件") +
+      routeLink("シフト希望一覧", "/emp/hopes", "未処理 " + pending.filter((i) => i.kind === "wish").length + "件") +
+      (open.length ? routeLink("シフト希望提出", "/emp/hope") : "") +
+      routeLink("シフト日時変更申請一覧", "/emp/shift-change", "申請の送信は自分の公開済みシフトから") +
+      routeLink("勤怠修正申請を送信する", "/emp/attendance", "勤怠記録の日付から開始"));
+  }
+  function employeeMenu() {
+    return card("アカウント", [], dl(["ユーザーID", current().id], ["所属単位", model.unitName(current().unit)], ["権限", roles(current())]) +
+      routeLink("通知", "/emp/notifications") + actions(btn("ログアウト", "logout", "", "danger")));
+  }
+  function adminHome() {
+    return card("ユーザー管理", [101, 107, 108], routeLink("ユーザー一覧", "/adm/users", "氏名・ID・権限・所属で絞り込む") +
+      routeLink("ユーザー登録", "/adm/users-new") + actions(btn("所属単位を登録する", "unit-new", "", "secondary")));
   }
 
   const tabs = (group, choices) => '<div class="tabs" aria-label="表示切り替え">' + choices.map(([key, label]) =>
@@ -128,7 +177,7 @@
     [...rows].sort(byDate).map((s) => [esc(person(s.userId)), esc(s.date), esc(s.start), esc(s.end),
       ...(team ? [status(s.published ? "公開" : "draft")] : []), btn("詳細", "shift-detail", s.id, "ghost", team ? 'data-team="true"' : "")]),
     team ? "対象のシフトがありません。" : "公開済みのシフトがありません。");
-  function shiftsPage() {
+  function shiftsPage(single = false) {
     const choices = [["published", "公開済みシフト"], ["wishes", "シフト希望"]];
     if (manager()) choices.push(["team", "管理先のシフト表"], ["incoming", "届いたシフト希望"]);
     if (!choices.some(([key]) => key === views.shifts)) views.shifts = "published";
@@ -166,7 +215,7 @@
         + (p && rows.length ? actions(btn(state.calendar ? "一覧表示" : "カレンダー表示", "calendar", "", "secondary")) : "")
         + (p ? (state.calendar && rows.length ? calendarShifts(p, rows) : shiftRows(rows)) : "") : empty("対象期間が登録されていません。"));
     }
-    return tabs("shifts", choices) + body;
+    return (single ? "" : tabs("shifts", choices)) + body;
   }
   function calendarShifts(period, rows) {
     const cells = [];
@@ -192,27 +241,29 @@
     })) : empty("条件に合う申請・希望はありません。");
   }
   function inbox(kind) {
-    const id = kind === "wish" ? "wishInbox" : "requestInbox";
+    const id = kind === "wish" ? "wishInbox" : kind + "Inbox";
     const f = state.filters[id] || { status: "pending" };
-    const rows = filtered(model.items.filter((i) => (kind === "wish" ? i.kind === "wish" : i.kind !== "wish")
+    const rows = filtered(model.items.filter((i) => (kind === "request" ? i.kind !== "wish" : i.kind === kind)
       && model.managedItem(current(), i) && (f.deleted || !model.user(i.userId).deleted)), f);
-    return card(kind === "wish" ? "届いたシフト希望" : "管理先の申請", kind === "wish" ? [204, 205, 206] : [207, 208, 209, 212, 213, 214],
+    return card(kind === "wish" ? "届いたシフト希望" : kind === "attendance" ? "勤怠修正申請" : kind === "change" ? "シフト日時変更申請" : "管理先の申請",
+      kind === "wish" ? [204, 205, 206] : kind === "attendance" ? [207, 208, 209] : kind === "change" ? [212, 213, 214] : [207, 208, 209, 212, 213, 214],
       filterForm(id, dateFields(f) + field("処理状態", select("status", [["", "すべて"], ...statuses()], f.status)) +
-        (kind === "wish" ? "" : field("申請の種類", select("kind", [["", "すべて"], ["attendance", kindLabels.attendance], ["change", kindLabels.change]], f.kind))) +
+        (kind !== "request" ? "" : field("申請の種類", select("kind", [["", "すべて"], ["attendance", kindLabels.attendance], ["change", kindLabels.change]], f.kind))) +
         field("管理先", select("unit", [["", "すべて"], ...unitPairs(managed())], f.unit)) +
         field("従業員", select("user", [["", "すべて"], ...userPairs(managerUsers(true))], f.user)) +
         check("deleted", "削除済みを含める", "yes", f.deleted)) + itemList(rows, true));
   }
-  function requestsPage() {
+  function requestsPage(onlyKind) {
     const choices = [["own", "自分の申請"]];
     if (manager()) choices.push(["incoming", "承認待ち"]);
     if (!manager()) views.requests = "own";
-    const f = state.filters.ownRequests || {};
-    const own = filtered(model.items.filter((i) => i.userId === current().key && i.kind !== "wish"), f);
-    return tabs("requests", choices) + (views.requests === "incoming" ? inbox("request") :
-      card("自分の申請", [310, 314, 316, 318],
-        filterForm("ownRequests", dateFields(f) + field("処理状態", select("status", [["", "すべて"], ...statuses()], f.status))
-          + field("申請の種類", select("kind", [["", "すべて"], ["attendance", kindLabels.attendance], ["change", kindLabels.change]], f.kind)))
+    const filterKey = onlyKind ? "own" + onlyKind : "ownRequests";
+    const f = state.filters[filterKey] || {};
+    const own = filtered(model.items.filter((i) => i.userId === current().key && (onlyKind ? i.kind === onlyKind : i.kind !== "wish")), f);
+    return (onlyKind ? "" : tabs("requests", choices)) + (views.requests === "incoming" && !onlyKind ? inbox("request") :
+      card(onlyKind ? kindLabels[onlyKind] + "一覧" : "自分の申請", onlyKind === "attendance" ? [310, 314] : onlyKind === "change" ? [316, 318] : [310, 314, 316, 318],
+        filterForm(filterKey, dateFields(f) + field("処理状態", select("status", [["", "すべて"], ...statuses()], f.status))
+          + (onlyKind ? "" : field("申請の種類", select("kind", [["", "すべて"], ["attendance", kindLabels.attendance], ["change", kindLabels.change]], f.kind))))
         + itemList(own, false)));
   }
 
@@ -241,14 +292,14 @@
     const [from, to] = monthRange(model.today().slice(0, 7));
     return { from, to };
   };
-  function recordsPage() {
+  function recordsPage(single = false) {
     const choices = [["own", "自分の勤怠記録"]];
     if (manager()) choices.push(["team", "管理先の勤務実態"]);
     if (!manager()) views.records = "own";
     if (views.records !== "team") {
       const f = state.filters.ownRecords || monthFilter();
       const rows = model.dayRows(current().key, f.from, f.to);
-      return tabs("records", choices) + card("自分の勤怠記録", [306, 313], filterForm("ownRecords", dateFields(f, true)) +
+      return (single ? "" : tabs("records", choices)) + card("自分の勤怠記録", [306, 313], filterForm("ownRecords", dateFields(f, true)) +
         (current().unit ? actions(btn("日付を指定して勤怠修正を申請する", "attendance-date", "", "secondary")) : "") +
         recordRows(current().key, rows, false));
     }
@@ -258,7 +309,7 @@
       field("管理先", select("unit", [["", "すべての管理先"], ...unitPairs(managed())], f.unit)) +
       field("従業員", select("user", [["", "全従業員"], ...userPairs(managerUsers(true))], f.user)) +
       check("deleted", "削除済みを含める", "yes", f.deleted));
-    return tabs("records", choices) + card("管理先の勤務実態", [210, 211], filter +
+    return (single ? "" : tabs("records", choices)) + card("管理先の勤務実態", [210, 211], filter +
       actions(btn("従業員と日付を指定して修正する", "correction-date", "", "secondary"),
         summary.length ? btn("集計をCSV出力する", "csv", "", "secondary") : "") +
       (summary.length ? summary.map((s) => `<section class="record-group"><div class="card-head"><h3>${esc(s.u.name)}</h3>${status(s.u.status)}</div>
@@ -275,7 +326,7 @@
       fieldInput("氏名", "name", "search", f.name) + fieldInput("ユーザーID", "id", "search", f.id) +
       field("権限", select("role", [["", "すべて"], ...Object.entries(roleLabels), ["none", "なし"]], f.role)) +
       field("所属", select("unit", [["", "すべて"], ...unitPairs(model.units)], f.unit)) + check("deleted", "削除済みを含める", "yes", f.deleted))
-      + actions(btn("ユーザーを登録する", "user-edit", "", "primary"), btn("所属単位を登録する", "unit-new", "", "secondary"))
+      + actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属単位を登録する", "unit-new", "", "secondary"))
       + table(["氏名", "ユーザーID", "権限", "所属", "管理先", "詳細"], rows.map((u) => [
         esc(u.name) + (u.deleted ? "（削除済み）" : ""), esc(u.id), esc(roles(u)), esc(model.unitName(u.unit)), esc(assigned(u)), btn("詳細", "user-detail", u.key),
       ]), "条件に合うユーザーはいません。"));
@@ -286,6 +337,11 @@
     return `<div class="drawer-backdrop" data-action="close-notifications"></div><aside class="drawer" aria-label="通知"><div class="drawer-head">
       <div><p class="eyebrow">UC-317</p><h2>通知</h2></div>${btn("閉じる", "close-notifications")}</div>
       ${rows.length ? itemsList(rows.map((n) => itemRow(n.message, n.at.replace("T", " "), btn("詳細", "notification", n.id)))) : empty("あなた宛ての通知はありません。")}</aside>`;
+  }
+  function notificationsPage() {
+    const rows = model.notifications.filter((n) => n.userId === current().key).sort((a, b) => b.at.localeCompare(a.at));
+    return card("通知", [317], rows.length ? itemsList(rows.map((n) =>
+      itemRow(n.message, n.at.replace("T", " "), btn("詳細", "notification", n.id)))) : empty("あなた宛ての通知はありません。"));
   }
   function openNotification(id) {
     const n = model.notifications.find((n) => n.id === id && n.userId === current().key);
@@ -310,7 +366,18 @@
     detail("通知", [317], dl(["内容", n.message], ["作成日時", n.at.replace("T", " ")]) + target);
   }
 
-  function showDialog(config) { state.dialog = config; render(); }
+  function showDialog(config) {
+    if (capturingForm) { capturedForm = config; return; }
+    const source = app.querySelector("#page-form");
+    if (source) state.pageDraft = { route: state.route, values: [...new FormData(source).entries()] };
+    if (source?.querySelector("#punch-entries")) {
+      state.pageDraft.punches = [...source.querySelectorAll(".punch-entry")].map((row) => ({
+        type: row.querySelector("[name=type]").value, at: row.querySelector("[name=at]").value,
+      }));
+    }
+    state.dialog = config;
+    render();
+  }
   function detail(title, ids, body) { showDialog({ title, ids, body }); }
   function form(title, ids, body, submit, label = "内容を確認する") { showDialog({ title, ids, body, submit, label }); }
   function confirm(title, ids, body, run, done, label = "確定する") {
@@ -319,6 +386,16 @@
   function finish(message) {
     state.dialog = null;
     state.toast = message || "";
+    if (pageForm && message) state.pageDraft = null;
+    const completedRoute = state.followupRoute || ({
+      userEntry: "/adm/users", wishEntry: "/emp/hopes", attendanceEntry: "/emp/corrections",
+      correctionEntry: "/mgr/work",
+    })[screen()?.page] || (screen()?.page === "ownChangeRequests" && routeParams().has("shiftId") ? "/emp/shift-change" : "");
+    if (current() && message && pageForm && completedRoute && !message.includes("キャンセル")) {
+      state.followupRoute = null;
+      state.route = completedRoute;
+      location.hash = "#" + completedRoute;
+    }
     window.clearTimeout(toastTimer);
     render();
     if (message) toastTimer = window.setTimeout(() => {
@@ -328,8 +405,53 @@
   }
   function render() {
     const u = current();
-    const pages = { "/": home, "/shifts": shiftsPage, "/requests": requestsPage, "/records": recordsPage, "/users": usersPage };
-    app.innerHTML = u && pages[state.route] ? shell(pages[state.route]()) : loginPage();
+    const pages = {
+      employeeHome: home, managerHome, adminHome, requestHub, employeeMenu, notifications: notificationsPage,
+      publishedShifts: () => { views.shifts = "published"; return shiftsPage(true); },
+      ownWishes: () => { views.shifts = "wishes"; return shiftsPage(true); },
+      teamShifts: () => { views.shifts = "team"; return shiftsPage(true); },
+      incomingWishes: () => inbox("wish"),
+      incomingAttendance: () => inbox("attendance"),
+      incomingChanges: () => inbox("change"),
+      ownAttendanceRequests: () => requestsPage("attendance"),
+      ownChangeRequests: () => routeParams().has("shiftId") ? embeddedForm(() => changeRequest(routeParams().get("shiftId")), "/emp/shifts") : requestsPage("change"),
+      ownRecords: () => { views.records = "own"; return recordsPage(true); },
+      teamRecords: () => { views.records = "team"; return recordsPage(true); },
+      users: usersPage,
+      userEntry: () => embeddedForm(() => userEdit(""), "/adm/users"),
+      userDetail: () => embeddedForm(() => userDetails(routeParams().get("id")), "/adm/users"),
+      attendanceEntry: () => {
+        const item = model.itemById(routeParams().get("id"));
+        const date = item?.userId === current().key ? item.date : routeParams().get("date");
+        if (!M.validDate(date)) return note("勤怠記録から対象日を指定してください。") + routeLink("勤怠記録", "/emp/attendance");
+        return embeddedForm(() => attendanceForm(current().key, date, false, item?.userId === current().key ? item.id : ""), "/emp/corrections");
+      },
+      correctionEntry: () => routeParams().has("user") && routeParams().has("date")
+        ? embeddedForm(() => attendanceForm(routeParams().get("user"), routeParams().get("date"), true), "/mgr/work")
+        : embeddedForm(() => recordDate(true), "/mgr/work"),
+      wishEntry: () => {
+        const [ps, selected] = myPeriods("wishes", true);
+        const p = ps.find((p) => p.id === state.periods.wishEntry && model.receptionOpen(p)) || (model.receptionOpen(selected) ? selected : ps.find(model.receptionOpen));
+        if (!p) return card("シフト希望提出", [307], note("シフト希望の受付期間外です。") + routeLink("シフト希望一覧", "/emp/hopes"));
+        return periodControl("wishEntry", ps.filter(model.receptionOpen), p) + embeddedForm(() => wishForm(p.id), "/emp/hopes");
+      },
+    };
+    pageForm = null;
+    app.innerHTML = u && pages[screen()?.page] ? shell(pages[screen().page]()) : loginPage();
+    if (pageForm && state.pageDraft?.route === state.route) {
+      const f = app.querySelector("#page-form");
+      const values = state.pageDraft.values;
+      if (state.pageDraft.punches && f.querySelector("#punch-entries")) {
+        f.querySelector("#punch-entries").innerHTML = state.pageDraft.punches.map(punchEntry).join("");
+      }
+      const occurrence = {};
+      for (const el of f.elements) {
+        if (!el.name || el.disabled || el.type === "submit") continue;
+        const match = values.filter(([key]) => key === el.name).map(([, value]) => value);
+        if (el.type === "checkbox") el.checked = match.includes(el.value);
+        else if (match.length) { const index = occurrence[el.name] || 0; el.value = match[index] ?? ""; occurrence[el.name] = index + 1; }
+      }
+    }
     const d = state.dialog;
     if (u && d) {
       app.insertAdjacentHTML("beforeend", `<dialog class="modal" id="dialog" aria-labelledby="dialog-title"><form id="dialog-form">
@@ -341,20 +463,41 @@
       dialog.showModal();
     }
   }
+  function embeddedForm(build, back) {
+    capturingForm = true;
+    capturedForm = null;
+    try { build(); } finally { capturingForm = false; }
+    const d = capturedForm;
+    if (!d) return empty("この画面は表示できません。");
+    pageForm = d;
+    return `<section class="card card-pad"><form id="page-form">${badge(d.ids)}<h2>${esc(d.title)}</h2>${d.body}${errorLine()}
+      <div class="modal-actions">${btn("一覧に戻る", "go-route", back)}
+      ${d.submit ? `<button class="btn btn-primary" type="submit" value="confirm">${esc(d.label)}</button>` : ""}</div></form></section>`;
+  }
   function syncRoute() {
     const path = location.hash.slice(1);
-    state.route = current() ? (nav.some(([p]) => p === path) ? path : "/") : "/login";
+    const result = N.resolve(path, current(), state.view);
+    state.route = result.path;
+    if (result.screen) state.view = result.screen.view;
+    if (state.pageDraft?.route !== state.route) state.pageDraft = null;
     state.dialog = null;
     state.drawer = false;
+    if (location.hash !== "#" + result.path) history.replaceState(null, "", "#" + result.path);
+    document.title = (result.screen?.title || "ログイン") + " | Kinchan";
     render();
+    window.scrollTo(0, 0);
   }
-  function goTab(id) {
-    const [group, tab] = id.split(":");
-    if (!Object.hasOwn(views, group)) return;
-    views[group] = tab;
-    const path = "/" + group;
+  function goRoute(path) {
     if (location.hash === "#" + path) syncRoute();
     else location.hash = "#" + path;
+  }
+  function goTab(id) {
+    const destinations = {
+      "shifts:published": "/emp/shifts", "shifts:wishes": "/emp/hopes", "shifts:team": "/mgr/shifts",
+      "shifts:incoming": "/mgr/hopes", "records:own": "/emp/attendance", "records:team": "/mgr/work",
+      "requests:own": "/emp/corrections", "requests:incoming": "/mgr/corrections",
+    };
+    if (destinations[id]) goRoute(destinations[id]);
   }
   function showError(node, error) {
     const el = node.querySelector("[data-error]");
@@ -371,6 +514,8 @@
   function logout() {
     confirm("ログアウトしますか？", [302], "", () => {
       state.actor = null;
+      state.view = "employee";
+      state.pageDraft = null;
       state.logoutNotice = "ログアウトしました。";
       state.filters = {};
       state.periods = {};
@@ -550,7 +695,8 @@
       (team ? field("従業員", select("user", [["", "選択してください"], ...userPairs(managerUsers())], "", "required")) : "") +
       fieldInput("対象日", "date", "date", model.today(), 'max="' + model.today() + '" required'), (f) => {
         const date = pick(f, "date");
-        attendanceForm(team ? pick(f, "user") : current().key, date, team);
+        goRoute(team ? "/mgr/attendance?user=" + encodeURIComponent(pick(f, "user")) + "&date=" + encodeURIComponent(date)
+          : "/emp/correction?date=" + encodeURIComponent(date));
       }, "打刻を入力する");
   }
   function punchEntry(p = {}) {
@@ -637,7 +783,10 @@
         const info = { ...fields(f, ["name", "id"]), password: String(f.get("password") || "") };
         model.checkUserInfo(current(), info, id);
         confirm(label + "確認", [u ? 102 : 101], dl(["氏名", info.name], ["ユーザーID", info.id],
-          ["パスワード", info.password ? "入力済み" : "変更なし"]), () => model.saveUser(current(), info, id),
+          ["パスワード", info.password ? "入力済み" : "変更なし"]), () => {
+          const saved = model.saveUser(current(), info, id);
+          if (!id && screen()?.page === "userEntry") state.followupRoute = "/adm/user?id=" + encodeURIComponent(saved.key);
+        },
         u ? "ユーザー情報を変更しました。" : "ユーザーを登録しました。", u ? "変更する" : "登録する");
       });
   }
@@ -697,10 +846,12 @@
         const user = model.authenticate(pick(f, "userId"), String(f.get("password")));
         if (!user) throw new Error("ユーザーIDまたはパスワードが正しくありません。");
         state.actor = user;
+        state.view = N.allowedViews(user)[0];
         state.logoutNotice = "";
-        location.hash = "#/";
+        location.hash = "#" + N.homes[state.view];
         syncRoute();
       } else if (formId === "dialog-form") state.dialog?.submit?.(f, event.submitter?.value, el);
+      else if (formId === "page-form") pageForm?.submit?.(f, event.submitter?.value, el);
       else if (el.dataset.filter) {
         const filter = { ...Object.fromEntries(f), deleted: f.has("deleted") };
         if (filter.from && filter.to && filter.from > filter.to) throw new Error("開始日は終了日以前を指定してください。");
@@ -711,6 +862,8 @@
   });
   app.addEventListener("change", (event) => {
     const el = event.target;
+    if (el.dataset.viewSwitch && N.allowedViews(current()).includes(el.value)) { goRoute(N.homes[el.value]); return; }
+    if (el.dataset.pageSwitch) { goRoute(el.value); return; }
     if (el.dataset.period) { state.periods[el.dataset.period] = el.value; render(); }
     if (el.dataset.teamFilter) {
       state.filters.teamShifts = el.dataset.teamFilter === "unit" ? { unit: el.value }
@@ -734,12 +887,13 @@
       }
       const [key, day] = (id || "").split(":");
       const commands = {
-        "tab": () => { const [group, view] = id.split(":"); views[group] = view; render(); },
+        "tab": () => goTab(id),
         "go-tab": () => goTab(id),
+        "go-route": () => goRoute(id),
         "calendar": () => { state.calendar = !state.calendar; render(); },
         "profile": profile, "logout": logout,
         "close-dialog": () => finish(state.dialog?.cancel || ""),
-        "notifications": () => { state.drawer = true; render(); },
+        "notifications": () => goRoute("/" + (state.view === "manager" ? "mgr" : state.view === "master" ? "adm" : "emp") + "/notifications"),
         "close-notifications": () => { state.drawer = false; render(); },
         "notification": () => openNotification(id),
         "punch": () => { const at = model.punch(current(), id); finish(id + "を " + at.replace("T", " ") + " に記録しました。"); },
@@ -761,7 +915,7 @@
             form.elements["end-" + d].value = batchEnd.value;
           }
         },
-        "change-new": () => changeRequest(id),
+        "change-new": () => goRoute("/emp/shift-change?shiftId=" + encodeURIComponent(id)),
         "item-own": () => itemDetails(id, false),
         "item-manager": () => itemDetails(id, true),
         "approve": () => decideItem(id, true),
@@ -770,13 +924,13 @@
         "record-detail": () => recordDetails(key, day, el.dataset.team === "true"),
         "attendance-date": () => recordDate(false),
         "correction-date": () => recordDate(true),
-        "attendance-new": () => attendanceForm(current().key, id, false),
-        "attendance-edit": () => { const i = model.itemById(id); if (i?.userId === current().key && i.status === "pending") attendanceForm(i.userId, i.date, false, id); },
-        "correction": () => attendanceForm(key, day, true),
+        "attendance-new": () => goRoute("/emp/correction?date=" + encodeURIComponent(id)),
+        "attendance-edit": () => { const i = model.itemById(id); if (i?.userId === current().key && i.status === "pending") goRoute("/emp/correction?id=" + encodeURIComponent(id)); },
+        "correction": () => goRoute("/mgr/attendance?user=" + encodeURIComponent(key) + "&date=" + encodeURIComponent(day)),
         "punch-add": () => app.querySelector("#punch-entries").insertAdjacentHTML("beforeend", punchEntry({ at: id + "T00:00:00" })),
         "punch-remove": () => el.closest(".punch-entry").remove(),
         "csv": csvExport,
-        "user-detail": () => userDetails(id),
+        "user-detail": () => goRoute("/adm/user?id=" + encodeURIComponent(id)),
         "user-edit": () => userEdit(id),
         "user-roles": () => userRoles(id),
         "user-unit": () => userUnit(id),

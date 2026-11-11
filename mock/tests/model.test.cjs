@@ -131,3 +131,66 @@ test("UC-211/313: gaps count as rest, daily overtime is summed, and warning boun
   assert.deepEqual([row.work, row.rest, row.overtime], [481, 60, 1]);
   assert.deepEqual([2159, 2160, 2699, 2700].map(overtimeAlert), ["", "注意", "注意", "超過"]);
 });
+
+test("UC-201/202: conflict errors carry every conflicting shift without changing records", () => {
+  const m = make(), mgr = m.user("3");
+  const first = m.saveShift(mgr, "1", shift("2026-10-21", "09:00", "12:00"));
+  const second = m.saveShift(mgr, "1", shift("2026-10-21", "13:00", "17:00"));
+  const snapshot = JSON.stringify([m.shifts, m.shiftHistory, m.notifications]);
+  assert.throws(() => m.saveShift(mgr, "1", shift("2026-10-21", "10:00", "16:00")), (error) => {
+    assert.deepEqual(error.conflicts.map((s) => s.id), [first.id, second.id]);
+    return true;
+  });
+  assert.equal(JSON.stringify([m.shifts, m.shiftHistory, m.notifications]), snapshot);
+  assert.throws(() => m.saveShift(mgr, "1", shift("2026-10-21", "13:30", "14:00"), first.id), (error) => {
+    assert.deepEqual(error.conflicts.map((s) => s.id), [second.id]);
+    return true;
+  });
+  assert.equal(JSON.stringify([m.shifts, m.shiftHistory, m.notifications]), snapshot);
+});
+
+test("UC-205/213/309: employees see published conflicts, approvals expose all conflicts and stay pending", () => {
+  const m = make(), mgr = m.user("3"), emp = m.user("1");
+  const published = m.saveShift(mgr, "1", shift("2026-11-03", "09:00", "12:00"));
+  m.publish(mgr, "p2");
+  const draft = m.saveShift(mgr, "1", shift("2026-11-03", "13:00", "20:00"));
+  m.withdraw(emp, "c1");
+  const after = shift("2026-11-03", "10:00", "18:00");
+  const plan = m.changePlan(emp, "s2", after, "勤務時間の変更");
+  assert.deepEqual(plan.conflicts.map((s) => s.id), [published.id]);
+  assert.equal(plan.conflict.id, published.id);
+  const change = m.submitChange(emp, "s2", after, "勤務時間の変更");
+  const snapshot = JSON.stringify([m.shifts, m.shiftHistory, m.notifications]);
+  for (const request of [m.itemById("w1"), change]) {
+    assert.throws(() => m.decide(mgr, request.id, true), (error) => {
+      assert.deepEqual(error.conflicts.map((s) => s.id), [published.id, draft.id]);
+      return true;
+    });
+    assert.equal(request.status, "pending");
+    assert.equal(JSON.stringify([m.shifts, m.shiftHistory, m.notifications]), snapshot);
+  }
+});
+
+test("UC-207: time differences are shown even when the requested work does not overlap a shift", () => {
+  const m = make();
+  const after = punches("2026-10-12", "00:00:00", "08:00:00");
+  const result = m.attendanceComparison({ userId: "1", date: "2026-10-12", after });
+  assert.equal(result.length, 2);
+  assert.match(result[1], /開始との差 -600分、終了との差 -600分/);
+  assert.match(result[1], /2026-10-12 00:00:00 ～ 2026-10-12 08:00:00/);
+});
+
+test("UC-207: multiple work sessions and overnight shifts have explicit comparisons without changing data", () => {
+  const m = make(), date = "2026-10-13";
+  m.shifts.push({ id: "night", userId: "1", unit: "shibuya", ...shift(date, "22:00", "06:00"), published: true });
+  const after = [...punches(date, "09:00:00", "19:00:00"),
+    { type: "出勤", at: date + "T22:30:00" }, { type: "退勤", at: "2026-10-14T06:15:00" }];
+  const snapshot = JSON.stringify([m.shifts, m.records, after]);
+  const result = m.attendanceComparison({ userId: "1", date, after });
+  assert.equal(result.length, 5);
+  assert.ok(result.some((line) => line.includes("開始との差 -60分、終了との差 60分")));
+  assert.ok(result.some((line) => line.includes("シフト 2026-10-13 22:00–06:00") && line.includes("開始との差 30分、終了との差 15分")));
+  assert.equal(JSON.stringify([m.shifts, m.records, after]), snapshot);
+  assert.deepEqual(m.attendanceComparison({ userId: "1", date: "2026-10-10", after: punches("2026-10-10", "09:00:00", "18:00:00") }),
+    ["矛盾：公開済みのシフトがない日に勤務があります。"]);
+});

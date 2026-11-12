@@ -412,7 +412,7 @@
     const f = state.filters.users || {};
     const rows = model.users.filter((u) => (f.deleted || !u.deleted) && (!f.name || u.name.includes(f.name))
       && (!f.id || u.id.includes(f.id)) && (!f.unit || u.unit === f.unit) && (!f.role || (f.role === "none" ? !u.roles.length : u.roles.includes(f.role))));
-    return card("ユーザー一覧・編集", [101, 102, 107, 108],
+    return card("ユーザー検索", [101, 102, 107, 108],
       actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属単位を登録する", "unit-new", "", "secondary")) +
       note("対象のユーザーの「編集する」から氏名・ユーザーID・パスワードを変更できます。権限・所属・管理先の操作は「詳細」から開きます。") +
       '<section class="user-search" aria-labelledby="user-search-title"><h4 id="user-search-title">ユーザー検索</h4><p class="item-sub">氏名・ユーザーIDで検索し、権限・所属で絞り込めます。</p>' + filterForm("users",

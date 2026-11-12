@@ -177,13 +177,12 @@
   function unitListPage() {
     if (!master()) return note("この画面を表示するにはマスタ管理者権限が必要です。");
     return card("所属一覧", [108, 110], actions(btn("所属追加", "unit-new", "", "primary")) +
-      note("未使用の所属だけ削除できます。現在の所属人数が0人でも、過去のデータや参照履歴がある所属は削除できません。") +
+      note("ユーザーの所属・管理先・シフト・申請・対象期間・勤怠記録などで使われている所属は削除不可") +
       (model.units.length ? itemsList(model.units.map((u) => {
         const { reasons } = model.unitDeletionPlan(current(), u.key);
-        const descriptionId = "unit-usage-" + u.key;
+        const descriptionId = "unit-status-" + u.key;
         return `<article class="list-item unit-delete-item"><div class="item-main"><p class="item-title">${esc(u.name)}</p>
-          <span class="status status-${reasons.length ? "pending" : "approved"}">${reasons.length ? "削除不可" : "未使用・削除可能"}</span>
-          ${reasons.length ? `<ul class="unit-reference-list" id="${val(descriptionId)}">${reasons.map((reason) => h("li", reason)).join("")}</ul>` : `<p class="item-sub" id="${val(descriptionId)}">現在・過去の参照はありません。</p>`}</div>
+          <span class="status status-${reasons.length ? "pending" : "approved"}" id="${val(descriptionId)}">${reasons.length ? "削除不可" : "未使用・削除可能"}</span></div>
           ${btn("削除する", "unit-delete", u.key, "danger", `aria-label="${val(u.name)}を削除する" aria-describedby="${val(descriptionId)}"${reasons.length ? " disabled" : ""}`)}</article>`;
       })) : empty("削除対象の所属単位はありません。")) + actions(btn("ホーム", "go-route", "/adm/home", "secondary")));
   }

@@ -23,8 +23,8 @@ test("manager and master menus route to separate screens", () => {
     ["ホーム", "シフト管理", "シフト希望", "勤怠修正申請", "シフト日時変更申請", "勤務実態", "勤怠修正"]);
   for (const [path] of menus.manager) assert.equal(screens[path].view, "manager");
   for (const [path] of menus.master) assert.equal(screens[path].view, "master");
-  assert.deepEqual(menus.master.map(([, label]) => label), ["ホーム", "ユーザー検索", "ユーザー登録", "所属追加", "所属削除"]);
-  assert.equal(screens["/adm/users"].title, "ユーザー検索");
+  assert.deepEqual(menus.master.map(([, label]) => label), ["ホーム", "ユーザー一覧", "ユーザー登録", "所属一覧"]);
+  assert.equal(screens["/adm/users"].title, "ユーザー一覧");
 });
 test("switching a user's displayed view does not grant privileges or switch accounts", () => {
   const manager = m.user("3");
@@ -42,18 +42,19 @@ test("deep links retain targets only when the screen is authorized", () => {
   assert.equal(resolve("/does-not-exist", m.user("3"), "manager").path, homes.manager);
   assert.equal(resolve("/users", m.user("4"), "master").path, "/adm/users");
 });
-test("UC-108: the unit registration entry reuses a master-only screen", () => {
-  assert.equal(screens["/adm/units-new"].page, "unitEntry");
-  assert.equal(screens["/adm/units-new"].title, "所属追加");
-  assert.equal(resolve("/adm/units-new", m.user("4"), "master").path, "/adm/units-new");
-  assert.equal(resolve("/adm/units-new", m.user("3"), "manager").path, "/mgr/home");
-  assert.equal(resolve("/adm/units-new", m.user("1"), "employee").path, "/emp/home");
-  assert.equal(resolve("/adm/units-new", null).path, "/login");
+test("UC-108/110: unit addition and deletion share a single master-only list", () => {
+  assert.equal(screens["/adm/units"].page, "unitList");
+  assert.equal(screens["/adm/units"].title, "所属一覧");
+  assert.equal(resolve("/adm/units", m.user("4"), "master").path, "/adm/units");
+  assert.equal(resolve("/adm/units", m.user("3"), "manager").path, "/mgr/home");
+  assert.equal(resolve("/adm/units", m.user("1"), "employee").path, "/emp/home");
+  assert.equal(resolve("/adm/units", null).path, "/login");
 });
-test("UC-110: unit deletion is a master-only destination", () => {
-  assert.equal(screens["/adm/units-delete"].page, "unitDeletion");
-  assert.equal(resolve("/adm/units-delete", m.user("4"), "master").path, "/adm/units-delete");
-  assert.equal(resolve("/adm/units-delete", m.user("3"), "manager").path, "/mgr/home");
-  assert.equal(resolve("/adm/units-delete", m.user("1"), "employee").path, "/emp/home");
-  assert.equal(resolve("/adm/units-delete", null).path, "/login");
+test("legacy unit links resolve to the list without granting master privileges", () => {
+  for (const path of ["/adm/units-new", "/adm/units-delete"]) {
+    assert.equal(resolve(path, m.user("4"), "master").path, "/adm/units");
+    assert.equal(resolve(path, m.user("3"), "manager").path, "/mgr/home");
+    assert.equal(resolve(path, m.user("1"), "employee").path, "/emp/home");
+    assert.equal(resolve(path, null).path, "/login");
+  }
 });

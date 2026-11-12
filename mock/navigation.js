@@ -22,10 +22,9 @@
     "/mgr/attendance": { view: "manager", title: "勤怠修正", section: "attendance", page: "correctionEntry" },
     "/mgr/notifications": { view: "manager", title: "通知", section: "home", page: "notifications" },
     "/adm/home": { view: "master", title: "ホーム", section: "home", page: "adminHome" },
-    "/adm/users": { view: "master", title: "ユーザー検索", section: "users", page: "users" },
+    "/adm/users": { view: "master", title: "ユーザー一覧", section: "users", page: "users" },
     "/adm/users-new": { view: "master", title: "ユーザー登録", section: "new", page: "userEntry" },
-    "/adm/units-new": { view: "master", title: "所属追加", section: "unitNew", page: "unitEntry" },
-    "/adm/units-delete": { view: "master", title: "所属削除", section: "unitDelete", page: "unitDeletion" },
+    "/adm/units": { view: "master", title: "所属一覧", section: "units", page: "unitList" },
     "/adm/user": { view: "master", title: "ユーザー詳細", section: "users", page: "userDetail" },
     "/adm/notifications": { view: "master", title: "通知", section: "home", page: "notifications" },
   };
@@ -40,7 +39,7 @@
       ["/mgr/shift-changes", "シフト日時変更申請", "✓"], ["/mgr/work", "勤務実態", "◫"],
       ["/mgr/attendance", "勤怠修正", "◫"],
     ],
-    master: [["/adm/home", "ホーム", "⌂"], ["/adm/users", "ユーザー検索", "♙"], ["/adm/users-new", "ユーザー登録", "＋"], ["/adm/units-new", "所属追加", "＋"], ["/adm/units-delete", "所属削除", "−"]],
+    master: [["/adm/home", "ホーム", "⌂"], ["/adm/users", "ユーザー一覧", "♙"], ["/adm/users-new", "ユーザー登録", "＋"], ["/adm/units", "所属一覧", "▦"]],
   };
   const labels = { employee: "従業員", manager: "勤怠管理者", master: "マスタ管理者" };
   const homes = { employee: "/emp/home", manager: "/mgr/home", master: "/adm/home" };
@@ -53,7 +52,7 @@
     const allowed = allowedViews(user);
     const selected = allowed.includes(view) ? view : allowed[0];
     const aliases = { "/": homes[selected], "/shifts": "/emp/shifts", "/requests": "/emp/requests",
-      "/records": "/emp/attendance", "/users": "/adm/users" };
+      "/records": "/emp/attendance", "/users": "/adm/users", "/adm/units-new": "/adm/units", "/adm/units-delete": "/adm/units" };
     const [pathname, query] = path.split("?");
     const actual = aliases[pathname] || pathname;
     const screen = screens[actual];

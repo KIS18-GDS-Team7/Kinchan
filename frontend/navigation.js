@@ -25,6 +25,7 @@
     "/adm/users": { view: "master", title: "ユーザー検索", section: "users", page: "users" },
     "/adm/users-new": { view: "master", title: "ユーザー登録", section: "new", page: "userEntry" },
     "/adm/units-new": { view: "master", title: "所属追加", section: "unitNew", page: "unitEntry" },
+    "/adm/units-delete": { view: "master", title: "所属削除", section: "unitDelete", page: "unitDeletion" },
     "/adm/user": { view: "master", title: "ユーザー詳細", section: "users", page: "userDetail" },
     "/adm/notifications": { view: "master", title: "通知", section: "home", page: "notifications" },
   };
@@ -39,7 +40,7 @@
       ["/mgr/shift-changes", "シフト日時変更申請", "✓"], ["/mgr/work", "勤務実態", "◫"],
       ["/mgr/attendance", "勤怠修正", "◫"],
     ],
-    master: [["/adm/home", "ホーム", "⌂"], ["/adm/users", "ユーザー検索", "♙"], ["/adm/users-new", "ユーザー登録", "＋"], ["/adm/units-new", "所属追加", "＋"]],
+    master: [["/adm/home", "ホーム", "⌂"], ["/adm/users", "ユーザー検索", "♙"], ["/adm/users-new", "ユーザー登録", "＋"], ["/adm/units-new", "所属追加", "＋"], ["/adm/units-delete", "所属削除", "−"]],
   };
   const labels = { employee: "従業員", manager: "勤怠管理者", master: "マスタ管理者" };
   const homes = { employee: "/emp/home", manager: "/mgr/home", master: "/adm/home" };

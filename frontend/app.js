@@ -171,7 +171,20 @@
       ${card("ユーザー編集", [102, 107],
       '<p class="user-entry-description">一覧から対象のユーザーを選び、氏名・ユーザーID・パスワードを変更します。</p>' +
       '<a class="btn btn-secondary" href="#/adm/users">編集するユーザーを選ぶ</a>')}</div>` +
-      card("所属単位", [108], actions(btn("所属追加", "unit-new", "", "secondary")));
+      card("所属単位", [108, 110], actions(btn("所属追加", "unit-new", "", "primary"), btn("所属削除", "go-route", "/adm/units-delete", "danger")));
+  }
+
+  function unitDeletionPage() {
+    if (!master()) return note("この画面を表示するにはマスタ管理者権限が必要です。");
+    return card("所属削除", [110], note("未使用の所属だけ削除できます。現在の所属人数が0人でも、過去のデータや参照履歴がある所属は削除できません。") +
+      (model.units.length ? itemsList(model.units.map((u) => {
+        const { reasons } = model.unitDeletionPlan(current(), u.key);
+        const descriptionId = "unit-usage-" + u.key;
+        return `<article class="list-item unit-delete-item"><div class="item-main"><p class="item-title">${esc(u.name)}</p>
+          <span class="status status-${reasons.length ? "pending" : "approved"}">${reasons.length ? "削除不可" : "未使用・削除可能"}</span>
+          ${reasons.length ? `<ul class="unit-reference-list" id="${val(descriptionId)}">${reasons.map((reason) => h("li", reason)).join("")}</ul>` : `<p class="item-sub" id="${val(descriptionId)}">現在・過去の参照はありません。</p>`}</div>
+          ${btn("削除する", "unit-delete", u.key, "danger", `aria-label="${val(u.name)}を削除する" aria-describedby="${val(descriptionId)}"${reasons.length ? " disabled" : ""}`)}</article>`;
+      })) : empty("削除対象の所属単位はありません。")) + actions(btn("ホーム", "go-route", "/adm/home", "secondary")));
   }
 
   const tabs = (group, choices) => '<div class="tabs" aria-label="表示切り替え">' + choices.map(([key, label]) =>
@@ -413,17 +426,18 @@
     const rows = model.users.filter((u) => (f.deleted || !u.deleted) && (!f.name || u.name.includes(f.name))
       && (!f.id || u.id.includes(f.id)) && (!f.unit || u.unit === f.unit) && (!f.role || (f.role === "none" ? !u.roles.length : u.roles.includes(f.role))));
     return card("ユーザー検索", [101, 102, 107, 108],
-      actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属追加", "unit-new", "", "secondary")) +
+      actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属追加", "unit-new", "", "primary")) +
       note("対象のユーザーの「編集する」から氏名・ユーザーID・パスワードを変更できます。権限・所属・管理先の操作は「詳細」から開きます。") +
       '<section class="user-search" aria-labelledby="user-search-title"><h4 id="user-search-title">ユーザー検索</h4><p class="item-sub">氏名・ユーザーIDで検索し、権限・所属で絞り込めます。</p>' + filterForm("users",
       fieldInput("氏名", "name", "search", f.name) + fieldInput("ユーザーID", "id", "search", f.id) +
       field("権限", select("role", [["", "すべて"], ...Object.entries(roleLabels), ["none", "なし"]], f.role)) +
       field("所属", select("unit", [["", "すべて"], ...unitPairs(model.units)], f.unit)) + check("deleted", "削除済みを含める", "yes", f.deleted), "検索する") + '</section>'
-      + table(["氏名・ユーザーID・操作", "権限", "所属", "管理先"], rows.map((u) => [
-        `<div class="user-list-person"><strong>${esc(u.name)}${u.deleted ? "（削除済み）" : ""}</strong><p class="item-sub">${esc(u.id)}</p><div class="user-list-actions">` +
+      + '<p class="item-sub">編集・詳細は表の「操作」欄から開きます。</p>'
+      + table(["氏名", "ユーザーID", "権限", "所属", "管理先", "操作"], rows.map((u) => [
+        esc(u.name) + (u.deleted ? "（削除済み）" : ""), esc(u.id), esc(roles(u)), esc(model.unitName(u.unit)), esc(assigned(u)),
+        '<div class="table-actions">' +
           (!u.deleted ? btn("編集する", "user-edit", u.key, "secondary", `aria-label="${val(u.name)}（${val(u.id)}）のユーザー情報を編集する"`) : "") +
-          btn("詳細", "user-detail", u.key, "ghost", `aria-label="${val(u.name)}（${val(u.id)}）の詳細を表示する"`) + '</div></div>',
-        esc(roles(u)), esc(model.unitName(u.unit)), esc(assigned(u)),
+          btn("詳細", "user-detail", u.key, "ghost", `aria-label="${val(u.name)}（${val(u.id)}）の詳細を表示する"`) + '</div>',
       ]), "条件に合うユーザーはいません。"), "user-management-list");
   }
 
@@ -519,7 +533,8 @@
       teamRecords: () => { views.records = "team"; return recordsPage(true); },
       users: usersPage,
       userEntry: () => embeddedForm(() => userEdit(""), "/adm/users"),
-      unitEntry: () => embeddedForm(unitForm, "/adm/home"),
+      unitEntry: () => embeddedForm(unitForm, "/adm/home", "ホーム"),
+      unitDeletion: unitDeletionPage,
       userDetail: () => embeddedForm(() => userDetails(routeParams().get("id")), "/adm/users"),
       attendanceEntry: () => {
         const item = model.itemById(routeParams().get("id"));
@@ -573,7 +588,7 @@
       dialog.showModal();
     }
   }
-  function embeddedForm(build, back) {
+  function embeddedForm(build, back, cancelLabel = "キャンセル") {
     capturingForm = true;
     capturedForm = null;
     try { build(); } finally { capturingForm = false; }
@@ -581,7 +596,7 @@
     if (!d) return empty("この画面は表示できません。");
     pageForm = d;
     return `<section class="card card-pad"><form id="page-form">${badge(d.ids)}<h2>${esc(d.title)}</h2>${d.body}${errorLine()}
-      <div class="modal-actions">${btn(d.submit ? "キャンセル" : "一覧に戻る", d.submit ? "cancel-page" : "go-route", back)}
+      <div class="modal-actions">${btn(d.submit ? cancelLabel : "一覧に戻る", d.submit ? "cancel-page" : "go-route", back)}
       ${d.submit ? `<button class="btn btn-primary" type="submit" value="confirm">${esc(d.label)}</button>` : ""}</div></form></section>`;
   }
   function syncRoute() {
@@ -963,6 +978,14 @@
       confirm("所属追加の確認", [108], dl(["所属単位名", name]), () => model.addUnit(current(), name), "所属を追加しました。", "追加する");
     });
   }
+  function unitDelete(id) {
+    const { unit, reasons } = model.unitDeletionPlan(current(), id);
+    if (reasons.length) throw new Error("この所属は削除できません：" + reasons.join("、"));
+    confirm("所属削除の確認", [110], dl(["所属単位名", unit.name]) +
+      note("ユーザーの所属・管理先・シフト・申請・対象期間・勤怠記録などで使われている所属は削除不可。過去の参照も含めます。") +
+      '<p class="item-sub">関連データの削除や所属・管理先の解除は行いません。</p>',
+      () => model.deleteUnit(current(), id), "所属を削除しました。", "削除する");
+  }
 
   app.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -1078,6 +1101,7 @@
         "user-managed": () => userManaged(id),
         "user-delete": () => userDelete(id),
         "unit-new": unitForm,
+        "unit-delete": () => unitDelete(id),
       };
       commands[action]?.();
     } catch (error) { showError(app.querySelector("#dialog-form") || app, error); }

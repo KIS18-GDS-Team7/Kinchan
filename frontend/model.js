@@ -94,6 +94,15 @@
       { key: "4", id: "admin01", name: "山本 恵子", unit: "hq", roles: ["master"] },
     ].map((u) => ({ password: "password", roles: [], managed: [], status: "off", deleted: false, ...u }));
     const units = [{ key: "shibuya", name: "渋谷店" }, { key: "hq", name: "本部" }];
+    // UC-110: retain past references even after an assignment is moved or removed.
+    const unitUsageHistory = [];
+    function rememberUnitUsage(unit, kind) {
+      if (unit && !unitUsageHistory.some((h) => h.unit === unit && h.kind === kind)) unitUsageHistory.push({ unit, kind });
+    }
+    for (const u of users) {
+      rememberUnitUsage(u.unit, "所属");
+      u.managed.forEach((unit) => rememberUnitUsage(unit, "管理先"));
+    }
     const unitName = (key) => units.find((u) => u.key === key)?.name || "未設定";
     const user = (key) => users.find((u) => u.key === key);
     const has = (actor, role) => Boolean(actor && !actor.deleted && actor.roles.includes(role));
@@ -131,12 +140,12 @@
       { userId: "1", date: "2026-10-13", punches: workDay("2026-10-13", "09:58:00", "18:03:00") },
       { userId: "2", date: "2026-10-11", punches: workDay("2026-10-11", "09:18:00", "17:00:00") },
       { userId: "3", date: TODAY, punches: punchesAt(TODAY, [["出勤", "09:00:00"]]) },
-    ].map((r) => ({ ...r, history: [] }));
+    ].map((r) => ({ ...r, unit: user(r.userId).unit, history: [] }));
     // A sample that lets the manager verify the defined 36-hour warning in the UI.
     for (let day = 1; day <= 9; day++) {
       const date = "2026-10-0" + day;
       shifts.push({ id: "sample" + day, userId: "2", unit: "shibuya", date, start: "09:00", end: "18:00", published: true });
-      records.push({ userId: "2", date, punches: workDay(date, "09:00:00", "22:00:00"), history: [] });
+      records.push({ userId: "2", unit: "shibuya", date, punches: workDay(date, "09:00:00", "22:00:00"), history: [] });
     }
     items.push(
       { id: "a1", kind: "attendance", userId: "1", unit: "shibuya", date: "2026-10-12", after: workDay("2026-10-12", "10:01:00", "18:02:00"), reason: "退勤時刻の修正", status: "pending", sentAt: "2026-10-13T08:00:00" },
@@ -156,7 +165,7 @@
     function recordFor(key, date) {
       let r = record(key, date);
       if (!r) {
-        r = { userId: key, date, punches: [], history: [] };
+        r = { userId: key, unit: user(key)?.unit, date, punches: [], history: [] };
         records.push(r);
       }
       return r;
@@ -341,7 +350,7 @@
     }
     function replaceRecord(actor, key, date, after, reason, basis) {
       const r = recordFor(key, date);
-      r.history.unshift({ before: r.punches.map((p) => ({ ...p })), by: actor.key, at: now(), reason, basis });
+      r.history.unshift({ unit: r.unit, before: r.punches.map((p) => ({ ...p })), by: actor.key, at: now(), reason, basis });
       r.punches = after.map((p) => ({ ...p }));
       return r;
     }
@@ -410,23 +419,28 @@
     function deleteUser(actor, key) {
       const u = adminTarget(actor, key, true);
       for (const s of shifts.filter((s) => s.userId === key && s.date > today())) removeShift(actor, s, false);
+      u.managed.forEach((unit) => rememberUnitUsage(unit, "管理先"));
       Object.assign(u, { deleted: true, managed: [] });
     }
     function setRoles(actor, key, roles) {
       const u = adminTarget(actor, key, true);
       assert(roles.every((r) => r in roleLabels), "指定された権限を変更できません。");
+      u.managed.forEach((unit) => rememberUnitUsage(unit, "管理先"));
       u.roles = roles;
       if (!roles.includes("manager")) u.managed = [];
     }
     function setUnit(actor, key, unit) {
       const u = adminTarget(actor, key);
       assert(units.some((p) => p.key === unit), "登録済みの所属単位を指定してください。");
+      rememberUnitUsage(u.unit, "所属");
+      rememberUnitUsage(unit, "所属");
       u.unit = unit;
     }
     function setManaged(actor, key, managed) {
       const u = adminTarget(actor, key);
       assert(has(u, "manager"), "勤怠管理者権限を持つユーザーを指定してください。");
       assert(managed.length && managed.every((k) => units.some((p) => p.key === k)), "管理先を1つ以上指定してください。");
+      [...u.managed, ...managed].forEach((unit) => rememberUnitUsage(unit, "管理先"));
       u.managed = [...new Set(managed)];
     }
     function checkUnit(actor, name) {
@@ -436,6 +450,35 @@
     function addUnit(actor, name) {
       checkUnit(actor, name);
       units.push({ key: id(), name: name.trim() });
+    }
+
+    function unitDeletionPlan(actor, key) {
+      assert(has(actor, "master"), "マスタ管理者権限が必要です。");
+      const unit = units.find((u) => u.key === key);
+      assert(unit, "対象の所属単位は存在しません。");
+      const referencesUnit = (value) => value && typeof value === "object" &&
+        (value.unit === key || Object.values(value).some(referencesUnit));
+      const reasons = [
+        [users.some((u) => u.unit === key), "ユーザーの所属（削除済みユーザーを含む）"],
+        [users.some((u) => u.managed.includes(key)), "勤怠管理者の管理先（削除済みユーザーを含む）"],
+        [periods.some(referencesUnit), "対象期間・受付期間（過去の期間を含む）"],
+        [shifts.some(referencesUnit), "シフト（下書き・公開済み・過去のシフトを含む）"],
+        [items.some(referencesUnit), "シフト希望・申請（すべての処理状態と変更前後の内容を含む）"],
+        [records.some(referencesUnit), "勤怠記録・勤怠修正の履歴"],
+        [shiftHistory.some(referencesUnit), "変更・削除されたシフトの履歴"],
+        [unitUsageHistory.some(referencesUnit), "過去の所属・管理先の参照履歴"],
+      ].filter(([used]) => used).map(([, label]) => label);
+      for (const [rows, label] of [[periods, "対象期間・受付期間"], [shifts, "シフト"], [items, "シフト希望・申請"],
+        [records, "勤怠記録"], [shiftHistory, "シフトの履歴"], [unitUsageHistory, "所属・管理先の参照履歴"]]) {
+        if (rows.some((row) => !row.unit)) reasons.push(label + "の所属単位が不明なため、未使用と判定できません");
+      }
+      return { unit, reasons };
+    }
+    function deleteUnit(actor, key) {
+      // Re-evaluate on execution, not just when the confirmation is displayed.
+      const { unit, reasons } = unitDeletionPlan(actor, key);
+      assert(!reasons.length, "この所属は削除できません：" + reasons.join("、"));
+      units.splice(units.indexOf(unit), 1);
     }
 
     function punch(actor, type) {
@@ -490,11 +533,11 @@
       return ["矛盾なし", ...result];
     }
     const authenticate = (login, password) => users.find((u) => !u.deleted && u.id === login && u.password === password);
-    return { now, today, users, units, periods, shifts, records, items, notifications, shiftHistory,
+    return { now, today, users, units, periods, shifts, records, items, notifications, shiftHistory, unitUsageHistory,
       unitName, user, has, manages, requireUnit, record, periodAt, receptionOpen, shiftById, itemById, managedItem,
       publishedOn, shiftPlan, saveShift, checkDeleteShift, removeShift, publishPlan, publish, checkPeriod, savePeriod,
       wishPlan, saveWishes, attendancePlan, submitAttendance, changePlan, submitChange, withdraw, correctionPlan, correct,
-      decide, checkUserInfo, saveUser, adminTarget, deleteUser, setRoles, setUnit, setManaged, checkUnit, addUnit,
+      decide, checkUserInfo, saveUser, adminTarget, deleteUser, setRoles, setUnit, setManaged, checkUnit, addUnit, unitDeletionPlan, deleteUnit,
       punch, dayRows, attendanceComparison, authenticate, shiftConflict, shiftConflicts };
   }
 

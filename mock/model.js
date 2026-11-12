@@ -25,7 +25,11 @@
   const shiftText = (s) => s ? s.date + " " + s.start + "–" + s.end : "なし";
   const sameList = (a, b) => a.length === b.length && a.every((p, i) => p.type === b[i].type && p.at === b[i].at);
   const assert = (condition, message) => { if (!condition) throw new Error(message); };
-  const validDate = (date) => /^\d{4}-\d{2}-\d{2}$/.test(date) && Number.isFinite(ms(date)) && iso(ms(date)).slice(0, 10) === date;
+  const validDate = (date) => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
+    const value = ms(stamp(date, "00:00"));
+    return Number.isFinite(value) && iso(value).slice(0, 10) === date;
+  };
   const validTime = (time) => /^([01]\d|2[0-3]):[0-5]\d$/.test(time);
   const validStamp = (at) => typeof at === "string" && validDate(at.slice(0, 10))
     && /^T([01]\d|2[0-3]):[0-5]\d(?::[0-5]\d)?$/.test(at.slice(10));

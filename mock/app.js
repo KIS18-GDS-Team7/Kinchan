@@ -488,7 +488,7 @@
     state.toast = message || "";
     if (pageForm && message) state.pageDraft = null;
     const completedRoute = state.followupRoute || ({
-      userEntry: "/adm/users", wishEntry: "/emp/hopes", attendanceEntry: "/emp/corrections",
+      userEntry: "/adm/users", unitEntry: "/adm/home", wishEntry: "/emp/hopes", attendanceEntry: "/emp/corrections",
       correctionEntry: "/mgr/work",
     })[screen()?.page] || (screen()?.page === "ownChangeRequests" && routeParams().has("shiftId") ? "/emp/shift-change" : "");
     if (current() && message && pageForm && completedRoute && !message.includes("キャンセル")) {
@@ -519,6 +519,7 @@
       teamRecords: () => { views.records = "team"; return recordsPage(true); },
       users: usersPage,
       userEntry: () => embeddedForm(() => userEdit(""), "/adm/users"),
+      unitEntry: () => embeddedForm(unitForm, "/adm/home"),
       userDetail: () => embeddedForm(() => userDetails(routeParams().get("id")), "/adm/users"),
       attendanceEntry: () => {
         const item = model.itemById(routeParams().get("id"));

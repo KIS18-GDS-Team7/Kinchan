@@ -171,12 +171,13 @@
       ${card("ユーザー編集", [102, 107],
       '<p class="user-entry-description">一覧から対象のユーザーを選び、氏名・ユーザーID・パスワードを変更します。</p>' +
       '<a class="btn btn-secondary" href="#/adm/users">編集するユーザーを選ぶ</a>')}</div>` +
-      card("所属単位", [108, 110], actions(btn("所属追加", "unit-new", "", "primary"), btn("所属削除", "go-route", "/adm/units-delete", "danger")));
+      card("所属単位", [108, 110], actions(btn("所属一覧", "go-route", "/adm/units", "primary")));
   }
 
-  function unitDeletionPage() {
+  function unitListPage() {
     if (!master()) return note("この画面を表示するにはマスタ管理者権限が必要です。");
-    return card("所属削除", [110], note("未使用の所属だけ削除できます。現在の所属人数が0人でも、過去のデータや参照履歴がある所属は削除できません。") +
+    return card("所属一覧", [108, 110], actions(btn("所属追加", "unit-new", "", "primary")) +
+      note("未使用の所属だけ削除できます。現在の所属人数が0人でも、過去のデータや参照履歴がある所属は削除できません。") +
       (model.units.length ? itemsList(model.units.map((u) => {
         const { reasons } = model.unitDeletionPlan(current(), u.key);
         const descriptionId = "unit-usage-" + u.key;
@@ -425,8 +426,8 @@
     const f = state.filters.users || {};
     const rows = model.users.filter((u) => (f.deleted || !u.deleted) && (!f.name || u.name.includes(f.name))
       && (!f.id || u.id.includes(f.id)) && (!f.unit || u.unit === f.unit) && (!f.role || (f.role === "none" ? !u.roles.length : u.roles.includes(f.role))));
-    return card("ユーザー検索", [101, 102, 107, 108],
-      actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属追加", "unit-new", "", "primary")) +
+    return card("ユーザー一覧", [101, 102, 107, 108],
+      actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属一覧", "go-route", "/adm/units", "primary")) +
       note("対象のユーザーの「編集する」から氏名・ユーザーID・パスワードを変更できます。権限・所属・管理先の操作は「詳細」から開きます。") +
       '<section class="user-search" aria-labelledby="user-search-title"><h4 id="user-search-title">ユーザー検索</h4><p class="item-sub">氏名・ユーザーIDで検索し、権限・所属で絞り込めます。</p>' + filterForm("users",
       fieldInput("氏名", "name", "search", f.name) + fieldInput("ユーザーID", "id", "search", f.id) +
@@ -502,7 +503,7 @@
     state.toast = message || "";
     if (pageForm && message) state.pageDraft = null;
     const completedRoute = state.followupRoute || ({
-      userEntry: "/adm/users", unitEntry: "/adm/home", wishEntry: "/emp/hopes", attendanceEntry: "/emp/corrections",
+      userEntry: "/adm/users", wishEntry: "/emp/hopes", attendanceEntry: "/emp/corrections",
       correctionEntry: "/mgr/work",
     })[screen()?.page] || (screen()?.page === "ownChangeRequests" && routeParams().has("shiftId") ? "/emp/shift-change" : "");
     if (current() && message && pageForm && completedRoute && !message.includes("キャンセル")) {
@@ -533,8 +534,7 @@
       teamRecords: () => { views.records = "team"; return recordsPage(true); },
       users: usersPage,
       userEntry: () => embeddedForm(() => userEdit(""), "/adm/users"),
-      unitEntry: () => embeddedForm(unitForm, "/adm/home", "ホーム"),
-      unitDeletion: unitDeletionPage,
+      unitList: unitListPage,
       userDetail: () => embeddedForm(() => userDetails(routeParams().get("id")), "/adm/users"),
       attendanceEntry: () => {
         const item = model.itemById(routeParams().get("id"));
@@ -588,7 +588,7 @@
       dialog.showModal();
     }
   }
-  function embeddedForm(build, back, cancelLabel = "キャンセル") {
+  function embeddedForm(build, back) {
     capturingForm = true;
     capturedForm = null;
     try { build(); } finally { capturingForm = false; }
@@ -596,7 +596,7 @@
     if (!d) return empty("この画面は表示できません。");
     pageForm = d;
     return `<section class="card card-pad"><form id="page-form">${badge(d.ids)}<h2>${esc(d.title)}</h2>${d.body}${errorLine()}
-      <div class="modal-actions">${btn(d.submit ? cancelLabel : "一覧に戻る", d.submit ? "cancel-page" : "go-route", back)}
+      <div class="modal-actions">${btn(d.submit ? "キャンセル" : "一覧に戻る", d.submit ? "cancel-page" : "go-route", back)}
       ${d.submit ? `<button class="btn btn-primary" type="submit" value="confirm">${esc(d.label)}</button>` : ""}</div></form></section>`;
   }
   function syncRoute() {

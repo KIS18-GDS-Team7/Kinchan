@@ -175,4 +175,5 @@ FR-005・006(勤務可能時間・休憩時間の設定)は削除(#77・#78)。F
 - [ ] 優先度の合意
 - [ ] ADR化が必要な意思決定の洗い出し(`docs/ADR/` 参照)
 - [ ] PWA形式にしたい
-- [ ] Flask を使用して開発する
+- [ ] frontend の構成を決める(SPA にして backend は API だけを提供するか、Django のテンプレートで描画するか。PWA形式とあわせて決める、#121)
+- [x] backend は Django を使用して開発する([ADR-0033](../ADR/0033-use-django-for-backend.md))

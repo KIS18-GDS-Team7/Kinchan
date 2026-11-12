@@ -489,7 +489,6 @@ h1, h2, h3 { letter-spacing: -.025em; }
 .unit-delete-item .item-main { flex: 1 1 220px; overflow-wrap: anywhere; }
 .unit-delete-item > .btn { margin-left: auto; }
 .unit-delete-item .status { margin-top: 8px; }
-.unit-reference-list { margin: 8px 0 0; padding-left: 20px; color: var(--muted); font-size: 13px; }
 .layout-employee { max-width: 720px; margin-inline: auto; }
 .layout-employee .sidebar { display: none; }
 .layout-employee .workspace { margin-left: 0; padding-bottom: calc(80px + env(safe-area-inset-bottom)); }

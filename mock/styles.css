@@ -487,6 +487,8 @@ h1, h2, h3 { letter-spacing: -.025em; }
 .user-list-actions .btn { padding-inline: 10px; white-space: nowrap; }
 .user-management-list .card-head { flex-wrap: wrap; }
 .user-management-list .table td:not(:first-child) { white-space: nowrap; }
+.user-search { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.user-search h4 { margin: 0; font-size: 16px; }
 .layout-employee { max-width: 720px; margin-inline: auto; }
 .layout-employee .sidebar { display: none; }
 .layout-employee .workspace { margin-left: 0; padding-bottom: calc(80px + env(safe-area-inset-bottom)); }

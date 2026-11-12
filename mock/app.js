@@ -414,10 +414,11 @@
       && (!f.id || u.id.includes(f.id)) && (!f.unit || u.unit === f.unit) && (!f.role || (f.role === "none" ? !u.roles.length : u.roles.includes(f.role))));
     return card("ユーザー一覧・編集", [101, 102, 107, 108],
       actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属単位を登録する", "unit-new", "", "secondary")) +
-      note("対象のユーザーの「編集する」から氏名・ユーザーID・パスワードを変更できます。権限・所属・管理先の操作は「詳細」から開きます。") + filterForm("users",
+      note("対象のユーザーの「編集する」から氏名・ユーザーID・パスワードを変更できます。権限・所属・管理先の操作は「詳細」から開きます。") +
+      '<section class="user-search" aria-labelledby="user-search-title"><h4 id="user-search-title">ユーザー検索</h4><p class="item-sub">氏名・ユーザーIDで検索し、権限・所属で絞り込めます。</p>' + filterForm("users",
       fieldInput("氏名", "name", "search", f.name) + fieldInput("ユーザーID", "id", "search", f.id) +
       field("権限", select("role", [["", "すべて"], ...Object.entries(roleLabels), ["none", "なし"]], f.role)) +
-      field("所属", select("unit", [["", "すべて"], ...unitPairs(model.units)], f.unit)) + check("deleted", "削除済みを含める", "yes", f.deleted))
+      field("所属", select("unit", [["", "すべて"], ...unitPairs(model.units)], f.unit)) + check("deleted", "削除済みを含める", "yes", f.deleted), "検索する") + '</section>'
       + table(["氏名・ユーザーID・操作", "権限", "所属", "管理先"], rows.map((u) => [
         `<div class="user-list-person"><strong>${esc(u.name)}${u.deleted ? "（削除済み）" : ""}</strong><p class="item-sub">${esc(u.id)}</p><div class="user-list-actions">` +
           (!u.deleted ? btn("編集する", "user-edit", u.key, "secondary", `aria-label="${val(u.name)}（${val(u.id)}）のユーザー情報を編集する"`) : "") +

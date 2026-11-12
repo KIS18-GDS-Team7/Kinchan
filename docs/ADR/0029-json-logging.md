@@ -23,5 +23,5 @@
 - 書く側は標準ライブラリの `logging` を使う。JSON への変換は `python-json-logger` の formatter で行い、logging の設定で一括して指定する。各 module で handler や formatter を追加しない。
 - すべてのログに timestamp (ISO 8601、timezone 付き)、level、logger、message を含める。request_id の付与は、フレームワークの決定後に定める。
 - ローカルの開発環境では text 形式で出力してよい。形式は環境ごとの設定で切り替える。
-- 変わる値はメッセージに埋め込まず、`extra` で渡す。メッセージは英語の固定の文字列とする。書き方の詳細は [コーディング規約 (Python)](../coding-conventions/python-django.md) に書く。
+- 変わる値はメッセージに埋め込まず、`extra` で渡す。メッセージは英語の固定の文字列とする。書き方の詳細は [コーディング規約 (Python / Django)](../coding-conventions/python-django.md) に書く。
 - ログの出力先と収集基盤は、deploy 先の決定時に定める。

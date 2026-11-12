@@ -49,7 +49,7 @@ PCの勤怠管理者・マスタ管理者画面では、左メニューの最下
 
 ### 所属削除
 
-利用者の承認に従い、先にGitHubへ [UC-110](https://github.com/KIS18-GDS-Team7/Kinchan/blob/feat/frontend-mock/docs/usecase/UC-110.md)・FR-028・[ADR-0034](https://github.com/KIS18-GDS-Team7/Kinchan/blob/feat/frontend-mock/docs/ADR/0034-unused-unit-deletion.md) を記載してから実装しました。mainへのマージ前の追加仕様です。
+承認された方針に従い、先にGitHubへ [UC-110](https://github.com/KIS18-GDS-Team7/Kinchan/blob/feat/frontend-mock/docs/usecase/UC-110.md)・FR-028・[ADR-0034](https://github.com/KIS18-GDS-Team7/Kinchan/blob/feat/frontend-mock/docs/ADR/0034-unused-unit-deletion.md) を記載してから実装しました。mainへのマージ前の追加仕様です。
 
 - 「所属一覧」で対象の所属と削除可否を表示し、各所属の「削除する」から削除確認を開きます。左メニューに独立した「所属追加」「所属削除」は表示しません。
 - 現在・過去のユーザーの所属、管理先、シフト、希望・申請、対象期間・受付期間、勤怠記録と履歴から参照がある所属は削除できません。削除済みユーザーや下書き・処理済み・過去のデータも判定します。一覧には「ユーザーの所属・管理先・シフト・申請・対象期間・勤怠記録などで使われている所属は削除不可」という共通の案内と各所属の削除可否だけを表示し、詳しい理由の箇条書きは表示しません。
@@ -71,7 +71,7 @@ python3 -m http.server 8001 --bind 127.0.0.1 --directory mock
 
 ## 反映したGitHub上の決定
 
-- 画面遷移は利用者指定の `mock/generic-kintai` を参照し、権限に対応した画面だけを選択・表示する
+- 画面遷移は指定された `mock/generic-kintai` を参照し、権限に対応した画面だけを選択・表示する
 - すべてのユーザーは従業員として振る舞い、勤怠管理者・マスタ管理者は追加権限とする
 - 「表示する画面」はヘッダー右上に配置する。狭い画面では通知・アカウントの下に右寄せし、ログイン直後は引き続き打刻画面を表示する
 - 従業員は下部タブバー、勤怠管理者・マスタ管理者はPCで左サイドバー、狭い画面では画面選択を表示する

@@ -428,17 +428,16 @@
       && (!f.id || u.id.includes(f.id)) && (!f.unit || u.unit === f.unit) && (!f.role || (f.role === "none" ? !u.roles.length : u.roles.includes(f.role))));
     return card("ユーザー一覧", [101, 102, 107, 108],
       actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属一覧", "go-route", "/adm/units", "primary")) +
-      note("対象のユーザーの「編集する」から氏名・ユーザーID・パスワードを変更できます。権限・所属・管理先の操作は「詳細」から開きます。") +
+      note("対象のユーザーの「編集する」から詳細画面を開き、ユーザー情報・権限・所属・管理先の操作を選べます。削除済みユーザーは「表示する」から閲覧だけできます。") +
       '<section class="user-search" aria-labelledby="user-search-title"><h4 id="user-search-title">ユーザー検索</h4><p class="item-sub">氏名・ユーザーIDで検索し、権限・所属で絞り込めます。</p>' + filterForm("users",
       fieldInput("氏名", "name", "search", f.name) + fieldInput("ユーザーID", "id", "search", f.id) +
       field("権限", select("role", [["", "すべて"], ...Object.entries(roleLabels), ["none", "なし"]], f.role)) +
       field("所属", select("unit", [["", "すべて"], ...unitPairs(model.units)], f.unit)) + check("deleted", "削除済みを含める", "yes", f.deleted), "検索する") + '</section>'
-      + '<p class="item-sub">編集・詳細は表の「操作」欄から開きます。</p>'
+      + '<p class="item-sub">表の「操作」欄から対象のユーザーを開きます。</p>'
       + table(["氏名", "ユーザーID", "権限", "所属", "管理先", "操作"], rows.map((u) => [
         esc(u.name) + (u.deleted ? "（削除済み）" : ""), esc(u.id), esc(roles(u)), esc(model.unitName(u.unit)), esc(assigned(u)),
         '<div class="table-actions">' +
-          (!u.deleted ? btn("編集する", "user-edit", u.key, "secondary", `aria-label="${val(u.name)}（${val(u.id)}）のユーザー情報を編集する"`) : "") +
-          btn("詳細", "user-detail", u.key, "ghost", `aria-label="${val(u.name)}（${val(u.id)}）の詳細を表示する"`) + '</div>',
+          btn(u.deleted ? "表示する" : "編集する", "user-detail", u.key, "secondary", `aria-label="${val(u.name)}（${val(u.id)}）のユーザー詳細を開く"`) + '</div>',
       ]), "条件に合うユーザーはいません。"), "user-management-list");
   }
 

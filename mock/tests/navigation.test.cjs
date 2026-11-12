@@ -23,6 +23,8 @@ test("manager and master menus route to separate screens", () => {
     ["ホーム", "シフト管理", "シフト希望", "勤怠修正申請", "シフト日時変更申請", "勤務実態", "勤怠修正"]);
   for (const [path] of menus.manager) assert.equal(screens[path].view, "manager");
   for (const [path] of menus.master) assert.equal(screens[path].view, "master");
+  assert.deepEqual(menus.master.map(([, label]) => label), ["ホーム", "ユーザー一覧・編集", "ユーザー登録"]);
+  assert.equal(screens["/adm/users"].title, "ユーザー一覧・編集");
 });
 test("switching a user's displayed view does not grant privileges or switch accounts", () => {
   const manager = m.user("3");

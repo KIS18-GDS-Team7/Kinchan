@@ -165,8 +165,13 @@
       routeLink("通知", "/emp/notifications") + actions(btn("ログアウト", "logout", "", "danger")));
   }
   function adminHome() {
-    return card("ユーザー管理", [101, 107, 108], routeLink("ユーザー一覧", "/adm/users", "氏名・ID・権限・所属で絞り込む") +
-      routeLink("ユーザー登録", "/adm/users-new") + actions(btn("所属単位を登録する", "unit-new", "", "secondary")));
+    return `<div class="grid grid-2 user-entry-grid">${card("ユーザー登録", [101],
+      '<p class="user-entry-description">氏名・ユーザーID・パスワードを入力して、新しいユーザーを登録します。</p>' +
+      '<a class="btn btn-primary" href="#/adm/users-new">ユーザーを登録する</a>')}
+      ${card("ユーザー編集", [102, 107],
+      '<p class="user-entry-description">一覧から対象のユーザーを選び、氏名・ユーザーID・パスワードを変更します。</p>' +
+      '<a class="btn btn-secondary" href="#/adm/users">編集するユーザーを選ぶ</a>')}</div>` +
+      card("所属単位", [108], actions(btn("所属単位を登録する", "unit-new", "", "secondary")));
   }
 
   const tabs = (group, choices) => '<div class="tabs" aria-label="表示切り替え">' + choices.map(([key, label]) =>
@@ -407,14 +412,19 @@
     const f = state.filters.users || {};
     const rows = model.users.filter((u) => (f.deleted || !u.deleted) && (!f.name || u.name.includes(f.name))
       && (!f.id || u.id.includes(f.id)) && (!f.unit || u.unit === f.unit) && (!f.role || (f.role === "none" ? !u.roles.length : u.roles.includes(f.role))));
-    return card("ユーザー一覧", [101, 107, 108], filterForm("users",
+    return card("ユーザー一覧・編集", [101, 102, 107, 108],
+      actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属単位を登録する", "unit-new", "", "secondary")) +
+      note("対象のユーザーの「編集する」から氏名・ユーザーID・パスワードを変更できます。権限・所属・管理先の操作は「詳細」から開きます。") +
+      '<section class="user-search" aria-labelledby="user-search-title"><h4 id="user-search-title">ユーザー検索</h4><p class="item-sub">氏名・ユーザーIDで検索し、権限・所属で絞り込めます。</p>' + filterForm("users",
       fieldInput("氏名", "name", "search", f.name) + fieldInput("ユーザーID", "id", "search", f.id) +
       field("権限", select("role", [["", "すべて"], ...Object.entries(roleLabels), ["none", "なし"]], f.role)) +
-      field("所属", select("unit", [["", "すべて"], ...unitPairs(model.units)], f.unit)) + check("deleted", "削除済みを含める", "yes", f.deleted))
-      + actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属単位を登録する", "unit-new", "", "secondary"))
-      + table(["氏名", "ユーザーID", "権限", "所属", "管理先", "詳細"], rows.map((u) => [
-        esc(u.name) + (u.deleted ? "（削除済み）" : ""), esc(u.id), esc(roles(u)), esc(model.unitName(u.unit)), esc(assigned(u)), btn("詳細", "user-detail", u.key),
-      ]), "条件に合うユーザーはいません。"));
+      field("所属", select("unit", [["", "すべて"], ...unitPairs(model.units)], f.unit)) + check("deleted", "削除済みを含める", "yes", f.deleted), "検索する") + '</section>'
+      + table(["氏名・ユーザーID・操作", "権限", "所属", "管理先"], rows.map((u) => [
+        `<div class="user-list-person"><strong>${esc(u.name)}${u.deleted ? "（削除済み）" : ""}</strong><p class="item-sub">${esc(u.id)}</p><div class="user-list-actions">` +
+          (!u.deleted ? btn("編集する", "user-edit", u.key, "secondary", `aria-label="${val(u.name)}（${val(u.id)}）のユーザー情報を編集する"`) : "") +
+          btn("詳細", "user-detail", u.key, "ghost", `aria-label="${val(u.name)}（${val(u.id)}）の詳細を表示する"`) + '</div></div>',
+        esc(roles(u)), esc(model.unitName(u.unit)), esc(assigned(u)),
+      ]), "条件に合うユーザーはいません。"), "user-management-list");
   }
 
   function notificationDrawer() {
@@ -884,7 +894,7 @@
     if (!u || !master()) return;
     detail("ユーザーの詳細", [107], dl(["氏名", u.name], ["ユーザーID", u.id], ["権限", roles(u)], ["所属", model.unitName(u.unit)],
       ["管理先", assigned(u)], ["削除済み", u.deleted ? "はい" : "いいえ"]) + (!u.deleted ? actions(
-      btn("基本情報を編集する", "user-edit", id, "secondary"),
+      btn("ユーザー情報を編集する", "user-edit", id, "primary"),
       u.key !== current().key ? btn("権限を変更する", "user-roles", id, "secondary") : "",
       btn(u.unit ? "所属を変更する" : "所属を設定する", "user-unit", id, "secondary"),
       model.has(u, "manager") ? btn("管理先を割り当てる", "user-managed", id, "secondary") : "",

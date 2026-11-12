@@ -98,7 +98,8 @@
     const mobileMenu = state.view !== "employee" ? field("画面", select("page", N.menus[state.view].map(([path, title]) => [path, title]),
       N.menus[state.view].find(([path]) => N.screens[path].section === screen()?.section)?.[0], 'data-page-switch="true"')) : "";
     return `<div class="app-shell layout-${state.view}"><aside class="sidebar"><div class="brand-mark"><span class="brand-logo">K</span> Kinchan</div>
-      ${navHtml("sidebar-nav")}<div class="sidebar-foot"><p>${esc(model.unitName(u.unit))}</p><p>${esc(roles(u) === "なし" ? "従業員" : "従業員・" + roles(u))}</p></div></aside>
+      ${navHtml("sidebar-nav")}<div class="sidebar-foot"><p>${esc(model.unitName(u.unit))}</p><p>${esc(roles(u) === "なし" ? "従業員" : "従業員・" + roles(u))}</p>
+      <button type="button" class="sidebar-logout" data-action="logout"><span class="nav-icon" aria-hidden="true">⇥</span><span>ログアウト</span></button></div></aside>
       <div class="workspace"><header class="topbar"><div class="topbar-heading"><p class="screen-role">${N.labels[state.view]}</p><h1 class="page-title">${esc(screen()?.title || "Kinchan")}</h1></div>
       ${viewSwitch}
       <div class="top-actions"><button class="icon-btn" type="button" data-action="notifications" aria-label="通知を表示">♧</button>

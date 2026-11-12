@@ -171,7 +171,7 @@
       ${card("ユーザー編集", [102, 107],
       '<p class="user-entry-description">一覧から対象のユーザーを選び、氏名・ユーザーID・パスワードを変更します。</p>' +
       '<a class="btn btn-secondary" href="#/adm/users">編集するユーザーを選ぶ</a>')}</div>` +
-      card("所属単位", [108], actions(btn("所属単位を登録する", "unit-new", "", "secondary")));
+      card("所属単位", [108], actions(btn("所属追加", "unit-new", "", "secondary")));
   }
 
   const tabs = (group, choices) => '<div class="tabs" aria-label="表示切り替え">' + choices.map(([key, label]) =>
@@ -413,7 +413,7 @@
     const rows = model.users.filter((u) => (f.deleted || !u.deleted) && (!f.name || u.name.includes(f.name))
       && (!f.id || u.id.includes(f.id)) && (!f.unit || u.unit === f.unit) && (!f.role || (f.role === "none" ? !u.roles.length : u.roles.includes(f.role))));
     return card("ユーザー検索", [101, 102, 107, 108],
-      actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属単位を登録する", "unit-new", "", "secondary")) +
+      actions(btn("ユーザーを登録する", "go-route", "/adm/users-new", "primary"), btn("所属追加", "unit-new", "", "secondary")) +
       note("対象のユーザーの「編集する」から氏名・ユーザーID・パスワードを変更できます。権限・所属・管理先の操作は「詳細」から開きます。") +
       '<section class="user-search" aria-labelledby="user-search-title"><h4 id="user-search-title">ユーザー検索</h4><p class="item-sub">氏名・ユーザーIDで検索し、権限・所属で絞り込めます。</p>' + filterForm("users",
       fieldInput("氏名", "name", "search", f.name) + fieldInput("ユーザーID", "id", "search", f.id) +
@@ -957,10 +957,10 @@
   }
   function unitForm() {
     if (!master()) return;
-    form("所属単位を登録する", [108], fieldInput("所属単位名", "name", "text", "", "required"), (f) => {
+    form("所属追加", [108], fieldInput("所属単位名", "name", "text", "", "required"), (f) => {
       const name = pick(f, "name");
       model.checkUnit(current(), name);
-      confirm("所属単位の登録確認", [108], dl(["所属単位名", name]), () => model.addUnit(current(), name), "所属単位を登録しました。", "登録する");
+      confirm("所属追加の確認", [108], dl(["所属単位名", name]), () => model.addUnit(current(), name), "所属を追加しました。", "追加する");
     });
   }
 

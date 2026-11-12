@@ -184,7 +184,7 @@
         return `<article class="list-item unit-delete-item"><div class="item-main"><p class="item-title">${esc(u.name)}</p>
           <span class="status status-${reasons.length ? "pending" : "approved"}" id="${val(descriptionId)}">${reasons.length ? "削除不可" : "未使用・削除可能"}</span></div>
           ${btn("削除する", "unit-delete", u.key, "danger", `aria-label="${val(u.name)}を削除する" aria-describedby="${val(descriptionId)}"${reasons.length ? " disabled" : ""}`)}</article>`;
-      })) : empty("削除対象の所属単位はありません。")) + actions(btn("ホーム", "go-route", "/adm/home", "secondary")));
+      })) : empty("削除対象の所属単位はありません。")));
   }
 
   const tabs = (group, choices) => '<div class="tabs" aria-label="表示切り替え">' + choices.map(([key, label]) =>
@@ -532,7 +532,7 @@
       ownRecords: () => { views.records = "own"; return recordsPage(true); },
       teamRecords: () => { views.records = "team"; return recordsPage(true); },
       users: usersPage,
-      userEntry: () => embeddedForm(() => userEdit(""), "/adm/users"),
+      userEntry: () => embeddedForm(() => userEdit(""), "/adm/users", { showBack: false }),
       unitList: unitListPage,
       userDetail: () => embeddedForm(() => userDetails(routeParams().get("id")), "/adm/users"),
       attendanceEntry: () => {
@@ -587,7 +587,7 @@
       dialog.showModal();
     }
   }
-  function embeddedForm(build, back) {
+  function embeddedForm(build, back, { showBack = true } = {}) {
     capturingForm = true;
     capturedForm = null;
     try { build(); } finally { capturingForm = false; }
@@ -595,7 +595,7 @@
     if (!d) return empty("この画面は表示できません。");
     pageForm = d;
     return `<section class="card card-pad"><form id="page-form">${badge(d.ids)}<h2>${esc(d.title)}</h2>${d.body}${errorLine()}
-      <div class="modal-actions">${btn(d.submit ? "キャンセル" : "一覧に戻る", d.submit ? "cancel-page" : "go-route", back)}
+      <div class="modal-actions">${showBack ? btn(d.submit ? "キャンセル" : "一覧に戻る", d.submit ? "cancel-page" : "go-route", back) : ""}
       ${d.submit ? `<button class="btn btn-primary" type="submit" value="confirm">${esc(d.label)}</button>` : ""}</div></form></section>`;
   }
   function syncRoute() {

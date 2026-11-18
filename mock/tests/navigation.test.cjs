@@ -20,7 +20,10 @@ test("the employee navigation matches the five reference tabs", () => {
 });
 test("manager and master menus route to separate screens", () => {
   assert.deepEqual(menus.manager.map(([, label]) => label),
-    ["ホーム", "シフト管理", "シフト希望", "勤怠修正申請", "シフト日時変更申請", "勤務実態", "勤怠修正"]);
+    ["ホーム", "シフト管理", "シフト希望", "勤怠修正申請", "シフト日時変更申請", "勤務実態"]);
+  assert.equal(screens["/mgr/attendance"].section, "corrections");
+  assert.equal(resolve("/mgr/attendance?user=1&date=2026-10-14", m.user("3"), "manager").path, "/mgr/attendance?user=1&date=2026-10-14");
+  assert.equal(resolve("/mgr/attendance", m.user("1"), "employee").path, "/emp/home");
   for (const [path] of menus.manager) assert.equal(screens[path].view, "manager");
   for (const [path] of menus.master) assert.equal(screens[path].view, "master");
   assert.deepEqual(menus.master.map(([, label]) => label), ["ホーム", "ユーザー一覧", "ユーザー登録", "所属一覧"]);

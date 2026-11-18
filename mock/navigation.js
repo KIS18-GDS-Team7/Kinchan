@@ -19,7 +19,7 @@
     "/mgr/corrections": { view: "manager", title: "勤怠修正申請", section: "corrections", page: "incomingAttendance" },
     "/mgr/shift-changes": { view: "manager", title: "シフト日時変更申請", section: "changes", page: "incomingChanges" },
     "/mgr/work": { view: "manager", title: "勤務実態", section: "work", page: "teamRecords" },
-    "/mgr/attendance": { view: "manager", title: "勤怠修正", section: "attendance", page: "correctionEntry" },
+    "/mgr/attendance": { view: "manager", title: "勤怠修正", section: "corrections", page: "correctionEntry" },
     "/mgr/notifications": { view: "manager", title: "通知", section: "home", page: "notifications" },
     "/adm/home": { view: "master", title: "ホーム", section: "home", page: "adminHome" },
     "/adm/users": { view: "master", title: "ユーザー一覧", section: "users", page: "users" },
@@ -37,7 +37,6 @@
       ["/mgr/home", "ホーム", "⌂"], ["/mgr/shifts", "シフト管理", "▦"],
       ["/mgr/hopes", "シフト希望", "▦"], ["/mgr/corrections", "勤怠修正申請", "✓"],
       ["/mgr/shift-changes", "シフト日時変更申請", "✓"], ["/mgr/work", "勤務実態", "◫"],
-      ["/mgr/attendance", "勤怠修正", "◫"],
     ],
     master: [["/adm/home", "ホーム", "⌂"], ["/adm/users", "ユーザー一覧", "♙"], ["/adm/users-new", "ユーザー登録", "＋"], ["/adm/units", "所属一覧", "▦"]],
   };

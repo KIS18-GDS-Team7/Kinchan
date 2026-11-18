@@ -15,6 +15,9 @@
   const state = { actor: null, route: "/login", view: "employee", dialog: null, toast: "", drawer: false, filters: {}, periods: {}, logoutNotice: "", calendars: {} };
   const screen = () => N.screens[state.route.split("?")[0]];
   const routeParams = () => new URLSearchParams(state.route.split("?")[1] || "");
+  // 勤怠修正は開いた画面へ戻る。勤務実態から開いたときだけ勤務実態を選択中にする
+  const correctionBack = () => routeParams().get("from") === "work" ? "/mgr/work" : "/mgr/corrections";
+  const activeSection = () => screen()?.page === "correctionEntry" && routeParams().get("from") === "work" ? "work" : screen()?.section;
   let toastTimer;
   let capturingForm = false;
   let capturedForm = null;
@@ -70,7 +73,7 @@
 
   function navHtml(css) {
     return `<nav class="${css}" aria-label="主要メニュー">${N.menus[state.view].map(([path, label, icon]) => {
-      const active = N.screens[path].section === screen()?.section;
+      const active = N.screens[path].section === activeSection();
       return `<a class="nav-link${active ? " active" : ""}" href="#${path}" ${active ? 'aria-current="page"' : ""}><span class="nav-icon" aria-hidden="true">${icon}</span><span>${label}</span></a>`;
     }).join("")}</nav>`;
   }
@@ -96,7 +99,7 @@
       <div class="view-switch-options">${available.map((v) =>
         `<button type="button" class="view-switch-button" data-action="switch-view" data-id="${v}" aria-pressed="${state.view === v}">${N.labels[v]}</button>`).join("")}</div></nav>` : "";
     const mobileMenu = state.view !== "employee" ? field("画面", select("page", N.menus[state.view].map(([path, title]) => [path, title]),
-      N.menus[state.view].find(([path]) => N.screens[path].section === screen()?.section)?.[0], 'data-page-switch="true"')) : "";
+      N.menus[state.view].find(([path]) => N.screens[path].section === activeSection())?.[0], 'data-page-switch="true"')) : "";
     return `<div class="app-shell layout-${state.view}"><aside class="sidebar"><div class="brand-mark"><span class="brand-logo">K</span> Kinchan</div>
       ${navHtml("sidebar-nav")}<div class="sidebar-foot"><p>${esc(model.unitName(u.unit))}</p><p>${esc(roles(u) === "なし" ? "従業員" : "従業員・" + roles(u))}</p>
       <button type="button" class="sidebar-logout" data-action="logout"><span class="nav-icon" aria-hidden="true">⇥</span><span>ログアウト</span></button></div></aside>
@@ -341,7 +344,9 @@
       const extra = isManager ? (i.kind === "wish" ? dl(["所属単位", model.unitName(model.user(i.userId)?.unit)]) : dl(["申請理由", i.reason])) : "";
       return `<div class="list-item"><div class="item-main"><p class="item-title">${esc((isManager ? person(i.userId) + "・" : "") + kindLabels[i.kind] + "・" + i.date)}</p>
         <p class="item-sub">${esc(summary + (i.sentAt ? " ／ 送信 " + i.sentAt.replace("T", " ") : ""))}</p>${extra}</div>
-        ${actions(status(i.status), btn("詳細", isManager ? "item-manager" : "item-own", i.id))}</div>`;
+        ${actions(status(i.status), btn("詳細", isManager ? "item-manager" : "item-own", i.id),
+          isManager && i.kind === "attendance" && !model.user(i.userId)?.deleted
+            ? btn("勤怠を修正する", "correction", i.userId + ":" + i.date, "secondary", `aria-label="${val(person(i.userId))}の${val(i.date)}の勤怠を修正する"`) : "")}</div>`;
     })) : empty("条件に合う申請・希望はありません。");
   }
   function inbox(kind) {
@@ -355,7 +360,8 @@
         (kind !== "request" ? "" : field("申請の種類", select("kind", [["", "すべて"], ["attendance", kindLabels.attendance], ["change", kindLabels.change]], f.kind))) +
         field("管理先", select("unit", [["", "すべて"], ...unitPairs(managed())], f.unit)) +
         field("従業員", select("user", [["", "すべて"], ...userPairs(managerUsers(true))], f.user)) +
-        check("deleted", "削除済みを含める", "yes", f.deleted)) + itemList(rows, true));
+        check("deleted", "削除済みを含める", "yes", f.deleted)) +
+      (kind === "attendance" ? actions(btn("従業員と日付を指定して勤怠を修正する", "correction-date", "", "primary")) : "") + itemList(rows, true));
   }
   function requestsPage(onlyKind) {
     const choices = [["own", "自分の申請"]];
@@ -414,7 +420,7 @@
       field("従業員", select("user", [["", "全従業員"], ...userPairs(managerUsers(true))], f.user)) +
       check("deleted", "削除済みを含める", "yes", f.deleted));
     return (single ? "" : tabs("records", choices)) + card("管理先の勤務実態", [210, 211], filter +
-      actions(btn("従業員と日付を指定して修正する", "correction-date", "", "secondary"),
+      actions(btn("従業員と日付を指定して修正する", "correction-date", "", "secondary", 'data-from="work"'),
         summary.length ? btn("集計をCSV出力する", "csv", "", "secondary") : "") +
       (summary.length ? summary.map((s) => `<section class="record-group"><div class="card-head"><h3>${esc(s.u.name)}</h3>${status(s.u.status)}</div>
         ${dl(["所属単位", model.unitName(s.u.unit)], ["期間の勤務時間", duration(s.work)], ["期間の残業時間", duration(s.overtime)], ["遅刻・早退・欠勤", [s.late, s.early, s.absent].join(" / ") + " 件"])}
@@ -503,7 +509,7 @@
     if (pageForm && message) state.pageDraft = null;
     const completedRoute = state.followupRoute || ({
       userEntry: "/adm/users", wishEntry: "/emp/hopes", attendanceEntry: "/emp/corrections",
-      correctionEntry: "/mgr/work",
+      correctionEntry: correctionBack(),
     })[screen()?.page] || (screen()?.page === "ownChangeRequests" && routeParams().has("shiftId") ? "/emp/shift-change" : "");
     if (current() && message && pageForm && completedRoute && !message.includes("キャンセル")) {
       state.followupRoute = null;
@@ -542,8 +548,8 @@
         return embeddedForm(() => attendanceForm(current().key, date, false, item?.userId === current().key ? item.id : ""), "/emp/corrections");
       },
       correctionEntry: () => routeParams().has("user") && routeParams().has("date")
-        ? embeddedForm(() => attendanceForm(routeParams().get("user"), routeParams().get("date"), true), "/mgr/work")
-        : embeddedForm(() => recordDate(true), "/mgr/work"),
+        ? embeddedForm(() => attendanceForm(routeParams().get("user"), routeParams().get("date"), true), correctionBack())
+        : embeddedForm(() => recordDate(true, routeParams().get("from") || ""), correctionBack()),
       wishEntry: () => {
         const [ps, selected] = myPeriods("wishes", true);
         const p = ps.find((p) => p.id === state.periods.wishEntry && model.receptionOpen(p)) || (model.receptionOpen(selected) ? selected : ps.find(model.receptionOpen));
@@ -828,19 +834,20 @@
       ["公開済みシフト", d?.planned.map(shiftText).join("、") || "なし"], ["休憩時間", duration(d?.rest || 0)], ["勤務時間", duration(d?.work || 0)])
       + h("h3", "打刻") + punchesList(r?.punches || []) + h("h3", "修正履歴")
       + (hist.length ? itemsList(hist.map((e) => itemRow(e.at.replace("T", " ") + "・" + person(e.by), e.basis + " ／ " + e.reason) + punchesList(e.before))) : empty("修正履歴はありません。"))
-      + actions(team && !model.user(key)?.deleted ? btn("勤怠を修正する", "correction", key + ":" + date, "secondary") :
+      + actions(team && !model.user(key)?.deleted ? btn("勤怠を修正する", "correction", key + ":" + date, "secondary", 'data-from="work"') :
         !team && current().unit ? btn("勤怠修正を申請する", "attendance-new", date, "primary") : ""));
   }
-  function recordDate(team) {
+  function recordDate(team, from = "") {
     if (team ? !manager() : !current().unit) return;
     form(team ? "修正する従業員と対象日を指定する" : "申請の対象日を指定する", [team ? 210 : 306],
       (team ? field("従業員", select("user", [["", "選択してください"], ...userPairs(managerUsers())], "", "required")) : "") +
       fieldInput("対象日", "date", "date", model.today(), 'max="' + model.today() + '" required'), (f) => {
         const date = pick(f, "date");
-        goRoute(team ? "/mgr/attendance?user=" + encodeURIComponent(pick(f, "user")) + "&date=" + encodeURIComponent(date)
+        goRoute(team ? correctionRoute(pick(f, "user"), date, from)
           : "/emp/correction?date=" + encodeURIComponent(date));
       }, "打刻を入力する");
   }
+  const correctionRoute = (user, date, from) => "/mgr/attendance?user=" + encodeURIComponent(user) + "&date=" + encodeURIComponent(date) + (from ? "&from=" + from : "");
   function punchEntry(p = {}) {
     return `<div class="punch-entry">${field("種類", select("type", punchTypes.map((t) => [t, t]), p.type || "出勤"))}
       ${fieldInput("打刻日時", "at", "datetime-local", p.at, 'step="1" required')}${btn("行を削除", "punch-remove")}</div>`;
@@ -1086,10 +1093,10 @@
         "withdraw": () => withdrawItem(id),
         "record-detail": () => recordDetails(key, day, el.dataset.team === "true"),
         "attendance-date": () => recordDate(false),
-        "correction-date": () => recordDate(true),
+        "correction-date": () => recordDate(true, el.dataset.from || ""),
         "attendance-new": () => goRoute("/emp/correction?date=" + encodeURIComponent(id)),
         "attendance-edit": () => { const i = model.itemById(id); if (i?.userId === current().key && i.status === "pending") goRoute("/emp/correction?id=" + encodeURIComponent(id)); },
-        "correction": () => goRoute("/mgr/attendance?user=" + encodeURIComponent(key) + "&date=" + encodeURIComponent(day)),
+        "correction": () => goRoute(correctionRoute(key, day, el.dataset.from || "")),
         "punch-add": () => app.querySelector("#punch-entries").insertAdjacentHTML("beforeend", punchEntry({ at: id + "T00:00:00" })),
         "punch-remove": () => el.closest(".punch-entry").remove(),
         "csv": csvExport,

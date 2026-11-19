@@ -12,9 +12,15 @@ test("all users start on their own punch screen after login, including both admi
   assert.deepEqual(allowedViews({ roles: ["manager", "master"] }), ["employee", "manager", "master"]);
   for (const user of m.users) assert.equal(resolve(loginDestination(), user, "manager").path, "/emp/home");
 });
-test("the employee navigation matches the five reference tabs", () => {
-  assert.deepEqual(menus.employee.map(([, label]) => label), ["ホーム", "勤怠", "シフト", "申請", "メニュー"]);
-  for (const [path] of menus.employee) assert.equal(screens[path].view, "employee");
+test("the employee navigation has four items and 申請 opens a dropdown instead of a screen", () => {
+  assert.deepEqual(menus.employee.map(([, label]) => label), ["ホーム", "勤怠", "シフト", "申請"]);
+  for (const [path, , , opts] of menus.employee) {
+    if (opts?.dropdown) assert.equal(opts.section, "requests");
+    else assert.equal(screens[path].view, "employee");
+  }
+  assert.equal(screens["/emp/requests"], undefined);
+  assert.equal(screens["/emp/menu"], undefined);
+  for (const legacy of ["/emp/requests", "/emp/menu", "/requests"]) assert.equal(resolve(legacy, m.user("1"), "employee").path, "/emp/home");
   assert.equal(screens["/emp/corrections"].section, "requests");
   assert.equal(screens["/emp/hope"].section, "requests");
 });

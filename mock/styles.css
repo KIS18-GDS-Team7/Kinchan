@@ -498,6 +498,13 @@ h1, h2, h3 { letter-spacing: -.025em; }
 .layout-employee .mobile-nav { position: fixed; z-index: 30; inset: auto 0 0; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; max-width: 720px; margin-inline: auto; padding: 7px 8px calc(7px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: rgba(255,255,255,.97); }
 .layout-employee .mobile-nav .nav-link { justify-content: center; flex-direction: column; gap: 2px; min-height: 56px; padding: 4px; color: var(--muted); font-size: 11px; }
 .layout-employee .mobile-nav .nav-link.active { color: var(--teal-700); background: var(--teal-50); }
+/* 申請のドロップダウン (ADR-0041) */
+.nav-dropdown { position: relative; display: grid; }
+.nav-dropdown > .nav-link { width: 100%; border: 0; background: transparent; font: inherit; cursor: pointer; }
+.layout-employee .mobile-nav .nav-dropdown > .nav-link { justify-content: center; flex-direction: column; gap: 2px; min-height: 56px; padding: 4px; color: var(--muted); font-size: 11px; }
+.layout-employee .mobile-nav .nav-dropdown > .nav-link.active, .layout-employee .mobile-nav .nav-dropdown > .nav-link[aria-expanded="true"] { color: var(--teal-700); background: var(--teal-50); }
+.nav-dropdown-menu { position: absolute; z-index: 40; right: 0; bottom: calc(100% + 10px); width: min(320px, calc(100vw - 32px)); padding: 4px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow); text-align: left; }
+.nav-dropdown-menu .destination-link { min-height: 52px; padding: 11px 2px; color: var(--ink, inherit); font-size: 14px; }
 .layout-employee .content { padding: 24px 16px 48px; }
 .layout-employee .topbar { padding-inline: 18px; }
 .layout-employee .screen-controls { padding-inline: 18px; }

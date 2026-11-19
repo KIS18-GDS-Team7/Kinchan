@@ -5,8 +5,6 @@
     "/emp/home": { view: "employee", title: "ホーム", section: "home", page: "employeeHome" },
     "/emp/attendance": { view: "employee", title: "勤怠記録", section: "attendance", page: "ownRecords" },
     "/emp/shifts": { view: "employee", title: "シフト", section: "shifts", page: "publishedShifts" },
-    "/emp/requests": { view: "employee", title: "申請", section: "requests", page: "requestHub" },
-    "/emp/menu": { view: "employee", title: "メニュー", section: "menu", page: "employeeMenu" },
     "/emp/corrections": { view: "employee", title: "勤怠修正申請一覧", section: "requests", page: "ownAttendanceRequests" },
     "/emp/correction": { view: "employee", title: "勤怠修正申請", section: "requests", page: "attendanceEntry" },
     "/emp/shift-change": { view: "employee", title: "シフト日時変更申請一覧", section: "requests", page: "ownChangeRequests" },
@@ -31,7 +29,8 @@
   const menus = {
     employee: [
       ["/emp/home", "ホーム", "⌂"], ["/emp/attendance", "勤怠", "◫"],
-      ["/emp/shifts", "シフト", "▦"], ["/emp/requests", "申請", "✓"], ["/emp/menu", "メニュー", "☰"],
+      // 申請は画面を持たず、下部メニューのドロップダウンで各申請画面へ移動する (ADR-0041)
+      ["/emp/shifts", "シフト", "▦"], ["requests", "申請", "✓", { dropdown: true, section: "requests" }],
     ],
     manager: [
       ["/mgr/home", "ホーム", "⌂"], ["/mgr/shifts", "シフト管理", "▦"],
@@ -50,7 +49,7 @@
     if (!user || user.deleted) return { path: "/login", screen: null };
     const allowed = allowedViews(user);
     const selected = allowed.includes(view) ? view : allowed[0];
-    const aliases = { "/": homes[selected], "/shifts": "/emp/shifts", "/requests": "/emp/requests",
+    const aliases = { "/": homes[selected], "/shifts": "/emp/shifts", "/requests": homes.employee, "/emp/requests": homes.employee, "/emp/menu": homes.employee,
       "/records": "/emp/attendance", "/users": "/adm/users", "/adm/units-new": "/adm/units", "/adm/units-delete": "/adm/units" };
     const [pathname, query] = path.split("?");
     const actual = aliases[pathname] || pathname;

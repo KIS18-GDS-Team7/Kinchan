@@ -12,7 +12,7 @@
   // Keep only wording that does not depend on removed staffing/availability rules or TBD deadlines.
   const rejectTemplates = ["申請内容とシフト・打刻記録が一致しないため"];
   const views = { shifts: "published", requests: "own", records: "own" };
-  const state = { actor: null, route: "/login", view: "employee", dialog: null, toast: "", drawer: false, filters: {}, periods: {}, logoutNotice: "", calendars: {} };
+  const state = { actor: null, route: "/login", view: "employee", dialog: null, toast: "", drawer: false, filters: {}, periods: {}, logoutNotice: "", calendars: {}, requestMenu: false };
   const screen = () => N.screens[state.route.split("?")[0]];
   const routeParams = () => new URLSearchParams(state.route.split("?")[1] || "");
   // 勤怠修正は開いた画面へ戻る。勤務実態から開いたときだけ勤務実態を選択中にする
@@ -72,7 +72,13 @@
   const dl = (...entries) => '<dl class="details">' + entries.map(([title, value]) => entry(title, value)).join("") + "</dl>";
 
   function navHtml(css) {
-    return `<nav class="${css}" aria-label="主要メニュー">${N.menus[state.view].map(([path, label, icon]) => {
+    return `<nav class="${css}" aria-label="主要メニュー">${N.menus[state.view].map(([path, label, icon, opts]) => {
+      if (opts?.dropdown) {
+        const active = opts.section === activeSection();
+        return `<div class="nav-dropdown"><button type="button" class="nav-link${active ? " active" : ""}" data-action="request-menu"
+          aria-haspopup="menu" aria-expanded="${!!state.requestMenu}" ${active ? 'aria-current="page"' : ""}><span class="nav-icon" aria-hidden="true">${icon}</span><span>${label}</span></button>
+          ${state.requestMenu && css === "mobile-nav" ? `<div class="nav-dropdown-menu" role="menu" aria-label="${label}">${requestLinks()}</div>` : ""}</div>`;
+      }
       const active = N.screens[path].section === activeSection();
       return `<a class="nav-link${active ? " active" : ""}" href="#${path}" ${active ? 'aria-current="page"' : ""}><span class="nav-icon" aria-hidden="true">${icon}</span><span>${label}</span></a>`;
     }).join("")}</nav>`;
@@ -153,20 +159,16 @@
       ])) + routeLink("勤務実態を表示する", "/mgr/work")) +
       card("シフト管理", [201, 215, 216], routeLink("シフト管理を開く", "/mgr/shifts", "登録・変更・削除、対象期間・受付期間の登録、下書きの公開"));
   }
-  function requestHub() {
+  function requestLinks() {
     const pending = model.items.filter((i) => i.userId === current().key && i.status === "pending");
     const [periods] = myPeriods("wishes", true);
     const open = periods.filter(model.receptionOpen);
-    return card("申請", [306, 307, 310, 311, 318],
+    return (
       routeLink("勤怠修正申請一覧", "/emp/corrections", "未処理 " + pending.filter((i) => i.kind === "attendance").length + "件") +
       routeLink("シフト希望一覧", "/emp/hopes", "未処理 " + pending.filter((i) => i.kind === "wish").length + "件") +
       (open.length ? routeLink("シフト希望提出", "/emp/hope") : "") +
       routeLink("シフト日時変更申請一覧", "/emp/shift-change", "申請の送信は自分の公開済みシフトから") +
       routeLink("勤怠修正申請を送信する", "/emp/attendance", "勤怠記録の日付から開始"));
-  }
-  function employeeMenu() {
-    return card("アカウント", [], dl(["ユーザーID", current().id], ["所属単位", model.unitName(current().unit)], ["権限", roles(current())]) +
-      routeLink("通知", "/emp/notifications") + actions(btn("ログアウト", "logout", "", "danger")));
   }
   function adminHome() {
     return `<div class="grid grid-2 user-entry-grid">${card("ユーザー登録", [101],
@@ -526,7 +528,7 @@
   function render() {
     const u = current();
     const pages = {
-      employeeHome: home, managerHome, adminHome, requestHub, employeeMenu, notifications: notificationsPage,
+      employeeHome: home, managerHome, adminHome, notifications: notificationsPage,
       publishedShifts: () => { views.shifts = "published"; return shiftsPage(true); },
       ownWishes: () => { views.shifts = "wishes"; return shiftsPage(true); },
       teamShifts: () => { views.shifts = "team"; return shiftsPage(true); },
@@ -612,6 +614,7 @@
     if (state.pageDraft?.route !== state.route) state.pageDraft = null;
     state.dialog = null;
     state.drawer = false;
+    state.requestMenu = false;
     if (location.hash !== "#" + result.path) history.replaceState(null, "", "#" + result.path);
     document.title = (result.screen?.title || "ログイン") + " | Kinchan";
     render();
@@ -650,8 +653,9 @@
       ])) + "</section>";
   }
   function profile() {
-    detail("アカウントメニュー", [], dl(["所属単位", model.unitName(current().unit)], ["権限", roles(current())]) +
-      actions(btn("ログアウト", "logout", "", "danger")));
+    const notices = { employee: "/emp/notifications", manager: "/mgr/notifications", master: "/adm/notifications" }[state.view];
+    detail("アカウントメニュー", [302], dl(["ユーザーID", current().id], ["所属単位", model.unitName(current().unit)], ["権限", roles(current())]) +
+      routeLink("通知", notices) + actions(btn("ログアウト", "logout", "", "danger")));
   }
   function logout() {
     confirm("ログアウトしますか？", [302], "", () => {
@@ -1038,6 +1042,10 @@
   });
   app.addEventListener("click", (event) => {
     const el = event.target.closest("[data-action]");
+    if (state.requestMenu && !event.target.closest(".nav-dropdown")) {
+      state.requestMenu = false;
+      if (!el) { render(); return; }
+    }
     if (!el) return;
     const { action, id } = el.dataset;
     try {
@@ -1061,6 +1069,7 @@
         "calendar-month": () => updateCalendar(action, id),
         "roster-day": () => updateCalendar(action, id),
         "profile": profile, "logout": logout,
+        "request-menu": () => { state.requestMenu = !state.requestMenu; render(); },
         "close-dialog": cancelDialog,
         "cancel-page": () => { state.pageDraft = null; state.followupRoute = null; goRoute(id); finish("操作をキャンセルしました。"); },
         "notifications": () => goRoute("/" + (state.view === "manager" ? "mgr" : state.view === "master" ? "adm" : "emp") + "/notifications"),
@@ -1113,5 +1122,12 @@
     } catch (error) { showError(app.querySelector("#dialog-form") || app, error); }
   });
   window.addEventListener("hashchange", syncRoute);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && state.requestMenu) {
+      state.requestMenu = false;
+      render();
+      app.querySelector('[data-action="request-menu"]')?.focus();
+    }
+  });
   syncRoute();
 })();

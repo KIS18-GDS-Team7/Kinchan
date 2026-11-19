@@ -194,3 +194,11 @@ test("UC-207: multiple work sessions and overnight shifts have explicit comparis
   assert.deepEqual(m.attendanceComparison({ userId: "1", date: "2026-10-10", after: punches("2026-10-10", "09:00:00", "18:00:00") }),
     ["矛盾：公開済みのシフトがない日に勤務があります。"]);
 });
+test("UC-205: a shift wish without valid start and end times is never approved into a shift", () => {
+  const m = make(), mgr = m.user("3");
+  const before = m.shifts.length;
+  m.items.push({ id: "w-none", kind: "wish", userId: "1", unit: "shibuya", date: "2026-11-06", start: "希望なし", end: undefined, status: "pending", sentAt: "2026-10-13T12:00:00" });
+  assert.throws(() => m.decide(mgr, "w-none", true), /開始・終了時刻/);
+  assert.equal(m.shifts.length, before);
+  assert.equal(m.itemById("w-none").status, "pending");
+});

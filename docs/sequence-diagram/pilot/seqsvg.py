@@ -23,7 +23,7 @@ SELF_H = 22        # 自己メッセージの折り返しの高さ
 NOTE_W = 380       # ノートの最大幅
 NOTE_GAP = 90      # 最後のライフラインからノート列までの距離
 LABEL_W = 430      # メッセージの文字がこれより長いと折り返す
-KINDS = ("actor", "boundary", "control", "entity")
+KINDS = ("actor", "boundary", "control", "participant", "entity")
 
 
 def text_width(s, fs=FS):
@@ -284,6 +284,9 @@ def draw_icon(c, kind, x, y):
     elif kind == "control":
         c.raw(f'<circle cx="{x}" cy="{y}" r="13" fill="{fill}" stroke="#222"/>')
         c.raw(f'<path d="M{x + 1} {y - 13} l6 -5 M{x + 1} {y - 13} l6 5" fill="none" stroke="#222"/>')
+    elif kind == "participant":
+        # DataManager など、BCE のどれにも当たらないオブジェクトは四角で描く
+        c.raw(f'<rect x="{x - 16}" y="{y - 13}" width="32" height="24" fill="{fill}" stroke="#222"/>')
     else:
         c.raw(f'<circle cx="{x}" cy="{y - 2}" r="13" fill="{fill}" stroke="#222"/>')
         c.raw(f'<path d="M{x - 13} {y + 13} H{x + 13}" fill="none" stroke="#222"/>')

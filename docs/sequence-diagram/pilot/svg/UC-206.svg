@@ -1,257 +1,292 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2575" height="2024" viewBox="0 0 2575 2024" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="3005" height="2296" viewBox="0 0 3005 2296" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
 <title>UC-206 シフト希望を却下する</title>
 <rect width="100%" height="100%" fill="#fff"/>
-<rect x="10" y="10" width="2555.0" height="2004.0" fill="none" stroke="#222"/><path d="M10 10 H259.2 V24 L249.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<rect x="10" y="10" width="2985.4" height="2276.0" fill="none" stroke="#222"/><path d="M10 10 H259.2 V24 L249.2 34 H10 Z" fill="#fff" stroke="#222"/>
 <line x1="148.0" y1="188.0" x2="600.0" y2="188.0" stroke="#222" stroke-width="1"/>
 <polygon points="601.0,188.0 591.0,183.0 591.0,193.0" fill="#222"/>
-<line x1="601.0" y1="188.0" x2="1867.5" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="601.0" y1="188.0" x2="2297.9" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <line x1="601.0" y1="222.0" x2="1140.2" y2="222.0" stroke="#222" stroke-width="1"/>
 <polygon points="1141.2,222.0 1131.2,217.0 1131.2,227.0" fill="#222"/>
-<line x1="1141.2" y1="256.0" x2="1516.5" y2="256.0" stroke="#222" stroke-width="1"/>
-<polygon points="1517.5,256.0 1507.5,251.0 1507.5,261.0" fill="#222"/>
-<line x1="1517.5" y1="290.0" x2="1142.2" y2="290.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1151.2,285.0 1141.2,290.0 1151.2,295.0" fill="none" stroke="#222"/>
-<path d="M62 312 H116.16 V324 L108.16 332 H62 Z" fill="#fff" stroke="#222"/>
-<line x1="1141.2" y1="378.0" x2="822.1" y2="378.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,378.0 831.1,373.0 831.1,383.0" fill="#222"/>
-<line x1="821.1" y1="412.0" x2="149.0" y2="412.0" stroke="#222" stroke-width="1"/>
-<polygon points="148.0,412.0 158.0,407.0 158.0,417.0" fill="#222"/>
-<path d="M86 434 H132.62 V446 L124.62 454 H86 Z" fill="#fff" stroke="#222"/>
-<line x1="1141.2" y1="500.0" x2="822.1" y2="500.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,500.0 831.1,495.0 831.1,505.0" fill="#222"/>
-<line x1="821.1" y1="534.0" x2="149.0" y2="534.0" stroke="#222" stroke-width="1"/>
-<polygon points="148.0,534.0 158.0,529.0 158.0,539.0" fill="#222"/>
-<line x1="821.1" y1="534.0" x2="1867.5" y2="534.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="86.0" y="434.0" width="1137.2" height="116.0" rx="0" fill="none" stroke="#222"/>
-<line x1="148.0" y1="584.0" x2="820.1" y2="584.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,584.0 811.1,579.0 811.1,589.0" fill="#222"/>
-<line x1="821.1" y1="584.0" x2="1867.5" y2="588.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="821.1" y1="618.0" x2="149.0" y2="618.0" stroke="#222" stroke-width="1"/>
-<polygon points="148.0,618.0 158.0,613.0 158.0,623.0" fill="#222"/>
-<path d="M74 640 H120.62 V652 L112.62 660 H74 Z" fill="#fff" stroke="#222"/>
-<line x1="148.0" y1="706.0" x2="820.1" y2="706.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,706.0 811.1,701.0 811.1,711.0" fill="#222"/>
-<line x1="821.1" y1="740.0" x2="1140.2" y2="740.0" stroke="#222" stroke-width="1"/>
-<polygon points="1141.2,740.0 1131.2,735.0 1131.2,745.0" fill="#222"/>
-<line x1="1141.2" y1="740.0" x2="1867.5" y2="740.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="148.0" y1="800.0" x2="820.1" y2="800.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,800.0 811.1,795.0 811.1,805.0" fill="#222"/>
-<line x1="821.1" y1="834.0" x2="1140.2" y2="834.0" stroke="#222" stroke-width="1"/>
-<polygon points="1141.2,834.0 1131.2,829.0 1131.2,839.0" fill="#222"/>
-<polyline points="1141.2200000000003,868 1171.2200000000003,868 1171.2200000000003,890 1142.2200000000003,890" fill="none" stroke="#222"/>
-<polygon points="1142.2,890.0 1152.2,885.0 1152.2,895.0" fill="#222"/>
-<path d="M86 912 H132.62 V924 L124.62 932 H86 Z" fill="#fff" stroke="#222"/>
-<line x1="1141.2" y1="978.0" x2="822.1" y2="978.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,978.0 831.1,973.0 831.1,983.0" fill="#222"/>
-<line x1="821.1" y1="1012.0" x2="149.0" y2="1012.0" stroke="#222" stroke-width="1"/>
-<polygon points="148.0,1012.0 158.0,1007.0 158.0,1017.0" fill="#222"/>
-<line x1="821.1" y1="1012.0" x2="1867.5" y2="1012.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="86.0" y="912.0" width="1137.2" height="116.0" rx="0" fill="none" stroke="#222"/>
-<rect x="74.0" y="640.0" width="1251.2" height="404.0" rx="0" fill="none" stroke="#222"/>
-<line x1="74.0" y1="752.0" x2="1325.2" y2="752.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="62.0" y="312.0" width="1275.2" height="748.0" rx="0" fill="none" stroke="#222"/>
-<path d="M86 1082 H147.7 V1094 L139.7 1102 H86 Z" fill="#fff" stroke="#222"/>
-<polyline points="1141.2200000000003,1148 1171.2200000000003,1148 1171.2200000000003,1170 1142.2200000000003,1170" fill="none" stroke="#222"/>
-<polygon points="1142.2,1170.0 1152.2,1165.0 1152.2,1175.0" fill="#222"/>
-<line x1="1141.2" y1="1204.0" x2="822.1" y2="1204.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,1204.0 831.1,1199.0 831.1,1209.0" fill="#222"/>
-<line x1="821.1" y1="1238.0" x2="149.0" y2="1238.0" stroke="#222" stroke-width="1"/>
-<polygon points="148.0,1238.0 158.0,1233.0 158.0,1243.0" fill="#222"/>
-<line x1="821.1" y1="1238.0" x2="1867.5" y2="1238.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="86.0" y="1082.0" width="1227.2" height="172.0" rx="0" fill="none" stroke="#222"/>
-<line x1="1141.2" y1="1288.0" x2="1516.5" y2="1288.0" stroke="#222" stroke-width="1"/>
-<polygon points="1517.5,1288.0 1507.5,1283.0 1507.5,1293.0" fill="#222"/>
-<line x1="1517.5" y1="1322.0" x2="1142.2" y2="1322.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1151.2,1317.0 1141.2,1322.0 1151.2,1327.0" fill="none" stroke="#222"/>
-<line x1="1517.5" y1="1322.0" x2="1867.5" y2="1322.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1141.2200000000003,1356 1171.2200000000003,1356 1171.2200000000003,1378 1142.2200000000003,1378" fill="none" stroke="#222"/>
-<polygon points="1142.2,1378.0 1152.2,1373.0 1152.2,1383.0" fill="#222"/>
-<path d="M86 1400 H147.7 V1412 L139.7 1420 H86 Z" fill="#fff" stroke="#222"/>
-<line x1="1141.2" y1="1466.0" x2="822.1" y2="1466.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,1466.0 831.1,1461.0 831.1,1471.0" fill="#222"/>
-<line x1="821.1" y1="1500.0" x2="149.0" y2="1500.0" stroke="#222" stroke-width="1"/>
-<polygon points="148.0,1500.0 158.0,1495.0 158.0,1505.0" fill="#222"/>
-<line x1="821.1" y1="1500.0" x2="1867.5" y2="1500.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="86.0" y="1400.0" width="1137.2" height="116.0" rx="0" fill="none" stroke="#222"/>
-<line x1="1141.2" y1="1550.0" x2="1516.5" y2="1550.0" stroke="#222" stroke-width="1"/>
-<polygon points="1517.5,1550.0 1507.5,1545.0 1507.5,1555.0" fill="#222"/>
-<line x1="1517.5" y1="1550.0" x2="1867.5" y2="1554.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<path d="M74 1572 H120.62 V1584 L112.62 1592 H74 Z" fill="#fff" stroke="#222"/>
-<line x1="1141.2" y1="1638.0" x2="822.1" y2="1638.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,1638.0 831.1,1633.0 831.1,1643.0" fill="#222"/>
-<line x1="821.1" y1="1672.0" x2="149.0" y2="1672.0" stroke="#222" stroke-width="1"/>
-<polygon points="148.0,1672.0 158.0,1667.0 158.0,1677.0" fill="#222"/>
-<line x1="821.1" y1="1672.0" x2="1867.5" y2="1672.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="1141.2" y1="1732.0" x2="1646.5" y2="1732.0" stroke="#222" stroke-width="1"/>
-<polygon points="1647.5,1732.0 1637.5,1727.0 1637.5,1737.0" fill="#222"/>
-<line x1="1647.5" y1="1766.0" x2="1142.2" y2="1766.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1151.2,1761.0 1141.2,1766.0 1151.2,1771.0" fill="none" stroke="#222"/>
-<line x1="1647.5" y1="1766.0" x2="1867.5" y2="1766.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<path d="M1119.2200000000003 1788 H1165.8400000000001 V1800 L1157.8400000000001 1808 H1119.2200000000003 Z" fill="#fff" stroke="#222"/>
-<line x1="1141.2" y1="1854.0" x2="1776.5" y2="1854.0" stroke="#222" stroke-width="1"/>
-<polygon points="1777.5,1854.0 1767.5,1849.0 1767.5,1859.0" fill="#222"/>
-<line x1="1777.5" y1="1854.0" x2="1867.5" y2="1854.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="1119.2" y="1788.0" width="722.3" height="82.0" rx="0" fill="none" stroke="#222"/>
-<line x1="1141.2" y1="1904.0" x2="822.1" y2="1904.0" stroke="#222" stroke-width="1"/>
-<polygon points="821.1,1904.0 831.1,1899.0 831.1,1909.0" fill="#222"/>
-<line x1="1141.2" y1="1904.0" x2="1867.5" y2="1904.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="821.1" y1="1938.0" x2="149.0" y2="1938.0" stroke="#222" stroke-width="1"/>
-<polygon points="148.0,1938.0 158.0,1933.0 158.0,1943.0" fill="#222"/>
-<rect x="74.0" y="1572.0" width="1779.5" height="382.0" rx="0" fill="none" stroke="#222"/>
-<line x1="74.0" y1="1684.0" x2="1853.5" y2="1684.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1141.2" y1="256.0" x2="1570.6" y2="256.0" stroke="#222" stroke-width="1"/>
+<polygon points="1571.6,256.0 1561.6,251.0 1561.6,261.0" fill="#222"/>
+<line x1="1571.6" y1="290.0" x2="1946.9" y2="290.0" stroke="#222" stroke-width="1"/>
+<polygon points="1947.9,290.0 1937.9,285.0 1937.9,295.0" fill="#222"/>
+<line x1="1947.9" y1="324.0" x2="1572.6" y2="324.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1581.6,319.0 1571.6,324.0 1581.6,329.0" fill="none" stroke="#222"/>
+<line x1="1571.6" y1="358.0" x2="1142.2" y2="358.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1151.2,353.0 1141.2,358.0 1151.2,363.0" fill="none" stroke="#222"/>
+<path d="M62 380 H116.16 V392 L108.16 400 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="1141.2" y1="446.0" x2="822.1" y2="446.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,446.0 831.1,441.0 831.1,451.0" fill="#222"/>
+<line x1="821.1" y1="480.0" x2="149.0" y2="480.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,480.0 158.0,475.0 158.0,485.0" fill="#222"/>
+<path d="M86 502 H132.62 V514 L124.62 522 H86 Z" fill="#fff" stroke="#222"/>
+<line x1="1141.2" y1="568.0" x2="822.1" y2="568.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,568.0 831.1,563.0 831.1,573.0" fill="#222"/>
+<line x1="821.1" y1="602.0" x2="149.0" y2="602.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,602.0 158.0,597.0 158.0,607.0" fill="#222"/>
+<line x1="821.1" y1="602.0" x2="2297.9" y2="602.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="86.0" y="502.0" width="1137.2" height="116.0" rx="0" fill="none" stroke="#222"/>
+<line x1="148.0" y1="652.0" x2="820.1" y2="652.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,652.0 811.1,647.0 811.1,657.0" fill="#222"/>
+<line x1="821.1" y1="652.0" x2="2297.9" y2="656.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="821.1" y1="686.0" x2="149.0" y2="686.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,686.0 158.0,681.0 158.0,691.0" fill="#222"/>
+<path d="M74 708 H120.62 V720 L112.62 728 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="148.0" y1="774.0" x2="820.1" y2="774.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,774.0 811.1,769.0 811.1,779.0" fill="#222"/>
+<line x1="821.1" y1="808.0" x2="1140.2" y2="808.0" stroke="#222" stroke-width="1"/>
+<polygon points="1141.2,808.0 1131.2,803.0 1131.2,813.0" fill="#222"/>
+<line x1="1141.2" y1="808.0" x2="2297.9" y2="808.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="148.0" y1="868.0" x2="820.1" y2="868.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,868.0 811.1,863.0 811.1,873.0" fill="#222"/>
+<line x1="821.1" y1="902.0" x2="1140.2" y2="902.0" stroke="#222" stroke-width="1"/>
+<polygon points="1141.2,902.0 1131.2,897.0 1131.2,907.0" fill="#222"/>
+<polyline points="1141.2200000000003,936 1171.2200000000003,936 1171.2200000000003,958 1142.2200000000003,958" fill="none" stroke="#222"/>
+<polygon points="1142.2,958.0 1152.2,953.0 1152.2,963.0" fill="#222"/>
+<path d="M86 980 H132.62 V992 L124.62 1000 H86 Z" fill="#fff" stroke="#222"/>
+<line x1="1141.2" y1="1046.0" x2="822.1" y2="1046.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,1046.0 831.1,1041.0 831.1,1051.0" fill="#222"/>
+<line x1="821.1" y1="1080.0" x2="149.0" y2="1080.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,1080.0 158.0,1075.0 158.0,1085.0" fill="#222"/>
+<line x1="821.1" y1="1080.0" x2="2297.9" y2="1080.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="86.0" y="980.0" width="1137.2" height="116.0" rx="0" fill="none" stroke="#222"/>
+<rect x="74.0" y="708.0" width="1251.2" height="404.0" rx="0" fill="none" stroke="#222"/>
+<line x1="74.0" y1="820.0" x2="1325.2" y2="820.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="62.0" y="380.0" width="1275.2" height="748.0" rx="0" fill="none" stroke="#222"/>
+<path d="M86 1150 H147.7 V1162 L139.7 1170 H86 Z" fill="#fff" stroke="#222"/>
+<polyline points="1141.2200000000003,1216 1171.2200000000003,1216 1171.2200000000003,1238 1142.2200000000003,1238" fill="none" stroke="#222"/>
+<polygon points="1142.2,1238.0 1152.2,1233.0 1152.2,1243.0" fill="#222"/>
+<line x1="1141.2" y1="1272.0" x2="822.1" y2="1272.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,1272.0 831.1,1267.0 831.1,1277.0" fill="#222"/>
+<line x1="821.1" y1="1306.0" x2="149.0" y2="1306.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,1306.0 158.0,1301.0 158.0,1311.0" fill="#222"/>
+<line x1="821.1" y1="1306.0" x2="2297.9" y2="1306.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="86.0" y="1150.0" width="1227.2" height="172.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1141.2" y1="1356.0" x2="1570.6" y2="1356.0" stroke="#222" stroke-width="1"/>
+<polygon points="1571.6,1356.0 1561.6,1351.0 1561.6,1361.0" fill="#222"/>
+<line x1="1571.6" y1="1390.0" x2="1946.9" y2="1390.0" stroke="#222" stroke-width="1"/>
+<polygon points="1947.9,1390.0 1937.9,1385.0 1937.9,1395.0" fill="#222"/>
+<line x1="1947.9" y1="1424.0" x2="1572.6" y2="1424.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1581.6,1419.0 1571.6,1424.0 1581.6,1429.0" fill="none" stroke="#222"/>
+<line x1="1571.6" y1="1458.0" x2="1142.2" y2="1458.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1151.2,1453.0 1141.2,1458.0 1151.2,1463.0" fill="none" stroke="#222"/>
+<line x1="1571.6" y1="1458.0" x2="2297.9" y2="1458.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1141.2200000000003,1492 1171.2200000000003,1492 1171.2200000000003,1514 1142.2200000000003,1514" fill="none" stroke="#222"/>
+<polygon points="1142.2,1514.0 1152.2,1509.0 1152.2,1519.0" fill="#222"/>
+<path d="M86 1536 H147.7 V1548 L139.7 1556 H86 Z" fill="#fff" stroke="#222"/>
+<line x1="1141.2" y1="1602.0" x2="822.1" y2="1602.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,1602.0 831.1,1597.0 831.1,1607.0" fill="#222"/>
+<line x1="821.1" y1="1636.0" x2="149.0" y2="1636.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,1636.0 158.0,1631.0 158.0,1641.0" fill="#222"/>
+<line x1="821.1" y1="1636.0" x2="2297.9" y2="1636.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="86.0" y="1536.0" width="1137.2" height="116.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1141.2" y1="1686.0" x2="1570.6" y2="1686.0" stroke="#222" stroke-width="1"/>
+<polygon points="1571.6,1686.0 1561.6,1681.0 1561.6,1691.0" fill="#222"/>
+<line x1="1571.6" y1="1720.0" x2="1946.9" y2="1720.0" stroke="#222" stroke-width="1"/>
+<polygon points="1947.9,1720.0 1937.9,1715.0 1937.9,1725.0" fill="#222"/>
+<line x1="1947.9" y1="1720.0" x2="2297.9" y2="1720.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M74 1742 H120.62 V1754 L112.62 1762 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="1141.2" y1="1808.0" x2="822.1" y2="1808.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,1808.0 831.1,1803.0 831.1,1813.0" fill="#222"/>
+<line x1="821.1" y1="1842.0" x2="149.0" y2="1842.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,1842.0 158.0,1837.0 158.0,1847.0" fill="#222"/>
+<line x1="821.1" y1="1842.0" x2="2297.9" y2="1842.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1141.2" y1="1902.0" x2="1570.6" y2="1902.0" stroke="#222" stroke-width="1"/>
+<polygon points="1571.6,1902.0 1561.6,1897.0 1561.6,1907.0" fill="#222"/>
+<line x1="1571.6" y1="1936.0" x2="2076.9" y2="1936.0" stroke="#222" stroke-width="1"/>
+<polygon points="2077.9,1936.0 2067.9,1931.0 2067.9,1941.0" fill="#222"/>
+<line x1="2077.9" y1="1970.0" x2="1572.6" y2="1970.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1581.6,1965.0 1571.6,1970.0 1581.6,1975.0" fill="none" stroke="#222"/>
+<line x1="1571.6" y1="2004.0" x2="1142.2" y2="2004.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1151.2,1999.0 1141.2,2004.0 1151.2,2009.0" fill="none" stroke="#222"/>
+<line x1="1571.6" y1="2004.0" x2="2297.9" y2="2004.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M1119.2200000000003 2026 H1165.8400000000001 V2038 L1157.8400000000001 2046 H1119.2200000000003 Z" fill="#fff" stroke="#222"/>
+<line x1="1141.2" y1="2092.0" x2="1570.6" y2="2092.0" stroke="#222" stroke-width="1"/>
+<polygon points="1571.6,2092.0 1561.6,2087.0 1561.6,2097.0" fill="#222"/>
+<line x1="1571.6" y1="2126.0" x2="2206.9" y2="2126.0" stroke="#222" stroke-width="1"/>
+<polygon points="2207.9,2126.0 2197.9,2121.0 2197.9,2131.0" fill="#222"/>
+<line x1="2207.9" y1="2126.0" x2="2297.9" y2="2126.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="1119.2" y="2026.0" width="1152.7" height="116.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1141.2" y1="2176.0" x2="822.1" y2="2176.0" stroke="#222" stroke-width="1"/>
+<polygon points="821.1,2176.0 831.1,2171.0 831.1,2181.0" fill="#222"/>
+<line x1="1141.2" y1="2176.0" x2="2297.9" y2="2176.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="821.1" y1="2210.0" x2="149.0" y2="2210.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,2210.0 158.0,2205.0 158.0,2215.0" fill="#222"/>
+<rect x="74.0" y="1742.0" width="2209.9" height="484.0" rx="0" fill="none" stroke="#222"/>
+<line x1="74.0" y1="1854.0" x2="2283.9" y2="1854.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="148" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
 <path d="M148 76 V88 M138 81 H158 M148 88 L140 98 M148 88 L156 98" fill="none" stroke="#222"/>
-<line x1="148.0" y1="130.0" x2="148.0" y2="1984.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="148.0" y1="130.0" x2="148.0" y2="2256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="606.0200000000002" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M593.0200000000002 82 H583.0200000000002 M583.0200000000002 71 V93" fill="none" stroke="#222"/>
-<line x1="601.0" y1="130.0" x2="601.0" y2="1984.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="601.0" y1="130.0" x2="601.0" y2="2256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="826.0600000000002" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M813.0600000000002 82 H803.0600000000002 M803.0600000000002 71 V93" fill="none" stroke="#222"/>
-<line x1="821.1" y1="130.0" x2="821.1" y2="1984.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="821.1" y1="130.0" x2="821.1" y2="2256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="1141.2200000000003" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M1142.2200000000003 69 l6 -5 M1142.2200000000003 69 l6 5" fill="none" stroke="#222"/>
-<line x1="1141.2" y1="130.0" x2="1141.2" y2="1984.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<circle cx="1517.5400000000004" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
-<path d="M1504.5400000000004 95 H1530.5400000000004" fill="none" stroke="#222"/>
-<line x1="1517.5" y1="130.0" x2="1517.5" y2="1984.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<circle cx="1647.5400000000004" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
-<path d="M1634.5400000000004 95 H1660.5400000000004" fill="none" stroke="#222"/>
-<line x1="1647.5" y1="130.0" x2="1647.5" y2="1984.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<circle cx="1777.5400000000004" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
-<path d="M1764.5400000000004 95 H1790.5400000000004" fill="none" stroke="#222"/>
-<line x1="1777.5" y1="130.0" x2="1777.5" y2="1984.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1141.2" y1="130.0" x2="1141.2" y2="2256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="1555.6200000000003" y="69" width="32" height="24" fill="#fefbd8" stroke="#222"/>
+<line x1="1571.6" y1="130.0" x2="1571.6" y2="2256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1947.9400000000005" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1934.9400000000005 95 H1960.9400000000005" fill="none" stroke="#222"/>
+<line x1="1947.9" y1="130.0" x2="1947.9" y2="2256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="2077.9400000000005" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M2064.9400000000005 95 H2090.9400000000005" fill="none" stroke="#222"/>
+<line x1="2077.9" y1="130.0" x2="2077.9" y2="2256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="2207.9400000000005" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M2194.9400000000005 95 H2220.9400000000005" fill="none" stroke="#222"/>
+<line x1="2207.9" y1="130.0" x2="2207.9" y2="2256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="164.8" y="169.0" width="419.5" height="17.0" fill="#fff"/>
 <text x="374.5" y="182.0" font-size="13" text-anchor="middle">1: 「未処理」のシフト希望を指定して却下を要求する(UC-204 から)</text>
 <rect x="707.3" y="203.0" width="327.7" height="17.0" fill="#fff"/>
 <text x="871.1" y="216.0" font-size="13" text-anchor="middle">2: 却下するシフト希望の内容を要求する(シフト希望)</text>
-<rect x="1251.1" y="237.0" width="156.6" height="17.0" fill="#fff"/>
-<text x="1329.4" y="250.0" font-size="13" text-anchor="middle">3: シフト希望を取得する</text>
-<rect x="1154.2" y="271.0" width="350.3" height="17.0" fill="#fff"/>
-<text x="1329.4" y="284.0" font-size="13" text-anchor="middle">従業員, 希望日, 希望開始時刻, 希望終了時刻, 処理状態</text>
-<text x="68.0" y="327.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
-<rect x="68.0" y="333.0" width="424.2" height="17.0" fill="#fff"/>
-<text x="70.0" y="346.0" font-size="13" text-anchor="start">[却下理由が入力されるまで繰り返す(キャンセルを要求したら抜ける)]</text>
-<rect x="870.3" y="359.0" width="221.6" height="17.0" fill="#fff"/>
-<text x="981.1" y="372.0" font-size="13" text-anchor="middle">4: 却下するシフト希望の内容を渡す</text>
-<rect x="289.2" y="393.0" width="390.6" height="17.0" fill="#fff"/>
-<text x="484.5" y="406.0" font-size="13" text-anchor="middle">5: 却下するシフト希望の内容を提示し、却下理由の入力を求める</text>
-<text x="92.0" y="449.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
-<rect x="92.0" y="455.0" width="214.1" height="17.0" fill="#fff"/>
-<text x="94.0" y="468.0" font-size="13" text-anchor="start">[対象がアクター自身のシフト希望]</text>
-<rect x="837.8" y="481.0" width="286.6" height="17.0" fill="#fff"/>
-<text x="981.1" y="494.0" font-size="13" text-anchor="middle">6: アクター自身のシフト希望であることを渡す</text>
-<rect x="308.7" y="515.0" width="351.6" height="17.0" fill="#fff"/>
-<text x="484.5" y="528.0" font-size="13" text-anchor="middle">7: 対象がアクター自身のシフト希望であることを提示する</text>
-<rect x="412.7" y="565.0" width="143.6" height="17.0" fill="#fff"/>
-<text x="484.5" y="578.0" font-size="13" text-anchor="middle">8: 却下理由を入力する</text>
-<rect x="412.7" y="599.0" width="143.6" height="17.0" fill="#fff"/>
-<text x="484.5" y="612.0" font-size="13" text-anchor="middle">9: 却下の確認を求める</text>
-<text x="80.0" y="655.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
-<rect x="80.0" y="661.0" width="188.1" height="17.0" fill="#fff"/>
-<text x="82.0" y="674.0" font-size="13" text-anchor="start">[却下のキャンセルを要求した]</text>
-<rect x="396.0" y="687.0" width="177.2" height="17.0" fill="#fff"/>
-<text x="484.5" y="700.0" font-size="13" text-anchor="middle">10: キャンセルボタンを押す</text>
-<rect x="899.1" y="721.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="981.1" y="734.0" font-size="13" text-anchor="middle">11: キャンセルを要求する</text>
-<rect x="80.0" y="755.0" width="110.1" height="17.0" fill="#fff"/>
-<text x="82.0" y="768.0" font-size="13" text-anchor="start">[却下を指示した]</text>
-<rect x="383.0" y="781.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="484.5" y="794.0" font-size="13" text-anchor="middle">12: シフト希望の却下を指示する</text>
-<rect x="845.0" y="815.0" width="272.3" height="17.0" fill="#fff"/>
-<text x="981.1" y="828.0" font-size="13" text-anchor="middle">13: 却下を要求する(シフト希望, 却下理由)</text>
-<rect x="1147.2" y="849.0" width="281.2" height="17.0" fill="#fff"/>
-<text x="1149.2" y="862.0" font-size="13" text-anchor="start">14: 却下理由が入力されていることを検証する</text>
-<text x="92.0" y="927.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
-<rect x="92.0" y="933.0" width="188.1" height="17.0" fill="#fff"/>
-<text x="94.0" y="946.0" font-size="13" text-anchor="start">[却下理由が入力されていない]</text>
-<rect x="866.6" y="959.0" width="229.2" height="17.0" fill="#fff"/>
-<text x="981.1" y="972.0" font-size="13" text-anchor="middle">15: 却下理由が必要であることを渡す</text>
-<rect x="337.5" y="993.0" width="294.2" height="17.0" fill="#fff"/>
-<text x="484.5" y="1006.0" font-size="13" text-anchor="middle">16: 却下理由の入力が必要であることを提示する</text>
-<text x="92.0" y="1097.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
-<rect x="92.0" y="1103.0" width="188.1" height="17.0" fill="#fff"/>
-<text x="94.0" y="1116.0" font-size="13" text-anchor="start">[却下のキャンセルを要求した]</text>
-<rect x="1147.2" y="1129.0" width="190.2" height="17.0" fill="#fff"/>
-<text x="1149.2" y="1142.0" font-size="13" text-anchor="start">17: 入力された内容を破棄する</text>
-<rect x="892.6" y="1185.0" width="177.2" height="17.0" fill="#fff"/>
-<text x="981.1" y="1198.0" font-size="13" text-anchor="middle">18: キャンセルの完了を渡す</text>
-<rect x="357.0" y="1219.0" width="255.2" height="17.0" fill="#fff"/>
-<text x="484.5" y="1232.0" font-size="13" text-anchor="middle">19: キャンセルが完了したことを提示する</text>
-<rect x="1247.3" y="1269.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="1329.4" y="1282.0" font-size="13" text-anchor="middle">20: シフト希望を取得する</text>
-<rect x="1274.3" y="1303.0" width="110.1" height="17.0" fill="#fff"/>
-<text x="1329.4" y="1316.0" font-size="13" text-anchor="middle">従業員, 処理状態</text>
-<rect x="1147.2" y="1337.0" width="294.2" height="17.0" fill="#fff"/>
-<text x="1149.2" y="1350.0" font-size="13" text-anchor="start">21: 処理状態が「未処理」であることを検証する</text>
-<text x="92.0" y="1415.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
-<rect x="92.0" y="1421.0" width="253.1" height="17.0" fill="#fff"/>
-<text x="94.0" y="1434.0" font-size="13" text-anchor="start">[処理状態が「未処理」でなくなっている]</text>
-<rect x="860.1" y="1447.0" width="242.2" height="17.0" fill="#fff"/>
-<text x="981.1" y="1460.0" font-size="13" text-anchor="middle">22: 却下できない状態であることを渡す</text>
-<rect x="292.0" y="1481.0" width="385.2" height="17.0" fill="#fff"/>
-<text x="484.5" y="1494.0" font-size="13" text-anchor="middle">23: 対象のシフト希望が却下できない状態であることを提示する</text>
-<rect x="1162.8" y="1531.0" width="333.2" height="17.0" fill="#fff"/>
-<text x="1329.4" y="1544.0" font-size="13" text-anchor="middle">24: 処理状態を「却下」に更新し、却下理由を記録する</text>
-<text x="80.0" y="1587.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
-<rect x="80.0" y="1593.0" width="110.1" height="17.0" fill="#fff"/>
-<text x="82.0" y="1606.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="886.1" y="1619.0" width="190.2" height="17.0" fill="#fff"/>
-<text x="981.1" y="1632.0" font-size="13" text-anchor="middle">25: 保存に失敗したことを渡す</text>
-<rect x="376.5" y="1653.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="484.5" y="1666.0" font-size="13" text-anchor="middle">26: 保存に失敗したことを提示する</text>
-<rect x="80.0" y="1687.0" width="110.1" height="17.0" fill="#fff"/>
-<text x="82.0" y="1700.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="1240.8" y="1713.0" width="307.2" height="17.0" fill="#fff"/>
-<text x="1394.4" y="1726.0" font-size="13" text-anchor="middle">27: 希望を送信した従業員が削除済みかを取得する</text>
-<rect x="1340.4" y="1747.0" width="108.0" height="17.0" fill="#fff"/>
-<text x="1394.4" y="1760.0" font-size="13" text-anchor="middle">削除済みかどうか</text>
-<text x="1125.2" y="1803.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
-<rect x="1125.2" y="1809.0" width="305.1" height="17.0" fill="#fff"/>
-<text x="1127.2" y="1822.0" font-size="13" text-anchor="start">[希望を送信した従業員が削除済みユーザーでない]</text>
-<rect x="1257.2" y="1835.0" width="404.4" height="17.0" fill="#fff"/>
-<text x="1459.4" y="1848.0" font-size="13" text-anchor="middle">28: 通知を登録する(希望を送信した従業員, 却下結果, 却下理由)</text>
-<rect x="912.1" y="1885.0" width="138.2" height="17.0" fill="#fff"/>
-<text x="981.1" y="1898.0" font-size="13" text-anchor="middle">29: 却下の完了を渡す</text>
-<rect x="376.5" y="1919.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="484.5" y="1932.0" font-size="13" text-anchor="middle">30: 却下が完了したことを提示する</text>
+<rect x="1278.1" y="237.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="1356.4" y="250.0" font-size="13" text-anchor="middle">3: シフト希望を取得する</text>
+<rect x="1681.5" y="271.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="1759.8" y="284.0" font-size="13" text-anchor="middle">4: シフト希望を取得する</text>
+<rect x="1584.6" y="305.0" width="350.3" height="17.0" fill="#fff"/>
+<text x="1759.8" y="318.0" font-size="13" text-anchor="middle">従業員, 希望日, 希望開始時刻, 希望終了時刻, 処理状態</text>
+<rect x="1181.3" y="339.0" width="350.3" height="17.0" fill="#fff"/>
+<text x="1356.4" y="352.0" font-size="13" text-anchor="middle">従業員, 希望日, 希望開始時刻, 希望終了時刻, 処理状態</text>
+<text x="68.0" y="395.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
+<rect x="68.0" y="401.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="70.0" y="414.0" font-size="13" text-anchor="start">[却下理由が入力されるまで繰り返す(キャンセルを要求したら抜ける)]</text>
+<rect x="870.3" y="427.0" width="221.6" height="17.0" fill="#fff"/>
+<text x="981.1" y="440.0" font-size="13" text-anchor="middle">5: 却下するシフト希望の内容を渡す</text>
+<rect x="289.2" y="461.0" width="390.6" height="17.0" fill="#fff"/>
+<text x="484.5" y="474.0" font-size="13" text-anchor="middle">6: 却下するシフト希望の内容を提示し、却下理由の入力を求める</text>
+<text x="92.0" y="517.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="92.0" y="523.0" width="214.1" height="17.0" fill="#fff"/>
+<text x="94.0" y="536.0" font-size="13" text-anchor="start">[対象がアクター自身のシフト希望]</text>
+<rect x="837.8" y="549.0" width="286.6" height="17.0" fill="#fff"/>
+<text x="981.1" y="562.0" font-size="13" text-anchor="middle">7: アクター自身のシフト希望であることを渡す</text>
+<rect x="308.7" y="583.0" width="351.6" height="17.0" fill="#fff"/>
+<text x="484.5" y="596.0" font-size="13" text-anchor="middle">8: 対象がアクター自身のシフト希望であることを提示する</text>
+<rect x="412.7" y="633.0" width="143.6" height="17.0" fill="#fff"/>
+<text x="484.5" y="646.0" font-size="13" text-anchor="middle">9: 却下理由を入力する</text>
+<rect x="409.0" y="667.0" width="151.2" height="17.0" fill="#fff"/>
+<text x="484.5" y="680.0" font-size="13" text-anchor="middle">10: 却下の確認を求める</text>
+<text x="80.0" y="723.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
+<rect x="80.0" y="729.0" width="188.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="742.0" font-size="13" text-anchor="start">[却下のキャンセルを要求した]</text>
+<rect x="396.0" y="755.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="484.5" y="768.0" font-size="13" text-anchor="middle">11: キャンセルボタンを押す</text>
+<rect x="899.1" y="789.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="981.1" y="802.0" font-size="13" text-anchor="middle">12: キャンセルを要求する</text>
+<rect x="80.0" y="823.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="836.0" font-size="13" text-anchor="start">[却下を指示した]</text>
+<rect x="383.0" y="849.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="484.5" y="862.0" font-size="13" text-anchor="middle">13: シフト希望の却下を指示する</text>
+<rect x="845.0" y="883.0" width="272.3" height="17.0" fill="#fff"/>
+<text x="981.1" y="896.0" font-size="13" text-anchor="middle">14: 却下を要求する(シフト希望, 却下理由)</text>
+<rect x="1147.2" y="917.0" width="281.2" height="17.0" fill="#fff"/>
+<text x="1149.2" y="930.0" font-size="13" text-anchor="start">15: 却下理由が入力されていることを検証する</text>
+<text x="92.0" y="995.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="92.0" y="1001.0" width="188.1" height="17.0" fill="#fff"/>
+<text x="94.0" y="1014.0" font-size="13" text-anchor="start">[却下理由が入力されていない]</text>
+<rect x="866.6" y="1027.0" width="229.2" height="17.0" fill="#fff"/>
+<text x="981.1" y="1040.0" font-size="13" text-anchor="middle">16: 却下理由が必要であることを渡す</text>
+<rect x="337.5" y="1061.0" width="294.2" height="17.0" fill="#fff"/>
+<text x="484.5" y="1074.0" font-size="13" text-anchor="middle">17: 却下理由の入力が必要であることを提示する</text>
+<text x="92.0" y="1165.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="92.0" y="1171.0" width="188.1" height="17.0" fill="#fff"/>
+<text x="94.0" y="1184.0" font-size="13" text-anchor="start">[却下のキャンセルを要求した]</text>
+<rect x="1147.2" y="1197.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="1149.2" y="1210.0" font-size="13" text-anchor="start">18: 入力された内容を破棄する</text>
+<rect x="892.6" y="1253.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="981.1" y="1266.0" font-size="13" text-anchor="middle">19: キャンセルの完了を渡す</text>
+<rect x="357.0" y="1287.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="484.5" y="1300.0" font-size="13" text-anchor="middle">20: キャンセルが完了したことを提示する</text>
+<rect x="1274.3" y="1337.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="1356.4" y="1350.0" font-size="13" text-anchor="middle">21: シフト希望を取得する</text>
+<rect x="1677.7" y="1371.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="1759.8" y="1384.0" font-size="13" text-anchor="middle">22: シフト希望を取得する</text>
+<rect x="1704.7" y="1405.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="1759.8" y="1418.0" font-size="13" text-anchor="middle">従業員, 処理状態</text>
+<rect x="1301.4" y="1439.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="1356.4" y="1452.0" font-size="13" text-anchor="middle">従業員, 処理状態</text>
+<rect x="1147.2" y="1473.0" width="294.2" height="17.0" fill="#fff"/>
+<text x="1149.2" y="1486.0" font-size="13" text-anchor="start">23: 処理状態が「未処理」であることを検証する</text>
+<text x="92.0" y="1551.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="92.0" y="1557.0" width="253.1" height="17.0" fill="#fff"/>
+<text x="94.0" y="1570.0" font-size="13" text-anchor="start">[処理状態が「未処理」でなくなっている]</text>
+<rect x="860.1" y="1583.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="981.1" y="1596.0" font-size="13" text-anchor="middle">24: 却下できない状態であることを渡す</text>
+<rect x="292.0" y="1617.0" width="385.2" height="17.0" fill="#fff"/>
+<text x="484.5" y="1630.0" font-size="13" text-anchor="middle">25: 対象のシフト希望が却下できない状態であることを提示する</text>
+<rect x="1189.8" y="1667.0" width="333.2" height="17.0" fill="#fff"/>
+<text x="1356.4" y="1680.0" font-size="13" text-anchor="middle">26: 処理状態を「却下」に更新し、却下理由を記録する</text>
+<rect x="1593.2" y="1701.0" width="333.2" height="17.0" fill="#fff"/>
+<text x="1759.8" y="1714.0" font-size="13" text-anchor="middle">27: 処理状態を「却下」に更新し、却下理由を記録する</text>
+<text x="80.0" y="1757.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
+<rect x="80.0" y="1763.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="1776.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
+<rect x="886.1" y="1789.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="981.1" y="1802.0" font-size="13" text-anchor="middle">28: 保存に失敗したことを渡す</text>
+<rect x="376.5" y="1823.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="484.5" y="1836.0" font-size="13" text-anchor="middle">29: 保存に失敗したことを提示する</text>
+<rect x="80.0" y="1857.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="1870.0" font-size="13" text-anchor="start">[保存に成功した]</text>
+<rect x="1202.8" y="1883.0" width="307.2" height="17.0" fill="#fff"/>
+<text x="1356.4" y="1896.0" font-size="13" text-anchor="middle">30: 希望を送信した従業員が削除済みかを取得する</text>
+<rect x="1671.2" y="1917.0" width="307.2" height="17.0" fill="#fff"/>
+<text x="1824.8" y="1930.0" font-size="13" text-anchor="middle">31: 希望を送信した従業員が削除済みかを取得する</text>
+<rect x="1770.8" y="1951.0" width="108.0" height="17.0" fill="#fff"/>
+<text x="1824.8" y="1964.0" font-size="13" text-anchor="middle">削除済みかどうか</text>
+<rect x="1302.4" y="1985.0" width="108.0" height="17.0" fill="#fff"/>
+<text x="1356.4" y="1998.0" font-size="13" text-anchor="middle">削除済みかどうか</text>
+<text x="1125.2" y="2041.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="1125.2" y="2047.0" width="305.1" height="17.0" fill="#fff"/>
+<text x="1127.2" y="2060.0" font-size="13" text-anchor="start">[希望を送信した従業員が削除済みユーザーでない]</text>
+<rect x="1154.2" y="2073.0" width="404.4" height="17.0" fill="#fff"/>
+<text x="1356.4" y="2086.0" font-size="13" text-anchor="middle">32: 通知を登録する(希望を送信した従業員, 却下結果, 却下理由)</text>
+<rect x="1687.6" y="2107.0" width="404.4" height="17.0" fill="#fff"/>
+<text x="1889.8" y="2120.0" font-size="13" text-anchor="middle">33: 通知を登録する(希望を送信した従業員, 却下結果, 却下理由)</text>
+<rect x="912.1" y="2157.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="981.1" y="2170.0" font-size="13" text-anchor="middle">34: 却下の完了を渡す</text>
+<rect x="376.5" y="2191.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="484.5" y="2204.0" font-size="13" text-anchor="middle">35: 却下が完了したことを提示する</text>
 <text x="148.0" y="120.0" font-size="13" text-anchor="middle">:勤怠管理者</text>
 <text x="601.0" y="120.0" font-size="13" text-anchor="middle">:従業員シフト希望一覧表示画面</text>
 <text x="821.1" y="120.0" font-size="13" text-anchor="middle">:シフト希望承認確認画面</text>
 <text x="1141.2" y="120.0" font-size="13" text-anchor="middle">:シフト希望承認制御</text>
-<text x="1517.5" y="120.0" font-size="13" text-anchor="middle">:シフト希望</text>
-<text x="1647.5" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
-<text x="1777.5" y="120.0" font-size="13" text-anchor="middle">:通知</text>
-<path d="M1867.5400000000004 176 H2232.0800000000004 L2242.0800000000004 186 V222 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="196.0" font-size="13" text-anchor="start">一覧の内容確認ボタンからシフト希望承認確認画面に移る(画</text>
-<text x="1875.5" y="214.0" font-size="13" text-anchor="start">面遷移図)</text>
-<path d="M1867.5400000000004 522 H2230.7800000000007 L2240.7800000000007 532 V568 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="542.0" font-size="13" text-anchor="start">Alt-3。メインフロー3に進む。自身のシフト希望も却下でき</text>
-<text x="1875.5" y="560.0" font-size="13" text-anchor="start">る(備考5、A-55)</text>
-<path d="M1867.5400000000004 576 H2238.3200000000006 L2248.3200000000006 586 V604 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="596.0" font-size="13" text-anchor="start">必須の自由記述。定型文から選んで挿入できる(備考2、A-46)</text>
-<path d="M1867.5400000000004 728 H2151.4800000000005 L2161.4800000000005 738 V756 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="748.0" font-size="13" text-anchor="start">Ex-1。繰り返しを抜けて、下の break に進む</text>
-<path d="M1867.5400000000004 1000 H2048.78 L2058.78 1010 V1028 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1020.0" font-size="13" text-anchor="start">Alt-1。メインフロー2に戻る</text>
-<path d="M1867.5400000000004 1226 H2150.7000000000003 L2160.7000000000003 1236 V1254 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1246.0" font-size="13" text-anchor="start">Ex-1。待機状態に戻る。処理状態は変わらない</text>
-<path d="M1867.5400000000004 1310 H2143.1600000000003 L2153.1600000000003 1320 V1338 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1330.0" font-size="13" text-anchor="start">却下を指示した時点の内容で判定する(備考3)</text>
-<path d="M1867.5400000000004 1488 H2237.0200000000004 L2247.0200000000004 1498 V1534 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1508.0" font-size="13" text-anchor="start">Alt-2。UC-204 に戻る。他の勤怠管理者が処理した、または</text>
-<text x="1875.5" y="1526.0" font-size="13" text-anchor="start">従業員が取り下げた場合(備考3)</text>
-<path d="M1867.5400000000004 1542 H2225.3200000000006 L2235.3200000000006 1552 V1570 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1562.0" font-size="13" text-anchor="start">シフトは登録しない。まとめて保存する(Ex-2 の事後条件)</text>
-<path d="M1867.5400000000004 1660 H2236.2400000000002 L2246.2400000000002 1670 V1688 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1680.0" font-size="13" text-anchor="start">Ex-2。入力された内容を保持したまま、メインフロー4に戻る</text>
-<path d="M1867.5400000000004 1754 H2234.9400000000005 L2244.9400000000005 1764 V1782 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1774.0" font-size="13" text-anchor="start">削除済みを表す属性は概念クラス図にない(ADR-0013、暫定)</text>
-<path d="M1867.5400000000004 1842 H2117.1600000000003 L2127.1600000000003 1852 V1870 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1862.0" font-size="13" text-anchor="start">削除済みユーザーには通知しない(備考4)</text>
-<path d="M1867.5400000000004 1892 H2148.6200000000003 L2158.6200000000003 1902 V1920 H1867.5400000000004 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1875.5" y="1912.0" font-size="13" text-anchor="start">却下の後に移る画面は画面遷移図にない(暫定)</text>
-<path d="M2278.3200000000006 40 H2534.9600000000005 L2544.9600000000005 50 V86 H2278.3200000000006 Z" fill="#fde2e2" stroke="#222"/>
-<text x="2286.3" y="60.0" font-size="13" text-anchor="start">UC-206 シフト希望を却下する</text>
-<text x="2286.3" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1〜3、Ex-1、Ex-2)</text>
+<text x="1571.6" y="120.0" font-size="13" text-anchor="middle">:DataManager</text>
+<text x="1947.9" y="120.0" font-size="13" text-anchor="middle">:シフト希望</text>
+<text x="2077.9" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<text x="2207.9" y="120.0" font-size="13" text-anchor="middle">:通知</text>
+<path d="M2297.9400000000005 176 H2662.4800000000005 L2672.4800000000005 186 V222 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="196.0" font-size="13" text-anchor="start">一覧の内容確認ボタンからシフト希望承認確認画面に移る(画</text>
+<text x="2305.9" y="214.0" font-size="13" text-anchor="start">面遷移図)</text>
+<path d="M2297.9400000000005 590 H2661.1800000000003 L2671.1800000000003 600 V636 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="610.0" font-size="13" text-anchor="start">Alt-3。メインフロー3に進む。自身のシフト希望も却下でき</text>
+<text x="2305.9" y="628.0" font-size="13" text-anchor="start">る(備考5、A-55)</text>
+<path d="M2297.9400000000005 644 H2668.7200000000007 L2678.7200000000007 654 V672 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="664.0" font-size="13" text-anchor="start">必須の自由記述。定型文から選んで挿入できる(備考2、A-46)</text>
+<path d="M2297.9400000000005 796 H2581.8800000000006 L2591.8800000000006 806 V824 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="816.0" font-size="13" text-anchor="start">Ex-1。繰り返しを抜けて、下の break に進む</text>
+<path d="M2297.9400000000005 1068 H2479.1800000000003 L2489.1800000000003 1078 V1096 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="1088.0" font-size="13" text-anchor="start">Alt-1。メインフロー2に戻る</text>
+<path d="M2297.9400000000005 1294 H2581.1000000000004 L2591.1000000000004 1304 V1322 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="1314.0" font-size="13" text-anchor="start">Ex-1。待機状態に戻る。処理状態は変わらない</text>
+<path d="M2297.9400000000005 1446 H2573.5600000000004 L2583.5600000000004 1456 V1474 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="1466.0" font-size="13" text-anchor="start">却下を指示した時点の内容で判定する(備考3)</text>
+<path d="M2297.9400000000005 1624 H2667.4200000000005 L2677.4200000000005 1634 V1670 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="1644.0" font-size="13" text-anchor="start">Alt-2。UC-204 に戻る。他の勤怠管理者が処理した、または</text>
+<text x="2305.9" y="1662.0" font-size="13" text-anchor="start">従業員が取り下げた場合(備考3)</text>
+<path d="M2297.9400000000005 1708 H2655.7200000000007 L2665.7200000000007 1718 V1736 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="1728.0" font-size="13" text-anchor="start">シフトは登録しない。まとめて保存する(Ex-2 の事後条件)</text>
+<path d="M2297.9400000000005 1830 H2666.6400000000003 L2676.6400000000003 1840 V1858 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="1850.0" font-size="13" text-anchor="start">Ex-2。入力された内容を保持したまま、メインフロー4に戻る</text>
+<path d="M2297.9400000000005 1992 H2665.3400000000006 L2675.3400000000006 2002 V2020 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="2012.0" font-size="13" text-anchor="start">削除済みを表す属性は概念クラス図にない(ADR-0013、暫定)</text>
+<path d="M2297.9400000000005 2114 H2547.5600000000004 L2557.5600000000004 2124 V2142 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="2134.0" font-size="13" text-anchor="start">削除済みユーザーには通知しない(備考4)</text>
+<path d="M2297.9400000000005 2164 H2579.0200000000004 L2589.0200000000004 2174 V2192 H2297.9400000000005 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2305.9" y="2184.0" font-size="13" text-anchor="start">却下の後に移る画面は画面遷移図にない(暫定)</text>
+<path d="M2708.7200000000007 40 H2965.3600000000006 L2975.3600000000006 50 V86 H2708.7200000000007 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2716.7" y="60.0" font-size="13" text-anchor="start">UC-206 シフト希望を却下する</text>
+<text x="2716.7" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1〜3、Ex-1、Ex-2)</text>
 <text x="16" y="27" font-size="14"><tspan font-weight="bold">sd</tspan> UC-206 シフト希望を却下する</text>
 </svg>

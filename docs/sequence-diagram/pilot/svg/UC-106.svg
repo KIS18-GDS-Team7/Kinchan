@@ -1,209 +1,240 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2334" height="1604" viewBox="0 0 2334 1604" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="2719" height="1842" viewBox="0 0 2719 1842" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
 <title>UC-106 ユーザーの所属を編集する</title>
 <rect width="100%" height="100%" fill="#fff"/>
-<rect x="10" y="10" width="2313.9" height="1584.0" fill="none" stroke="#222"/><path d="M10 10 H287.2 V24 L277.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<rect x="10" y="10" width="2699.0" height="1822.0" fill="none" stroke="#222"/><path d="M10 10 H287.2 V24 L277.2 34 H10 Z" fill="#fff" stroke="#222"/>
 <line x1="124.0" y1="188.0" x2="562.2" y2="188.0" stroke="#222" stroke-width="1"/>
 <polygon points="563.2,188.0 553.2,183.0 553.2,193.0" fill="#222"/>
-<line x1="563.2" y1="188.0" x2="1647.8" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="563.2" y1="188.0" x2="2032.9" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <line x1="563.2" y1="222.0" x2="1041.6" y2="222.0" stroke="#222" stroke-width="1"/>
 <polygon points="1042.6,222.0 1032.6,217.0 1032.6,227.0" fill="#222"/>
 <line x1="1042.6" y1="256.0" x2="1426.8" y2="256.0" stroke="#222" stroke-width="1"/>
 <polygon points="1427.8,256.0 1417.8,251.0 1417.8,261.0" fill="#222"/>
-<line x1="1427.8" y1="290.0" x2="1043.6" y2="290.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1052.6,285.0 1042.6,290.0 1052.6,295.0" fill="none" stroke="#222"/>
-<line x1="1042.6" y1="324.0" x2="719.3" y2="324.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,324.0 728.3,319.0 728.3,329.0" fill="#222"/>
-<line x1="718.3" y1="358.0" x2="125.0" y2="358.0" stroke="#222" stroke-width="1"/>
-<polygon points="124.0,358.0 134.0,353.0 134.0,363.0" fill="#222"/>
-<line x1="124.0" y1="392.0" x2="717.3" y2="392.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,392.0 708.3,387.0 708.3,397.0" fill="#222"/>
-<line x1="718.3" y1="426.0" x2="1041.6" y2="426.0" stroke="#222" stroke-width="1"/>
-<polygon points="1042.6,426.0 1032.6,421.0 1032.6,431.0" fill="#222"/>
-<line x1="1042.6" y1="460.0" x2="1426.8" y2="460.0" stroke="#222" stroke-width="1"/>
-<polygon points="1427.8,460.0 1417.8,455.0 1417.8,465.0" fill="#222"/>
-<line x1="1427.8" y1="494.0" x2="1043.6" y2="494.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1052.6,489.0 1042.6,494.0 1052.6,499.0" fill="none" stroke="#222"/>
-<path d="M62 516 H123.69999999999999 V528 L115.69999999999999 536 H62 Z" fill="#fff" stroke="#222"/>
-<line x1="1042.6" y1="582.0" x2="719.3" y2="582.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,582.0 728.3,577.0 728.3,587.0" fill="#222"/>
-<line x1="718.3" y1="616.0" x2="125.0" y2="616.0" stroke="#222" stroke-width="1"/>
-<polygon points="124.0,616.0 134.0,611.0 134.0,621.0" fill="#222"/>
-<line x1="718.3" y1="616.0" x2="1647.8" y2="616.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="62.0" y="516.0" width="1062.6" height="116.0" rx="0" fill="none" stroke="#222"/>
-<line x1="1042.6" y1="666.0" x2="1556.8" y2="666.0" stroke="#222" stroke-width="1"/>
-<polygon points="1557.8,666.0 1547.8,661.0 1547.8,671.0" fill="#222"/>
-<line x1="1557.8" y1="700.0" x2="1043.6" y2="700.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1052.6,695.0 1042.6,700.0 1052.6,705.0" fill="none" stroke="#222"/>
-<line x1="1042.6" y1="734.0" x2="719.3" y2="734.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,734.0 728.3,729.0 728.3,739.0" fill="#222"/>
-<line x1="718.3" y1="785.0" x2="125.0" y2="785.0" stroke="#222" stroke-width="1"/>
-<polygon points="124.0,785.0 134.0,780.0 134.0,790.0" fill="#222"/>
-<line x1="124.0" y1="819.0" x2="717.3" y2="819.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,819.0 708.3,814.0 708.3,824.0" fill="#222"/>
-<line x1="718.3" y1="819.0" x2="1647.8" y2="819.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="718.3" y1="853.0" x2="1041.6" y2="853.0" stroke="#222" stroke-width="1"/>
-<polygon points="1042.6,853.0 1032.6,848.0 1032.6,858.0" fill="#222"/>
-<line x1="1042.6" y1="887.0" x2="719.3" y2="887.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,887.0 728.3,882.0 728.3,892.0" fill="#222"/>
-<line x1="718.3" y1="938.0" x2="125.0" y2="938.0" stroke="#222" stroke-width="1"/>
-<polygon points="124.0,938.0 134.0,933.0 134.0,943.0" fill="#222"/>
-<path d="M62 960 H123.69999999999999 V972 L115.69999999999999 980 H62 Z" fill="#fff" stroke="#222"/>
-<line x1="124.0" y1="1026.0" x2="717.3" y2="1026.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,1026.0 708.3,1021.0 708.3,1031.0" fill="#222"/>
-<line x1="718.3" y1="1060.0" x2="1041.6" y2="1060.0" stroke="#222" stroke-width="1"/>
-<polygon points="1042.6,1060.0 1032.6,1055.0 1032.6,1065.0" fill="#222"/>
-<polyline points="1042.6,1094 1072.6,1094 1072.6,1116 1043.6,1116" fill="none" stroke="#222"/>
-<polygon points="1043.6,1116.0 1053.6,1111.0 1053.6,1121.0" fill="#222"/>
-<line x1="1042.6" y1="1150.0" x2="719.3" y2="1150.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,1150.0 728.3,1145.0 728.3,1155.0" fill="#222"/>
-<line x1="718.3" y1="1184.0" x2="125.0" y2="1184.0" stroke="#222" stroke-width="1"/>
-<polygon points="124.0,1184.0 134.0,1179.0 134.0,1189.0" fill="#222"/>
-<line x1="718.3" y1="1184.0" x2="1647.8" y2="1184.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="62.0" y="960.0" width="1152.6" height="240.0" rx="0" fill="none" stroke="#222"/>
-<line x1="124.0" y1="1234.0" x2="717.3" y2="1234.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,1234.0 708.3,1229.0 708.3,1239.0" fill="#222"/>
-<line x1="718.3" y1="1268.0" x2="1041.6" y2="1268.0" stroke="#222" stroke-width="1"/>
-<polygon points="1042.6,1268.0 1032.6,1263.0 1032.6,1273.0" fill="#222"/>
-<line x1="1042.6" y1="1302.0" x2="1426.8" y2="1302.0" stroke="#222" stroke-width="1"/>
-<polygon points="1427.8,1302.0 1417.8,1297.0 1417.8,1307.0" fill="#222"/>
-<line x1="1427.8" y1="1302.0" x2="1647.8" y2="1302.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<path d="M62 1324 H108.62 V1336 L100.62 1344 H62 Z" fill="#fff" stroke="#222"/>
-<line x1="1042.6" y1="1390.0" x2="719.3" y2="1390.0" stroke="#222" stroke-width="1"/>
-<polygon points="718.3,1390.0 728.3,1385.0 728.3,1395.0" fill="#222"/>
-<line x1="718.3" y1="1424.0" x2="125.0" y2="1424.0" stroke="#222" stroke-width="1"/>
-<polygon points="124.0,1424.0 134.0,1419.0 134.0,1429.0" fill="#222"/>
-<line x1="718.3" y1="1424.0" x2="1647.8" y2="1424.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="1042.6" y1="1484.0" x2="564.2" y2="1484.0" stroke="#222" stroke-width="1"/>
-<polygon points="563.2,1484.0 573.2,1479.0 573.2,1489.0" fill="#222"/>
-<line x1="1042.6" y1="1484.0" x2="1647.8" y2="1484.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="563.2" y1="1518.0" x2="125.0" y2="1518.0" stroke="#222" stroke-width="1"/>
-<polygon points="124.0,1518.0 134.0,1513.0 134.0,1523.0" fill="#222"/>
-<rect x="62.0" y="1324.0" width="1062.6" height="210.0" rx="0" fill="none" stroke="#222"/>
-<line x1="62.0" y1="1436.0" x2="1124.6" y2="1436.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1427.8" y1="290.0" x2="1811.9" y2="290.0" stroke="#222" stroke-width="1"/>
+<polygon points="1812.9,290.0 1802.9,285.0 1802.9,295.0" fill="#222"/>
+<line x1="1812.9" y1="324.0" x2="1428.8" y2="324.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1437.8,319.0 1427.8,324.0 1437.8,329.0" fill="none" stroke="#222"/>
+<line x1="1427.8" y1="358.0" x2="1043.6" y2="358.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1052.6,353.0 1042.6,358.0 1052.6,363.0" fill="none" stroke="#222"/>
+<line x1="1042.6" y1="392.0" x2="719.3" y2="392.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,392.0 728.3,387.0 728.3,397.0" fill="#222"/>
+<line x1="718.3" y1="426.0" x2="125.0" y2="426.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,426.0 134.0,421.0 134.0,431.0" fill="#222"/>
+<line x1="124.0" y1="460.0" x2="717.3" y2="460.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,460.0 708.3,455.0 708.3,465.0" fill="#222"/>
+<line x1="718.3" y1="494.0" x2="1041.6" y2="494.0" stroke="#222" stroke-width="1"/>
+<polygon points="1042.6,494.0 1032.6,489.0 1032.6,499.0" fill="#222"/>
+<line x1="1042.6" y1="528.0" x2="1426.8" y2="528.0" stroke="#222" stroke-width="1"/>
+<polygon points="1427.8,528.0 1417.8,523.0 1417.8,533.0" fill="#222"/>
+<line x1="1427.8" y1="562.0" x2="1811.9" y2="562.0" stroke="#222" stroke-width="1"/>
+<polygon points="1812.9,562.0 1802.9,557.0 1802.9,567.0" fill="#222"/>
+<line x1="1812.9" y1="596.0" x2="1428.8" y2="596.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1437.8,591.0 1427.8,596.0 1437.8,601.0" fill="none" stroke="#222"/>
+<line x1="1427.8" y1="630.0" x2="1043.6" y2="630.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1052.6,625.0 1042.6,630.0 1052.6,635.0" fill="none" stroke="#222"/>
+<path d="M62 652 H123.69999999999999 V664 L115.69999999999999 672 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="1042.6" y1="718.0" x2="719.3" y2="718.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,718.0 728.3,713.0 728.3,723.0" fill="#222"/>
+<line x1="718.3" y1="752.0" x2="125.0" y2="752.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,752.0 134.0,747.0 134.0,757.0" fill="#222"/>
+<line x1="718.3" y1="752.0" x2="2032.9" y2="752.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="62.0" y="652.0" width="1062.6" height="116.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1042.6" y1="802.0" x2="1426.8" y2="802.0" stroke="#222" stroke-width="1"/>
+<polygon points="1427.8,802.0 1417.8,797.0 1417.8,807.0" fill="#222"/>
+<line x1="1427.8" y1="836.0" x2="1941.9" y2="836.0" stroke="#222" stroke-width="1"/>
+<polygon points="1942.9,836.0 1932.9,831.0 1932.9,841.0" fill="#222"/>
+<line x1="1942.9" y1="870.0" x2="1428.8" y2="870.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1437.8,865.0 1427.8,870.0 1437.8,875.0" fill="none" stroke="#222"/>
+<line x1="1427.8" y1="904.0" x2="1043.6" y2="904.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1052.6,899.0 1042.6,904.0 1052.6,909.0" fill="none" stroke="#222"/>
+<line x1="1042.6" y1="938.0" x2="719.3" y2="938.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,938.0 728.3,933.0 728.3,943.0" fill="#222"/>
+<line x1="718.3" y1="989.0" x2="125.0" y2="989.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,989.0 134.0,984.0 134.0,994.0" fill="#222"/>
+<line x1="124.0" y1="1023.0" x2="717.3" y2="1023.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,1023.0 708.3,1018.0 708.3,1028.0" fill="#222"/>
+<line x1="718.3" y1="1023.0" x2="2032.9" y2="1023.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="718.3" y1="1057.0" x2="1041.6" y2="1057.0" stroke="#222" stroke-width="1"/>
+<polygon points="1042.6,1057.0 1032.6,1052.0 1032.6,1062.0" fill="#222"/>
+<line x1="1042.6" y1="1091.0" x2="719.3" y2="1091.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,1091.0 728.3,1086.0 728.3,1096.0" fill="#222"/>
+<line x1="718.3" y1="1142.0" x2="125.0" y2="1142.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,1142.0 134.0,1137.0 134.0,1147.0" fill="#222"/>
+<path d="M62 1164 H123.69999999999999 V1176 L115.69999999999999 1184 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="124.0" y1="1230.0" x2="717.3" y2="1230.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,1230.0 708.3,1225.0 708.3,1235.0" fill="#222"/>
+<line x1="718.3" y1="1264.0" x2="1041.6" y2="1264.0" stroke="#222" stroke-width="1"/>
+<polygon points="1042.6,1264.0 1032.6,1259.0 1032.6,1269.0" fill="#222"/>
+<polyline points="1042.6,1298 1072.6,1298 1072.6,1320 1043.6,1320" fill="none" stroke="#222"/>
+<polygon points="1043.6,1320.0 1053.6,1315.0 1053.6,1325.0" fill="#222"/>
+<line x1="1042.6" y1="1354.0" x2="719.3" y2="1354.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,1354.0 728.3,1349.0 728.3,1359.0" fill="#222"/>
+<line x1="718.3" y1="1388.0" x2="125.0" y2="1388.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,1388.0 134.0,1383.0 134.0,1393.0" fill="#222"/>
+<line x1="718.3" y1="1388.0" x2="2032.9" y2="1388.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="62.0" y="1164.0" width="1152.6" height="240.0" rx="0" fill="none" stroke="#222"/>
+<line x1="124.0" y1="1438.0" x2="717.3" y2="1438.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,1438.0 708.3,1433.0 708.3,1443.0" fill="#222"/>
+<line x1="718.3" y1="1472.0" x2="1041.6" y2="1472.0" stroke="#222" stroke-width="1"/>
+<polygon points="1042.6,1472.0 1032.6,1467.0 1032.6,1477.0" fill="#222"/>
+<line x1="1042.6" y1="1506.0" x2="1426.8" y2="1506.0" stroke="#222" stroke-width="1"/>
+<polygon points="1427.8,1506.0 1417.8,1501.0 1417.8,1511.0" fill="#222"/>
+<line x1="1427.8" y1="1540.0" x2="1811.9" y2="1540.0" stroke="#222" stroke-width="1"/>
+<polygon points="1812.9,1540.0 1802.9,1535.0 1802.9,1545.0" fill="#222"/>
+<line x1="1812.9" y1="1540.0" x2="2032.9" y2="1540.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M62 1562 H108.62 V1574 L100.62 1582 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="1042.6" y1="1628.0" x2="719.3" y2="1628.0" stroke="#222" stroke-width="1"/>
+<polygon points="718.3,1628.0 728.3,1623.0 728.3,1633.0" fill="#222"/>
+<line x1="718.3" y1="1662.0" x2="125.0" y2="1662.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,1662.0 134.0,1657.0 134.0,1667.0" fill="#222"/>
+<line x1="718.3" y1="1662.0" x2="2032.9" y2="1662.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1042.6" y1="1722.0" x2="564.2" y2="1722.0" stroke="#222" stroke-width="1"/>
+<polygon points="563.2,1722.0 573.2,1717.0 573.2,1727.0" fill="#222"/>
+<line x1="1042.6" y1="1722.0" x2="2032.9" y2="1722.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="563.2" y1="1756.0" x2="125.0" y2="1756.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,1756.0 134.0,1751.0 134.0,1761.0" fill="#222"/>
+<rect x="62.0" y="1562.0" width="1062.6" height="210.0" rx="0" fill="none" stroke="#222"/>
+<line x1="62.0" y1="1674.0" x2="1124.6" y2="1674.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="124" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
 <path d="M124 76 V88 M114 81 H134 M124 88 L116 98 M124 88 L132 98" fill="none" stroke="#222"/>
-<line x1="124.0" y1="130.0" x2="124.0" y2="1564.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="124.0" y1="130.0" x2="124.0" y2="1802.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="568.24" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M555.24 82 H545.24 M545.24 71 V93" fill="none" stroke="#222"/>
-<line x1="563.2" y1="130.0" x2="563.2" y2="1564.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="563.2" y1="130.0" x2="563.2" y2="1802.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="723.28" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M710.28 82 H700.28 M700.28 71 V93" fill="none" stroke="#222"/>
-<line x1="718.3" y1="130.0" x2="718.3" y2="1564.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="718.3" y1="130.0" x2="718.3" y2="1802.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="1042.6" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M1043.6 69 l6 -5 M1043.6 69 l6 5" fill="none" stroke="#222"/>
-<line x1="1042.6" y1="130.0" x2="1042.6" y2="1564.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<circle cx="1427.7599999999998" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
-<path d="M1414.7599999999998 95 H1440.7599999999998" fill="none" stroke="#222"/>
-<line x1="1427.8" y1="130.0" x2="1427.8" y2="1564.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<circle cx="1557.7599999999998" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
-<path d="M1544.7599999999998 95 H1570.7599999999998" fill="none" stroke="#222"/>
-<line x1="1557.8" y1="130.0" x2="1557.8" y2="1564.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1042.6" y1="130.0" x2="1042.6" y2="1802.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="1411.7599999999998" y="69" width="32" height="24" fill="#fefbd8" stroke="#222"/>
+<line x1="1427.8" y1="130.0" x2="1427.8" y2="1802.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1812.9199999999996" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1799.9199999999996 95 H1825.9199999999996" fill="none" stroke="#222"/>
+<line x1="1812.9" y1="130.0" x2="1812.9" y2="1802.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1942.9199999999996" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1929.9199999999996 95 H1955.9199999999996" fill="none" stroke="#222"/>
+<line x1="1942.9" y1="130.0" x2="1942.9" y2="1802.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="140.8" y="169.0" width="405.7" height="17.0" fill="#fff"/>
 <text x="343.6" y="182.0" font-size="13" text-anchor="middle">1: ユーザ所属変更ボタンを押す(ユーザーの所属の変更を要求する)</text>
 <rect x="711.6" y="203.0" width="182.6" height="17.0" fill="#fff"/>
 <text x="802.9" y="216.0" font-size="13" text-anchor="middle">2: ユーザーの一覧を要求する</text>
 <rect x="1098.4" y="237.0" width="273.6" height="17.0" fill="#fff"/>
 <text x="1235.2" y="250.0" font-size="13" text-anchor="middle">3: 削除済みでないユーザーの一覧を取得する</text>
-<rect x="1126.1" y="271.0" width="218.2" height="17.0" fill="#fff"/>
-<text x="1235.2" y="284.0" font-size="13" text-anchor="middle">ユーザーの一覧(氏名, ユーザーID)</text>
-<rect x="802.1" y="305.0" width="156.6" height="17.0" fill="#fff"/>
-<text x="880.4" y="318.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を渡す</text>
-<rect x="238.8" y="339.0" width="364.6" height="17.0" fill="#fff"/>
-<text x="421.1" y="352.0" font-size="13" text-anchor="middle">5: ユーザーの一覧を提示し、対象のユーザーの指定を求める</text>
-<rect x="329.8" y="373.0" width="182.6" height="17.0" fill="#fff"/>
-<text x="421.1" y="386.0" font-size="13" text-anchor="middle">6: 対象のユーザーを指定する</text>
-<rect x="749.1" y="407.0" width="262.7" height="17.0" fill="#fff"/>
-<text x="880.4" y="420.0" font-size="13" text-anchor="middle">7: 所属の変更の入力を要求する(ユーザー)</text>
-<rect x="1104.9" y="441.0" width="260.6" height="17.0" fill="#fff"/>
-<text x="1235.2" y="454.0" font-size="13" text-anchor="middle">8: 対象のユーザーの現在の所属を取得する</text>
-<rect x="1220.2" y="475.0" width="30.0" height="17.0" fill="#fff"/>
-<text x="1235.2" y="488.0" font-size="13" text-anchor="middle">所属</text>
-<text x="68.0" y="531.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
-<rect x="68.0" y="537.0" width="162.1" height="17.0" fill="#fff"/>
-<text x="70.0" y="550.0" font-size="13" text-anchor="start">[所属が設定されていない]</text>
-<rect x="763.1" y="563.0" width="234.6" height="17.0" fill="#fff"/>
-<text x="880.4" y="576.0" font-size="13" text-anchor="middle">9: 所属が設定されていないことを渡す</text>
-<rect x="235.1" y="597.0" width="372.2" height="17.0" fill="#fff"/>
-<text x="421.1" y="610.0" font-size="13" text-anchor="middle">10: 対象のユーザーの所属が設定されていないことを提示する</text>
-<rect x="1179.1" y="647.0" width="242.2" height="17.0" fill="#fff"/>
-<text x="1300.2" y="660.0" font-size="13" text-anchor="middle">11: 登録されている所属単位を取得する</text>
-<rect x="1232.1" y="681.0" width="136.1" height="17.0" fill="#fff"/>
-<text x="1300.2" y="694.0" font-size="13" text-anchor="middle">所属単位の一覧(名称)</text>
-<rect x="733.4" y="715.0" width="294.2" height="17.0" fill="#fff"/>
-<text x="880.4" y="728.0" font-size="13" text-anchor="middle">12: 現在の所属と登録されている所属単位を渡す</text>
-<rect x="209.1" y="749.0" width="424.2" height="17.0" fill="#fff"/>
-<text x="421.1" y="762.0" font-size="13" text-anchor="middle">13: 対象のユーザーの現在の所属と登録されている所属単位を提示し、</text>
-<rect x="289.1" y="766.0" width="264.0" height="17.0" fill="#fff"/>
-<text x="421.1" y="779.0" font-size="13" text-anchor="middle">変更後の所属とする所属単位の指定を求める</text>
-<rect x="276.8" y="800.0" width="288.7" height="17.0" fill="#fff"/>
-<text x="421.1" y="813.0" font-size="13" text-anchor="middle">14: 変更後の所属とする所属単位を1つ指定する</text>
-<rect x="731.3" y="834.0" width="298.3" height="17.0" fill="#fff"/>
-<text x="880.4" y="847.0" font-size="13" text-anchor="middle">15: 変更の確認を要求する(ユーザー, 所属単位)</text>
-<rect x="778.9" y="868.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="880.4" y="881.0" font-size="13" text-anchor="middle">16: 変更前と変更後の所属を渡す</text>
-<rect x="209.1" y="902.0" width="424.2" height="17.0" fill="#fff"/>
-<text x="421.1" y="915.0" font-size="13" text-anchor="middle">17: 対象のユーザーの変更前と変更後の所属を提示し、変更の確認を求</text>
-<rect x="406.1" y="919.0" width="30.0" height="17.0" fill="#fff"/>
-<text x="421.1" y="932.0" font-size="13" text-anchor="middle">める</text>
-<text x="68.0" y="975.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
-<rect x="68.0" y="981.0" width="188.1" height="17.0" fill="#fff"/>
-<text x="70.0" y="994.0" font-size="13" text-anchor="start">[変更のキャンセルを要求した]</text>
-<rect x="332.6" y="1007.0" width="177.2" height="17.0" fill="#fff"/>
-<text x="421.1" y="1020.0" font-size="13" text-anchor="middle">18: キャンセルボタンを押す</text>
-<rect x="798.4" y="1041.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="880.4" y="1054.0" font-size="13" text-anchor="middle">19: キャンセルを要求する</text>
-<rect x="1048.6" y="1075.0" width="190.2" height="17.0" fill="#fff"/>
-<text x="1050.6" y="1088.0" font-size="13" text-anchor="start">20: 入力された内容を破棄する</text>
-<rect x="791.9" y="1131.0" width="177.2" height="17.0" fill="#fff"/>
-<text x="880.4" y="1144.0" font-size="13" text-anchor="middle">21: キャンセルの完了を渡す</text>
-<rect x="293.6" y="1165.0" width="255.2" height="17.0" fill="#fff"/>
-<text x="421.1" y="1178.0" font-size="13" text-anchor="middle">22: キャンセルが完了したことを提示する</text>
-<rect x="279.5" y="1215.0" width="283.2" height="17.0" fill="#fff"/>
-<text x="421.1" y="1228.0" font-size="13" text-anchor="middle">23: 変更ボタンを押す(所属の変更を指示する)</text>
-<rect x="731.3" y="1249.0" width="298.3" height="17.0" fill="#fff"/>
-<text x="880.4" y="1262.0" font-size="13" text-anchor="middle">24: 所属の変更を要求する(ユーザー, 所属単位)</text>
-<rect x="1055.6" y="1283.0" width="359.2" height="17.0" fill="#fff"/>
-<text x="1235.2" y="1296.0" font-size="13" text-anchor="middle">25: 対象のユーザーの所属を指定された所属単位に更新する</text>
-<text x="68.0" y="1339.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
-<rect x="68.0" y="1345.0" width="110.1" height="17.0" fill="#fff"/>
-<text x="70.0" y="1358.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="785.4" y="1371.0" width="190.2" height="17.0" fill="#fff"/>
-<text x="880.4" y="1384.0" font-size="13" text-anchor="middle">26: 保存に失敗したことを渡す</text>
-<rect x="313.1" y="1405.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="421.1" y="1418.0" font-size="13" text-anchor="middle">27: 保存に失敗したことを提示する</text>
-<rect x="68.0" y="1439.0" width="110.1" height="17.0" fill="#fff"/>
-<text x="70.0" y="1452.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="714.3" y="1465.0" width="177.2" height="17.0" fill="#fff"/>
-<text x="802.9" y="1478.0" font-size="13" text-anchor="middle">28: 所属の変更の完了を渡す</text>
-<rect x="216.0" y="1499.0" width="255.2" height="17.0" fill="#fff"/>
-<text x="343.6" y="1512.0" font-size="13" text-anchor="middle">29: 所属の変更が完了したことを提示する</text>
+<rect x="1483.5" y="271.0" width="273.6" height="17.0" fill="#fff"/>
+<text x="1620.3" y="284.0" font-size="13" text-anchor="middle">4: 削除済みでないユーザーの一覧を取得する</text>
+<rect x="1511.2" y="305.0" width="218.2" height="17.0" fill="#fff"/>
+<text x="1620.3" y="318.0" font-size="13" text-anchor="middle">ユーザーの一覧(氏名, ユーザーID)</text>
+<rect x="1126.1" y="339.0" width="218.2" height="17.0" fill="#fff"/>
+<text x="1235.2" y="352.0" font-size="13" text-anchor="middle">ユーザーの一覧(氏名, ユーザーID)</text>
+<rect x="802.1" y="373.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="880.4" y="386.0" font-size="13" text-anchor="middle">5: ユーザーの一覧を渡す</text>
+<rect x="238.8" y="407.0" width="364.6" height="17.0" fill="#fff"/>
+<text x="421.1" y="420.0" font-size="13" text-anchor="middle">6: ユーザーの一覧を提示し、対象のユーザーの指定を求める</text>
+<rect x="329.8" y="441.0" width="182.6" height="17.0" fill="#fff"/>
+<text x="421.1" y="454.0" font-size="13" text-anchor="middle">7: 対象のユーザーを指定する</text>
+<rect x="749.1" y="475.0" width="262.7" height="17.0" fill="#fff"/>
+<text x="880.4" y="488.0" font-size="13" text-anchor="middle">8: 所属の変更の入力を要求する(ユーザー)</text>
+<rect x="1104.9" y="509.0" width="260.6" height="17.0" fill="#fff"/>
+<text x="1235.2" y="522.0" font-size="13" text-anchor="middle">9: 対象のユーザーの現在の所属を取得する</text>
+<rect x="1486.3" y="543.0" width="268.2" height="17.0" fill="#fff"/>
+<text x="1620.3" y="556.0" font-size="13" text-anchor="middle">10: 対象のユーザーの現在の所属を取得する</text>
+<rect x="1605.3" y="577.0" width="30.0" height="17.0" fill="#fff"/>
+<text x="1620.3" y="590.0" font-size="13" text-anchor="middle">所属</text>
+<rect x="1220.2" y="611.0" width="30.0" height="17.0" fill="#fff"/>
+<text x="1235.2" y="624.0" font-size="13" text-anchor="middle">所属</text>
+<text x="68.0" y="667.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="68.0" y="673.0" width="162.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="686.0" font-size="13" text-anchor="start">[所属が設定されていない]</text>
+<rect x="759.4" y="699.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="880.4" y="712.0" font-size="13" text-anchor="middle">11: 所属が設定されていないことを渡す</text>
+<rect x="235.1" y="733.0" width="372.2" height="17.0" fill="#fff"/>
+<text x="421.1" y="746.0" font-size="13" text-anchor="middle">12: 対象のユーザーの所属が設定されていないことを提示する</text>
+<rect x="1114.1" y="783.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="1235.2" y="796.0" font-size="13" text-anchor="middle">13: 登録されている所属単位を取得する</text>
+<rect x="1564.3" y="817.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="1685.3" y="830.0" font-size="13" text-anchor="middle">14: 登録されている所属単位を取得する</text>
+<rect x="1617.3" y="851.0" width="136.1" height="17.0" fill="#fff"/>
+<text x="1685.3" y="864.0" font-size="13" text-anchor="middle">所属単位の一覧(名称)</text>
+<rect x="1167.1" y="885.0" width="136.1" height="17.0" fill="#fff"/>
+<text x="1235.2" y="898.0" font-size="13" text-anchor="middle">所属単位の一覧(名称)</text>
+<rect x="733.4" y="919.0" width="294.2" height="17.0" fill="#fff"/>
+<text x="880.4" y="932.0" font-size="13" text-anchor="middle">15: 現在の所属と登録されている所属単位を渡す</text>
+<rect x="209.1" y="953.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="421.1" y="966.0" font-size="13" text-anchor="middle">16: 対象のユーザーの現在の所属と登録されている所属単位を提示し、</text>
+<rect x="289.1" y="970.0" width="264.0" height="17.0" fill="#fff"/>
+<text x="421.1" y="983.0" font-size="13" text-anchor="middle">変更後の所属とする所属単位の指定を求める</text>
+<rect x="276.8" y="1004.0" width="288.7" height="17.0" fill="#fff"/>
+<text x="421.1" y="1017.0" font-size="13" text-anchor="middle">17: 変更後の所属とする所属単位を1つ指定する</text>
+<rect x="731.3" y="1038.0" width="298.3" height="17.0" fill="#fff"/>
+<text x="880.4" y="1051.0" font-size="13" text-anchor="middle">18: 変更の確認を要求する(ユーザー, 所属単位)</text>
+<rect x="778.9" y="1072.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="880.4" y="1085.0" font-size="13" text-anchor="middle">19: 変更前と変更後の所属を渡す</text>
+<rect x="209.1" y="1106.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="421.1" y="1119.0" font-size="13" text-anchor="middle">20: 対象のユーザーの変更前と変更後の所属を提示し、変更の確認を求</text>
+<rect x="406.1" y="1123.0" width="30.0" height="17.0" fill="#fff"/>
+<text x="421.1" y="1136.0" font-size="13" text-anchor="middle">める</text>
+<text x="68.0" y="1179.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="68.0" y="1185.0" width="188.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="1198.0" font-size="13" text-anchor="start">[変更のキャンセルを要求した]</text>
+<rect x="332.6" y="1211.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="421.1" y="1224.0" font-size="13" text-anchor="middle">21: キャンセルボタンを押す</text>
+<rect x="798.4" y="1245.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="880.4" y="1258.0" font-size="13" text-anchor="middle">22: キャンセルを要求する</text>
+<rect x="1048.6" y="1279.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="1050.6" y="1292.0" font-size="13" text-anchor="start">23: 入力された内容を破棄する</text>
+<rect x="791.9" y="1335.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="880.4" y="1348.0" font-size="13" text-anchor="middle">24: キャンセルの完了を渡す</text>
+<rect x="293.6" y="1369.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="421.1" y="1382.0" font-size="13" text-anchor="middle">25: キャンセルが完了したことを提示する</text>
+<rect x="279.5" y="1419.0" width="283.2" height="17.0" fill="#fff"/>
+<text x="421.1" y="1432.0" font-size="13" text-anchor="middle">26: 変更ボタンを押す(所属の変更を指示する)</text>
+<rect x="731.3" y="1453.0" width="298.3" height="17.0" fill="#fff"/>
+<text x="880.4" y="1466.0" font-size="13" text-anchor="middle">27: 所属の変更を要求する(ユーザー, 所属単位)</text>
+<rect x="1055.6" y="1487.0" width="359.2" height="17.0" fill="#fff"/>
+<text x="1235.2" y="1500.0" font-size="13" text-anchor="middle">28: 対象のユーザーの所属を指定された所属単位に更新する</text>
+<rect x="1440.8" y="1521.0" width="359.2" height="17.0" fill="#fff"/>
+<text x="1620.3" y="1534.0" font-size="13" text-anchor="middle">29: 対象のユーザーの所属を指定された所属単位に更新する</text>
+<text x="68.0" y="1577.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
+<rect x="68.0" y="1583.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="1596.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
+<rect x="785.4" y="1609.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="880.4" y="1622.0" font-size="13" text-anchor="middle">30: 保存に失敗したことを渡す</text>
+<rect x="313.1" y="1643.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="421.1" y="1656.0" font-size="13" text-anchor="middle">31: 保存に失敗したことを提示する</text>
+<rect x="68.0" y="1677.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="1690.0" font-size="13" text-anchor="start">[保存に成功した]</text>
+<rect x="714.3" y="1703.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="802.9" y="1716.0" font-size="13" text-anchor="middle">32: 所属の変更の完了を渡す</text>
+<rect x="216.0" y="1737.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="343.6" y="1750.0" font-size="13" text-anchor="middle">33: 所属の変更が完了したことを提示する</text>
 <text x="124.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>
 <text x="563.2" y="120.0" font-size="13" text-anchor="middle">:ユーザ所属設定画面</text>
 <text x="718.3" y="120.0" font-size="13" text-anchor="middle">:所属変更画面</text>
 <text x="1042.6" y="120.0" font-size="13" text-anchor="middle">:所属制御</text>
-<text x="1427.8" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
-<text x="1557.8" y="120.0" font-size="13" text-anchor="middle">:所属単位</text>
-<path d="M1647.7599999999998 176 H2017.7599999999998 L2027.7599999999998 186 V222 H1647.7599999999998 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1655.8" y="196.0" font-size="13" text-anchor="start">ユーザ所属設定画面のユーザ所属変更ボタンから所属変更画面</text>
-<text x="1655.8" y="214.0" font-size="13" text-anchor="start">に移る(画面遷移図)</text>
-<path d="M1647.7599999999998 604 H1984.9999999999998 L1994.9999999999998 614 V650 H1647.7599999999998 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1655.8" y="624.0" font-size="13" text-anchor="start">Alt-1。このユースケースを終了する。未設定の所属は </text>
-<text x="1655.8" y="642.0" font-size="13" text-anchor="start">UC-105 で設定する(備考3、A-21)</text>
-<path d="M1647.7599999999998 807 H1933.7799999999997 L1943.7799999999997 817 V835 H1647.7599999999998 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1655.8" y="827.0" font-size="13" text-anchor="start">1ユーザーにつき所属は1つ(備考1、ADR-0007)</text>
-<path d="M1647.7599999999998 1172 H1917.9199999999996 L1927.9199999999996 1182 V1200 H1647.7599999999998 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1655.8" y="1192.0" font-size="13" text-anchor="start">Ex-1。待機状態に戻る。所属は変更されない</text>
-<path d="M1647.7599999999998 1290 H2012.2999999999997 L2022.2999999999997 1300 V1354 H1647.7599999999998 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1655.8" y="1310.0" font-size="13" text-anchor="start">既存のシフト・申請・勤怠記録は変更しない(事後条件、備考</text>
-<text x="1655.8" y="1328.0" font-size="13" text-anchor="start">2)。所属を変えた後の既存のシフトと「未処理」の申請の扱</text>
-<text x="1655.8" y="1346.0" font-size="13" text-anchor="start">いは TBD(備考5)</text>
-<path d="M1647.7599999999998 1412 H2016.4599999999998 L2026.4599999999998 1422 V1440 H1647.7599999999998 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1655.8" y="1432.0" font-size="13" text-anchor="start">Ex-2。入力された内容を保持したまま、メインフロー6に戻る</text>
-<path d="M1647.7599999999998 1472 H2012.2999999999997 L2022.2999999999997 1482 V1518 H1647.7599999999998 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1655.8" y="1492.0" font-size="13" text-anchor="start">所属変更画面の変更ボタンからユーザ所属設定画面に戻る(画</text>
-<text x="1655.8" y="1510.0" font-size="13" text-anchor="start">面遷移図)</text>
-<path d="M2057.7599999999998 40 H2293.8599999999997 L2303.8599999999997 50 V86 H2057.7599999999998 Z" fill="#fde2e2" stroke="#222"/>
-<text x="2065.8" y="60.0" font-size="13" text-anchor="start">UC-106 ユーザーの所属を編集する</text>
-<text x="2065.8" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1、Ex-1、Ex-2)</text>
+<text x="1427.8" y="120.0" font-size="13" text-anchor="middle">:DataManager</text>
+<text x="1812.9" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<text x="1942.9" y="120.0" font-size="13" text-anchor="middle">:所属単位</text>
+<path d="M2032.9199999999996 176 H2402.9199999999996 L2412.9199999999996 186 V222 H2032.9199999999996 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2040.9" y="196.0" font-size="13" text-anchor="start">ユーザ所属設定画面のユーザ所属変更ボタンから所属変更画面</text>
+<text x="2040.9" y="214.0" font-size="13" text-anchor="start">に移る(画面遷移図)</text>
+<path d="M2032.9199999999996 740 H2370.16 L2380.16 750 V786 H2032.9199999999996 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2040.9" y="760.0" font-size="13" text-anchor="start">Alt-1。このユースケースを終了する。未設定の所属は </text>
+<text x="2040.9" y="778.0" font-size="13" text-anchor="start">UC-105 で設定する(備考3、A-21)</text>
+<path d="M2032.9199999999996 1011 H2318.9399999999996 L2328.9399999999996 1021 V1039 H2032.9199999999996 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2040.9" y="1031.0" font-size="13" text-anchor="start">1ユーザーにつき所属は1つ(備考1、ADR-0007)</text>
+<path d="M2032.9199999999996 1376 H2303.0799999999995 L2313.0799999999995 1386 V1404 H2032.9199999999996 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2040.9" y="1396.0" font-size="13" text-anchor="start">Ex-1。待機状態に戻る。所属は変更されない</text>
+<path d="M2032.9199999999996 1528 H2397.4599999999996 L2407.4599999999996 1538 V1592 H2032.9199999999996 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2040.9" y="1548.0" font-size="13" text-anchor="start">既存のシフト・申請・勤怠記録は変更しない(事後条件、備考</text>
+<text x="2040.9" y="1566.0" font-size="13" text-anchor="start">2)。所属を変えた後の既存のシフトと「未処理」の申請の扱</text>
+<text x="2040.9" y="1584.0" font-size="13" text-anchor="start">いは TBD(備考5)</text>
+<path d="M2032.9199999999996 1650 H2401.6199999999994 L2411.6199999999994 1660 V1678 H2032.9199999999996 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2040.9" y="1670.0" font-size="13" text-anchor="start">Ex-2。入力された内容を保持したまま、メインフロー6に戻る</text>
+<path d="M2032.9199999999996 1710 H2397.4599999999996 L2407.4599999999996 1720 V1756 H2032.9199999999996 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2040.9" y="1730.0" font-size="13" text-anchor="start">所属変更画面の変更ボタンからユーザ所属設定画面に戻る(画</text>
+<text x="2040.9" y="1748.0" font-size="13" text-anchor="start">面遷移図)</text>
+<path d="M2442.9199999999996 40 H2679.0199999999995 L2689.0199999999995 50 V86 H2442.9199999999996 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2450.9" y="60.0" font-size="13" text-anchor="start">UC-106 ユーザーの所属を編集する</text>
+<text x="2450.9" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1、Ex-1、Ex-2)</text>
 <text x="16" y="27" font-size="14"><tspan font-weight="bold">sd</tspan> UC-106 ユーザーの所属を編集する</text>
 </svg>

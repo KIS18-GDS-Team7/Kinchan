@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2363" height="1424" viewBox="0 0 2363 1424" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="2779" height="1526" viewBox="0 0 2779 1526" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
 <title>UC-101 ユーザーを登録する</title>
 <rect width="100%" height="100%" fill="#fff"/>
-<rect x="10" y="10" width="2343.3" height="1404.0" fill="none" stroke="#222"/><path d="M10 10 H245.2 V24 L235.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<rect x="10" y="10" width="2758.6" height="1506.0" fill="none" stroke="#222"/><path d="M10 10 H245.2 V24 L235.2 34 H10 Z" fill="#fff" stroke="#222"/>
 <line x1="136.0" y1="188.0" x2="509.2" y2="188.0" stroke="#222" stroke-width="1"/>
 <polygon points="510.2,188.0 500.2,183.0 500.2,193.0" fill="#222"/>
-<line x1="510.2" y1="188.0" x2="1616.1" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="510.2" y1="188.0" x2="2031.4" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <line x1="510.2" y1="222.0" x2="1109.8" y2="222.0" stroke="#222" stroke-width="1"/>
 <polygon points="1110.8,222.0 1100.8,217.0 1100.8,227.0" fill="#222"/>
 <line x1="1110.8" y1="256.0" x2="692.3" y2="256.0" stroke="#222" stroke-width="1"/>
@@ -18,72 +18,80 @@
 <polygon points="1110.8,412.0 1100.8,407.0 1100.8,417.0" fill="#222"/>
 <polyline points="1110.76,446 1140.76,446 1140.76,468 1111.76,468" fill="none" stroke="#222"/>
 <polygon points="1111.8,468.0 1121.8,463.0 1121.8,473.0" fill="#222"/>
-<line x1="1140.8" y1="446.0" x2="1616.1" y2="446.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1140.8" y1="446.0" x2="2031.4" y2="446.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <line x1="1110.8" y1="502.0" x2="1525.1" y2="502.0" stroke="#222" stroke-width="1"/>
 <polygon points="1526.1,502.0 1516.1,497.0 1516.1,507.0" fill="#222"/>
-<line x1="1526.1" y1="536.0" x2="1111.8" y2="536.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1120.8,531.0 1110.8,536.0 1120.8,541.0" fill="none" stroke="#222"/>
-<line x1="1526.1" y1="536.0" x2="1616.1" y2="536.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<path d="M74 558 H120.62 V570 L112.62 578 H74 Z" fill="#fff" stroke="#222"/>
-<line x1="1110.8" y1="624.0" x2="692.3" y2="624.0" stroke="#222" stroke-width="1"/>
-<polygon points="691.3,624.0 701.3,619.0 701.3,629.0" fill="#222"/>
-<line x1="691.3" y1="658.0" x2="137.0" y2="658.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,658.0 146.0,653.0 146.0,663.0" fill="#222"/>
-<line x1="691.3" y1="658.0" x2="1616.1" y2="658.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="74.0" y="558.0" width="1118.8" height="116.0" rx="0" fill="none" stroke="#222"/>
-<rect x="62.0" y="278.0" width="1540.1" height="412.0" rx="0" fill="none" stroke="#222"/>
-<line x1="1110.8" y1="724.0" x2="692.3" y2="724.0" stroke="#222" stroke-width="1"/>
-<polygon points="691.3,724.0 701.3,719.0 701.3,729.0" fill="#222"/>
-<line x1="691.3" y1="758.0" x2="137.0" y2="758.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,758.0 146.0,753.0 146.0,763.0" fill="#222"/>
-<path d="M74 780 H135.7 V792 L127.69999999999999 800 H74 Z" fill="#fff" stroke="#222"/>
-<line x1="136.0" y1="846.0" x2="690.3" y2="846.0" stroke="#222" stroke-width="1"/>
-<polygon points="691.3,846.0 681.3,841.0 681.3,851.0" fill="#222"/>
-<line x1="691.3" y1="880.0" x2="1109.8" y2="880.0" stroke="#222" stroke-width="1"/>
-<polygon points="1110.8,880.0 1100.8,875.0 1100.8,885.0" fill="#222"/>
-<polyline points="1110.76,914 1140.76,914 1140.76,936 1111.76,936" fill="none" stroke="#222"/>
-<polygon points="1111.8,936.0 1121.8,931.0 1121.8,941.0" fill="#222"/>
-<line x1="1110.8" y1="970.0" x2="692.3" y2="970.0" stroke="#222" stroke-width="1"/>
-<polygon points="691.3,970.0 701.3,965.0 701.3,975.0" fill="#222"/>
-<line x1="691.3" y1="1004.0" x2="137.0" y2="1004.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,1004.0 146.0,999.0 146.0,1009.0" fill="#222"/>
-<line x1="691.3" y1="1004.0" x2="1616.1" y2="1004.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="74.0" y="780.0" width="1208.8" height="240.0" rx="0" fill="none" stroke="#222"/>
-<line x1="136.0" y1="1054.0" x2="690.3" y2="1054.0" stroke="#222" stroke-width="1"/>
-<polygon points="691.3,1054.0 681.3,1049.0 681.3,1059.0" fill="#222"/>
-<line x1="691.3" y1="1088.0" x2="1109.8" y2="1088.0" stroke="#222" stroke-width="1"/>
-<polygon points="1110.8,1088.0 1100.8,1083.0 1100.8,1093.0" fill="#222"/>
-<line x1="1110.8" y1="1122.0" x2="1525.1" y2="1122.0" stroke="#222" stroke-width="1"/>
-<polygon points="1526.1,1122.0 1516.1,1117.0 1516.1,1127.0" fill="#222"/>
-<line x1="1526.1" y1="1122.0" x2="1616.1" y2="1122.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<path d="M74 1144 H120.62 V1156 L112.62 1164 H74 Z" fill="#fff" stroke="#222"/>
-<line x1="1110.8" y1="1210.0" x2="692.3" y2="1210.0" stroke="#222" stroke-width="1"/>
-<polygon points="691.3,1210.0 701.3,1205.0 701.3,1215.0" fill="#222"/>
-<line x1="691.3" y1="1244.0" x2="137.0" y2="1244.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,1244.0 146.0,1239.0 146.0,1249.0" fill="#222"/>
-<line x1="691.3" y1="1244.0" x2="1616.1" y2="1244.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="1110.8" y1="1304.0" x2="692.3" y2="1304.0" stroke="#222" stroke-width="1"/>
-<polygon points="691.3,1304.0 701.3,1299.0 701.3,1309.0" fill="#222"/>
-<line x1="1110.8" y1="1304.0" x2="1616.1" y2="1304.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="691.3" y1="1338.0" x2="137.0" y2="1338.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,1338.0 146.0,1333.0 146.0,1343.0" fill="#222"/>
-<rect x="74.0" y="1144.0" width="1118.8" height="210.0" rx="0" fill="none" stroke="#222"/>
-<line x1="74.0" y1="1256.0" x2="1192.8" y2="1256.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1526.1" y1="536.0" x2="1940.4" y2="536.0" stroke="#222" stroke-width="1"/>
+<polygon points="1941.4,536.0 1931.4,531.0 1931.4,541.0" fill="#222"/>
+<line x1="1941.4" y1="570.0" x2="1527.1" y2="570.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1536.1,565.0 1526.1,570.0 1536.1,575.0" fill="none" stroke="#222"/>
+<line x1="1526.1" y1="604.0" x2="1111.8" y2="604.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1120.8,599.0 1110.8,604.0 1120.8,609.0" fill="none" stroke="#222"/>
+<line x1="1526.1" y1="604.0" x2="2031.4" y2="604.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M74 626 H120.62 V638 L112.62 646 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="1110.8" y1="692.0" x2="692.3" y2="692.0" stroke="#222" stroke-width="1"/>
+<polygon points="691.3,692.0 701.3,687.0 701.3,697.0" fill="#222"/>
+<line x1="691.3" y1="726.0" x2="137.0" y2="726.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,726.0 146.0,721.0 146.0,731.0" fill="#222"/>
+<line x1="691.3" y1="726.0" x2="2031.4" y2="726.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="626.0" width="1118.8" height="116.0" rx="0" fill="none" stroke="#222"/>
+<rect x="62.0" y="278.0" width="1955.4" height="480.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1110.8" y1="792.0" x2="692.3" y2="792.0" stroke="#222" stroke-width="1"/>
+<polygon points="691.3,792.0 701.3,787.0 701.3,797.0" fill="#222"/>
+<line x1="691.3" y1="826.0" x2="137.0" y2="826.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,826.0 146.0,821.0 146.0,831.0" fill="#222"/>
+<path d="M74 848 H135.7 V860 L127.69999999999999 868 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="136.0" y1="914.0" x2="690.3" y2="914.0" stroke="#222" stroke-width="1"/>
+<polygon points="691.3,914.0 681.3,909.0 681.3,919.0" fill="#222"/>
+<line x1="691.3" y1="948.0" x2="1109.8" y2="948.0" stroke="#222" stroke-width="1"/>
+<polygon points="1110.8,948.0 1100.8,943.0 1100.8,953.0" fill="#222"/>
+<polyline points="1110.76,982 1140.76,982 1140.76,1004 1111.76,1004" fill="none" stroke="#222"/>
+<polygon points="1111.8,1004.0 1121.8,999.0 1121.8,1009.0" fill="#222"/>
+<line x1="1110.8" y1="1038.0" x2="692.3" y2="1038.0" stroke="#222" stroke-width="1"/>
+<polygon points="691.3,1038.0 701.3,1033.0 701.3,1043.0" fill="#222"/>
+<line x1="691.3" y1="1072.0" x2="137.0" y2="1072.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1072.0 146.0,1067.0 146.0,1077.0" fill="#222"/>
+<line x1="691.3" y1="1072.0" x2="2031.4" y2="1072.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="848.0" width="1208.8" height="240.0" rx="0" fill="none" stroke="#222"/>
+<line x1="136.0" y1="1122.0" x2="690.3" y2="1122.0" stroke="#222" stroke-width="1"/>
+<polygon points="691.3,1122.0 681.3,1117.0 681.3,1127.0" fill="#222"/>
+<line x1="691.3" y1="1156.0" x2="1109.8" y2="1156.0" stroke="#222" stroke-width="1"/>
+<polygon points="1110.8,1156.0 1100.8,1151.0 1100.8,1161.0" fill="#222"/>
+<line x1="1110.8" y1="1190.0" x2="1525.1" y2="1190.0" stroke="#222" stroke-width="1"/>
+<polygon points="1526.1,1190.0 1516.1,1185.0 1516.1,1195.0" fill="#222"/>
+<line x1="1526.1" y1="1224.0" x2="1940.4" y2="1224.0" stroke="#222" stroke-width="1"/>
+<polygon points="1941.4,1224.0 1931.4,1219.0 1931.4,1229.0" fill="#222"/>
+<line x1="1941.4" y1="1224.0" x2="2031.4" y2="1224.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M74 1246 H120.62 V1258 L112.62 1266 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="1110.8" y1="1312.0" x2="692.3" y2="1312.0" stroke="#222" stroke-width="1"/>
+<polygon points="691.3,1312.0 701.3,1307.0 701.3,1317.0" fill="#222"/>
+<line x1="691.3" y1="1346.0" x2="137.0" y2="1346.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1346.0 146.0,1341.0 146.0,1351.0" fill="#222"/>
+<line x1="691.3" y1="1346.0" x2="2031.4" y2="1346.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1110.8" y1="1406.0" x2="692.3" y2="1406.0" stroke="#222" stroke-width="1"/>
+<polygon points="691.3,1406.0 701.3,1401.0 701.3,1411.0" fill="#222"/>
+<line x1="1110.8" y1="1406.0" x2="2031.4" y2="1406.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="691.3" y1="1440.0" x2="137.0" y2="1440.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1440.0 146.0,1435.0 146.0,1445.0" fill="#222"/>
+<rect x="74.0" y="1246.0" width="1118.8" height="210.0" rx="0" fill="none" stroke="#222"/>
+<line x1="74.0" y1="1358.0" x2="1192.8" y2="1358.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="136" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
 <path d="M136 76 V88 M126 81 H146 M136 88 L128 98 M136 88 L144 98" fill="none" stroke="#222"/>
-<line x1="136.0" y1="130.0" x2="136.0" y2="1384.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="136.0" y1="130.0" x2="136.0" y2="1486.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="515.24" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M502.24 82 H492.24 M492.24 71 V93" fill="none" stroke="#222"/>
-<line x1="510.2" y1="130.0" x2="510.2" y2="1384.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="510.2" y1="130.0" x2="510.2" y2="1486.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="696.28" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M683.28 82 H673.28 M673.28 71 V93" fill="none" stroke="#222"/>
-<line x1="691.3" y1="130.0" x2="691.3" y2="1384.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="691.3" y1="130.0" x2="691.3" y2="1486.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="1110.76" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M1111.76 69 l6 -5 M1111.76 69 l6 5" fill="none" stroke="#222"/>
-<line x1="1110.8" y1="130.0" x2="1110.8" y2="1384.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<circle cx="1526.08" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
-<path d="M1513.08 95 H1539.08" fill="none" stroke="#222"/>
-<line x1="1526.1" y1="130.0" x2="1526.1" y2="1384.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1110.8" y1="130.0" x2="1110.8" y2="1486.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="1510.08" y="69" width="32" height="24" fill="#fefbd8" stroke="#222"/>
+<line x1="1526.1" y1="130.0" x2="1526.1" y2="1486.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1941.3999999999999" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1928.3999999999999 95 H1954.3999999999999" fill="none" stroke="#222"/>
+<line x1="1941.4" y1="130.0" x2="1941.4" y2="1486.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="152.8" y="169.0" width="340.7" height="17.0" fill="#fff"/>
 <text x="323.1" y="182.0" font-size="13" text-anchor="middle">1: ユーザ登録ボタンを押す(ユーザーの登録を要求する)</text>
 <rect x="719.2" y="203.0" width="182.6" height="17.0" fill="#fff"/>
@@ -103,79 +111,86 @@
 <text x="1118.8" y="440.0" font-size="13" text-anchor="start">7: 入力規則を検証する</text>
 <rect x="1127.5" y="483.0" width="381.8" height="17.0" fill="#fff"/>
 <text x="1318.4" y="496.0" font-size="13" text-anchor="middle">8: 同じユーザーIDのユーザーを探す(削除済みユーザーを含む)</text>
-<rect x="1303.4" y="517.0" width="30.0" height="17.0" fill="#fff"/>
-<text x="1318.4" y="530.0" font-size="13" text-anchor="middle">有無</text>
-<text x="80.0" y="573.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
-<rect x="80.0" y="579.0" width="346.2" height="17.0" fill="#fff"/>
-<text x="82.0" y="592.0" font-size="13" text-anchor="start">[ユーザー情報が無効、またはユーザーIDが重複している]</text>
-<rect x="743.7" y="605.0" width="314.7" height="17.0" fill="#fff"/>
-<text x="901.0" y="618.0" font-size="13" text-anchor="middle">9: 無効である理由、またはユーザーIDの重複を渡す</text>
-<rect x="200.5" y="639.0" width="426.2" height="17.0" fill="#fff"/>
-<text x="413.6" y="652.0" font-size="13" text-anchor="middle">10: 無効である理由、またはユーザーIDが重複していることを提示する</text>
-<rect x="792.9" y="705.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="718.0" font-size="13" text-anchor="middle">11: 入力されたユーザー情報を渡す</text>
-<rect x="234.1" y="739.0" width="359.2" height="17.0" fill="#fff"/>
-<text x="413.6" y="752.0" font-size="13" text-anchor="middle">12: 入力されたユーザー情報を提示し、登録の確認を求める</text>
-<text x="80.0" y="795.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
-<rect x="80.0" y="801.0" width="188.1" height="17.0" fill="#fff"/>
-<text x="82.0" y="814.0" font-size="13" text-anchor="start">[登録のキャンセルを要求した]</text>
-<rect x="325.1" y="827.0" width="177.2" height="17.0" fill="#fff"/>
-<text x="413.6" y="840.0" font-size="13" text-anchor="middle">13: キャンセルボタンを押す</text>
-<rect x="818.9" y="861.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="874.0" font-size="13" text-anchor="middle">14: キャンセルを要求する</text>
-<rect x="1116.8" y="895.0" width="190.2" height="17.0" fill="#fff"/>
-<text x="1118.8" y="908.0" font-size="13" text-anchor="start">15: 入力された内容を破棄する</text>
-<rect x="812.4" y="951.0" width="177.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="964.0" font-size="13" text-anchor="middle">16: キャンセルの完了を渡す</text>
-<rect x="286.1" y="985.0" width="255.2" height="17.0" fill="#fff"/>
-<text x="413.6" y="998.0" font-size="13" text-anchor="middle">17: キャンセルが完了したことを提示する</text>
-<rect x="259.0" y="1035.0" width="309.2" height="17.0" fill="#fff"/>
-<text x="413.6" y="1048.0" font-size="13" text-anchor="middle">18: 登録ボタンを押す(ユーザーの登録を指示する)</text>
-<rect x="704.3" y="1069.0" width="393.5" height="17.0" fill="#fff"/>
-<text x="901.0" y="1082.0" font-size="13" text-anchor="middle">19: ユーザーの登録を要求する(氏名, ユーザーID, パスワード)</text>
-<rect x="1141.2" y="1103.0" width="354.5" height="17.0" fill="#fff"/>
-<text x="1318.4" y="1116.0" font-size="13" text-anchor="middle">20: ユーザーを登録する(氏名, ユーザーID, パスワード)</text>
-<text x="80.0" y="1159.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
-<rect x="80.0" y="1165.0" width="110.1" height="17.0" fill="#fff"/>
-<text x="82.0" y="1178.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="805.9" y="1191.0" width="190.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="1204.0" font-size="13" text-anchor="middle">21: 保存に失敗したことを渡す</text>
-<rect x="305.6" y="1225.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="413.6" y="1238.0" font-size="13" text-anchor="middle">22: 保存に失敗したことを提示する</text>
-<rect x="80.0" y="1259.0" width="110.1" height="17.0" fill="#fff"/>
-<text x="82.0" y="1272.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="831.9" y="1285.0" width="138.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="1298.0" font-size="13" text-anchor="middle">23: 登録の完了を渡す</text>
-<rect x="273.1" y="1319.0" width="281.2" height="17.0" fill="#fff"/>
-<text x="413.6" y="1332.0" font-size="13" text-anchor="middle">24: ユーザーの登録が完了したことを提示する</text>
+<rect x="1542.8" y="517.0" width="381.8" height="17.0" fill="#fff"/>
+<text x="1733.7" y="530.0" font-size="13" text-anchor="middle">9: 同じユーザーIDのユーザーを探す(削除済みユーザーを含む)</text>
+<rect x="1718.7" y="551.0" width="30.0" height="17.0" fill="#fff"/>
+<text x="1733.7" y="564.0" font-size="13" text-anchor="middle">有無</text>
+<rect x="1303.4" y="585.0" width="30.0" height="17.0" fill="#fff"/>
+<text x="1318.4" y="598.0" font-size="13" text-anchor="middle">有無</text>
+<text x="80.0" y="641.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="80.0" y="647.0" width="346.2" height="17.0" fill="#fff"/>
+<text x="82.0" y="660.0" font-size="13" text-anchor="start">[ユーザー情報が無効、またはユーザーIDが重複している]</text>
+<rect x="739.9" y="673.0" width="322.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="686.0" font-size="13" text-anchor="middle">10: 無効である理由、またはユーザーIDの重複を渡す</text>
+<rect x="200.5" y="707.0" width="426.2" height="17.0" fill="#fff"/>
+<text x="413.6" y="720.0" font-size="13" text-anchor="middle">11: 無効である理由、またはユーザーIDが重複していることを提示する</text>
+<rect x="792.9" y="773.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="786.0" font-size="13" text-anchor="middle">12: 入力されたユーザー情報を渡す</text>
+<rect x="234.1" y="807.0" width="359.2" height="17.0" fill="#fff"/>
+<text x="413.6" y="820.0" font-size="13" text-anchor="middle">13: 入力されたユーザー情報を提示し、登録の確認を求める</text>
+<text x="80.0" y="863.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="80.0" y="869.0" width="188.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="882.0" font-size="13" text-anchor="start">[登録のキャンセルを要求した]</text>
+<rect x="325.1" y="895.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="413.6" y="908.0" font-size="13" text-anchor="middle">14: キャンセルボタンを押す</text>
+<rect x="818.9" y="929.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="942.0" font-size="13" text-anchor="middle">15: キャンセルを要求する</text>
+<rect x="1116.8" y="963.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="1118.8" y="976.0" font-size="13" text-anchor="start">16: 入力された内容を破棄する</text>
+<rect x="812.4" y="1019.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="1032.0" font-size="13" text-anchor="middle">17: キャンセルの完了を渡す</text>
+<rect x="286.1" y="1053.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="413.6" y="1066.0" font-size="13" text-anchor="middle">18: キャンセルが完了したことを提示する</text>
+<rect x="259.0" y="1103.0" width="309.2" height="17.0" fill="#fff"/>
+<text x="413.6" y="1116.0" font-size="13" text-anchor="middle">19: 登録ボタンを押す(ユーザーの登録を指示する)</text>
+<rect x="704.3" y="1137.0" width="393.5" height="17.0" fill="#fff"/>
+<text x="901.0" y="1150.0" font-size="13" text-anchor="middle">20: ユーザーの登録を要求する(氏名, ユーザーID, パスワード)</text>
+<rect x="1141.2" y="1171.0" width="354.5" height="17.0" fill="#fff"/>
+<text x="1318.4" y="1184.0" font-size="13" text-anchor="middle">21: ユーザーを登録する(氏名, ユーザーID, パスワード)</text>
+<rect x="1556.5" y="1205.0" width="354.5" height="17.0" fill="#fff"/>
+<text x="1733.7" y="1218.0" font-size="13" text-anchor="middle">22: ユーザーを登録する(氏名, ユーザーID, パスワード)</text>
+<text x="80.0" y="1261.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
+<rect x="80.0" y="1267.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="1280.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
+<rect x="805.9" y="1293.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="1306.0" font-size="13" text-anchor="middle">23: 保存に失敗したことを渡す</text>
+<rect x="305.6" y="1327.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="413.6" y="1340.0" font-size="13" text-anchor="middle">24: 保存に失敗したことを提示する</text>
+<rect x="80.0" y="1361.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="1374.0" font-size="13" text-anchor="start">[保存に成功した]</text>
+<rect x="831.9" y="1387.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="1400.0" font-size="13" text-anchor="middle">25: 登録の完了を渡す</text>
+<rect x="273.1" y="1421.0" width="281.2" height="17.0" fill="#fff"/>
+<text x="413.6" y="1434.0" font-size="13" text-anchor="middle">26: ユーザーの登録が完了したことを提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>
 <text x="510.2" y="120.0" font-size="13" text-anchor="middle">:システム管理者ホーム画面</text>
 <text x="691.3" y="120.0" font-size="13" text-anchor="middle">:ユーザ登録画面</text>
 <text x="1110.8" y="120.0" font-size="13" text-anchor="middle">:ユーザー管理制御</text>
-<text x="1526.1" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
-<path d="M1616.08 176 H1986.08 L1996.08 186 V222 H1616.08 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1624.1" y="196.0" font-size="13" text-anchor="start">システム管理者ホーム画面のユーザ登録ボタンからユーザ登録</text>
-<text x="1624.1" y="214.0" font-size="13" text-anchor="start">画面に移る(画面遷移図)</text>
-<path d="M1616.08 434 H1996.48 L2006.48 444 V498 H1616.08 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1624.1" y="454.0" font-size="13" text-anchor="start">ユーザーID: 半角英数字と . _ - の4〜20文字。パスワー</text>
-<text x="1624.1" y="472.0" font-size="13" text-anchor="start">ド: 8文字以上で英字と数字を含む。氏名: 1〜30文字(備考1、</text>
-<text x="1624.1" y="490.0" font-size="13" text-anchor="start">A-17)</text>
-<path d="M1616.08 524 H1986.08 L1996.08 534 V570 H1616.08 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1624.1" y="544.0" font-size="13" text-anchor="start">ユーザーは概念クラス図の「従業員」。削除済みユーザーのユ</text>
-<text x="1624.1" y="562.0" font-size="13" text-anchor="start">ーザーIDとも重複できない(備考3)</text>
-<path d="M1616.08 646 H1848.02 L1858.02 656 V674 H1616.08 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1624.1" y="666.0" font-size="13" text-anchor="start">Alt-1・Alt-2。メインフロー2に戻る</text>
-<path d="M1616.08 992 H1912.2399999999998 L1922.2399999999998 1002 V1020 H1616.08 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1624.1" y="1012.0" font-size="13" text-anchor="start">Ex-1。待機状態に戻る。ユーザーは登録されない</text>
-<path d="M1616.08 1110 H1980.62 L1990.62 1120 V1156 H1616.08 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1624.1" y="1130.0" font-size="13" text-anchor="start">登録したユーザーは権限を持たず、所属も未設定(事後条件、</text>
-<text x="1624.1" y="1148.0" font-size="13" text-anchor="start">備考2)。権限は UC-104、所属は UC-105 で扱う</text>
-<path d="M1616.08 1232 H1984.78 L1994.78 1242 V1260 H1616.08 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1624.1" y="1252.0" font-size="13" text-anchor="start">Ex-2。入力された内容を保持したまま、メインフロー5に戻る</text>
-<path d="M1616.08 1292 H1949.1599999999999 L1959.1599999999999 1302 V1320 H1616.08 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1624.1" y="1312.0" font-size="13" text-anchor="start">登録ボタンではユーザ登録画面にとどまる(画面遷移図)</text>
-<path d="M2036.48 40 H2323.2799999999997 L2333.2799999999997 50 V86 H2036.48 Z" fill="#fde2e2" stroke="#222"/>
-<text x="2044.5" y="60.0" font-size="13" text-anchor="start">UC-101 ユーザーを登録する</text>
-<text x="2044.5" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1、Alt-2、Ex-1、Ex-2)</text>
+<text x="1526.1" y="120.0" font-size="13" text-anchor="middle">:DataManager</text>
+<text x="1941.4" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<path d="M2031.3999999999999 176 H2401.3999999999996 L2411.3999999999996 186 V222 H2031.3999999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2039.4" y="196.0" font-size="13" text-anchor="start">システム管理者ホーム画面のユーザ登録ボタンからユーザ登録</text>
+<text x="2039.4" y="214.0" font-size="13" text-anchor="start">画面に移る(画面遷移図)</text>
+<path d="M2031.3999999999999 434 H2411.8 L2421.8 444 V498 H2031.3999999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2039.4" y="454.0" font-size="13" text-anchor="start">ユーザーID: 半角英数字と . _ - の4〜20文字。パスワー</text>
+<text x="2039.4" y="472.0" font-size="13" text-anchor="start">ド: 8文字以上で英字と数字を含む。氏名: 1〜30文字(備考1、</text>
+<text x="2039.4" y="490.0" font-size="13" text-anchor="start">A-17)</text>
+<path d="M2031.3999999999999 592 H2401.3999999999996 L2411.3999999999996 602 V638 H2031.3999999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2039.4" y="612.0" font-size="13" text-anchor="start">ユーザーは概念クラス図の「従業員」。削除済みユーザーのユ</text>
+<text x="2039.4" y="630.0" font-size="13" text-anchor="start">ーザーIDとも重複できない(備考3)</text>
+<path d="M2031.3999999999999 714 H2263.3399999999997 L2273.3399999999997 724 V742 H2031.3999999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2039.4" y="734.0" font-size="13" text-anchor="start">Alt-1・Alt-2。メインフロー2に戻る</text>
+<path d="M2031.3999999999999 1060 H2327.56 L2337.56 1070 V1088 H2031.3999999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2039.4" y="1080.0" font-size="13" text-anchor="start">Ex-1。待機状態に戻る。ユーザーは登録されない</text>
+<path d="M2031.3999999999999 1212 H2395.94 L2405.94 1222 V1258 H2031.3999999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2039.4" y="1232.0" font-size="13" text-anchor="start">登録したユーザーは権限を持たず、所属も未設定(事後条件、</text>
+<text x="2039.4" y="1250.0" font-size="13" text-anchor="start">備考2)。権限は UC-104、所属は UC-105 で扱う</text>
+<path d="M2031.3999999999999 1334 H2400.1 L2410.1 1344 V1362 H2031.3999999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2039.4" y="1354.0" font-size="13" text-anchor="start">Ex-2。入力された内容を保持したまま、メインフロー5に戻る</text>
+<path d="M2031.3999999999999 1394 H2364.48 L2374.48 1404 V1422 H2031.3999999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2039.4" y="1414.0" font-size="13" text-anchor="start">登録ボタンではユーザ登録画面にとどまる(画面遷移図)</text>
+<path d="M2451.8 40 H2738.6000000000004 L2748.6000000000004 50 V86 H2451.8 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2459.8" y="60.0" font-size="13" text-anchor="start">UC-101 ユーザーを登録する</text>
+<text x="2459.8" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1、Alt-2、Ex-1、Ex-2)</text>
 <text x="16" y="27" font-size="14"><tspan font-weight="bold">sd</tspan> UC-101 ユーザーを登録する</text>
 </svg>

@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2484" height="1417" viewBox="0 0 2484 1417" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<title>UC-314 勤怠修正申請を取り下げる</title>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="10" y="10" width="2464.2" height="1397.0" fill="none" stroke="#222"/><path d="M10 10 H287.2 V24 L277.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<line x1="124.0" y1="205.0" x2="581.5" y2="205.0" stroke="#222" stroke-width="1"/>
+<polygon points="582.5,205.0 572.5,200.0 572.5,210.0" fill="#222"/>
+<line x1="582.5" y1="239.0" x2="981.7" y2="239.0" stroke="#222" stroke-width="1"/>
+<polygon points="982.7,239.0 972.7,234.0 972.7,244.0" fill="#222"/>
+<line x1="982.7" y1="273.0" x2="1345.0" y2="273.0" stroke="#222" stroke-width="1"/>
+<polygon points="1346.0,273.0 1336.0,268.0 1336.0,278.0" fill="#222"/>
+<line x1="1346.0" y1="307.0" x2="1708.4" y2="307.0" stroke="#222" stroke-width="1"/>
+<polygon points="1709.4,307.0 1699.4,302.0 1699.4,312.0" fill="#222"/>
+<line x1="1709.4" y1="341.0" x2="1347.0" y2="341.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1356.0,336.0 1346.0,341.0 1356.0,346.0" fill="none" stroke="#222"/>
+<line x1="1346.0" y1="375.0" x2="983.7" y2="375.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="992.7,370.0 982.7,375.0 992.7,380.0" fill="none" stroke="#222"/>
+<line x1="982.7" y1="409.0" x2="583.5" y2="409.0" stroke="#222" stroke-width="1"/>
+<polygon points="582.5,409.0 592.5,404.0 592.5,414.0" fill="#222"/>
+<line x1="582.5" y1="443.0" x2="125.0" y2="443.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,443.0 134.0,438.0 134.0,448.0" fill="#222"/>
+<line x1="582.5" y1="443.0" x2="1799.4" y2="443.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M62 465 H123.69999999999999 V477 L115.69999999999999 485 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="124.0" y1="531.0" x2="581.5" y2="531.0" stroke="#222" stroke-width="1"/>
+<polygon points="582.5,531.0 572.5,526.0 572.5,536.0" fill="#222"/>
+<line x1="582.5" y1="565.0" x2="981.7" y2="565.0" stroke="#222" stroke-width="1"/>
+<polygon points="982.7,565.0 972.7,560.0 972.7,570.0" fill="#222"/>
+<line x1="982.7" y1="599.0" x2="583.5" y2="599.0" stroke="#222" stroke-width="1"/>
+<polygon points="582.5,599.0 592.5,594.0 592.5,604.0" fill="#222"/>
+<line x1="582.5" y1="633.0" x2="125.0" y2="633.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,633.0 134.0,628.0 134.0,638.0" fill="#222"/>
+<line x1="582.5" y1="633.0" x2="1799.4" y2="633.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="62.0" y="465.0" width="1002.7" height="184.0" rx="0" fill="none" stroke="#222"/>
+<line x1="124.0" y1="683.0" x2="581.5" y2="683.0" stroke="#222" stroke-width="1"/>
+<polygon points="582.5,683.0 572.5,678.0 572.5,688.0" fill="#222"/>
+<line x1="582.5" y1="717.0" x2="981.7" y2="717.0" stroke="#222" stroke-width="1"/>
+<polygon points="982.7,717.0 972.7,712.0 972.7,722.0" fill="#222"/>
+<line x1="982.7" y1="751.0" x2="1345.0" y2="751.0" stroke="#222" stroke-width="1"/>
+<polygon points="1346.0,751.0 1336.0,746.0 1336.0,756.0" fill="#222"/>
+<line x1="1346.0" y1="785.0" x2="1708.4" y2="785.0" stroke="#222" stroke-width="1"/>
+<polygon points="1709.4,785.0 1699.4,780.0 1699.4,790.0" fill="#222"/>
+<line x1="1709.4" y1="819.0" x2="1347.0" y2="819.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1356.0,814.0 1346.0,819.0 1356.0,824.0" fill="none" stroke="#222"/>
+<line x1="1346.0" y1="853.0" x2="983.7" y2="853.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="992.7,848.0 982.7,853.0 992.7,858.0" fill="none" stroke="#222"/>
+<polyline points="982.7200000000001,887 1012.7200000000001,887 1012.7200000000001,909 983.7200000000001,909" fill="none" stroke="#222"/>
+<polygon points="983.7,909.0 993.7,904.0 993.7,914.0" fill="#222"/>
+<path d="M62 931 H123.69999999999999 V943 L115.69999999999999 951 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="982.7" y1="997.0" x2="583.5" y2="997.0" stroke="#222" stroke-width="1"/>
+<polygon points="582.5,997.0 592.5,992.0 592.5,1002.0" fill="#222"/>
+<line x1="582.5" y1="1031.0" x2="125.0" y2="1031.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,1031.0 134.0,1026.0 134.0,1036.0" fill="#222"/>
+<line x1="582.5" y1="1031.0" x2="1799.4" y2="1031.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="62.0" y="931.0" width="1002.7" height="116.0" rx="0" fill="none" stroke="#222"/>
+<line x1="982.7" y1="1081.0" x2="1345.0" y2="1081.0" stroke="#222" stroke-width="1"/>
+<polygon points="1346.0,1081.0 1336.0,1076.0 1336.0,1086.0" fill="#222"/>
+<line x1="1346.0" y1="1115.0" x2="1708.4" y2="1115.0" stroke="#222" stroke-width="1"/>
+<polygon points="1709.4,1115.0 1699.4,1110.0 1699.4,1120.0" fill="#222"/>
+<line x1="1709.4" y1="1115.0" x2="1799.4" y2="1115.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M62 1137 H108.62 V1149 L100.62 1157 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="982.7" y1="1203.0" x2="583.5" y2="1203.0" stroke="#222" stroke-width="1"/>
+<polygon points="582.5,1203.0 592.5,1198.0 592.5,1208.0" fill="#222"/>
+<line x1="582.5" y1="1237.0" x2="125.0" y2="1237.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,1237.0 134.0,1232.0 134.0,1242.0" fill="#222"/>
+<line x1="582.5" y1="1237.0" x2="1799.4" y2="1237.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="982.7" y1="1297.0" x2="583.5" y2="1297.0" stroke="#222" stroke-width="1"/>
+<polygon points="582.5,1297.0 592.5,1292.0 592.5,1302.0" fill="#222"/>
+<line x1="982.7" y1="1297.0" x2="1799.4" y2="1297.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="582.5" y1="1331.0" x2="125.0" y2="1331.0" stroke="#222" stroke-width="1"/>
+<polygon points="124.0,1331.0 134.0,1326.0 134.0,1336.0" fill="#222"/>
+<rect x="62.0" y="1137.0" width="1002.7" height="210.0" rx="0" fill="none" stroke="#222"/>
+<line x1="62.0" y1="1249.0" x2="1064.7" y2="1249.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="124" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
+<path d="M124 76 V88 M114 81 H134 M124 88 L116 98 M124 88 L132 98" fill="none" stroke="#222"/>
+<line x1="124.0" y1="130.0" x2="124.0" y2="1377.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="587.4800000000001" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M574.4800000000001 82 H564.4800000000001 M564.4800000000001 71 V93" fill="none" stroke="#222"/>
+<line x1="582.5" y1="130.0" x2="582.5" y2="1377.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="982.7200000000001" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M983.7200000000001 69 l6 -5 M983.7200000000001 69 l6 5" fill="none" stroke="#222"/>
+<line x1="982.7" y1="130.0" x2="982.7" y2="1377.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="1330.0400000000002" y="69" width="32" height="24" fill="#fefbd8" stroke="#222"/>
+<line x1="1346.0" y1="130.0" x2="1346.0" y2="1377.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1709.3600000000001" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1696.3600000000001 95 H1722.3600000000001" fill="none" stroke="#222"/>
+<line x1="1709.4" y1="130.0" x2="1709.4" y2="1377.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="140.8" y="169.0" width="424.9" height="17.0" fill="#fff"/>
+<text x="353.2" y="182.0" font-size="13" text-anchor="middle">1: 「未処理」の勤怠修正申請を指定して取り下げを要求する(UC-310 </text>
+<rect x="334.5" y="186.0" width="37.5" height="17.0" fill="#fff"/>
+<text x="353.2" y="199.0" font-size="13" text-anchor="middle">から)</text>
+<rect x="599.3" y="220.0" width="366.7" height="17.0" fill="#fff"/>
+<text x="782.6" y="233.0" font-size="13" text-anchor="middle">2: 取り下げる勤怠修正申請の内容を要求する(勤怠修正申請)</text>
+<rect x="1079.6" y="254.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="1164.4" y="267.0" font-size="13" text-anchor="middle">3: 勤怠修正申請を取得する</text>
+<rect x="1442.9" y="288.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="1527.7" y="301.0" font-size="13" text-anchor="middle">4: 勤怠修正申請を取得する</text>
+<rect x="1359.0" y="322.0" width="337.3" height="17.0" fill="#fff"/>
+<text x="1527.7" y="335.0" font-size="13" text-anchor="middle">対象日, 修正後の勤怠, 申請理由, 送信日時, 処理状態</text>
+<rect x="995.7" y="356.0" width="337.3" height="17.0" fill="#fff"/>
+<text x="1164.4" y="369.0" font-size="13" text-anchor="middle">対象日, 修正後の勤怠, 申請理由, 送信日時, 処理状態</text>
+<rect x="658.8" y="390.0" width="247.6" height="17.0" fill="#fff"/>
+<text x="782.6" y="403.0" font-size="13" text-anchor="middle">5: 取り下げる勤怠修正申請の内容を渡す</text>
+<rect x="144.9" y="424.0" width="416.6" height="17.0" fill="#fff"/>
+<text x="353.2" y="437.0" font-size="13" text-anchor="middle">6: 取り下げる勤怠修正申請の内容を提示し、取り下げの確認を求める</text>
+<text x="68.0" y="480.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="68.0" y="486.0" width="214.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="499.0" font-size="13" text-anchor="start">[取り下げのキャンセルを要求した]</text>
+<rect x="268.4" y="512.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="353.2" y="525.0" font-size="13" text-anchor="middle">7: キャンセルボタンを押す</text>
+<rect x="704.3" y="546.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="782.6" y="559.0" font-size="13" text-anchor="middle">8: キャンセルを要求する</text>
+<rect x="697.8" y="580.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="782.6" y="593.0" font-size="13" text-anchor="middle">9: キャンセルの完了を渡す</text>
+<rect x="225.7" y="614.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="353.2" y="627.0" font-size="13" text-anchor="middle">10: キャンセルが完了したことを提示する</text>
+<rect x="232.2" y="664.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="353.2" y="677.0" font-size="13" text-anchor="middle">11: 勤怠修正申請の取り下げを指示する</text>
+<rect x="660.5" y="698.0" width="244.2" height="17.0" fill="#fff"/>
+<text x="782.6" y="711.0" font-size="13" text-anchor="middle">12: 取り下げを要求する(勤怠修正申請)</text>
+<rect x="1088.8" y="732.0" width="151.2" height="17.0" fill="#fff"/>
+<text x="1164.4" y="745.0" font-size="13" text-anchor="middle">13: 処理状態を取得する</text>
+<rect x="1452.1" y="766.0" width="151.2" height="17.0" fill="#fff"/>
+<text x="1527.7" y="779.0" font-size="13" text-anchor="middle">14: 処理状態を取得する</text>
+<rect x="1499.7" y="800.0" width="56.0" height="17.0" fill="#fff"/>
+<text x="1527.7" y="813.0" font-size="13" text-anchor="middle">処理状態</text>
+<rect x="1136.4" y="834.0" width="56.0" height="17.0" fill="#fff"/>
+<text x="1164.4" y="847.0" font-size="13" text-anchor="middle">処理状態</text>
+<rect x="988.7" y="868.0" width="294.2" height="17.0" fill="#fff"/>
+<text x="990.7" y="881.0" font-size="13" text-anchor="start">15: 処理状態が「未処理」であることを検証する</text>
+<text x="68.0" y="946.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="68.0" y="952.0" width="253.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="965.0" font-size="13" text-anchor="start">[処理状態が「未処理」でなくなっている]</text>
+<rect x="681.0" y="978.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="782.6" y="991.0" font-size="13" text-anchor="middle">16: 取り下げできないことを渡す</text>
+<rect x="173.7" y="1012.0" width="359.2" height="17.0" fill="#fff"/>
+<text x="353.2" y="1025.0" font-size="13" text-anchor="middle">17: 対象の勤怠修正申請を取り下げできないことを提示する</text>
+<rect x="1043.3" y="1062.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="1164.4" y="1075.0" font-size="13" text-anchor="middle">18: 処理状態を「取り下げ」に更新する</text>
+<rect x="1406.6" y="1096.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="1527.7" y="1109.0" font-size="13" text-anchor="middle">19: 処理状態を「取り下げ」に更新する</text>
+<text x="68.0" y="1152.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
+<rect x="68.0" y="1158.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="1171.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
+<rect x="687.5" y="1184.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="782.6" y="1197.0" font-size="13" text-anchor="middle">20: 保存に失敗したことを渡す</text>
+<rect x="245.2" y="1218.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="353.2" y="1231.0" font-size="13" text-anchor="middle">21: 保存に失敗したことを提示する</text>
+<rect x="68.0" y="1252.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="1265.0" font-size="13" text-anchor="start">[保存に成功した]</text>
+<rect x="700.5" y="1278.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="782.6" y="1291.0" font-size="13" text-anchor="middle">22: 取り下げの完了を渡す</text>
+<rect x="232.2" y="1312.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="353.2" y="1325.0" font-size="13" text-anchor="middle">23: 取り下げが完了したことを提示する</text>
+<text x="124.0" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<text x="582.5" y="120.0" font-size="13" text-anchor="middle">:勤怠修正申請内容一覧表示画面</text>
+<text x="982.7" y="120.0" font-size="13" text-anchor="middle">:勤怠修正申請制御</text>
+<text x="1346.0" y="120.0" font-size="13" text-anchor="middle">:DataManager</text>
+<text x="1709.4" y="120.0" font-size="13" text-anchor="middle">:勤怠修正申請</text>
+<path d="M1799.3600000000001 431 H2132.44 L2142.44 441 V459 H1799.3600000000001 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1807.4" y="451.0" font-size="13" text-anchor="start">取り下げの確認を求める画面は画面遷移図にない(暫定)</text>
+<path d="M1799.3600000000001 621 H2082.52 L2092.52 631 V649 H1799.3600000000001 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1807.4" y="641.0" font-size="13" text-anchor="start">Ex-1。待機状態に戻る。処理状態は変わらない</text>
+<path d="M1799.3600000000001 1019 H2168.06 L2178.06 1029 V1065 H1799.3600000000001 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1807.4" y="1039.0" font-size="13" text-anchor="start">Alt-1。このユースケースを終了する。一覧を提示した後に承</text>
+<text x="1807.4" y="1057.0" font-size="13" text-anchor="start">認・却下・取り下げされた場合に当たる(備考3)</text>
+<path d="M1799.3600000000001 1103 H2157.1400000000003 L2167.1400000000003 1113 V1149 H1799.3600000000001 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1807.4" y="1123.0" font-size="13" text-anchor="start">データは消さない(備考2、A-6)。勤怠記録は修正しない(事</text>
+<text x="1807.4" y="1141.0" font-size="13" text-anchor="start">後条件)</text>
+<path d="M1799.3600000000001 1225 H1973.0600000000002 L1983.0600000000002 1235 V1253 H1799.3600000000001 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1807.4" y="1245.0" font-size="13" text-anchor="start">Ex-2。メインフロー2に戻る</text>
+<path d="M1799.3600000000001 1285 H2009.98 L2019.98 1295 V1313 H1799.3600000000001 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1807.4" y="1305.0" font-size="13" text-anchor="start">勤怠管理者には通知しない(備考4)</text>
+<path d="M2208.06 40 H2444.16 L2454.16 50 V86 H2208.06 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2216.1" y="60.0" font-size="13" text-anchor="start">UC-314 勤怠修正申請を取り下げる</text>
+<text x="2216.1" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1、Ex-1、Ex-2)</text>
+<text x="16" y="27" font-size="14"><tspan font-weight="bold">sd</tspan> UC-314 勤怠修正申請を取り下げる</text>
+</svg>

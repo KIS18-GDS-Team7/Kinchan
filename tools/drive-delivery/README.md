@@ -76,16 +76,17 @@ GitHub 側に受け口や秘密情報は置かない (public repo を GAS 側か
    |---|---|
    | `GITHUB_REPO` | `KIS18-GDS-Team7/Kinchan` |
    | `DRIVE_FOLDER_ID` | `成果物/` と `PR-成果物/` を置くフォルダの ID (URL の `folders/` 以降) |
-   | `GITHUB_TOKEN` | 推奨。認証なしの GitHub API は送信元 IP ごとに 60 回/時で、GAS の送信元 IP は他の利用者と共有される。fine-grained PAT で、対象は Public repositories (read-only)、権限の追加は不要 |
+   | `GITHUB_TOKEN` | 必須 (未設定だと `Script property not set: GITHUB_TOKEN` で止まる)。認証なしの GitHub API は送信元 IP ごとに 60 回/時で、GAS の送信元 IP は他の利用者と共有されるため、すぐに上限に達して HTTP 403 になる。fine-grained PAT で、Repository access は Public repositories (read-only)、権限の追加は不要。有効期限が切れると HTTP 401 になるので、期限を控えておく |
    | `BASE_BRANCH` | 任意。既定 `main` |
    | `MAIN_FOLDER_NAME` | 任意。既定 `成果物` |
    | `PR_FOLDER_NAME` | 任意。既定 `PR-成果物` |
    | `MANIFEST_PATH` | 任意。既定 `tools/drive-delivery/manifest.json` |
 
-3. `checkImportFormats` を実行し、Markdown → Google Docs の変換がこのアカウントで使えることを確認する (初回は権限の承認ダイアログが出る)。
-4. `dryRun` を実行し、置かれる予定のファイルの一覧をログで確認する (Drive には書き込まない)。
-5. `poll` を 1 回手で実行し、Drive に `成果物/` と `PR-成果物/` ができることを確認する。
-6. `setup` を実行し、10 分ごとのトリガーを作る。
+3. `checkGitHub` を実行し、ログに `limit=5000` が表示されることを確認する (初回は権限の承認ダイアログが出る)。
+4. `checkImportFormats` を実行し、Markdown → Google Docs の変換がこのアカウントで使えることを確認する。
+5. `dryRun` を実行し、置かれる予定のファイルの一覧をログで確認する (Drive には書き込まない)。
+6. `poll` を 1 回手で実行し、Drive に `成果物/` と `PR-成果物/` ができることを確認する。
+7. `setup` を実行し、10 分ごとのトリガーを作る。
 
 ### 旧版 (approved/* タグで納品) からの移行
 
@@ -97,6 +98,7 @@ GitHub 側に受け口や秘密情報は置かない (public repo を GAS 側か
 ## 運用
 
 - 失敗するとトリガーのエラー通知が実行者 (PM) にメールで届く。1 つの PR の失敗は他の PR や `成果物/` の処理を止めない。同期済みの記録は成功したときだけ付くので、原因を直せば次回の実行で再試行される。
+- `HTTP 403 ... rate limit ... exhausted` は GitHub API の回数の上限。`checkGitHub` で token が効いているか (`limit=5000`) を確認する。`HTTP 401` は token の誤りか期限切れ。
 - 1 回の実行は 4.5 分で打ち切り、残りは次回に回す (GAS の実行時間の上限は 6 分)。
 - PR フォルダを作り直したいときは、Drive 上でそのフォルダをゴミ箱に移す。次回の実行で作り直される。
 - script を更新したあとで全体を読み直させたいときは `forceResync` を実行する。内容が同じファイルは再アップロードされない。

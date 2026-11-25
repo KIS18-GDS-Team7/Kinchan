@@ -73,7 +73,12 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 
 ### Google Drive への納品
 
-`approved/<日付>` タグを打つと、Apps Script が 30 分以内に Shared Drive の指定フォルダに成果物を置く (Markdown は Google Docs に変換)。納品するファイルと置き場所は `tools/drive-delivery/manifest.json` に書いたものだけで、変更は PR で行う。仕組みと設定は [tools/drive-delivery/README.md](tools/drive-delivery/README.md) と [ADR-0005](docs/ADR/0005-deliver-via-apps-script.md) を参照。
+Apps Script が 10 分ごとに GitHub を読み、Shared Drive の指定フォルダに成果物を置く (Markdown は Google Docs に変換)。
+
+- `成果物/`: `main` の最新に追従する。
+- `PR-成果物/#<番号> <タイトル>-成果物/`: `main` を base とする PR (draft を除く) の差分に含まれる成果物。PR が close (merge を含む) されるか draft に戻されると、フォルダはゴミ箱に移る。
+
+置くファイルと置き場所は `tools/drive-delivery/manifest.json` に書いたものだけで、変更は PR で行う。仕組みと設定は [tools/drive-delivery/README.md](tools/drive-delivery/README.md) と [ADR-0042](docs/ADR/0042-deliver-main-and-pr-to-drive.md) を参照。
 
 ## 困ったとき
 

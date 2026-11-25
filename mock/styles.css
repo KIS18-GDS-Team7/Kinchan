@@ -320,6 +320,10 @@ h1, h2, h3 { letter-spacing: -.025em; }
 .details dt { color: var(--muted); font-weight: 600; }
 .details dd { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
 .list-item { overflow-wrap: anywhere; }
+/* 一覧の行のボタンは縮めず、「詳細」などのラベルを1行で表示する */
+.list-item > .item-main { flex: 1 1 auto; }
+.list-item > .btn, .list-item > .item-actions { flex-shrink: 0; }
+.list-item .btn { white-space: nowrap; overflow-wrap: normal; }
 .punch-list { margin: 0; padding: 0; list-style: none; font-size: 12px; }
 .punch-list li { white-space: nowrap; }
 .record-group { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 20px; }

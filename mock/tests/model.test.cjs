@@ -9,6 +9,7 @@ const punches = (date, start, end) => [{ type: "出勤", at: date + "T" + start 
 
 test("UC-201/202/203/216: only a manager's selected drafts are published and notified", () => {
   const m = make(), mgr = m.user("3");
+  const initialForTanaka = m.notifications.filter((n) => n.userId === "1").length;
   assert.throws(() => m.saveShift(m.user("1"), "2", shift("2026-10-21", "10:00", "18:00")), /管理先/);
   assert.throws(() => m.saveShift(mgr, "4", shift("2026-10-21", "10:00", "18:00")), /管理先/);
   const october = m.saveShift(mgr, "2", shift("2026-10-21", "10:00", "18:00"));
@@ -21,7 +22,7 @@ test("UC-201/202/203/216: only a manager's selected drafts are published and not
   assert.equal(november.published, false);
   const [notice] = m.notifications.filter((n) => n.userId === "2");
   assert.ok(notice.target.ids.includes(october.id));
-  assert.equal(m.notifications.filter((n) => n.userId === "1").length, 0);
+  assert.equal(m.notifications.filter((n) => n.userId === "1").length, initialForTanaka);
   m.removeShift(mgr, m.checkDeleteShift(mgr, october.id), true);
   assert.equal(m.shiftById(october.id), undefined);
   assert.equal(m.notifications.at(-1).target, null);
@@ -201,4 +202,15 @@ test("UC-205: a shift wish without valid start and end times is never approved i
   assert.throws(() => m.decide(mgr, "w-none", true), /開始・終了時刻/);
   assert.equal(m.shifts.length, before);
   assert.equal(m.itemById("w-none").status, "pending");
+});
+test("UC-317: the employee demo account starts with notifications that point at existing data", () => {
+  const m = make();
+  const own = m.notifications.filter((n) => n.userId === "1");
+  assert.equal(own.length, 3);
+  for (const n of own) {
+    if (n.target?.type === "shift") assert.ok(m.shiftById(n.target.id)?.published);
+    if (n.target?.type === "published") assert.ok(n.target.ids.every((id) => m.shiftById(id)?.published && m.shiftById(id).userId === "1"));
+    if (n.target?.type === "item") assert.equal(m.itemById(n.target.id)?.status, "rejected");
+    assert.ok(n.at <= "2026-10-14T10:30:00");
+  }
 });

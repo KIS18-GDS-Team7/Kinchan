@@ -44,8 +44,18 @@ def wrap(s, max_w, fs=FS):
         for ch in para:
             # 閉じ括弧・句読点は行頭に置かない (前の行にはみ出させる)
             if cur and text_width(cur + ch, fs) > max_w and ch not in ")）」』、。,.":
-                lines.append(cur)
-                cur = ch
+                # 英数字の語 (ADR-0007、UC-310 など) の途中では折り返さない
+                k = len(cur)
+                while k > 0 and re.match(r"[A-Za-z0-9_\-]", cur[k - 1]) and re.match(r"[A-Za-z0-9_\-]", ch):
+                    k -= 1
+                    if k > 0 and not re.match(r"[A-Za-z0-9_\-]", cur[k - 1]):
+                        break
+                if 0 < k < len(cur) and re.match(r"[A-Za-z0-9_\-]", ch):
+                    lines.append(cur[:k])
+                    cur = cur[k:] + ch
+                else:
+                    lines.append(cur)
+                    cur = ch
             else:
                 cur += ch
         lines.append(cur)

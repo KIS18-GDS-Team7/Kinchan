@@ -72,9 +72,9 @@
 <text x="782.9" y="120.0" font-size="13" text-anchor="middle">:ログイン制御</text>
 <path d="M872.8599999999999 210 H1140.9399999999998 L1150.9399999999998 220 V238 H872.8599999999999 Z" fill="#fde2e2" stroke="#222"/>
 <text x="880.9" y="230.0" font-size="13" text-anchor="start">確認を求める画面は画面遷移図にない(暫定)</text>
-<path d="M872.8599999999999 400 H1236.8799999999999 L1246.8799999999999 410 V446 H872.8599999999999 Z" fill="#fde2e2" stroke="#222"/>
-<text x="880.9" y="420.0" font-size="13" text-anchor="start">待機状態に戻る(Ex-1 の 3)。ログインしたままである(Ex-</text>
-<text x="880.9" y="438.0" font-size="13" text-anchor="start">1 の事後条件)</text>
+<path d="M872.8599999999999 400 H1214.2599999999998 L1224.2599999999998 410 V446 H872.8599999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="880.9" y="420.0" font-size="13" text-anchor="start">待機状態に戻る(Ex-1 の 3)。ログインしたままである(</text>
+<text x="880.9" y="438.0" font-size="13" text-anchor="start">Ex-1 の事後条件)</text>
 <path d="M872.8599999999999 574 H1242.86 L1252.86 584 V620 H872.8599999999999 Z" fill="#fde2e2" stroke="#222"/>
 <text x="880.9" y="594.0" font-size="13" text-anchor="start">従業員ホーム画面のログアウトボタンからログイン画面に移る</text>
 <text x="880.9" y="612.0" font-size="13" text-anchor="start">(画面遷移図)</text>

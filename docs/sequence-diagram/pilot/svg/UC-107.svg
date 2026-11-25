@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2369" height="1800" viewBox="0 0 2369 1800" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<title>UC-107 ユーザー一覧を表示する</title>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="10" y="10" width="2348.7" height="1780.0" fill="none" stroke="#222"/><path d="M10 10 H273.2 V24 L263.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<line x1="148.0" y1="188.0" x2="602.1" y2="188.0" stroke="#222" stroke-width="1"/>
+<polygon points="603.1,188.0 593.1,183.0 593.1,193.0" fill="#222"/>
+<line x1="603.1" y1="188.0" x2="1706.5" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="603.1" y1="222.0" x2="1057.2" y2="222.0" stroke="#222" stroke-width="1"/>
+<polygon points="1058.2,222.0 1048.2,217.0 1048.2,227.0" fill="#222"/>
+<line x1="1058.2" y1="256.0" x2="1355.5" y2="256.0" stroke="#222" stroke-width="1"/>
+<polygon points="1356.5,256.0 1346.5,251.0 1346.5,261.0" fill="#222"/>
+<line x1="1356.5" y1="290.0" x2="1059.2" y2="290.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,285.0 1058.2,290.0 1068.2,295.0" fill="none" stroke="#222"/>
+<line x1="1356.5" y1="290.0" x2="1706.5" y2="290.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1058.2" y1="324.0" x2="1485.5" y2="324.0" stroke="#222" stroke-width="1"/>
+<polygon points="1486.5,324.0 1476.5,319.0 1476.5,329.0" fill="#222"/>
+<line x1="1486.5" y1="358.0" x2="1059.2" y2="358.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,353.0 1058.2,358.0 1068.2,363.0" fill="none" stroke="#222"/>
+<line x1="1058.2" y1="392.0" x2="1615.5" y2="392.0" stroke="#222" stroke-width="1"/>
+<polygon points="1616.5,392.0 1606.5,387.0 1606.5,397.0" fill="#222"/>
+<line x1="1616.5" y1="426.0" x2="1059.2" y2="426.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,421.0 1058.2,426.0 1068.2,431.0" fill="none" stroke="#222"/>
+<line x1="1616.5" y1="426.0" x2="1706.5" y2="426.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M86 448 H132.62 V460 L124.62 468 H86 Z" fill="#fff" stroke="#222"/>
+<line x1="1058.2" y1="514.0" x2="604.1" y2="514.0" stroke="#222" stroke-width="1"/>
+<polygon points="603.1,514.0 613.1,509.0 613.1,519.0" fill="#222"/>
+<line x1="603.1" y1="548.0" x2="149.0" y2="548.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,548.0 158.0,543.0 158.0,553.0" fill="#222"/>
+<line x1="603.1" y1="548.0" x2="1706.5" y2="548.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1058.2" y1="625.0" x2="604.1" y2="625.0" stroke="#222" stroke-width="1"/>
+<polygon points="603.1,625.0 613.1,620.0 613.1,630.0" fill="#222"/>
+<line x1="603.1" y1="676.0" x2="149.0" y2="676.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,676.0 158.0,671.0 158.0,681.0" fill="#222"/>
+<rect x="86.0" y="448.0" width="1054.2" height="244.0" rx="0" fill="none" stroke="#222"/>
+<line x1="86.0" y1="560.0" x2="1140.2" y2="560.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M62 714 H108.62 V726 L100.62 734 H62 Z" fill="#fff" stroke="#222"/>
+<path d="M74 768 H128.16 V780 L120.16 788 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="148.0" y1="834.0" x2="602.1" y2="834.0" stroke="#222" stroke-width="1"/>
+<polygon points="603.1,834.0 593.1,829.0 593.1,839.0" fill="#222"/>
+<line x1="603.1" y1="834.0" x2="1706.5" y2="834.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="603.1" y1="885.0" x2="1057.2" y2="885.0" stroke="#222" stroke-width="1"/>
+<polygon points="1058.2,885.0 1048.2,880.0 1048.2,890.0" fill="#222"/>
+<line x1="1058.2" y1="919.0" x2="1355.5" y2="919.0" stroke="#222" stroke-width="1"/>
+<polygon points="1356.5,919.0 1346.5,914.0 1346.5,924.0" fill="#222"/>
+<line x1="1356.5" y1="953.0" x2="1059.2" y2="953.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,948.0 1058.2,953.0 1068.2,958.0" fill="none" stroke="#222"/>
+<line x1="1058.2" y1="987.0" x2="1485.5" y2="987.0" stroke="#222" stroke-width="1"/>
+<polygon points="1486.5,987.0 1476.5,982.0 1476.5,992.0" fill="#222"/>
+<line x1="1486.5" y1="1021.0" x2="1059.2" y2="1021.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,1016.0 1058.2,1021.0 1068.2,1026.0" fill="none" stroke="#222"/>
+<line x1="1058.2" y1="1055.0" x2="1615.5" y2="1055.0" stroke="#222" stroke-width="1"/>
+<polygon points="1616.5,1055.0 1606.5,1050.0 1606.5,1060.0" fill="#222"/>
+<line x1="1616.5" y1="1089.0" x2="1059.2" y2="1089.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,1084.0 1058.2,1089.0 1068.2,1094.0" fill="none" stroke="#222"/>
+<path d="M86 1111 H132.62 V1123 L124.62 1131 H86 Z" fill="#fff" stroke="#222"/>
+<line x1="1058.2" y1="1177.0" x2="604.1" y2="1177.0" stroke="#222" stroke-width="1"/>
+<polygon points="603.1,1177.0 613.1,1172.0 613.1,1182.0" fill="#222"/>
+<line x1="603.1" y1="1211.0" x2="149.0" y2="1211.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,1211.0 158.0,1206.0 158.0,1216.0" fill="#222"/>
+<line x1="603.1" y1="1211.0" x2="1706.5" y2="1211.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="86.0" y="1111.0" width="1054.2" height="116.0" rx="0" fill="none" stroke="#222"/>
+<rect x="74.0" y="768.0" width="1636.5" height="475.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1058.2" y1="1294.0" x2="604.1" y2="1294.0" stroke="#222" stroke-width="1"/>
+<polygon points="603.1,1294.0 613.1,1289.0 613.1,1299.0" fill="#222"/>
+<line x1="603.1" y1="1328.0" x2="149.0" y2="1328.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,1328.0 158.0,1323.0 158.0,1333.0" fill="#222"/>
+<line x1="603.1" y1="1328.0" x2="1706.5" y2="1328.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="62.0" y="714.0" width="1660.5" height="630.0" rx="0" fill="none" stroke="#222"/>
+<line x1="148.0" y1="1378.0" x2="602.1" y2="1378.0" stroke="#222" stroke-width="1"/>
+<polygon points="603.1,1378.0 593.1,1373.0 593.1,1383.0" fill="#222"/>
+<line x1="603.1" y1="1412.0" x2="1057.2" y2="1412.0" stroke="#222" stroke-width="1"/>
+<polygon points="1058.2,1412.0 1048.2,1407.0 1048.2,1417.0" fill="#222"/>
+<line x1="1058.2" y1="1446.0" x2="1355.5" y2="1446.0" stroke="#222" stroke-width="1"/>
+<polygon points="1356.5,1446.0 1346.5,1441.0 1346.5,1451.0" fill="#222"/>
+<line x1="1356.5" y1="1480.0" x2="1059.2" y2="1480.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,1475.0 1058.2,1480.0 1068.2,1485.0" fill="none" stroke="#222"/>
+<line x1="1356.5" y1="1480.0" x2="1706.5" y2="1480.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1058.2" y1="1514.0" x2="1485.5" y2="1514.0" stroke="#222" stroke-width="1"/>
+<polygon points="1486.5,1514.0 1476.5,1509.0 1476.5,1519.0" fill="#222"/>
+<line x1="1486.5" y1="1548.0" x2="1059.2" y2="1548.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,1543.0 1058.2,1548.0 1068.2,1553.0" fill="none" stroke="#222"/>
+<line x1="1058.2" y1="1582.0" x2="1615.5" y2="1582.0" stroke="#222" stroke-width="1"/>
+<polygon points="1616.5,1582.0 1606.5,1577.0 1606.5,1587.0" fill="#222"/>
+<line x1="1616.5" y1="1616.0" x2="1059.2" y2="1616.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1068.2,1611.0 1058.2,1616.0 1068.2,1621.0" fill="none" stroke="#222"/>
+<line x1="1058.2" y1="1667.0" x2="604.1" y2="1667.0" stroke="#222" stroke-width="1"/>
+<polygon points="603.1,1667.0 613.1,1662.0 613.1,1672.0" fill="#222"/>
+<line x1="603.1" y1="1718.0" x2="149.0" y2="1718.0" stroke="#222" stroke-width="1"/>
+<polygon points="148.0,1718.0 158.0,1713.0 158.0,1723.0" fill="#222"/>
+<line x1="603.1" y1="1718.0" x2="1706.5" y2="1718.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="148" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
+<path d="M148 76 V88 M138 81 H158 M148 88 L140 98 M148 88 L156 98" fill="none" stroke="#222"/>
+<line x1="148.0" y1="130.0" x2="148.0" y2="1760.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="608.1000000000001" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M595.1000000000001 82 H585.1000000000001 M585.1000000000001 71 V93" fill="none" stroke="#222"/>
+<line x1="603.1" y1="130.0" x2="603.1" y2="1760.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1058.2000000000003" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1059.2000000000003 69 l6 -5 M1059.2000000000003 69 l6 5" fill="none" stroke="#222"/>
+<line x1="1058.2" y1="130.0" x2="1058.2" y2="1760.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1356.5200000000002" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1343.5200000000002 95 H1369.5200000000002" fill="none" stroke="#222"/>
+<line x1="1356.5" y1="130.0" x2="1356.5" y2="1760.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1486.5200000000002" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1473.5200000000002 95 H1499.5200000000002" fill="none" stroke="#222"/>
+<line x1="1486.5" y1="130.0" x2="1486.5" y2="1760.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1616.5200000000002" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1603.5200000000002 95 H1629.5200000000002" fill="none" stroke="#222"/>
+<line x1="1616.5" y1="130.0" x2="1616.5" y2="1760.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="271.2" y="169.0" width="208.6" height="17.0" fill="#fff"/>
+<text x="375.6" y="182.0" font-size="13" text-anchor="middle">1: ユーザーの一覧表示を要求する</text>
+<rect x="739.3" y="203.0" width="182.6" height="17.0" fill="#fff"/>
+<text x="830.7" y="216.0" font-size="13" text-anchor="middle">2: ユーザーの一覧を要求する</text>
+<rect x="1090.1" y="237.0" width="234.6" height="17.0" fill="#fff"/>
+<text x="1207.4" y="250.0" font-size="13" text-anchor="middle">3: 削除済みでないユーザーを取得する</text>
+<rect x="1077.7" y="271.0" width="259.3" height="17.0" fill="#fff"/>
+<text x="1207.4" y="284.0" font-size="13" text-anchor="middle">ユーザーの一覧(氏名, ユーザーID, 所属)</text>
+<rect x="1174.6" y="305.0" width="195.6" height="17.0" fill="#fff"/>
+<text x="1272.4" y="318.0" font-size="13" text-anchor="middle">4: 各ユーザーの権限を取得する</text>
+<rect x="1146.9" y="339.0" width="251.0" height="17.0" fill="#fff"/>
+<text x="1272.4" y="352.0" font-size="13" text-anchor="middle">マスタ管理者権限・勤怠管理者権限の有無</text>
+<rect x="1233.1" y="373.0" width="208.6" height="17.0" fill="#fff"/>
+<text x="1337.4" y="386.0" font-size="13" text-anchor="middle">5: 各ユーザーの管理先を取得する</text>
+<rect x="1296.4" y="407.0" width="82.0" height="17.0" fill="#fff"/>
+<text x="1337.4" y="420.0" font-size="13" text-anchor="middle">管理先の一覧</text>
+<text x="92.0" y="463.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
+<rect x="92.0" y="469.0" width="201.1" height="17.0" fill="#fff"/>
+<text x="94.0" y="482.0" font-size="13" text-anchor="start">[該当するユーザーが存在しない]</text>
+<rect x="680.8" y="495.0" width="299.6" height="17.0" fill="#fff"/>
+<text x="830.7" y="508.0" font-size="13" text-anchor="middle">6: 該当するユーザーが存在しないことを表示する</text>
+<rect x="225.7" y="529.0" width="299.6" height="17.0" fill="#fff"/>
+<text x="375.6" y="542.0" font-size="13" text-anchor="middle">7: 該当するユーザーが存在しないことを提示する</text>
+<rect x="92.0" y="563.0" width="188.1" height="17.0" fill="#fff"/>
+<text x="94.0" y="576.0" font-size="13" text-anchor="start">[該当するユーザーが存在する]</text>
+<rect x="619.9" y="589.0" width="421.6" height="17.0" fill="#fff"/>
+<text x="830.7" y="602.0" font-size="13" text-anchor="middle">8: ユーザーの一覧を表示する(氏名, ユーザーID, 権限, 所属, 管理</text>
+<rect x="818.4" y="606.0" width="24.5" height="17.0" fill="#fff"/>
+<text x="830.7" y="619.0" font-size="13" text-anchor="middle">先)</text>
+<rect x="164.8" y="640.0" width="421.6" height="17.0" fill="#fff"/>
+<text x="375.6" y="653.0" font-size="13" text-anchor="middle">9: 削除済みでないユーザーの一覧(氏名, ユーザーID, 権限, 所属, </text>
+<rect x="317.8" y="657.0" width="115.5" height="17.0" fill="#fff"/>
+<text x="375.6" y="670.0" font-size="13" text-anchor="middle">管理先)を提示する</text>
+<text x="68.0" y="729.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="68.0" y="735.0" width="370.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="748.0" font-size="13" text-anchor="start">[条件を指定した、または該当するユーザーが存在しなかった]</text>
+<text x="80.0" y="783.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
+<rect x="80.0" y="789.0" width="279.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="802.0" font-size="13" text-anchor="start">[条件に合うユーザーが存在するまで繰り返す]</text>
+<rect x="210.3" y="815.0" width="330.6" height="17.0" fill="#fff"/>
+<text x="375.6" y="828.0" font-size="13" text-anchor="middle">10: 条件(氏名, ユーザーID, 権限, 所属)を指定する</text>
+<rect x="617.1" y="849.0" width="427.0" height="17.0" fill="#fff"/>
+<text x="830.7" y="862.0" font-size="13" text-anchor="middle">11: 条件に合うユーザーの一覧を要求する(氏名, ユーザーID, 権限, </text>
+<rect x="719.8" y="866.0" width="221.6" height="17.0" fill="#fff"/>
+<text x="830.7" y="879.0" font-size="13" text-anchor="middle">所属, 削除済みユーザーを含めるか)</text>
+<rect x="1099.3" y="900.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="1207.4" y="913.0" font-size="13" text-anchor="middle">12: 条件に合うユーザーを取得する</text>
+<rect x="1077.7" y="934.0" width="259.3" height="17.0" fill="#fff"/>
+<text x="1207.4" y="947.0" font-size="13" text-anchor="middle">ユーザーの一覧(氏名, ユーザーID, 所属)</text>
+<rect x="1170.8" y="968.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="1272.4" y="981.0" font-size="13" text-anchor="middle">13: 各ユーザーの権限を取得する</text>
+<rect x="1146.9" y="1002.0" width="251.0" height="17.0" fill="#fff"/>
+<text x="1272.4" y="1015.0" font-size="13" text-anchor="middle">マスタ管理者権限・勤怠管理者権限の有無</text>
+<rect x="1229.3" y="1036.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="1337.4" y="1049.0" font-size="13" text-anchor="middle">14: 各ユーザーの管理先を取得する</text>
+<rect x="1296.4" y="1070.0" width="82.0" height="17.0" fill="#fff"/>
+<text x="1337.4" y="1083.0" font-size="13" text-anchor="middle">管理先の一覧</text>
+<text x="92.0" y="1126.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="92.0" y="1132.0" width="214.1" height="17.0" fill="#fff"/>
+<text x="94.0" y="1145.0" font-size="13" text-anchor="start">[条件に合うユーザーが存在しない]</text>
+<rect x="670.6" y="1158.0" width="320.2" height="17.0" fill="#fff"/>
+<text x="830.7" y="1171.0" font-size="13" text-anchor="middle">15: 条件に合うユーザーが存在しないことを表示する</text>
+<rect x="215.5" y="1192.0" width="320.2" height="17.0" fill="#fff"/>
+<text x="375.6" y="1205.0" font-size="13" text-anchor="middle">16: 条件に合うユーザーが存在しないことを提示する</text>
+<rect x="617.1" y="1258.0" width="427.0" height="17.0" fill="#fff"/>
+<text x="830.7" y="1271.0" font-size="13" text-anchor="middle">17: 条件に合うユーザーの一覧を表示する(氏名, ユーザーID, 権限, </text>
+<rect x="784.8" y="1275.0" width="91.6" height="17.0" fill="#fff"/>
+<text x="830.7" y="1288.0" font-size="13" text-anchor="middle">所属, 管理先)</text>
+<rect x="248.0" y="1309.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="375.6" y="1322.0" font-size="13" text-anchor="middle">18: 条件に合うユーザーの一覧を提示する</text>
+<rect x="263.7" y="1359.0" width="223.7" height="17.0" fill="#fff"/>
+<text x="375.6" y="1372.0" font-size="13" text-anchor="middle">19: 一覧からユーザーを1人指定する</text>
+<rect x="702.0" y="1393.0" width="257.2" height="17.0" fill="#fff"/>
+<text x="830.7" y="1406.0" font-size="13" text-anchor="middle">20: ユーザーの詳細を要求する(ユーザー)</text>
+<rect x="1099.3" y="1427.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="1207.4" y="1440.0" font-size="13" text-anchor="middle">21: 指定されたユーザーを取得する</text>
+<rect x="1071.2" y="1461.0" width="272.3" height="17.0" fill="#fff"/>
+<text x="1207.4" y="1474.0" font-size="13" text-anchor="middle">氏名, ユーザーID, 所属, 削除済みかどうか</text>
+<rect x="1144.8" y="1495.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="1272.4" y="1508.0" font-size="13" text-anchor="middle">22: 指定されたユーザーの権限を取得する</text>
+<rect x="1146.9" y="1529.0" width="251.0" height="17.0" fill="#fff"/>
+<text x="1272.4" y="1542.0" font-size="13" text-anchor="middle">マスタ管理者権限・勤怠管理者権限の有無</text>
+<rect x="1203.3" y="1563.0" width="268.2" height="17.0" fill="#fff"/>
+<text x="1337.4" y="1576.0" font-size="13" text-anchor="middle">23: 指定されたユーザーの管理先を取得する</text>
+<rect x="1296.4" y="1597.0" width="82.0" height="17.0" fill="#fff"/>
+<text x="1337.4" y="1610.0" font-size="13" text-anchor="middle">管理先の一覧</text>
+<rect x="616.1" y="1631.0" width="429.1" height="17.0" fill="#fff"/>
+<text x="830.7" y="1644.0" font-size="13" text-anchor="middle">24: ユーザーの詳細を表示する(氏名, ユーザーID, 権限, 所属, 管理</text>
+<rect x="758.8" y="1648.0" width="143.6" height="17.0" fill="#fff"/>
+<text x="830.7" y="1661.0" font-size="13" text-anchor="middle">先, 削除済みかどうか)</text>
+<rect x="161.0" y="1682.0" width="429.1" height="17.0" fill="#fff"/>
+<text x="375.6" y="1695.0" font-size="13" text-anchor="middle">25: 指定されたユーザーの詳細(氏名, ユーザーID, 権限, 所属, 管理</text>
+<rect x="271.2" y="1699.0" width="208.6" height="17.0" fill="#fff"/>
+<text x="375.6" y="1712.0" font-size="13" text-anchor="middle">先, 削除済みかどうか)を提示する</text>
+<text x="148.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>
+<text x="603.1" y="120.0" font-size="13" text-anchor="middle">:ユーザ情報編集画面</text>
+<text x="1058.2" y="120.0" font-size="13" text-anchor="middle">:ユーザー管理制御</text>
+<text x="1356.5" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<text x="1486.5" y="120.0" font-size="13" text-anchor="middle">:権限</text>
+<text x="1616.5" y="120.0" font-size="13" text-anchor="middle">:所属単位</text>
+<path d="M1706.5200000000002 176 H2076.5200000000004 L2086.5200000000004 186 V222 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="196.0" font-size="13" text-anchor="start">ユーザーの一覧を提示する画面は画面遷移図にない。ユーザ情</text>
+<text x="1714.5" y="214.0" font-size="13" text-anchor="start">報編集画面を流用する(暫定)</text>
+<path d="M1706.5200000000002 278 H2016.4600000000003 L2026.4600000000003 288 V306 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="298.0" font-size="13" text-anchor="start">削除済みユーザーは通常は除く(備考2、ADR-0013)</text>
+<path d="M1706.5200000000002 414 H2060.1400000000003 L2070.1400000000003 424 V442 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="434.0" font-size="13" text-anchor="start">管理先は勤怠管理者権限を持つユーザーにだけある(備考1)</text>
+<path d="M1706.5200000000002 536 H1939.2400000000002 L1949.2400000000002 546 V564 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="556.0" font-size="13" text-anchor="start">Alt-1。Alt-2 の1に進む(下の opt)</text>
+<path d="M1706.5200000000002 822 H2072.6200000000003 L2082.6200000000003 832 V886 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="842.0" font-size="13" text-anchor="start">Alt-2 の1。Alt-1 からはここに進む。氏名・ユーザーIDで</text>
+<text x="1714.5" y="860.0" font-size="13" text-anchor="start">探し、権限・所属で絞る(備考3、A-31)。削除済みユーザー</text>
+<text x="1714.5" y="878.0" font-size="13" text-anchor="start">を含めることも指定できる(Alt-3)</text>
+<path d="M1706.5200000000002 1199 H1868.0000000000002 L1878.0000000000002 1209 V1227 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="1219.0" font-size="13" text-anchor="start">Alt-4。Alt-2 の1に戻る</text>
+<path d="M1706.5200000000002 1316 H2086.92 L2096.92 1326 V1380 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="1336.0" font-size="13" text-anchor="start">Alt-2・Alt-3。削除済みユーザーを含めると指定した場合は、</text>
+<text x="1714.5" y="1354.0" font-size="13" text-anchor="start">削除済みユーザーを含めた一覧を提示する。メインフロー3に</text>
+<text x="1714.5" y="1372.0" font-size="13" text-anchor="start">戻る</text>
+<path d="M1706.5200000000002 1468 H2073.9200000000005 L2083.9200000000005 1478 V1496 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="1488.0" font-size="13" text-anchor="start">削除済みを表す属性は概念クラス図にない(ADR-0013、暫定)</text>
+<path d="M1706.5200000000002 1706 H2067.6800000000003 L2077.6800000000003 1716 V1752 H1706.5200000000002 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1714.5" y="1726.0" font-size="13" text-anchor="start">登録・変更・削除・権限・所属・管理先の操作は各 UC で行</text>
+<text x="1714.5" y="1744.0" font-size="13" text-anchor="start">う(備考5)</text>
+<path d="M2126.92 40 H2328.7000000000003 L2338.7000000000003 50 V86 H2126.92 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2134.9" y="60.0" font-size="13" text-anchor="start">UC-107 ユーザー一覧を表示する</text>
+<text x="2134.9" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1〜4)</text>
+<text x="16" y="27" font-size="14"><tspan font-weight="bold">sd</tspan> UC-107 ユーザー一覧を表示する</text>
+</svg>

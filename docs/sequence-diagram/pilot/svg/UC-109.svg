@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2395" height="2045" viewBox="0 0 2395 2045" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<title>UC-109 勤怠管理者に管理先を割り当てる</title>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="10" y="10" width="2375.4" height="2025.0" fill="none" stroke="#222"/><path d="M10 10 H329.2 V24 L319.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<line x1="136.0" y1="188.0" x2="598.2" y2="188.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,188.0 589.2,183.0 589.2,193.0" fill="#222"/>
+<line x1="599.2" y1="188.0" x2="1658.6" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="599.2" y1="222.0" x2="1000.5" y2="222.0" stroke="#222" stroke-width="1"/>
+<polygon points="1001.5,222.0 991.5,217.0 991.5,227.0" fill="#222"/>
+<line x1="1001.5" y1="256.0" x2="1307.6" y2="256.0" stroke="#222" stroke-width="1"/>
+<polygon points="1308.6,256.0 1298.6,251.0 1298.6,261.0" fill="#222"/>
+<line x1="1308.6" y1="290.0" x2="1002.5" y2="290.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1011.5,285.0 1001.5,290.0 1011.5,295.0" fill="none" stroke="#222"/>
+<line x1="1001.5" y1="324.0" x2="1437.6" y2="324.0" stroke="#222" stroke-width="1"/>
+<polygon points="1438.6,324.0 1428.6,319.0 1428.6,329.0" fill="#222"/>
+<line x1="1438.6" y1="358.0" x2="1002.5" y2="358.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1011.5,353.0 1001.5,358.0 1011.5,363.0" fill="none" stroke="#222"/>
+<line x1="1438.6" y1="358.0" x2="1658.6" y2="358.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M62 380 H116.16 V392 L108.16 400 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="1001.5" y1="446.0" x2="600.2" y2="446.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,446.0 609.2,441.0 609.2,451.0" fill="#222"/>
+<line x1="599.2" y1="497.0" x2="137.0" y2="497.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,497.0 146.0,492.0 146.0,502.0" fill="#222"/>
+<line x1="136.0" y1="531.0" x2="598.2" y2="531.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,531.0 589.2,526.0 589.2,536.0" fill="#222"/>
+<line x1="599.2" y1="565.0" x2="1000.5" y2="565.0" stroke="#222" stroke-width="1"/>
+<polygon points="1001.5,565.0 991.5,560.0 991.5,570.0" fill="#222"/>
+<polyline points="1001.48,599 1031.48,599 1031.48,621 1002.48,621" fill="none" stroke="#222"/>
+<polygon points="1002.5,621.0 1012.5,616.0 1012.5,626.0" fill="#222"/>
+<path d="M74 643 H120.62 V655 L112.62 663 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="1001.5" y1="709.0" x2="600.2" y2="709.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,709.0 609.2,704.0 609.2,714.0" fill="#222"/>
+<line x1="599.2" y1="760.0" x2="137.0" y2="760.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,760.0 146.0,755.0 146.0,765.0" fill="#222"/>
+<line x1="599.2" y1="760.0" x2="1658.6" y2="760.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="643.0" width="1009.5" height="133.0" rx="0" fill="none" stroke="#222"/>
+<rect x="62.0" y="380.0" width="1123.5" height="412.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1001.5" y1="843.0" x2="1567.6" y2="843.0" stroke="#222" stroke-width="1"/>
+<polygon points="1568.6,843.0 1558.6,838.0 1558.6,848.0" fill="#222"/>
+<line x1="1568.6" y1="877.0" x2="1002.5" y2="877.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1011.5,872.0 1001.5,877.0 1011.5,882.0" fill="none" stroke="#222"/>
+<path d="M62 899 H116.16 V911 L108.16 919 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="1001.5" y1="965.0" x2="600.2" y2="965.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,965.0 609.2,960.0 609.2,970.0" fill="#222"/>
+<line x1="599.2" y1="1016.0" x2="137.0" y2="1016.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1016.0 146.0,1011.0 146.0,1021.0" fill="#222"/>
+<line x1="136.0" y1="1050.0" x2="598.2" y2="1050.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,1050.0 589.2,1045.0 589.2,1055.0" fill="#222"/>
+<line x1="599.2" y1="1084.0" x2="1000.5" y2="1084.0" stroke="#222" stroke-width="1"/>
+<polygon points="1001.5,1084.0 991.5,1079.0 991.5,1089.0" fill="#222"/>
+<polyline points="1001.48,1118 1031.48,1118 1031.48,1140 1002.48,1140" fill="none" stroke="#222"/>
+<polygon points="1002.5,1140.0 1012.5,1135.0 1012.5,1145.0" fill="#222"/>
+<path d="M74 1162 H120.62 V1174 L112.62 1182 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="1001.5" y1="1228.0" x2="600.2" y2="1228.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,1228.0 609.2,1223.0 609.2,1233.0" fill="#222"/>
+<line x1="599.2" y1="1262.0" x2="137.0" y2="1262.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1262.0 146.0,1257.0 146.0,1267.0" fill="#222"/>
+<line x1="599.2" y1="1262.0" x2="1658.6" y2="1262.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="1162.0" width="1009.5" height="116.0" rx="0" fill="none" stroke="#222"/>
+<rect x="62.0" y="899.0" width="1123.5" height="395.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1001.5" y1="1328.0" x2="600.2" y2="1328.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,1328.0 609.2,1323.0 609.2,1333.0" fill="#222"/>
+<line x1="599.2" y1="1379.0" x2="137.0" y2="1379.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1379.0 146.0,1374.0 146.0,1384.0" fill="#222"/>
+<path d="M74 1401 H135.7 V1413 L127.69999999999999 1421 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="136.0" y1="1467.0" x2="598.2" y2="1467.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,1467.0 589.2,1462.0 589.2,1472.0" fill="#222"/>
+<line x1="599.2" y1="1501.0" x2="1000.5" y2="1501.0" stroke="#222" stroke-width="1"/>
+<polygon points="1001.5,1501.0 991.5,1496.0 991.5,1506.0" fill="#222"/>
+<polyline points="1001.48,1535 1031.48,1535 1031.48,1557 1002.48,1557" fill="none" stroke="#222"/>
+<polygon points="1002.5,1557.0 1012.5,1552.0 1012.5,1562.0" fill="#222"/>
+<line x1="1001.5" y1="1591.0" x2="600.2" y2="1591.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,1591.0 609.2,1586.0 609.2,1596.0" fill="#222"/>
+<line x1="599.2" y1="1625.0" x2="137.0" y2="1625.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1625.0 146.0,1620.0 146.0,1630.0" fill="#222"/>
+<line x1="599.2" y1="1625.0" x2="1658.6" y2="1625.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="1401.0" width="1099.5" height="240.0" rx="0" fill="none" stroke="#222"/>
+<line x1="136.0" y1="1675.0" x2="598.2" y2="1675.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,1675.0 589.2,1670.0 589.2,1680.0" fill="#222"/>
+<line x1="599.2" y1="1709.0" x2="1000.5" y2="1709.0" stroke="#222" stroke-width="1"/>
+<polygon points="1001.5,1709.0 991.5,1704.0 991.5,1714.0" fill="#222"/>
+<line x1="1001.5" y1="1743.0" x2="1567.6" y2="1743.0" stroke="#222" stroke-width="1"/>
+<polygon points="1568.6,1743.0 1558.6,1738.0 1558.6,1748.0" fill="#222"/>
+<line x1="1568.6" y1="1743.0" x2="1658.6" y2="1743.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M74 1765 H120.62 V1777 L112.62 1785 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="1001.5" y1="1831.0" x2="600.2" y2="1831.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,1831.0 609.2,1826.0 609.2,1836.0" fill="#222"/>
+<line x1="599.2" y1="1865.0" x2="137.0" y2="1865.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1865.0 146.0,1860.0 146.0,1870.0" fill="#222"/>
+<line x1="599.2" y1="1865.0" x2="1658.6" y2="1865.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1001.5" y1="1925.0" x2="600.2" y2="1925.0" stroke="#222" stroke-width="1"/>
+<polygon points="599.2,1925.0 609.2,1920.0 609.2,1930.0" fill="#222"/>
+<line x1="599.2" y1="1959.0" x2="137.0" y2="1959.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1959.0 146.0,1954.0 146.0,1964.0" fill="#222"/>
+<rect x="74.0" y="1765.0" width="1009.5" height="210.0" rx="0" fill="none" stroke="#222"/>
+<line x1="74.0" y1="1877.0" x2="1083.5" y2="1877.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="136" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
+<path d="M136 76 V88 M126 81 H146 M136 88 L128 98 M136 88 L144 98" fill="none" stroke="#222"/>
+<line x1="136.0" y1="130.0" x2="136.0" y2="2005.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="604.16" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M591.16 82 H581.16 M581.16 71 V93" fill="none" stroke="#222"/>
+<line x1="599.2" y1="130.0" x2="599.2" y2="2005.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1001.48" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1002.48 69 l6 -5 M1002.48 69 l6 5" fill="none" stroke="#222"/>
+<line x1="1001.5" y1="130.0" x2="1001.5" y2="2005.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1308.6399999999999" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1295.6399999999999 95 H1321.6399999999999" fill="none" stroke="#222"/>
+<line x1="1308.6" y1="130.0" x2="1308.6" y2="2005.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1438.6399999999999" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1425.6399999999999 95 H1451.6399999999999" fill="none" stroke="#222"/>
+<line x1="1438.6" y1="130.0" x2="1438.6" y2="2005.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1568.6399999999999" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1555.6399999999999 95 H1581.6399999999999" fill="none" stroke="#222"/>
+<line x1="1568.6" y1="130.0" x2="1568.6" y2="2005.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="269.8" y="169.0" width="195.6" height="17.0" fill="#fff"/>
+<text x="367.6" y="182.0" font-size="13" text-anchor="middle">1: 管理先の割り当てを要求する</text>
+<rect x="709.0" y="203.0" width="182.6" height="17.0" fill="#fff"/>
+<text x="800.3" y="216.0" font-size="13" text-anchor="middle">2: ユーザーの一覧を要求する</text>
+<rect x="1018.2" y="237.0" width="273.6" height="17.0" fill="#fff"/>
+<text x="1155.1" y="250.0" font-size="13" text-anchor="middle">3: 削除済みでないユーザーの一覧を取得する</text>
+<rect x="1045.9" y="271.0" width="218.2" height="17.0" fill="#fff"/>
+<text x="1155.1" y="284.0" font-size="13" text-anchor="middle">ユーザーの一覧(氏名, ユーザーID)</text>
+<rect x="1122.2" y="305.0" width="195.6" height="17.0" fill="#fff"/>
+<text x="1220.1" y="318.0" font-size="13" text-anchor="middle">4: 各ユーザーの権限を取得する</text>
+<rect x="1094.6" y="339.0" width="251.0" height="17.0" fill="#fff"/>
+<text x="1220.1" y="352.0" font-size="13" text-anchor="middle">マスタ管理者権限・勤怠管理者権限の有無</text>
+<text x="68.0" y="395.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
+<rect x="68.0" y="401.0" width="357.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="414.0" font-size="13" text-anchor="start">[勤怠管理者権限を持つユーザーが指定されるまで繰り返す]</text>
+<rect x="709.0" y="427.0" width="182.6" height="17.0" fill="#fff"/>
+<text x="800.3" y="440.0" font-size="13" text-anchor="middle">5: ユーザーの一覧を表示する</text>
+<rect x="155.5" y="461.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="474.0" font-size="13" text-anchor="middle">6: ユーザーの一覧を提示し、対象のユーザー(勤怠管理者権限を持つユ</text>
+<rect x="296.8" y="478.0" width="141.5" height="17.0" fill="#fff"/>
+<text x="367.6" y="491.0" font-size="13" text-anchor="middle">ーザー)の指定を求める</text>
+<rect x="276.3" y="512.0" width="182.6" height="17.0" fill="#fff"/>
+<text x="367.6" y="525.0" font-size="13" text-anchor="middle">7: 対象のユーザーを指定する</text>
+<rect x="682.0" y="546.0" width="236.7" height="17.0" fill="#fff"/>
+<text x="800.3" y="559.0" font-size="13" text-anchor="middle">8: 管理先の入力を要求する(ユーザー)</text>
+<rect x="1007.5" y="580.0" width="338.6" height="17.0" fill="#fff"/>
+<text x="1009.5" y="593.0" font-size="13" text-anchor="start">9: 対象のユーザーが勤怠管理者権限を持つかを判定する</text>
+<text x="80.0" y="658.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="80.0" y="664.0" width="279.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="677.0" font-size="13" text-anchor="start">[対象のユーザーが勤怠管理者権限を持たない]</text>
+<rect x="659.7" y="690.0" width="281.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="703.0" font-size="13" text-anchor="middle">10: 管理先を割り当てられないことを表示する</text>
+<rect x="155.5" y="724.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="737.0" font-size="13" text-anchor="middle">11: 対象のユーザーが勤怠管理者権限を持たないため管理先を割り当て</text>
+<rect x="294.1" y="741.0" width="147.0" height="17.0" fill="#fff"/>
+<text x="367.6" y="754.0" font-size="13" text-anchor="middle">られないことを提示する</text>
+<rect x="1073.0" y="807.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="1285.1" y="820.0" font-size="13" text-anchor="middle">12: 対象のユーザーの現在の管理先と、登録されている所属単位を取得</text>
+<rect x="1270.1" y="824.0" width="30.0" height="17.0" fill="#fff"/>
+<text x="1285.1" y="837.0" font-size="13" text-anchor="middle">する</text>
+<rect x="1191.0" y="858.0" width="188.1" height="17.0" fill="#fff"/>
+<text x="1285.1" y="871.0" font-size="13" text-anchor="middle">管理先の一覧, 所属単位の一覧</text>
+<text x="68.0" y="914.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
+<rect x="68.0" y="920.0" width="188.1" height="17.0" fill="#fff"/>
+<text x="70.0" y="933.0" font-size="13" text-anchor="start">[誤りが無くなるまで繰り返す]</text>
+<rect x="633.7" y="946.0" width="333.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="959.0" font-size="13" text-anchor="middle">13: 現在の管理先と登録されている所属単位を表示する</text>
+<rect x="149.0" y="980.0" width="437.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="993.0" font-size="13" text-anchor="middle">14: 対象のユーザーの現在の管理先と登録されている所属単位を提示し、</text>
+<rect x="229.1" y="997.0" width="277.0" height="17.0" fill="#fff"/>
+<text x="367.6" y="1010.0" font-size="13" text-anchor="middle">変更後の管理先とする所属単位の指定を求める</text>
+<rect x="203.7" y="1031.0" width="327.7" height="17.0" fill="#fff"/>
+<text x="367.6" y="1044.0" font-size="13" text-anchor="middle">15: 変更後の管理先とする所属単位を1つ以上指定する</text>
+<rect x="626.2" y="1065.0" width="348.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1078.0" font-size="13" text-anchor="middle">16: 指定された管理先の検証を要求する(所属単位の一覧)</text>
+<rect x="1007.5" y="1099.0" width="314.7" height="17.0" fill="#fff"/>
+<text x="1009.5" y="1112.0" font-size="13" text-anchor="start">17: 所属単位が1つ以上指定されているかを検証する</text>
+<text x="80.0" y="1177.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="80.0" y="1183.0" width="221.6" height="17.0" fill="#fff"/>
+<text x="82.0" y="1196.0" font-size="13" text-anchor="start">[所属単位が1つも指定されていない]</text>
+<rect x="656.0" y="1209.0" width="288.7" height="17.0" fill="#fff"/>
+<text x="800.3" y="1222.0" font-size="13" text-anchor="middle">18: 1つ以上の指定が必要であることを表示する</text>
+<rect x="151.7" y="1243.0" width="431.7" height="17.0" fill="#fff"/>
+<text x="367.6" y="1256.0" font-size="13" text-anchor="middle">19: 管理先とする所属単位を1つ以上指定する必要があることを提示する</text>
+<rect x="679.2" y="1309.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1322.0" font-size="13" text-anchor="middle">20: 変更前と変更後の管理先を表示する</text>
+<rect x="155.5" y="1343.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="1356.0" font-size="13" text-anchor="middle">21: 対象のユーザーの変更前と変更後の管理先を提示し、割り当ての確</text>
+<rect x="333.1" y="1360.0" width="69.0" height="17.0" fill="#fff"/>
+<text x="367.6" y="1373.0" font-size="13" text-anchor="middle">認を求める</text>
+<text x="80.0" y="1416.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="80.0" y="1422.0" width="214.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="1435.0" font-size="13" text-anchor="start">[割り当てのキャンセルを要求した]</text>
+<rect x="279.0" y="1448.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="1461.0" font-size="13" text-anchor="middle">22: キャンセルボタンを押す</text>
+<rect x="718.2" y="1482.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1495.0" font-size="13" text-anchor="middle">23: キャンセルを要求する</text>
+<rect x="1007.5" y="1516.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="1009.5" y="1529.0" font-size="13" text-anchor="start">24: 入力された内容を破棄する</text>
+<rect x="698.7" y="1572.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1585.0" font-size="13" text-anchor="middle">25: キャンセルの完了を表示する</text>
+<rect x="240.0" y="1606.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="1619.0" font-size="13" text-anchor="middle">26: キャンセルが完了したことを提示する</text>
+<rect x="266.0" y="1656.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="1669.0" font-size="13" text-anchor="middle">27: 管理先の割り当てを指示する</text>
+<rect x="612.2" y="1690.0" width="376.3" height="17.0" fill="#fff"/>
+<text x="800.3" y="1703.0" font-size="13" text-anchor="middle">28: 管理先の割り当てを要求する(ユーザー, 所属単位の一覧)</text>
+<rect x="1099.0" y="1724.0" width="372.2" height="17.0" fill="#fff"/>
+<text x="1285.1" y="1737.0" font-size="13" text-anchor="middle">29: 対象のユーザーの管理先を指定された所属単位に更新する</text>
+<text x="80.0" y="1780.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
+<rect x="80.0" y="1786.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="1799.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
+<rect x="692.2" y="1812.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1825.0" font-size="13" text-anchor="middle">30: 保存に失敗したことを表示する</text>
+<rect x="259.5" y="1846.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="1859.0" font-size="13" text-anchor="middle">31: 保存に失敗したことを提示する</text>
+<rect x="80.0" y="1880.0" width="110.1" height="17.0" fill="#fff"/>
+<text x="82.0" y="1893.0" font-size="13" text-anchor="start">[保存に成功した]</text>
+<rect x="679.2" y="1906.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1919.0" font-size="13" text-anchor="middle">32: 管理先の割り当ての完了を表示する</text>
+<rect x="220.5" y="1940.0" width="294.2" height="17.0" fill="#fff"/>
+<text x="367.6" y="1953.0" font-size="13" text-anchor="middle">33: 管理先の割り当てが完了したことを提示する</text>
+<text x="136.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>
+<text x="599.2" y="120.0" font-size="13" text-anchor="middle">:ユーザ権限変更画面</text>
+<text x="1001.5" y="120.0" font-size="13" text-anchor="middle">:管理先制御</text>
+<text x="1308.6" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<text x="1438.6" y="120.0" font-size="13" text-anchor="middle">:権限</text>
+<text x="1568.6" y="120.0" font-size="13" text-anchor="middle">:所属単位</text>
+<path d="M1658.6399999999999 176 H2028.6399999999999 L2038.6399999999999 186 V222 H1658.6399999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1666.6" y="196.0" font-size="13" text-anchor="start">管理先の割り当てを要求する画面は画面遷移図にない。ユーザ</text>
+<text x="1666.6" y="214.0" font-size="13" text-anchor="start">権限変更画面を流用する(暫定)</text>
+<path d="M1658.6399999999999 346 H2016.42 L2026.42 356 V374 H1658.6399999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1666.6" y="366.0" font-size="13" text-anchor="start">権限はユーザーの一覧と一緒に取得する(#125 のレビュー)</text>
+<path d="M1658.6399999999999 748 H2017.2 L2027.2 758 V794 H1658.6399999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1666.6" y="768.0" font-size="13" text-anchor="start">Alt-1。メインフロー2に戻る。勤怠管理者権限は UC-104 </text>
+<text x="1666.6" y="786.0" font-size="13" text-anchor="start">で付ける(備考4)</text>
+<path d="M1658.6399999999999 1250 H1839.8799999999999 L1849.8799999999999 1260 V1278 H1658.6399999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1666.6" y="1270.0" font-size="13" text-anchor="start">Alt-2。メインフロー4に戻る</text>
+<path d="M1658.6399999999999 1613 H1941.7999999999997 L1951.7999999999997 1623 V1641 H1658.6399999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1666.6" y="1633.0" font-size="13" text-anchor="start">Ex-1。待機状態に戻る。管理先は変更されない</text>
+<path d="M1658.6399999999999 1731 H2022.6599999999999 L2032.6599999999999 1741 V1795 H1658.6399999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1666.6" y="1751.0" font-size="13" text-anchor="start">管理先は従業員としての所属とは別のデータ(備考1、</text>
+<text x="1666.6" y="1769.0" font-size="13" text-anchor="start">ADR-0007)。初回の割り当ても変更もここで行う(備考2)。1</text>
+<text x="1666.6" y="1787.0" font-size="13" text-anchor="start">つの所属単位に複数の勤怠管理者を置けるかは TBD(備考5)</text>
+<path d="M1658.6399999999999 1853 H2027.34 L2037.34 1863 V1881 H1658.6399999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1666.6" y="1873.0" font-size="13" text-anchor="start">Ex-2。入力された内容を保持したまま、メインフロー7に戻る</text>
+<path d="M2068.64 40 H2355.4399999999996 L2365.4399999999996 50 V86 H2068.64 Z" fill="#fde2e2" stroke="#222"/>
+<text x="2076.6" y="60.0" font-size="13" text-anchor="start">UC-109 勤怠管理者に管理先を割り当てる</text>
+<text x="2076.6" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1、Alt-2、Ex-1、Ex-2)</text>
+<text x="16" y="27" font-size="14"><tspan font-weight="bold">sd</tspan> UC-109 勤怠管理者に管理先を割り当てる</text>
+</svg>

@@ -2,7 +2,7 @@
 
 ## ステータス
 
-決定
+決定。`approved/*` タグを契機とする納品、`update` / `snapshot` モード、Drive 側の削除を行わない点は [ADR-0042](./0042-deliver-main-and-pr-to-drive.md) で置き換え
 
 ## 背景
 

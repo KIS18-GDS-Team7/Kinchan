@@ -77,8 +77,8 @@
 <line x1="1100.1" y1="1586.0" x2="1666.3" y2="1586.0" stroke="#222" stroke-width="1"/>
 <polygon points="1667.3,1586.0 1657.3,1581.0 1657.3,1591.0" fill="#222"/>
 <line x1="1667.3" y1="1586.0" x2="1757.3" y2="1586.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="1078.1" y="1520.0" width="671.2" height="82.0" rx="0" fill="none" stroke="#222"/>
-<line x1="1749.3" y1="1530.0" x2="1757.3" y2="1622.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="1078.1" y="1520.0" width="665.2" height="82.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1743.3" y1="1530.0" x2="1757.3" y2="1622.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <path d="M74 1624 H120.62 V1636 L112.62 1644 H74 Z" fill="#fff" stroke="#222"/>
 <line x1="1100.1" y1="1690.0" x2="750.8" y2="1690.0" stroke="#222" stroke-width="1"/>
 <polygon points="749.8,1690.0 759.8,1685.0 759.8,1695.0" fill="#222"/>

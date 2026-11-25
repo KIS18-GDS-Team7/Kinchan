@@ -51,7 +51,7 @@
 <polygon points="1185.6,1079.0 1175.6,1074.0 1175.6,1084.0" fill="#222"/>
 <line x1="1185.6" y1="1079.0" x2="1884.0" y2="1079.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="74.0" y="979.0" width="1193.6" height="116.0" rx="0" fill="none" stroke="#222"/>
-<rect x="62.0" y="591.0" width="1826.0" height="520.0" rx="0" fill="none" stroke="#222"/>
+<rect x="62.0" y="591.0" width="1808.0" height="520.0" rx="0" fill="none" stroke="#222"/>
 <line x1="136.0" y1="1145.0" x2="735.8" y2="1145.0" stroke="#222" stroke-width="1"/>
 <polygon points="736.8,1145.0 726.8,1140.0 726.8,1150.0" fill="#222"/>
 <line x1="736.8" y1="1145.0" x2="1884.0" y2="1145.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>

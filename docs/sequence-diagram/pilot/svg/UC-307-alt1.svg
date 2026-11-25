@@ -116,12 +116,12 @@
 <line x1="1390.6" y1="2396.0" x2="2357.4" y2="2416.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <line x1="579.7" y1="2430.0" x2="149.0" y2="2430.0" stroke="#222" stroke-width="1"/>
 <polygon points="148.0,2430.0 158.0,2425.0 158.0,2435.0" fill="#222"/>
-<rect x="86.0" y="2134.0" width="2263.4" height="312.0" rx="0" fill="none" stroke="#222"/>
-<line x1="86.0" y1="2246.0" x2="2349.4" y2="2246.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="74.0" y="1727.0" width="2287.4" height="735.0" rx="0" fill="none" stroke="#222"/>
-<line x1="74.0" y1="1856.0" x2="2361.4" y2="1856.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="62.0" y="1438.0" width="2311.4" height="1040.0" rx="0" fill="none" stroke="#222"/>
-<line x1="62.0" y1="1567.0" x2="2373.4" y2="1567.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="86.0" y="2134.0" width="2257.4" height="312.0" rx="0" fill="none" stroke="#222"/>
+<line x1="86.0" y1="2246.0" x2="2343.4" y2="2246.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="1727.0" width="2269.4" height="735.0" rx="0" fill="none" stroke="#222"/>
+<line x1="74.0" y1="1856.0" x2="2343.4" y2="1856.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="62.0" y="1438.0" width="2281.4" height="1040.0" rx="0" fill="none" stroke="#222"/>
+<line x1="62.0" y1="1567.0" x2="2343.4" y2="1567.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="148" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
 <path d="M148 76 V88 M138 81 H158 M148 88 L140 98 M148 88 L156 98" fill="none" stroke="#222"/>
 <line x1="148.0" y1="130.0" x2="148.0" y2="2508.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>

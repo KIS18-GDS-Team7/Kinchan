@@ -135,8 +135,8 @@
 <line x1="1471.0" y1="2741.0" x2="2597.3" y2="2743.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <line x1="1011.2" y1="2775.0" x2="161.0" y2="2775.0" stroke="#222" stroke-width="1"/>
 <polygon points="160.0,2775.0 170.0,2770.0 170.0,2780.0" fill="#222"/>
-<rect x="98.0" y="2479.0" width="2491.3" height="312.0" rx="0" fill="none" stroke="#222"/>
-<line x1="98.0" y1="2591.0" x2="2589.3" y2="2591.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="98.0" y="2479.0" width="2485.3" height="312.0" rx="0" fill="none" stroke="#222"/>
+<line x1="98.0" y1="2591.0" x2="2583.3" y2="2591.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="160" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
 <path d="M160 76 V88 M150 81 H170 M160 88 L152 98 M160 88 L168 98" fill="none" stroke="#222"/>
 <line x1="160.0" y1="130.0" x2="160.0" y2="2821.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>

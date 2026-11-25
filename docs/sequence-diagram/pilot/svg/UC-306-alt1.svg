@@ -104,8 +104,8 @@
 <line x1="1419.5" y1="2049.0" x2="2357.2" y2="2051.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <line x1="602.0" y1="2083.0" x2="137.0" y2="2083.0" stroke="#222" stroke-width="1"/>
 <polygon points="136.0,2083.0 146.0,2078.0 146.0,2088.0" fill="#222"/>
-<rect x="74.0" y="1787.0" width="2275.2" height="312.0" rx="0" fill="none" stroke="#222"/>
-<line x1="74.0" y1="1899.0" x2="2349.2" y2="1899.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="1787.0" width="2269.2" height="312.0" rx="0" fill="none" stroke="#222"/>
+<line x1="74.0" y1="1899.0" x2="2343.2" y2="1899.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="136" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
 <path d="M136 76 V88 M126 81 H146 M136 88 L128 98 M136 88 L144 98" fill="none" stroke="#222"/>
 <line x1="136.0" y1="130.0" x2="136.0" y2="2129.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>

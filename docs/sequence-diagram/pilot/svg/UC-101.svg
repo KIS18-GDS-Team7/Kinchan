@@ -31,7 +31,7 @@
 <polygon points="136.0,658.0 146.0,653.0 146.0,663.0" fill="#222"/>
 <line x1="691.3" y1="658.0" x2="1616.1" y2="658.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="74.0" y="558.0" width="1118.8" height="116.0" rx="0" fill="none" stroke="#222"/>
-<rect x="62.0" y="278.0" width="1558.1" height="412.0" rx="0" fill="none" stroke="#222"/>
+<rect x="62.0" y="278.0" width="1540.1" height="412.0" rx="0" fill="none" stroke="#222"/>
 <line x1="1110.8" y1="724.0" x2="692.3" y2="724.0" stroke="#222" stroke-width="1"/>
 <polygon points="691.3,724.0 701.3,719.0 701.3,729.0" fill="#222"/>
 <line x1="691.3" y1="758.0" x2="137.0" y2="758.0" stroke="#222" stroke-width="1"/>

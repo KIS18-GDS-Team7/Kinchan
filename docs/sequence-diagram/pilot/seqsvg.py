@@ -352,6 +352,8 @@ def render(d):
         right = right_base + pad + (60 if hi == int(hi) else 0)
         guard0 = f"[{f.operands[0][0]}]"
         right = max(right, left + text_width(guard0) + 70)
+        # ノート列にかからないようにする
+        right = min(right, note_x - 14)
         y += 22
         y0 = y
         # 見出し (五角形)

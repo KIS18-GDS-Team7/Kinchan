@@ -30,7 +30,7 @@
 <polygon points="136.0,675.0 146.0,670.0 146.0,680.0" fill="#222"/>
 <line x1="632.8" y1="675.0" x2="1200.0" y2="675.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="74.0" y="558.0" width="898.0" height="133.0" rx="0" fill="none" stroke="#222"/>
-<rect x="62.0" y="278.0" width="1142.0" height="429.0" rx="0" fill="none" stroke="#222"/>
+<rect x="62.0" y="278.0" width="1124.0" height="429.0" rx="0" fill="none" stroke="#222"/>
 <line x1="890.0" y1="741.0" x2="633.8" y2="741.0" stroke="#222" stroke-width="1"/>
 <polygon points="632.8,741.0 642.8,736.0 642.8,746.0" fill="#222"/>
 <line x1="632.8" y1="775.0" x2="137.0" y2="775.0" stroke="#222" stroke-width="1"/>

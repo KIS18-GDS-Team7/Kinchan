@@ -165,6 +165,15 @@
       }
     }
     for (const item of items.filter((i) => i.status === "pending")) notifyManagers(user(item.userId), item);
+    // 従業員側でも通知画面を試せるよう、田中 陽菜さんに処理済みの通知を用意する (初期データと対応させる)
+    items.push(
+      { id: "w0", kind: "wish", userId: "1", unit: "shibuya", date: "2026-10-14", start: "10:00", end: "18:00", status: "approved", sentAt: "2026-09-20T10:00:00" },
+      { id: "a0", kind: "attendance", userId: "1", unit: "shibuya", date: "2026-10-13", after: workDay("2026-10-13", "09:58:00", "18:30:00"),
+        reason: "退勤時刻の修正", status: "rejected", rejectReason: "申請内容とシフト・打刻記録が一致しないため", sentAt: "2026-10-13T19:00:00" },
+    );
+    notify("1", "シフト希望が承認されました。", { type: "shift", id: "s1" }, "2026-09-25T10:00:00");
+    notify("1", "対象期間のシフトが公開されました。", { type: "published", ids: ["s6", "s7", "s1", "s2"] }, "2026-09-30T18:00:00");
+    notify("1", "勤怠修正申請が却下されました。理由：申請内容とシフト・打刻記録が一致しないため", { type: "item", id: "a0" }, "2026-10-14T09:00:00");
     const record = (key, date) => records.find((r) => r.userId === key && r.date === date);
     function recordFor(key, date) {
       let r = record(key, date);

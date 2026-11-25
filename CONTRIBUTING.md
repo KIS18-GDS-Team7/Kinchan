@@ -4,19 +4,22 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 
 ## ブランチ
 
-![ブランチの流れ: 作業ブランチ <type>/<topic> から main へ PR。複数 PR の feature は feat/<name>/<topic> から dev/feat/<name> に PR し、まとめて main へ PR。main の内容を教員に送付し (review/<日付> タグ)、承認で approved/<日付> タグと Release を作る](docs/img/branch-model.svg)
+![ブランチの流れ: 作業ブランチ <type>/<topic> から main へ PR。その作業ブランチには、子の作業ブランチから PR を出せる (stacked PR)。子の PR ごとに承認を必須にする feature は feat/<name>/<topic> から dev/feat/<name> に PR し、まとめて main へ PR。main の最新は Google Drive の 成果物/ に自動で置かれ、教員はそれを読む](docs/img/branch-model.svg)
 
 | ブランチ | 役割 | 決まり |
 |---|---|---|
 | `main` | チームの統合先。常に教員に見せられる状態に保つ | 直接 push 不可。PR 必須。削除・force push 不可 |
-| `<type>/<topic>` | 作業ブランチ。`docs/` `feat/` `fix/` `ci/` など | `main` から切り、`main` に PR を出す。マージ後に削除 |
-| `dev/feat/<name>` | 複数人・複数 PR で進める feature の統合ブランチ | `main` から切る。直接 push 不可。PR 必須。`main` に PR を出し、マージ後に削除 |
+| `<type>/<topic>` | 作業ブランチ。`docs/` `feat/` `fix/` `ci/` など | `main` から切り、`main` に PR を出す (stacked PR の子は親の作業ブランチに出す)。マージすると自動で削除される |
+| `dev/feat/<name>` | 子の PR ごとに承認を必須にして統合を続ける feature の統合ブランチ (任意) | `main` から切る。直接 push 不可。PR 必須。`main` に PR を出し、マージ後に削除 |
 | `feat/<name>/<topic>` | `dev/feat/<name>` に対する作業ブランチ | `dev/feat/<name>` に PR を出す |
 
 - 1 PR で終わる変更は `dev/` を経由せず `main` に直接 PR を出す。
-- 未完成の変更を `main` に入れない。途中の状態を共有したいときは `dev/feat/<name>` を使う。
+- `main` への PR の head ブランチ (親) に、別の作業ブランチ (子) から PR を出してよい (stacked PR)。親の作者は自分でも他のメンバーでもよい。例: #129 #131 → `docs/add-sequence-diagrams` (#125 の head)、#116 → `Screen-transition-diagram` (#107 の head)。
+  - 親は保護されていないため、子の PR は承認なしでマージできる。レビューは親から `main` への PR で、子の変更を含めて受ける。
+  - 他のメンバーの親に出した子の PR は、親の作者がマージする。
+- 未完成の変更を `main` に入れない。途中の状態を共有したいときは、stacked PR の親ブランチか `dev/feat/<name>` を使う。
 - `dev/feat/<name>` が長く残ると `main` から離れる。`main` の取り込みも PR で行うため、feature は小さく区切って早く `main` に入れる。
-- 自動生成のブランチ (`claude/issue-...`) はそのまま `main` に PR を出してよい。
+- Claude が作るブランチ (`@claude` の `claude/issue-<番号>-...`、Claude Code のセッションの `claude/<名前>`) は命名規則の対象外。base の選び方は他の作業ブランチと同じ。
 
 ## PR とレビュー
 
@@ -41,35 +44,12 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 
 ## 教員レビュー
 
-教員は `main` のファイルを GitHub 上で読み、メールで返す。PR やタグの操作はしない。
-本来のレビューは Google Docs 上で行う運用で、この班は GitHub 上での閲覧を例外的に認められている。完成品の Google Drive への納品はレビューとは別に必要 (後述)。
+教員は Google Drive の成果物フォルダ (後述) を読む。Markdown は Google Docs に変換して置かれる。教員は GitHub の PR やタグを操作しない。
 
-1. `main` が送付できる状態か確認する (未完成の変更が入っていないこと)。
-2. PM が送付する commit に `review/<YYYYMMDD>` タグを打つ。
-
-   ```sh
-   git fetch origin
-   git tag -a review/20261022 -m "教員レビュー依頼 (UC ドキュメント)" origin/main
-   git push origin review/20261022
-   ```
-
-3. メールには commit を固定したリンク (permalink) を書く。GitHub でファイルを開いて `y` を押すと URL が `blob/<commit>/...` の形になる。この URL は後で `main` が進んでも同じ内容を表示する。
-4. 承認の返信を受けたら、同じ commit に `approved/<YYYYMMDD>` タグと GitHub Release を作り、返信の日時と要旨を記録する。リポジトリは public なので、メールの原文や個人情報は書かない。
-
-   タグは annotated で打つ (日時・作成者・メッセージが不変の証跡になる)。Release はその上に載せる読める記録で、notes は後から編集できる。
-
-   ```sh
-   sha=$(git rev-parse 'review/20261022^{commit}')   # review/ タグが無い場合は対象 commit の SHA を直接書く
-   git tag -a approved/20261022 -m "教員承認 2026-10-22 (対象: review/20261022)" "$sha"
-   git push origin approved/20261022
-   gh release create approved/20261022 \
-     --title "教員承認 2026-10-22" --notes "2026-10-22 のメールで承認。対象: ${sha:0:7} (review/20261022)。指摘事項: なし"
-   ```
-
-5. 差し戻しの場合はタグを打たず、`main` で修正して 1 からやり直す。
-6. 手順 2 を経ずにレビューを受けた場合 (例: #102 は `develop` の内容でレビューを受け、マージ後の `main` に `approved/` だけを作る) は、Release notes に対象の commit と経緯を書く。
-
-`review/*` `approved/*` タグの作成・変更・削除は pm-qa チームのみ。
+- `成果物/` は `main` の最新に追従する。未完成の変更を `main` に入れない。
+- `main` に入る前の変更は、PR ごとに `PR-成果物/` に置かれる。
+- 指摘を受けたら、通常の PR で修正する。
+- 教員レビューのためのタグと GitHub Release は作らない ([ADR-0043](docs/ADR/0043-review-on-drive-without-tags.md))。既存の `review/*` `approved/*` タグと Release は過去の記録として残す。これらのタグの作成・変更・削除は pm-qa チームのみ。
 
 ### Google Drive への納品
 
@@ -86,15 +66,15 @@ Apps Script が 10 分ごとに GitHub を読み、Shared Drive の指定フォ�
 |---|---|---|
 | `Changes must be made through a pull request` | 保護されたブランチへ直接 push した | 作業ブランチを切って PR を出す |
 | `Review required` / `Waiting on required reviewers` | 必須レビュアーの承認が足りない | 表示されたチームのメンバーに依頼する |
-| `GH013: Repository rule violations found` | Rulesets に違反した。続く行に理由がある | 理由に従う。`review/` `approved/` タグなら PM に依頼する |
+| `GH013: Repository rule violations found` | Rulesets に違反した。続く行に理由がある | 理由に従う |
 | 承認が消えた | 承認後に push した | 再度レビューを依頼する |
 
 ## 自動化
 
 | 名前 | 起動 | 動作 |
 |---|---|---|
-| Claude Code Review | PR を開く、draft を解除する、再オープンする、`claude-review` ラベルを付ける | 差分をレビューし、inline comment と総評を書く。push では動かない。再レビューはラベルを付け直す |
-| Claude Code | Issue / PR のコメントに `@claude` と書く | 質問に答える、調査する。承認・編集・close はしない。write 権限のあるメンバーのみ起動できる |
+| Claude Code Review | PR を開く、draft を解除する、再オープンする、`claude-review` ラベルを付ける (ラベルは draft の PR でも動く) | 差分をレビューし、inline comment と総評を書く。push では動かない。ラベルは実行後に自動で外れるので、再レビューはラベルを付け直す |
+| Claude Code | Issue / PR のコメント、PR のレビュー、Issue の本文かタイトル (作成時・assign 時) に `@claude` と書く | 質問に答える、調査する。承認・編集・close はしない。write 権限のあるメンバーのみ起動できる |
 | Issue duplicate check | Issue を開く | 既存 Issue との重複を判定し、重複があればコメントする |
 
 ## 設定の変更
@@ -118,4 +98,7 @@ CODEOWNERS (`.github/CODEOWNERS`) は所有の宣言と review request の自動
 - [ADR-0002 ドキュメントでは人間的な表現を使わない](docs/ADR/0002-avoid-human-centric-expressions.md)
 - [ADR-0003 曖昧な語を使わない](docs/ADR/0003-avoid-ambiguous-terms.md)
 - [ADR-0004 ブランチの運用と必須レビューを定める](docs/ADR/0004-branch-strategy.md)
+- [ADR-0042 Google Drive の成果物フォルダを main と PR ごとに分けて置く](docs/ADR/0042-deliver-main-and-pr-to-drive.md)
+- [ADR-0043 教員レビューを Google Drive の成果物フォルダで受け、タグと Release の記録をやめる](docs/ADR/0043-review-on-drive-without-tags.md)
+- [ADR-0044 main への PR の head に stacked PR を出してよい](docs/ADR/0044-allow-stacked-prs.md)
 - [AGENTS.md](AGENTS.md): AI コーディングエージェント向けの決まり

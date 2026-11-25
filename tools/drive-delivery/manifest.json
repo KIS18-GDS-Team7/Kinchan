@@ -1,14 +1,15 @@
 {
-    // リポジトリのパス (main の approved/* タグ時点) と Google Drive 上の置き場所の対応表。
-    // ここに書いたものだけが納品される。書いていないものは同期しない。Drive 側の削除は行わない。
+    // リポジトリのパスと、Google Drive 上の置き場所の対応表。ここに書いたものだけを置く。
+    // dest は成果物フォルダからの相対パスで、同じ対応表を 2 か所に使う。
+    //   成果物/                               : main の最新にある、一致する全ファイル
+    //   PR-成果物/#<番号> <タイトル>-成果物/  : main 向けの PR の差分 (削除を除く) のうち、一致するファイル
+    // main では main のこのファイルを、PR では PR の head のこのファイルを使う。
+    // 対象から外れたファイルは、script が置いたものに限りゴミ箱へ移す。
     // 行頭が // の行はコメント。
     //
-    // mode: "update"   = 固定の置き場所を上書きする (Google Docs の URL と版履歴を保つ)
-    //       "snapshot" = approved-<日付>/ 配下に毎回新しく置く
     // src : リポジトリのパス。glob 可 (* はディレクトリ内、** は階層をまたぐ)
-    // dest: Drive 上の相対パス。末尾 / または src が glob ならフォルダ、それ以外はファイル名そのもの
+    // dest: 成果物フォルダ内の相対パス。末尾 / または src が glob ならフォルダ、それ以外はファイル名そのもの
     // convert: "gdoc" = Markdown を Google Docs に変換 / "none" = そのまま置く (既定)
-    "mode": "update",
     "entries": [
         {
             "src": "docs/requirements/requirements.md",
@@ -17,27 +18,27 @@
         },
         {
             "src": "docs/usecase/*.md",
-            "dest": "成果物/02ユースケースドキュメント/",
+            "dest": "02ユースケースドキュメント/",
             "convert": "gdoc"
         },
         {
             "src": "docs/usecase/*.svg",
-            "dest": "成果物/01ユースケース図/",
+            "dest": "01ユースケース図/",
             "convert": "none"
         },
         {
             "src": "docs/usecase/*.png",
-            "dest": "成果物/01ユースケース図/",
+            "dest": "01ユースケース図/",
             "convert": "none"
         },
         {
             "src": "docs/class/conceptual-class-diagram.*",
-            "dest": "成果物/03概念クラス図/",
+            "dest": "03概念クラス図/",
             "convert": "none"
         },
         {
             "src": "docs/screen-transition-diagram/screen_transition_diagram.*",
-            "dest": "成果物/04画面遷移図/",
+            "dest": "04画面遷移図/",
             "convert": "none"
         }
     ]

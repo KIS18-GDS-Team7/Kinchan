@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1444" height="690" viewBox="0 0 1444 690" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<title>UC-302 ログアウトする</title>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="10" y="10" width="1423.6" height="670.0" fill="none" stroke="#222"/><path d="M10 10 H217.2 V24 L207.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<line x1="95.0" y1="188.0" x2="375.2" y2="188.0" stroke="#222" stroke-width="1"/>
+<polygon points="376.2,188.0 366.2,183.0 366.2,193.0" fill="#222"/>
+<line x1="376.2" y1="222.0" x2="96.0" y2="222.0" stroke="#222" stroke-width="1"/>
+<polygon points="95.0,222.0 105.0,217.0 105.0,227.0" fill="#222"/>
+<line x1="376.2" y1="222.0" x2="843.9" y2="222.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M33.0 244 H94.69999999999999 V256 L86.69999999999999 264 H33.0 Z" fill="#fff" stroke="#222"/>
+<line x1="95.0" y1="310.0" x2="375.2" y2="310.0" stroke="#222" stroke-width="1"/>
+<polygon points="376.2,310.0 366.2,305.0 366.2,315.0" fill="#222"/>
+<line x1="376.2" y1="344.0" x2="752.9" y2="344.0" stroke="#222" stroke-width="1"/>
+<polygon points="753.9,344.0 743.9,339.0 743.9,349.0" fill="#222"/>
+<line x1="753.9" y1="378.0" x2="377.2" y2="378.0" stroke="#222" stroke-width="1"/>
+<polygon points="376.2,378.0 386.2,373.0 386.2,383.0" fill="#222"/>
+<line x1="376.2" y1="412.0" x2="96.0" y2="412.0" stroke="#222" stroke-width="1"/>
+<polygon points="95.0,412.0 105.0,407.0 105.0,417.0" fill="#222"/>
+<line x1="376.2" y1="412.0" x2="843.9" y2="412.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="33.0" y="244.0" width="802.9" height="184.0" rx="0" fill="none" stroke="#222"/>
+<line x1="95.0" y1="462.0" x2="375.2" y2="462.0" stroke="#222" stroke-width="1"/>
+<polygon points="376.2,462.0 366.2,457.0 366.2,467.0" fill="#222"/>
+<line x1="376.2" y1="496.0" x2="752.9" y2="496.0" stroke="#222" stroke-width="1"/>
+<polygon points="753.9,496.0 743.9,491.0 743.9,501.0" fill="#222"/>
+<polyline points="753.8599999999999,530 783.8599999999999,530 783.8599999999999,552 754.8599999999999,552" fill="none" stroke="#222"/>
+<polygon points="754.9,552.0 764.9,547.0 764.9,557.0" fill="#222"/>
+<line x1="753.9" y1="586.0" x2="525.7" y2="586.0" stroke="#222" stroke-width="1"/>
+<polygon points="524.7,586.0 534.7,581.0 534.7,591.0" fill="#222"/>
+<line x1="753.9" y1="586.0" x2="843.9" y2="586.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="524.7" y1="620.0" x2="96.0" y2="620.0" stroke="#222" stroke-width="1"/>
+<polygon points="95.0,620.0 105.0,615.0 105.0,625.0" fill="#222"/>
+<circle cx="95.0" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
+<path d="M95.0 76 V88 M85.0 81 H105.0 M95.0 88 L87.0 98 M95.0 88 L103.0 98" fill="none" stroke="#222"/>
+<line x1="95.0" y1="130.0" x2="95.0" y2="650.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="381.15999999999997" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M368.15999999999997 82 H358.15999999999997 M358.15999999999997 71 V93" fill="none" stroke="#222"/>
+<line x1="376.2" y1="130.0" x2="376.2" y2="650.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="529.6999999999999" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M516.6999999999999 82 H506.69999999999993 M506.69999999999993 71 V93" fill="none" stroke="#222"/>
+<line x1="524.7" y1="130.0" x2="524.7" y2="650.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="753.8599999999999" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M754.8599999999999 69 l6 -5 M754.8599999999999 69 l6 5" fill="none" stroke="#222"/>
+<line x1="753.9" y1="130.0" x2="753.9" y2="650.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="150.8" y="169.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="235.6" y="182.0" font-size="13" text-anchor="middle">1: ログアウトボタンを押す</text>
+<rect x="144.3" y="203.0" width="182.6" height="17.0" fill="#fff"/>
+<text x="235.6" y="216.0" font-size="13" text-anchor="middle">2: ログアウトの確認を求める</text>
+<text x="39.0" y="259.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
+<rect x="39.0" y="265.0" width="227.1" height="17.0" fill="#fff"/>
+<text x="41.0" y="278.0" font-size="13" text-anchor="start">[ログアウトのキャンセルを要求した]</text>
+<rect x="150.8" y="291.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="235.6" y="304.0" font-size="13" text-anchor="middle">3: キャンセルボタンを押す</text>
+<rect x="486.7" y="325.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="565.0" y="338.0" font-size="13" text-anchor="middle">4: キャンセルを要求する</text>
+<rect x="467.2" y="359.0" width="195.6" height="17.0" fill="#fff"/>
+<text x="565.0" y="372.0" font-size="13" text-anchor="middle">5: キャンセルの完了を表示する</text>
+<rect x="111.8" y="393.0" width="247.6" height="17.0" fill="#fff"/>
+<text x="235.6" y="406.0" font-size="13" text-anchor="middle">6: キャンセルが完了したことを提示する</text>
+<rect x="157.3" y="443.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="235.6" y="456.0" font-size="13" text-anchor="middle">7: ログアウトを指示する</text>
+<rect x="486.7" y="477.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="565.0" y="490.0" font-size="13" text-anchor="middle">8: ログアウトを要求する</text>
+<rect x="759.9" y="511.0" width="247.6" height="17.0" fill="#fff"/>
+<text x="761.9" y="524.0" font-size="13" text-anchor="start">9: アクターをログアウトした状態にする</text>
+<rect x="537.7" y="567.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="639.3" y="580.0" font-size="13" text-anchor="middle">10: ログアウトの完了を表示する</text>
+<rect x="182.3" y="601.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="309.8" y="614.0" font-size="13" text-anchor="middle">11: ログアウトが完了したことを提示する</text>
+<text x="95.0" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<text x="376.2" y="120.0" font-size="13" text-anchor="middle">:従業員ホーム画面</text>
+<text x="524.7" y="120.0" font-size="13" text-anchor="middle">:ログイン画面</text>
+<text x="753.9" y="120.0" font-size="13" text-anchor="middle">:ログイン制御</text>
+<path d="M843.8599999999999 210 H1111.9399999999998 L1121.9399999999998 220 V238 H843.8599999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="851.9" y="230.0" font-size="13" text-anchor="start">確認を求める画面は画面遷移図にない(暫定)</text>
+<path d="M843.8599999999999 400 H1207.8799999999999 L1217.8799999999999 410 V446 H843.8599999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="851.9" y="420.0" font-size="13" text-anchor="start">待機状態に戻る(Ex-1 の 3)。ログインしたままである(Ex-</text>
+<text x="851.9" y="438.0" font-size="13" text-anchor="start">1 の事後条件)</text>
+<path d="M843.8599999999999 574 H1213.86 L1223.86 584 V620 H843.8599999999999 Z" fill="#fde2e2" stroke="#222"/>
+<text x="851.9" y="594.0" font-size="13" text-anchor="start">従業員ホーム画面のログアウトボタンからログイン画面に移る</text>
+<text x="851.9" y="612.0" font-size="13" text-anchor="start">(画面遷移図)</text>
+<path d="M1253.86 40 H1403.6399999999999 L1413.6399999999999 50 V86 H1253.86 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1261.9" y="60.0" font-size="13" text-anchor="start">UC-302 ログアウトする</text>
+<text x="1261.9" y="78.0" font-size="13" text-anchor="start">(メインフロー、Ex-1)</text>
+<text x="16" y="27" font-size="14"><tspan font-weight="bold">sd</tspan> UC-302 ログアウトする</text>
+</svg>

@@ -2,7 +2,7 @@
 """シーケンス図のテキスト定義 (src/*.txt) から SVG を書き出す。
 
 使い方:
-    python3 seqsvg.py            # src/ の全ファイルを svg/ に書き出す
+    python3 seqsvg.py            # src/ の全ファイルを images/ に書き出す
     python3 seqsvg.py src/UC-302.txt ...
 
 標準ライブラリだけで動く。文字は <text> 要素のまま出力するので、
@@ -432,12 +432,12 @@ def render(d):
 def main(argv):
     here = Path(__file__).resolve().parent
     srcs = [Path(a) for a in argv] or sorted((here / "src").glob("*.txt"))
-    out = here / "svg"
+    out = here / "images"
     out.mkdir(exist_ok=True)
     for s in srcs:
         d = parse(s)
         (out / (s.stem + ".svg")).write_text(render(d), encoding="utf-8")
-        print(f"{s.name} -> svg/{s.stem}.svg")
+        print(f"{s.name} -> images/{s.stem}.svg")
 
 
 if __name__ == "__main__":

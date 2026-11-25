@@ -47,7 +47,7 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 教員は Google Drive の成果物フォルダ (後述) を読む。Markdown は Google Docs に変換して置かれる。教員は GitHub の PR やタグを操作しない。
 
 - `成果物/` は `main` の最新に追従する。未完成の変更を `main` に入れない。
-- `main` に入る前の変更は、PR ごとに `PR-成果物/` に置かれる。
+- `main` を base とする PR (draft を除く) の変更は、PR ごとに `PR-成果物/` に置かれる。stacked PR の子の変更は、親にマージされると親の `PR-成果物/` に置かれる。
 - 指摘を受けたら、通常の PR で修正する。
 - 教員レビューのためのタグと GitHub Release は作らない ([ADR-0043](docs/ADR/0043-review-on-drive-without-tags.md))。既存の `review/*` `approved/*` タグと Release は過去の記録として残す。これらのタグの作成・変更・削除は pm-qa チームのみ。
 

@@ -182,8 +182,8 @@
 <text x="104.0" y="400.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
 <rect x="104.0" y="406.0" width="162.1" height="17.0" fill="#fff"/>
 <text x="106.0" y="419.0" font-size="13" text-anchor="start">[勤務日が翌日以降でない]</text>
-<rect x="936.3" y="432.0" width="208.6" height="17.0" fill="#fff"/>
-<text x="1040.6" y="445.0" font-size="13" text-anchor="middle">5: 対象にできないことを表示する</text>
+<rect x="949.3" y="432.0" width="182.6" height="17.0" fill="#fff"/>
+<text x="1040.6" y="445.0" font-size="13" text-anchor="middle">5: 対象にできないことを渡す</text>
 <rect x="189.8" y="466.0" width="390.6" height="17.0" fill="#fff"/>
 <text x="385.1" y="479.0" font-size="13" text-anchor="middle">6: 勤務日が翌日以降のシフトだけを対象にできることを提示する</text>
 <rect x="1587.4" y="516.0" width="351.6" height="17.0" fill="#fff"/>
@@ -193,8 +193,8 @@
 <text x="104.0" y="606.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
 <rect x="104.0" y="612.0" width="292.1" height="17.0" fill="#fff"/>
 <text x="106.0" y="625.0" font-size="13" text-anchor="start">[「未処理」のシフト日時変更申請がすでにある]</text>
-<rect x="942.8" y="638.0" width="195.6" height="17.0" fill="#fff"/>
-<text x="1040.6" y="651.0" font-size="13" text-anchor="middle">8: 送信できないことを表示する</text>
+<rect x="955.8" y="638.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="1040.6" y="651.0" font-size="13" text-anchor="middle">8: 送信できないことを渡す</text>
 <rect x="170.3" y="672.0" width="429.6" height="17.0" fill="#fff"/>
 <text x="385.1" y="685.0" font-size="13" text-anchor="middle">9: 「未処理」のシフト日時変更申請があるため送信できないことを提示</text>
 <rect x="370.1" y="689.0" width="30.0" height="17.0" fill="#fff"/>
@@ -202,8 +202,8 @@
 <text x="68.0" y="761.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="767.0" width="188.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="780.0" font-size="13" text-anchor="start">[誤りが無くなるまで繰り返す]</text>
-<rect x="951.7" y="793.0" width="378.4" height="17.0" fill="#fff"/>
-<text x="1140.9" y="806.0" font-size="13" text-anchor="middle">10: 変更前のシフトを表示する(勤務日, 開始時刻, 終了時刻)</text>
+<rect x="964.7" y="793.0" width="352.4" height="17.0" fill="#fff"/>
+<text x="1140.9" y="806.0" font-size="13" text-anchor="middle">10: 変更前のシフトを渡す(勤務日, 開始時刻, 終了時刻)</text>
 <rect x="272.2" y="827.0" width="426.2" height="17.0" fill="#fff"/>
 <text x="485.3" y="840.0" font-size="13" text-anchor="middle">11: 変更前のシフト(勤務日、開始時刻、終了時刻)を提示し、変更後の</text>
 <rect x="320.8" y="844.0" width="329.0" height="17.0" fill="#fff"/>
@@ -221,8 +221,8 @@
 <text x="80.0" y="1075.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="1081.0" width="240.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1094.0" font-size="13" text-anchor="start">[誤りがある、または変更前と同じ日時]</text>
-<rect x="948.3" y="1107.0" width="385.2" height="17.0" fill="#fff"/>
-<text x="1140.9" y="1120.0" font-size="13" text-anchor="middle">16: 誤りの内容、または変更前と同じ日時であることを表示する</text>
+<rect x="961.3" y="1107.0" width="359.2" height="17.0" fill="#fff"/>
+<text x="1140.9" y="1120.0" font-size="13" text-anchor="middle">16: 誤りの内容、または変更前と同じ日時であることを渡す</text>
 <rect x="273.3" y="1141.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="485.3" y="1154.0" font-size="13" text-anchor="middle">17: 誤りの内容、または変更前と同じ日時であるため送信できないこと</text>
 <rect x="450.8" y="1158.0" width="69.0" height="17.0" fill="#fff"/>
@@ -234,8 +234,8 @@
 <text x="92.0" y="1296.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="92.0" y="1302.0" width="188.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="1315.0" font-size="13" text-anchor="start">[変更後の勤務日が当日より前]</text>
-<rect x="974.3" y="1328.0" width="333.2" height="17.0" fill="#fff"/>
-<text x="1140.9" y="1341.0" font-size="13" text-anchor="middle">19: 変更後の勤務日が当日より前であることを表示する</text>
+<rect x="987.3" y="1328.0" width="307.2" height="17.0" fill="#fff"/>
+<text x="1140.9" y="1341.0" font-size="13" text-anchor="middle">19: 変更後の勤務日が当日より前であることを渡す</text>
 <rect x="273.3" y="1362.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="485.3" y="1375.0" font-size="13" text-anchor="middle">20: 変更後の勤務日が当日より前であるため送信できないことを提示す</text>
 <rect x="476.8" y="1379.0" width="17.0" height="17.0" fill="#fff"/>
@@ -253,8 +253,8 @@
 <text x="104.0" y="1602.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="104.0" y="1608.0" width="149.1" height="17.0" fill="#fff"/>
 <text x="106.0" y="1621.0" font-size="13" text-anchor="start">[対象期間に含まれない]</text>
-<rect x="961.3" y="1634.0" width="359.2" height="17.0" fill="#fff"/>
-<text x="1140.9" y="1647.0" font-size="13" text-anchor="middle">23: 変更後の勤務日が対象期間に含まれないことを表示する</text>
+<rect x="974.3" y="1634.0" width="333.2" height="17.0" fill="#fff"/>
+<text x="1140.9" y="1647.0" font-size="13" text-anchor="middle">23: 変更後の勤務日が対象期間に含まれないことを渡す</text>
 <rect x="305.8" y="1668.0" width="359.2" height="17.0" fill="#fff"/>
 <text x="485.3" y="1681.0" font-size="13" text-anchor="middle">24: 変更後の勤務日が対象期間に含まれないことを提示する</text>
 <rect x="1484.0" y="1766.0" width="411.2" height="17.0" fill="#fff"/>
@@ -264,14 +264,14 @@
 <text x="104.0" y="1856.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="104.0" y="1862.0" width="214.1" height="17.0" fill="#fff"/>
 <text x="106.0" y="1875.0" font-size="13" text-anchor="start">[重複する公開済みのシフトがある]</text>
-<rect x="1013.3" y="1888.0" width="255.2" height="17.0" fill="#fff"/>
-<text x="1140.9" y="1901.0" font-size="13" text-anchor="middle">26: 重複する公開済みのシフトを表示する</text>
+<rect x="1026.3" y="1888.0" width="229.2" height="17.0" fill="#fff"/>
+<text x="1140.9" y="1901.0" font-size="13" text-anchor="middle">26: 重複する公開済みのシフトを渡す</text>
 <rect x="357.8" y="1922.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="485.3" y="1935.0" font-size="13" text-anchor="middle">27: 重複する公開済みのシフトを提示する</text>
 <rect x="1024.2" y="1972.0" width="433.8" height="17.0" fill="#fff"/>
-<text x="1241.1" y="1985.0" font-size="13" text-anchor="middle">28: 申請の内容を表示する(変更前のシフト, 変更後の勤務日・開始時刻</text>
-<rect x="1169.3" y="1989.0" width="143.6" height="17.0" fill="#fff"/>
-<text x="1241.1" y="2002.0" font-size="13" text-anchor="middle">・終了時刻, 申請理由)</text>
+<text x="1241.1" y="1985.0" font-size="13" text-anchor="middle">28: 申請の内容を渡す(変更前のシフト, 変更後の勤務日・開始時刻・終</text>
+<rect x="1182.3" y="1989.0" width="117.6" height="17.0" fill="#fff"/>
+<text x="1241.1" y="2002.0" font-size="13" text-anchor="middle">了時刻, 申請理由)</text>
 <rect x="363.3" y="2023.0" width="444.7" height="17.0" fill="#fff"/>
 <text x="585.6" y="2036.0" font-size="13" text-anchor="middle">29: 申請の内容(変更前のシフト、変更後の勤務日・開始時刻・終了時刻、</text>
 <rect x="462.8" y="2040.0" width="245.5" height="17.0" fill="#fff"/>
@@ -285,8 +285,8 @@
 <text x="1241.1" y="2175.0" font-size="13" text-anchor="middle">31: キャンセルを要求する</text>
 <rect x="1477.0" y="2196.0" width="190.2" height="17.0" fill="#fff"/>
 <text x="1479.0" y="2209.0" font-size="13" text-anchor="start">32: 入力された内容を破棄する</text>
-<rect x="1139.5" y="2252.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="1241.1" y="2265.0" font-size="13" text-anchor="middle">33: キャンセルの完了を表示する</text>
+<rect x="1152.5" y="2252.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="1241.1" y="2265.0" font-size="13" text-anchor="middle">33: キャンセルの完了を渡す</text>
 <rect x="458.0" y="2286.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="585.6" y="2299.0" font-size="13" text-anchor="middle">34: キャンセルが完了したことを提示する</text>
 <rect x="516.5" y="2336.0" width="138.2" height="17.0" fill="#fff"/>
@@ -302,8 +302,8 @@
 <text x="104.0" y="2494.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="104.0" y="2500.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="106.0" y="2513.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="1133.0" y="2526.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="1241.1" y="2539.0" font-size="13" text-anchor="middle">38: 保存に失敗したことを表示する</text>
+<rect x="1146.0" y="2526.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="1241.1" y="2539.0" font-size="13" text-anchor="middle">38: 保存に失敗したことを渡す</text>
 <rect x="477.5" y="2560.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="585.6" y="2573.0" font-size="13" text-anchor="middle">39: 保存に失敗したことを提示する</text>
 <rect x="104.0" y="2594.0" width="110.1" height="17.0" fill="#fff"/>
@@ -314,8 +314,8 @@
 <text x="1924.1" y="2667.0" font-size="13" text-anchor="middle">勤怠管理者の一覧</text>
 <rect x="1768.5" y="2688.0" width="441.3" height="17.0" fill="#fff"/>
 <text x="1989.1" y="2701.0" font-size="13" text-anchor="middle">41: 通知を登録する(勤怠管理者ごと, シフト日時変更申請が送信された)</text>
-<rect x="1159.0" y="2722.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="1241.1" y="2735.0" font-size="13" text-anchor="middle">42: 送信の完了を表示する</text>
+<rect x="1172.0" y="2722.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="1241.1" y="2735.0" font-size="13" text-anchor="middle">42: 送信の完了を渡す</text>
 <rect x="477.5" y="2756.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="585.6" y="2769.0" font-size="13" text-anchor="middle">43: 送信が完了したことを提示する</text>
 <text x="160.0" y="120.0" font-size="13" text-anchor="middle">:従業員</text>

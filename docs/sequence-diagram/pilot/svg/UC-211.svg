@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2618" height="2055" viewBox="0 0 2618 2055" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="2618" height="2038" viewBox="0 0 2618 2038" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
 <title>UC-211 勤務実態を一覧表示する</title>
 <rect width="100%" height="100%" fill="#fff"/>
-<rect x="10" y="10" width="2597.8" height="2035.0" fill="none" stroke="#222"/><path d="M10 10 H273.2 V24 L263.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<rect x="10" y="10" width="2597.8" height="2018.0" fill="none" stroke="#222"/><path d="M10 10 H273.2 V24 L263.2 34 H10 Z" fill="#fff" stroke="#222"/>
 <line x1="136.0" y1="188.0" x2="522.2" y2="188.0" stroke="#222" stroke-width="1"/>
 <polygon points="523.2,188.0 513.2,183.0 513.2,193.0" fill="#222"/>
 <line x1="523.2" y1="188.0" x2="1961.1" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
@@ -70,59 +70,59 @@
 <line x1="1190.9" y1="1401.0" x2="1961.1" y2="1401.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="1138.9" y="1206.0" width="194.0" height="233.0" rx="0" fill="none" stroke="#222"/>
 <path d="M74 1461 H120.62 V1473 L112.62 1481 H74 Z" fill="#fff" stroke="#222"/>
-<line x1="1160.9" y1="1544.0" x2="711.8" y2="1544.0" stroke="#222" stroke-width="1"/>
-<polygon points="710.8,1544.0 720.8,1539.0 720.8,1549.0" fill="#222"/>
-<line x1="710.8" y1="1595.0" x2="137.0" y2="1595.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,1595.0 146.0,1590.0 146.0,1600.0" fill="#222"/>
-<line x1="710.8" y1="1595.0" x2="1961.1" y2="1595.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="74.0" y="1461.0" width="1168.9" height="150.0" rx="0" fill="none" stroke="#222"/>
-<line x1="1160.9" y1="1645.0" x2="1610.1" y2="1645.0" stroke="#222" stroke-width="1"/>
-<polygon points="1611.1,1645.0 1601.1,1640.0 1601.1,1650.0" fill="#222"/>
-<line x1="1611.1" y1="1679.0" x2="1161.9" y2="1679.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<polyline points="1170.9,1674.0 1160.9,1679.0 1170.9,1684.0" fill="none" stroke="#222"/>
-<line x1="1611.1" y1="1679.0" x2="1961.1" y2="1679.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="1160.9" y1="1713.0" x2="711.8" y2="1713.0" stroke="#222" stroke-width="1"/>
-<polygon points="710.8,1713.0 720.8,1708.0 720.8,1718.0" fill="#222"/>
-<line x1="710.8" y1="1764.0" x2="137.0" y2="1764.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,1764.0 146.0,1759.0 146.0,1769.0" fill="#222"/>
-<line x1="1160.9" y1="1798.0" x2="711.8" y2="1798.0" stroke="#222" stroke-width="1"/>
-<polygon points="710.8,1798.0 720.8,1793.0 720.8,1803.0" fill="#222"/>
-<line x1="710.8" y1="1832.0" x2="137.0" y2="1832.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,1832.0 146.0,1827.0 146.0,1837.0" fill="#222"/>
-<line x1="710.8" y1="1832.0" x2="1961.1" y2="1832.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<line x1="1160.9" y1="1866.0" x2="711.8" y2="1866.0" stroke="#222" stroke-width="1"/>
-<polygon points="710.8,1866.0 720.8,1861.0 720.8,1871.0" fill="#222"/>
-<line x1="710.8" y1="1917.0" x2="137.0" y2="1917.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,1917.0 146.0,1912.0 146.0,1922.0" fill="#222"/>
-<line x1="1160.9" y1="1951.0" x2="711.8" y2="1951.0" stroke="#222" stroke-width="1"/>
-<polygon points="710.8,1951.0 720.8,1946.0 720.8,1956.0" fill="#222"/>
-<line x1="710.8" y1="1985.0" x2="137.0" y2="1985.0" stroke="#222" stroke-width="1"/>
-<polygon points="136.0,1985.0 146.0,1980.0 146.0,1990.0" fill="#222"/>
-<line x1="710.8" y1="1985.0" x2="1961.1" y2="1985.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1160.9" y1="1527.0" x2="711.8" y2="1527.0" stroke="#222" stroke-width="1"/>
+<polygon points="710.8,1527.0 720.8,1522.0 720.8,1532.0" fill="#222"/>
+<line x1="710.8" y1="1578.0" x2="137.0" y2="1578.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1578.0 146.0,1573.0 146.0,1583.0" fill="#222"/>
+<line x1="710.8" y1="1578.0" x2="1961.1" y2="1578.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="1461.0" width="1168.9" height="133.0" rx="0" fill="none" stroke="#222"/>
+<line x1="1160.9" y1="1628.0" x2="1610.1" y2="1628.0" stroke="#222" stroke-width="1"/>
+<polygon points="1611.1,1628.0 1601.1,1623.0 1601.1,1633.0" fill="#222"/>
+<line x1="1611.1" y1="1662.0" x2="1161.9" y2="1662.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="1170.9,1657.0 1160.9,1662.0 1170.9,1667.0" fill="none" stroke="#222"/>
+<line x1="1611.1" y1="1662.0" x2="1961.1" y2="1662.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1160.9" y1="1696.0" x2="711.8" y2="1696.0" stroke="#222" stroke-width="1"/>
+<polygon points="710.8,1696.0 720.8,1691.0 720.8,1701.0" fill="#222"/>
+<line x1="710.8" y1="1747.0" x2="137.0" y2="1747.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1747.0 146.0,1742.0 146.0,1752.0" fill="#222"/>
+<line x1="1160.9" y1="1781.0" x2="711.8" y2="1781.0" stroke="#222" stroke-width="1"/>
+<polygon points="710.8,1781.0 720.8,1776.0 720.8,1786.0" fill="#222"/>
+<line x1="710.8" y1="1815.0" x2="137.0" y2="1815.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1815.0 146.0,1810.0 146.0,1820.0" fill="#222"/>
+<line x1="710.8" y1="1815.0" x2="1961.1" y2="1815.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1160.9" y1="1849.0" x2="711.8" y2="1849.0" stroke="#222" stroke-width="1"/>
+<polygon points="710.8,1849.0 720.8,1844.0 720.8,1854.0" fill="#222"/>
+<line x1="710.8" y1="1900.0" x2="137.0" y2="1900.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1900.0 146.0,1895.0 146.0,1905.0" fill="#222"/>
+<line x1="1160.9" y1="1934.0" x2="711.8" y2="1934.0" stroke="#222" stroke-width="1"/>
+<polygon points="710.8,1934.0 720.8,1929.0 720.8,1939.0" fill="#222"/>
+<line x1="710.8" y1="1968.0" x2="137.0" y2="1968.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,1968.0 146.0,1963.0 146.0,1973.0" fill="#222"/>
+<line x1="710.8" y1="1968.0" x2="1961.1" y2="1968.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="136" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
 <path d="M136 76 V88 M126 81 H146 M136 88 L128 98 M136 88 L144 98" fill="none" stroke="#222"/>
-<line x1="136.0" y1="130.0" x2="136.0" y2="2015.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="136.0" y1="130.0" x2="136.0" y2="1998.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="528.24" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M515.24 82 H505.24 M505.24 71 V93" fill="none" stroke="#222"/>
-<line x1="523.2" y1="130.0" x2="523.2" y2="2015.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="523.2" y1="130.0" x2="523.2" y2="1998.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="715.78" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M702.78 82 H692.78 M692.78 71 V93" fill="none" stroke="#222"/>
-<line x1="710.8" y1="130.0" x2="710.8" y2="2015.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="710.8" y1="130.0" x2="710.8" y2="1998.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="1160.94" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M1161.94 69 l6 -5 M1161.94 69 l6 5" fill="none" stroke="#222"/>
-<line x1="1160.9" y1="130.0" x2="1160.9" y2="2015.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1160.9" y1="130.0" x2="1160.9" y2="1998.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="1481.1" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M1468.1 95 H1494.1" fill="none" stroke="#222"/>
-<line x1="1481.1" y1="130.0" x2="1481.1" y2="2015.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1481.1" y1="130.0" x2="1481.1" y2="1998.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="1611.1" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M1598.1 95 H1624.1" fill="none" stroke="#222"/>
-<line x1="1611.1" y1="130.0" x2="1611.1" y2="2015.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1611.1" y1="130.0" x2="1611.1" y2="1998.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="1741.1" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M1728.1 95 H1754.1" fill="none" stroke="#222"/>
-<line x1="1741.1" y1="130.0" x2="1741.1" y2="2015.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1741.1" y1="130.0" x2="1741.1" y2="1998.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <circle cx="1871.1" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
 <path d="M1858.1 95 H1884.1" fill="none" stroke="#222"/>
-<line x1="1871.1" y1="130.0" x2="1871.1" y2="2015.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="1871.1" y1="130.0" x2="1871.1" y2="1998.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="152.8" y="169.0" width="353.7" height="17.0" fill="#fff"/>
 <text x="329.6" y="182.0" font-size="13" text-anchor="middle">1: 勤怠実態ボタンを押す(勤務実態の一覧表示を要求する)</text>
 <rect x="750.8" y="203.0" width="182.6" height="17.0" fill="#fff"/>
@@ -134,8 +134,8 @@
 <text x="68.0" y="327.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="333.0" width="266.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="346.0" font-size="13" text-anchor="start">[期間の指定に誤りが無くなるまで繰り返す]</text>
-<rect x="844.5" y="359.0" width="182.6" height="17.0" fill="#fff"/>
-<text x="935.9" y="372.0" font-size="13" text-anchor="middle">4: 管理先と従業員を表示する</text>
+<rect x="857.5" y="359.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="935.9" y="372.0" font-size="13" text-anchor="middle">4: 管理先と従業員を渡す</text>
 <rect x="208.6" y="393.0" width="429.6" height="17.0" fill="#fff"/>
 <text x="423.4" y="406.0" font-size="13" text-anchor="middle">5: 管理先と従業員の一覧を提示し、対象の従業員と期間の指定を求める</text>
 <rect x="319.1" y="427.0" width="208.6" height="17.0" fill="#fff"/>
@@ -158,8 +158,8 @@
 <text x="80.0" y="793.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="799.0" width="188.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="812.0" font-size="13" text-anchor="start">[期間の開始日が終了日より後]</text>
-<rect x="834.3" y="825.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="935.9" y="838.0" font-size="13" text-anchor="middle">12: 期間の指定の誤りを表示する</text>
+<rect x="847.3" y="825.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="935.9" y="838.0" font-size="13" text-anchor="middle">12: 期間の指定の誤りを渡す</text>
 <rect x="289.3" y="859.0" width="268.2" height="17.0" fill="#fff"/>
 <text x="423.4" y="872.0" font-size="13" text-anchor="middle">13: 期間の指定に誤りがあることを提示する</text>
 <rect x="1284.4" y="925.0" width="333.2" height="17.0" fill="#fff"/>
@@ -173,8 +173,8 @@
 <text x="80.0" y="1083.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
 <rect x="80.0" y="1089.0" width="266.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1102.0" font-size="13" text-anchor="start">[勤怠記録も公開済みのシフトも存在しない]</text>
-<rect x="840.8" y="1115.0" width="190.2" height="17.0" fill="#fff"/>
-<text x="935.9" y="1128.0" font-size="13" text-anchor="middle">16: 存在しないことを表示する</text>
+<rect x="853.8" y="1115.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="935.9" y="1128.0" font-size="13" text-anchor="middle">16: 存在しないことを渡す</text>
 <rect x="211.3" y="1149.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="423.4" y="1162.0" font-size="13" text-anchor="middle">17: 該当する勤怠記録も公開済みのシフトも存在しないことを提示する</text>
 <text x="1144.9" y="1221.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
@@ -192,37 +192,35 @@
 <rect x="80.0" y="1482.0" width="229.2" height="17.0" fill="#fff"/>
 <text x="82.0" y="1495.0" font-size="13" text-anchor="start">[36協定の警告に当たる従業員がいる]</text>
 <rect x="723.8" y="1508.0" width="424.2" height="17.0" fill="#fff"/>
-<text x="935.9" y="1521.0" font-size="13" text-anchor="middle">21: 該当する従業員と当月の残業時間、「注意」または「超過」を表示</text>
-<rect x="920.9" y="1525.0" width="30.0" height="17.0" fill="#fff"/>
-<text x="935.9" y="1538.0" font-size="13" text-anchor="middle">する</text>
-<rect x="211.3" y="1559.0" width="424.2" height="17.0" fill="#fff"/>
-<text x="423.4" y="1572.0" font-size="13" text-anchor="middle">22: 該当する従業員と当月の残業時間、「注意」または「超過」を提示</text>
-<rect x="408.4" y="1576.0" width="30.0" height="17.0" fill="#fff"/>
-<text x="423.4" y="1589.0" font-size="13" text-anchor="middle">する</text>
-<rect x="1238.9" y="1626.0" width="294.2" height="17.0" fill="#fff"/>
-<text x="1386.0" y="1639.0" font-size="13" text-anchor="middle">23: 各従業員の現在の勤務ステータスを取得する</text>
-<rect x="1338.5" y="1660.0" width="95.0" height="17.0" fill="#fff"/>
-<text x="1386.0" y="1673.0" font-size="13" text-anchor="middle">勤務ステータス</text>
-<rect x="788.8" y="1694.0" width="294.2" height="17.0" fill="#fff"/>
-<text x="935.9" y="1707.0" font-size="13" text-anchor="middle">24: 各従業員の現在の勤務ステータスを表示する</text>
-<rect x="203.8" y="1728.0" width="439.2" height="17.0" fill="#fff"/>
-<text x="423.4" y="1741.0" font-size="13" text-anchor="middle">25: 各従業員の現在の勤務ステータス(「出勤中」「退勤中」「休憩中」)</text>
-<rect x="388.9" y="1745.0" width="69.0" height="17.0" fill="#fff"/>
-<text x="423.4" y="1758.0" font-size="13" text-anchor="middle">を提示する</text>
-<rect x="814.8" y="1779.0" width="242.2" height="17.0" fill="#fff"/>
-<text x="935.9" y="1792.0" font-size="13" text-anchor="middle">26: 各従業員の日ごとの勤務を表示する</text>
-<rect x="210.3" y="1813.0" width="426.2" height="17.0" fill="#fff"/>
-<text x="423.4" y="1826.0" font-size="13" text-anchor="middle">27: 各従業員の日ごとの勤務(各打刻、休憩時間、勤務時間)を提示する</text>
-<rect x="821.3" y="1847.0" width="229.2" height="17.0" fill="#fff"/>
-<text x="935.9" y="1860.0" font-size="13" text-anchor="middle">28: 各従業員の期間の合計を表示する</text>
-<rect x="211.3" y="1881.0" width="424.2" height="17.0" fill="#fff"/>
-<text x="423.4" y="1894.0" font-size="13" text-anchor="middle">29: 各従業員の期間の合計勤務時間、残業時間、遅刻・早退・欠勤の回</text>
-<rect x="382.4" y="1898.0" width="82.0" height="17.0" fill="#fff"/>
-<text x="423.4" y="1911.0" font-size="13" text-anchor="middle">数を提示する</text>
-<rect x="762.8" y="1932.0" width="346.2" height="17.0" fill="#fff"/>
-<text x="935.9" y="1945.0" font-size="13" text-anchor="middle">30: 各従業員の遅刻・早退・打刻漏れがある日を表示する</text>
-<rect x="250.3" y="1966.0" width="346.2" height="17.0" fill="#fff"/>
-<text x="423.4" y="1979.0" font-size="13" text-anchor="middle">31: 各従業員の遅刻、早退、打刻漏れがある日を提示する</text>
+<text x="935.9" y="1521.0" font-size="13" text-anchor="middle">21: 該当する従業員と当月の残業時間、「注意」または「超過」を渡す</text>
+<rect x="211.3" y="1542.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="423.4" y="1555.0" font-size="13" text-anchor="middle">22: 該当する従業員と当月の残業時間、「注意」または「超過」を提示</text>
+<rect x="408.4" y="1559.0" width="30.0" height="17.0" fill="#fff"/>
+<text x="423.4" y="1572.0" font-size="13" text-anchor="middle">する</text>
+<rect x="1238.9" y="1609.0" width="294.2" height="17.0" fill="#fff"/>
+<text x="1386.0" y="1622.0" font-size="13" text-anchor="middle">23: 各従業員の現在の勤務ステータスを取得する</text>
+<rect x="1338.5" y="1643.0" width="95.0" height="17.0" fill="#fff"/>
+<text x="1386.0" y="1656.0" font-size="13" text-anchor="middle">勤務ステータス</text>
+<rect x="801.8" y="1677.0" width="268.2" height="17.0" fill="#fff"/>
+<text x="935.9" y="1690.0" font-size="13" text-anchor="middle">24: 各従業員の現在の勤務ステータスを渡す</text>
+<rect x="203.8" y="1711.0" width="439.2" height="17.0" fill="#fff"/>
+<text x="423.4" y="1724.0" font-size="13" text-anchor="middle">25: 各従業員の現在の勤務ステータス(「出勤中」「退勤中」「休憩中」)</text>
+<rect x="388.9" y="1728.0" width="69.0" height="17.0" fill="#fff"/>
+<text x="423.4" y="1741.0" font-size="13" text-anchor="middle">を提示する</text>
+<rect x="827.8" y="1762.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="935.9" y="1775.0" font-size="13" text-anchor="middle">26: 各従業員の日ごとの勤務を渡す</text>
+<rect x="210.3" y="1796.0" width="426.2" height="17.0" fill="#fff"/>
+<text x="423.4" y="1809.0" font-size="13" text-anchor="middle">27: 各従業員の日ごとの勤務(各打刻、休憩時間、勤務時間)を提示する</text>
+<rect x="834.3" y="1830.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="935.9" y="1843.0" font-size="13" text-anchor="middle">28: 各従業員の期間の合計を渡す</text>
+<rect x="211.3" y="1864.0" width="424.2" height="17.0" fill="#fff"/>
+<text x="423.4" y="1877.0" font-size="13" text-anchor="middle">29: 各従業員の期間の合計勤務時間、残業時間、遅刻・早退・欠勤の回</text>
+<rect x="382.4" y="1881.0" width="82.0" height="17.0" fill="#fff"/>
+<text x="423.4" y="1894.0" font-size="13" text-anchor="middle">数を提示する</text>
+<rect x="775.8" y="1915.0" width="320.2" height="17.0" fill="#fff"/>
+<text x="935.9" y="1928.0" font-size="13" text-anchor="middle">30: 各従業員の遅刻・早退・打刻漏れがある日を渡す</text>
+<rect x="250.3" y="1949.0" width="346.2" height="17.0" fill="#fff"/>
+<text x="423.4" y="1962.0" font-size="13" text-anchor="middle">31: 各従業員の遅刻、早退、打刻漏れがある日を提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:勤怠管理者</text>
 <text x="523.2" y="120.0" font-size="13" text-anchor="middle">:勤怠管理者ホーム画面</text>
 <text x="710.8" y="120.0" font-size="13" text-anchor="middle">:勤怠実態一覧表示画面</text>
@@ -255,14 +253,14 @@
 <text x="1969.1" y="1371.0" font-size="13" text-anchor="start">する時点は TBD(備考11)</text>
 <path d="M1961.1 1389 H2336.04 L2346.04 1399 V1417 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
 <text x="1969.1" y="1409.0" font-size="13" text-anchor="start">36時間以上で「注意」、45時間以上で「超過」(備考6、A-57)</text>
-<path d="M1961.1 1583 H2142.3399999999997 L2152.3399999999997 1593 V1611 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1969.1" y="1603.0" font-size="13" text-anchor="start">Alt-4。メインフロー7に進む</text>
-<path d="M1961.1 1667 H2275.72 L2285.72 1677 V1695 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1969.1" y="1687.0" font-size="13" text-anchor="start">勤務ステータスは概念クラス図にない(備考1、暫定)</text>
-<path d="M1961.1 1820 H2171.72 L2181.72 1830 V1848 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1969.1" y="1840.0" font-size="13" text-anchor="start">打刻日時は秒まで提示する(備考2)</text>
-<path d="M1961.1 1973 H2313.42 L2323.42 1983 V2001 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
-<text x="1969.1" y="1993.0" font-size="13" text-anchor="start">集計結果は CSV ファイルとして出力できる(備考8、暫定)</text>
+<path d="M1961.1 1566 H2142.3399999999997 L2152.3399999999997 1576 V1594 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1969.1" y="1586.0" font-size="13" text-anchor="start">Alt-4。メインフロー7に進む</text>
+<path d="M1961.1 1650 H2275.72 L2285.72 1660 V1678 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1969.1" y="1670.0" font-size="13" text-anchor="start">勤務ステータスは概念クラス図にない(備考1、暫定)</text>
+<path d="M1961.1 1803 H2171.72 L2181.72 1813 V1831 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1969.1" y="1823.0" font-size="13" text-anchor="start">打刻日時は秒まで提示する(備考2)</text>
+<path d="M1961.1 1956 H2313.42 L2323.42 1966 V1984 H1961.1 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1969.1" y="1976.0" font-size="13" text-anchor="start">集計結果は CSV ファイルとして出力できる(備考8、暫定)</text>
 <path d="M2376.04 40 H2577.82 L2587.82 50 V86 H2376.04 Z" fill="#fde2e2" stroke="#222"/>
 <text x="2384.0" y="60.0" font-size="13" text-anchor="start">UC-211 勤務実態を一覧表示する</text>
 <text x="2384.0" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1〜4)</text>

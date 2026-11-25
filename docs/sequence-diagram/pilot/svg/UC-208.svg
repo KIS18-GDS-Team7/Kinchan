@@ -120,15 +120,15 @@
 <text x="1183.9" y="250.0" font-size="13" text-anchor="middle">3: 勤怠修正申請を取得する</text>
 <rect x="1002.3" y="271.0" width="363.3" height="17.0" fill="#fff"/>
 <text x="1183.9" y="284.0" font-size="13" text-anchor="middle">従業員, 対象日, 修正後の打刻の一覧, 申請理由, 処理状態</text>
-<rect x="665.3" y="305.0" width="260.6" height="17.0" fill="#fff"/>
-<text x="795.6" y="318.0" font-size="13" text-anchor="middle">4: 承認する勤怠修正申請の内容を表示する</text>
+<rect x="678.3" y="305.0" width="234.6" height="17.0" fill="#fff"/>
+<text x="795.6" y="318.0" font-size="13" text-anchor="middle">4: 承認する勤怠修正申請の内容を渡す</text>
 <rect x="180.2" y="339.0" width="377.6" height="17.0" fill="#fff"/>
 <text x="369.0" y="352.0" font-size="13" text-anchor="middle">5: 承認する勤怠修正申請の内容を提示し、承認の確認を求める</text>
 <text x="80.0" y="395.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="401.0" width="227.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="414.0" font-size="13" text-anchor="start">[対象がアクター自身の勤怠修正申請]</text>
-<rect x="632.8" y="427.0" width="325.6" height="17.0" fill="#fff"/>
-<text x="795.6" y="440.0" font-size="13" text-anchor="middle">6: アクター自身の勤怠修正申請であることを表示する</text>
+<rect x="645.8" y="427.0" width="299.6" height="17.0" fill="#fff"/>
+<text x="795.6" y="440.0" font-size="13" text-anchor="middle">6: アクター自身の勤怠修正申請であることを渡す</text>
 <rect x="186.7" y="461.0" width="364.6" height="17.0" fill="#fff"/>
 <text x="369.0" y="474.0" font-size="13" text-anchor="middle">7: 対象がアクター自身の勤怠修正申請であることを提示する</text>
 <text x="80.0" y="533.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
@@ -138,8 +138,8 @@
 <text x="369.0" y="578.0" font-size="13" text-anchor="middle">8: キャンセルボタンを押す</text>
 <rect x="717.3" y="599.0" width="156.6" height="17.0" fill="#fff"/>
 <text x="795.6" y="612.0" font-size="13" text-anchor="middle">9: キャンセルを要求する</text>
-<rect x="694.1" y="633.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="795.6" y="646.0" font-size="13" text-anchor="middle">10: キャンセルの完了を表示する</text>
+<rect x="707.1" y="633.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="795.6" y="646.0" font-size="13" text-anchor="middle">10: キャンセルの完了を渡す</text>
 <rect x="241.4" y="667.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="369.0" y="680.0" font-size="13" text-anchor="middle">11: キャンセルが完了したことを提示する</text>
 <rect x="260.9" y="717.0" width="216.2" height="17.0" fill="#fff"/>
@@ -157,8 +157,8 @@
 <text x="80.0" y="948.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
 <rect x="80.0" y="954.0" width="331.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="967.0" font-size="13" text-anchor="start">[「未処理」でなくなっている、または整合していない]</text>
-<rect x="694.1" y="980.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="795.6" y="993.0" font-size="13" text-anchor="middle">16: 承認できない理由を表示する</text>
+<rect x="707.1" y="980.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="795.6" y="993.0" font-size="13" text-anchor="middle">16: 承認できない理由を渡す</text>
 <rect x="228.4" y="1014.0" width="281.2" height="17.0" fill="#fff"/>
 <text x="369.0" y="1027.0" font-size="13" text-anchor="middle">17: 承認できないことと、その理由を提示する</text>
 <rect x="1069.3" y="1064.0" width="229.2" height="17.0" fill="#fff"/>
@@ -176,8 +176,8 @@
 <text x="68.0" y="1273.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="68.0" y="1279.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="1292.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="687.6" y="1305.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="795.6" y="1318.0" font-size="13" text-anchor="middle">22: 保存に失敗したことを表示する</text>
+<rect x="700.6" y="1305.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="795.6" y="1318.0" font-size="13" text-anchor="middle">22: 保存に失敗したことを渡す</text>
 <rect x="260.9" y="1339.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="369.0" y="1352.0" font-size="13" text-anchor="middle">23: 保存に失敗したことを提示する</text>
 <rect x="68.0" y="1373.0" width="110.1" height="17.0" fill="#fff"/>
@@ -191,8 +191,8 @@
 <text x="975.3" y="1508.0" font-size="13" text-anchor="start">[申請した従業員が削除済みユーザーでない]</text>
 <rect x="1294.8" y="1521.0" width="298.3" height="17.0" fill="#fff"/>
 <text x="1443.9" y="1534.0" font-size="13" text-anchor="middle">25: 通知を登録する(申請した従業員, 承認結果)</text>
-<rect x="713.6" y="1571.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="795.6" y="1584.0" font-size="13" text-anchor="middle">26: 承認の完了を表示する</text>
+<rect x="726.6" y="1571.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="795.6" y="1584.0" font-size="13" text-anchor="middle">26: 承認の完了を渡す</text>
 <rect x="260.9" y="1605.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="369.0" y="1618.0" font-size="13" text-anchor="middle">27: 承認が完了したことを提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:勤怠管理者</text>

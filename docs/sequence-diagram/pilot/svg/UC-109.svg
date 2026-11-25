@@ -116,8 +116,8 @@
 <text x="68.0" y="327.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="333.0" width="357.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="346.0" font-size="13" text-anchor="start">[勤怠管理者権限を持つユーザーが指定されるまで繰り返す]</text>
-<rect x="709.0" y="359.0" width="182.6" height="17.0" fill="#fff"/>
-<text x="800.3" y="372.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を表示する</text>
+<rect x="722.0" y="359.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="800.3" y="372.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を渡す</text>
 <rect x="155.5" y="393.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="367.6" y="406.0" font-size="13" text-anchor="middle">5: ユーザーの一覧を提示し、対象のユーザー(勤怠管理者権限を持つユ</text>
 <rect x="296.8" y="410.0" width="141.5" height="17.0" fill="#fff"/>
@@ -131,8 +131,8 @@
 <text x="80.0" y="590.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="596.0" width="279.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="609.0" font-size="13" text-anchor="start">[対象のユーザーが勤怠管理者権限を持たない]</text>
-<rect x="663.5" y="622.0" width="273.6" height="17.0" fill="#fff"/>
-<text x="800.3" y="635.0" font-size="13" text-anchor="middle">9: 管理先を割り当てられないことを表示する</text>
+<rect x="676.5" y="622.0" width="247.6" height="17.0" fill="#fff"/>
+<text x="800.3" y="635.0" font-size="13" text-anchor="middle">9: 管理先を割り当てられないことを渡す</text>
 <rect x="155.5" y="656.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="367.6" y="669.0" font-size="13" text-anchor="middle">10: 対象のユーザーが勤怠管理者権限を持たないため管理先を割り当て</text>
 <rect x="294.1" y="673.0" width="147.0" height="17.0" fill="#fff"/>
@@ -146,8 +146,8 @@
 <text x="68.0" y="846.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="852.0" width="188.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="865.0" font-size="13" text-anchor="start">[誤りが無くなるまで繰り返す]</text>
-<rect x="633.7" y="878.0" width="333.2" height="17.0" fill="#fff"/>
-<text x="800.3" y="891.0" font-size="13" text-anchor="middle">12: 現在の管理先と登録されている所属単位を表示する</text>
+<rect x="646.7" y="878.0" width="307.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="891.0" font-size="13" text-anchor="middle">12: 現在の管理先と登録されている所属単位を渡す</text>
 <rect x="149.0" y="912.0" width="437.2" height="17.0" fill="#fff"/>
 <text x="367.6" y="925.0" font-size="13" text-anchor="middle">13: 対象のユーザーの現在の管理先と登録されている所属単位を提示し、</text>
 <rect x="229.1" y="929.0" width="277.0" height="17.0" fill="#fff"/>
@@ -161,12 +161,12 @@
 <text x="80.0" y="1109.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="1115.0" width="221.6" height="17.0" fill="#fff"/>
 <text x="82.0" y="1128.0" font-size="13" text-anchor="start">[所属単位が1つも指定されていない]</text>
-<rect x="656.0" y="1141.0" width="288.7" height="17.0" fill="#fff"/>
-<text x="800.3" y="1154.0" font-size="13" text-anchor="middle">17: 1つ以上の指定が必要であることを表示する</text>
+<rect x="669.0" y="1141.0" width="262.7" height="17.0" fill="#fff"/>
+<text x="800.3" y="1154.0" font-size="13" text-anchor="middle">17: 1つ以上の指定が必要であることを渡す</text>
 <rect x="151.7" y="1175.0" width="431.7" height="17.0" fill="#fff"/>
 <text x="367.6" y="1188.0" font-size="13" text-anchor="middle">18: 管理先とする所属単位を1つ以上指定する必要があることを提示する</text>
-<rect x="679.2" y="1241.0" width="242.2" height="17.0" fill="#fff"/>
-<text x="800.3" y="1254.0" font-size="13" text-anchor="middle">19: 変更前と変更後の管理先を表示する</text>
+<rect x="692.2" y="1241.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1254.0" font-size="13" text-anchor="middle">19: 変更前と変更後の管理先を渡す</text>
 <rect x="155.5" y="1275.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="367.6" y="1288.0" font-size="13" text-anchor="middle">20: 対象のユーザーの変更前と変更後の管理先を提示し、割り当ての確</text>
 <rect x="333.1" y="1292.0" width="69.0" height="17.0" fill="#fff"/>
@@ -180,8 +180,8 @@
 <text x="800.3" y="1427.0" font-size="13" text-anchor="middle">22: キャンセルを要求する</text>
 <rect x="1007.5" y="1448.0" width="190.2" height="17.0" fill="#fff"/>
 <text x="1009.5" y="1461.0" font-size="13" text-anchor="start">23: 入力された内容を破棄する</text>
-<rect x="698.7" y="1504.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="800.3" y="1517.0" font-size="13" text-anchor="middle">24: キャンセルの完了を表示する</text>
+<rect x="711.7" y="1504.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1517.0" font-size="13" text-anchor="middle">24: キャンセルの完了を渡す</text>
 <rect x="240.0" y="1538.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="367.6" y="1551.0" font-size="13" text-anchor="middle">25: キャンセルが完了したことを提示する</text>
 <rect x="266.0" y="1588.0" width="203.2" height="17.0" fill="#fff"/>
@@ -193,14 +193,14 @@
 <text x="80.0" y="1712.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="1718.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1731.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="692.2" y="1744.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="800.3" y="1757.0" font-size="13" text-anchor="middle">29: 保存に失敗したことを表示する</text>
+<rect x="705.2" y="1744.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1757.0" font-size="13" text-anchor="middle">29: 保存に失敗したことを渡す</text>
 <rect x="259.5" y="1778.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="367.6" y="1791.0" font-size="13" text-anchor="middle">30: 保存に失敗したことを提示する</text>
 <rect x="80.0" y="1812.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1825.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="679.2" y="1838.0" width="242.2" height="17.0" fill="#fff"/>
-<text x="800.3" y="1851.0" font-size="13" text-anchor="middle">31: 管理先の割り当ての完了を表示する</text>
+<rect x="692.2" y="1838.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="800.3" y="1851.0" font-size="13" text-anchor="middle">31: 管理先の割り当ての完了を渡す</text>
 <rect x="220.5" y="1872.0" width="294.2" height="17.0" fill="#fff"/>
 <text x="367.6" y="1885.0" font-size="13" text-anchor="middle">32: 管理先の割り当てが完了したことを提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>

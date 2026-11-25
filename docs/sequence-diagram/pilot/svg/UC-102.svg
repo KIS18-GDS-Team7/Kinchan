@@ -114,8 +114,8 @@
 <text x="1413.2" y="250.0" font-size="13" text-anchor="middle">3: 削除済みでないユーザーの一覧を取得する</text>
 <rect x="1304.1" y="271.0" width="218.2" height="17.0" fill="#fff"/>
 <text x="1413.2" y="284.0" font-size="13" text-anchor="middle">ユーザーの一覧(氏名, ユーザーID)</text>
-<rect x="865.5" y="305.0" width="182.6" height="17.0" fill="#fff"/>
-<text x="956.8" y="318.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を表示する</text>
+<rect x="878.5" y="305.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="956.8" y="318.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を渡す</text>
 <rect x="250.8" y="339.0" width="364.6" height="17.0" fill="#fff"/>
 <text x="433.1" y="352.0" font-size="13" text-anchor="middle">5: ユーザーの一覧を提示し、対象のユーザーの指定を求める</text>
 <rect x="341.8" y="373.0" width="182.6" height="17.0" fill="#fff"/>
@@ -129,8 +129,8 @@
 <text x="68.0" y="531.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="537.0" width="188.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="550.0" font-size="13" text-anchor="start">[誤りが無くなるまで繰り返す]</text>
-<rect x="786.4" y="563.0" width="340.7" height="17.0" fill="#fff"/>
-<text x="956.8" y="576.0" font-size="13" text-anchor="middle">9: 対象のユーザーの現在の氏名とユーザーIDを表示する</text>
+<rect x="799.4" y="563.0" width="314.7" height="17.0" fill="#fff"/>
+<text x="956.8" y="576.0" font-size="13" text-anchor="middle">9: 対象のユーザーの現在の氏名とユーザーIDを渡す</text>
 <rect x="220.0" y="597.0" width="426.2" height="17.0" fill="#fff"/>
 <text x="433.1" y="610.0" font-size="13" text-anchor="middle">10: 対象のユーザーの現在の氏名とユーザーIDを提示し、変更後のユー</text>
 <rect x="258.0" y="614.0" width="350.3" height="17.0" fill="#fff"/>
@@ -155,12 +155,12 @@
 <text x="80.0" y="1005.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="1011.0" width="346.2" height="17.0" fill="#fff"/>
 <text x="82.0" y="1024.0" font-size="13" text-anchor="start">[ユーザー情報が無効、またはユーザーIDが重複している]</text>
-<rect x="782.7" y="1037.0" width="348.2" height="17.0" fill="#fff"/>
-<text x="956.8" y="1050.0" font-size="13" text-anchor="middle">16: 無効である理由、またはユーザーIDの重複を表示する</text>
+<rect x="795.7" y="1037.0" width="322.2" height="17.0" fill="#fff"/>
+<text x="956.8" y="1050.0" font-size="13" text-anchor="middle">16: 無効である理由、またはユーザーIDの重複を渡す</text>
 <rect x="220.0" y="1071.0" width="426.2" height="17.0" fill="#fff"/>
 <text x="433.1" y="1084.0" font-size="13" text-anchor="middle">17: 無効である理由、またはユーザーIDが重複していることを提示する</text>
-<rect x="842.2" y="1137.0" width="229.2" height="17.0" fill="#fff"/>
-<text x="956.8" y="1150.0" font-size="13" text-anchor="middle">18: 変更後のユーザー情報を表示する</text>
+<rect x="855.2" y="1137.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="956.8" y="1150.0" font-size="13" text-anchor="middle">18: 変更後のユーザー情報を渡す</text>
 <rect x="260.1" y="1171.0" width="346.2" height="17.0" fill="#fff"/>
 <text x="433.1" y="1184.0" font-size="13" text-anchor="middle">19: 変更後のユーザー情報を提示し、変更の確認を求める</text>
 <text x="80.0" y="1227.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
@@ -172,8 +172,8 @@
 <text x="956.8" y="1306.0" font-size="13" text-anchor="middle">21: キャンセルを要求する</text>
 <rect x="1189.3" y="1327.0" width="190.2" height="17.0" fill="#fff"/>
 <text x="1191.3" y="1340.0" font-size="13" text-anchor="start">22: 入力された内容を破棄する</text>
-<rect x="855.2" y="1383.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="956.8" y="1396.0" font-size="13" text-anchor="middle">23: キャンセルの完了を表示する</text>
+<rect x="868.2" y="1383.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="956.8" y="1396.0" font-size="13" text-anchor="middle">23: キャンセルの完了を渡す</text>
 <rect x="305.6" y="1417.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="433.1" y="1430.0" font-size="13" text-anchor="middle">24: キャンセルが完了したことを提示する</text>
 <rect x="325.1" y="1467.0" width="216.2" height="17.0" fill="#fff"/>
@@ -189,14 +189,14 @@
 <text x="80.0" y="1625.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="1631.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1644.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="848.7" y="1657.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="956.8" y="1670.0" font-size="13" text-anchor="middle">28: 保存に失敗したことを表示する</text>
+<rect x="861.7" y="1657.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="956.8" y="1670.0" font-size="13" text-anchor="middle">28: 保存に失敗したことを渡す</text>
 <rect x="325.1" y="1691.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="433.1" y="1704.0" font-size="13" text-anchor="middle">29: 保存に失敗したことを提示する</text>
 <rect x="80.0" y="1725.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1738.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="829.2" y="1751.0" width="255.2" height="17.0" fill="#fff"/>
-<text x="956.8" y="1764.0" font-size="13" text-anchor="middle">30: ユーザー情報の変更の完了を表示する</text>
+<rect x="842.2" y="1751.0" width="229.2" height="17.0" fill="#fff"/>
+<text x="956.8" y="1764.0" font-size="13" text-anchor="middle">30: ユーザー情報の変更の完了を渡す</text>
 <rect x="279.6" y="1785.0" width="307.2" height="17.0" fill="#fff"/>
 <text x="433.1" y="1798.0" font-size="13" text-anchor="middle">31: ユーザー情報の変更が完了したことを提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>

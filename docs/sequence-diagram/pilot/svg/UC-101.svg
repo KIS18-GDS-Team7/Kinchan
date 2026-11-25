@@ -88,8 +88,8 @@
 <text x="323.1" y="182.0" font-size="13" text-anchor="middle">1: ユーザ登録ボタンを押す(ユーザーの登録を要求する)</text>
 <rect x="719.2" y="203.0" width="182.6" height="17.0" fill="#fff"/>
 <text x="810.5" y="216.0" font-size="13" text-anchor="middle">2: ユーザーの登録を要求する</text>
-<rect x="809.7" y="237.0" width="182.6" height="17.0" fill="#fff"/>
-<text x="901.0" y="250.0" font-size="13" text-anchor="middle">3: ユーザ登録画面を表示する</text>
+<rect x="822.7" y="237.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="901.0" y="250.0" font-size="13" text-anchor="middle">3: ユーザ登録画面を渡す</text>
 <text x="68.0" y="293.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="299.0" width="188.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="312.0" font-size="13" text-anchor="start">[誤りが無くなるまで繰り返す]</text>
@@ -108,12 +108,12 @@
 <text x="80.0" y="573.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="579.0" width="346.2" height="17.0" fill="#fff"/>
 <text x="82.0" y="592.0" font-size="13" text-anchor="start">[ユーザー情報が無効、またはユーザーIDが重複している]</text>
-<rect x="730.7" y="605.0" width="340.7" height="17.0" fill="#fff"/>
-<text x="901.0" y="618.0" font-size="13" text-anchor="middle">9: 無効である理由、またはユーザーIDの重複を表示する</text>
+<rect x="743.7" y="605.0" width="314.7" height="17.0" fill="#fff"/>
+<text x="901.0" y="618.0" font-size="13" text-anchor="middle">9: 無効である理由、またはユーザーIDの重複を渡す</text>
 <rect x="200.5" y="639.0" width="426.2" height="17.0" fill="#fff"/>
 <text x="413.6" y="652.0" font-size="13" text-anchor="middle">10: 無効である理由、またはユーザーIDが重複していることを提示する</text>
-<rect x="779.9" y="705.0" width="242.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="718.0" font-size="13" text-anchor="middle">11: 入力されたユーザー情報を表示する</text>
+<rect x="792.9" y="705.0" width="216.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="718.0" font-size="13" text-anchor="middle">11: 入力されたユーザー情報を渡す</text>
 <rect x="234.1" y="739.0" width="359.2" height="17.0" fill="#fff"/>
 <text x="413.6" y="752.0" font-size="13" text-anchor="middle">12: 入力されたユーザー情報を提示し、登録の確認を求める</text>
 <text x="80.0" y="795.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
@@ -125,8 +125,8 @@
 <text x="901.0" y="874.0" font-size="13" text-anchor="middle">14: キャンセルを要求する</text>
 <rect x="1116.8" y="895.0" width="190.2" height="17.0" fill="#fff"/>
 <text x="1118.8" y="908.0" font-size="13" text-anchor="start">15: 入力された内容を破棄する</text>
-<rect x="799.4" y="951.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="964.0" font-size="13" text-anchor="middle">16: キャンセルの完了を表示する</text>
+<rect x="812.4" y="951.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="964.0" font-size="13" text-anchor="middle">16: キャンセルの完了を渡す</text>
 <rect x="286.1" y="985.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="413.6" y="998.0" font-size="13" text-anchor="middle">17: キャンセルが完了したことを提示する</text>
 <rect x="259.0" y="1035.0" width="309.2" height="17.0" fill="#fff"/>
@@ -138,14 +138,14 @@
 <text x="80.0" y="1159.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="1165.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1178.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="792.9" y="1191.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="1204.0" font-size="13" text-anchor="middle">21: 保存に失敗したことを表示する</text>
+<rect x="805.9" y="1191.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="1204.0" font-size="13" text-anchor="middle">21: 保存に失敗したことを渡す</text>
 <rect x="305.6" y="1225.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="413.6" y="1238.0" font-size="13" text-anchor="middle">22: 保存に失敗したことを提示する</text>
 <rect x="80.0" y="1259.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1272.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="818.9" y="1285.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="901.0" y="1298.0" font-size="13" text-anchor="middle">23: 登録の完了を表示する</text>
+<rect x="831.9" y="1285.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="901.0" y="1298.0" font-size="13" text-anchor="middle">23: 登録の完了を渡す</text>
 <rect x="273.1" y="1319.0" width="281.2" height="17.0" fill="#fff"/>
 <text x="413.6" y="1332.0" font-size="13" text-anchor="middle">24: ユーザーの登録が完了したことを提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>

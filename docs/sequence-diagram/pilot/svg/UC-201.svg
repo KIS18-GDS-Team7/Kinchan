@@ -123,8 +123,8 @@
 <text x="1276.3" y="250.0" font-size="13" text-anchor="middle">3: アクターの管理先の従業員を取得する</text>
 <rect x="1235.3" y="271.0" width="82.0" height="17.0" fill="#fff"/>
 <text x="1276.3" y="284.0" font-size="13" text-anchor="middle">従業員の一覧</text>
-<rect x="795.7" y="305.0" width="221.6" height="17.0" fill="#fff"/>
-<text x="906.5" y="318.0" font-size="13" text-anchor="middle">4: 管理先の従業員の一覧を表示する</text>
+<rect x="808.7" y="305.0" width="195.6" height="17.0" fill="#fff"/>
+<text x="906.5" y="318.0" font-size="13" text-anchor="middle">4: 管理先の従業員の一覧を渡す</text>
 <rect x="217.3" y="339.0" width="390.6" height="17.0" fill="#fff"/>
 <text x="412.6" y="352.0" font-size="13" text-anchor="middle">5: 管理先の従業員の一覧を提示し、対象の従業員の指定を求める</text>
 <rect x="327.8" y="373.0" width="169.6" height="17.0" fill="#fff"/>
@@ -153,8 +153,8 @@
 <text x="80.0" y="816.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="822.0" width="370.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="835.0" font-size="13" text-anchor="start">[誤りがある、勤務日が過去日、または対象期間に含まれない]</text>
-<rect x="746.4" y="848.0" width="320.2" height="17.0" fill="#fff"/>
-<text x="906.5" y="861.0" font-size="13" text-anchor="middle">14: 誤りの内容、または登録できない理由を表示する</text>
+<rect x="759.4" y="848.0" width="294.2" height="17.0" fill="#fff"/>
+<text x="906.5" y="861.0" font-size="13" text-anchor="middle">14: 誤りの内容、または登録できない理由を渡す</text>
 <rect x="252.6" y="882.0" width="320.2" height="17.0" fill="#fff"/>
 <text x="412.6" y="895.0" font-size="13" text-anchor="middle">15: 誤りの内容、または登録できない理由を提示する</text>
 <rect x="80.0" y="916.0" width="331.1" height="17.0" fill="#fff"/>
@@ -166,14 +166,14 @@
 <text x="92.0" y="1032.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="92.0" y="1038.0" width="253.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="1051.0" font-size="13" text-anchor="start">[同じ従業員の他のシフトと重複している]</text>
-<rect x="798.4" y="1064.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="906.5" y="1077.0" font-size="13" text-anchor="middle">17: 重複しているシフトを表示する</text>
+<rect x="811.4" y="1064.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="906.5" y="1077.0" font-size="13" text-anchor="middle">17: 重複しているシフトを渡す</text>
 <rect x="304.6" y="1098.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="412.6" y="1111.0" font-size="13" text-anchor="middle">18: 重複しているシフトを提示する</text>
 <rect x="694.0" y="1180.0" width="424.9" height="17.0" fill="#fff"/>
-<text x="906.5" y="1193.0" font-size="13" text-anchor="middle">19: 入力されたシフトの内容を表示する(従業員, 勤務日, 開始時刻, </text>
-<rect x="874.8" y="1197.0" width="63.5" height="17.0" fill="#fff"/>
-<text x="906.5" y="1210.0" font-size="13" text-anchor="middle">終了時刻)</text>
+<text x="906.5" y="1193.0" font-size="13" text-anchor="middle">19: 入力されたシフトの内容を渡す(従業員, 勤務日, 開始時刻, 終了</text>
+<rect x="887.8" y="1197.0" width="37.5" height="17.0" fill="#fff"/>
+<text x="906.5" y="1210.0" font-size="13" text-anchor="middle">時刻)</text>
 <rect x="233.1" y="1231.0" width="359.2" height="17.0" fill="#fff"/>
 <text x="412.6" y="1244.0" font-size="13" text-anchor="middle">20: 入力されたシフトの内容を提示し、登録の確認を求める</text>
 <text x="92.0" y="1287.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
@@ -185,8 +185,8 @@
 <text x="906.5" y="1366.0" font-size="13" text-anchor="middle">22: キャンセルを要求する</text>
 <rect x="1141.8" y="1387.0" width="190.2" height="17.0" fill="#fff"/>
 <text x="1143.8" y="1400.0" font-size="13" text-anchor="start">23: 入力された内容を破棄する</text>
-<rect x="804.9" y="1443.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="906.5" y="1456.0" font-size="13" text-anchor="middle">24: キャンセルの完了を表示する</text>
+<rect x="817.9" y="1443.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="906.5" y="1456.0" font-size="13" text-anchor="middle">24: キャンセルの完了を渡す</text>
 <rect x="285.1" y="1477.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="412.6" y="1490.0" font-size="13" text-anchor="middle">25: キャンセルが完了したことを提示する</text>
 <rect x="324.1" y="1527.0" width="177.2" height="17.0" fill="#fff"/>
@@ -200,14 +200,14 @@
 <text x="92.0" y="1668.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="92.0" y="1674.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="1687.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="798.4" y="1700.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="906.5" y="1713.0" font-size="13" text-anchor="middle">29: 保存に失敗したことを表示する</text>
+<rect x="811.4" y="1700.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="906.5" y="1713.0" font-size="13" text-anchor="middle">29: 保存に失敗したことを渡す</text>
 <rect x="304.6" y="1734.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="412.6" y="1747.0" font-size="13" text-anchor="middle">30: 保存に失敗したことを提示する</text>
 <rect x="92.0" y="1768.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="1781.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="824.4" y="1794.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="906.5" y="1807.0" font-size="13" text-anchor="middle">31: 登録の完了を表示する</text>
+<rect x="837.4" y="1794.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="906.5" y="1807.0" font-size="13" text-anchor="middle">31: 登録の完了を渡す</text>
 <rect x="304.6" y="1828.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="412.6" y="1841.0" font-size="13" text-anchor="middle">32: 登録が完了したことを提示する</text>
 <text x="148.0" y="120.0" font-size="13" text-anchor="middle">:勤怠管理者</text>

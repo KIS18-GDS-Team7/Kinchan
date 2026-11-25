@@ -74,8 +74,8 @@
 <text x="68.0" y="383.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
 <rect x="68.0" y="389.0" width="84.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="402.0" font-size="13" text-anchor="start">[整合しない]</text>
-<rect x="661.8" y="415.0" width="195.6" height="17.0" fill="#fff"/>
-<text x="759.6" y="428.0" font-size="13" text-anchor="middle">5: 打刻できない理由を表示する</text>
+<rect x="674.8" y="415.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="759.6" y="428.0" font-size="13" text-anchor="middle">5: 打刻できない理由を渡す</text>
 <rect x="192.8" y="449.0" width="273.6" height="17.0" fill="#fff"/>
 <text x="329.6" y="462.0" font-size="13" text-anchor="middle">6: 打刻できないことと、その理由を提示する</text>
 <rect x="1096.6" y="499.0" width="221.6" height="17.0" fill="#fff"/>
@@ -89,14 +89,14 @@
 <text x="68.0" y="657.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
 <rect x="68.0" y="663.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="676.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="651.5" y="689.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="759.6" y="702.0" font-size="13" text-anchor="middle">10: 保存に失敗したことを表示する</text>
+<rect x="664.5" y="689.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="759.6" y="702.0" font-size="13" text-anchor="middle">10: 保存に失敗したことを渡す</text>
 <rect x="221.5" y="723.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="329.6" y="736.0" font-size="13" text-anchor="middle">11: 保存に失敗したことを提示する</text>
 <rect x="548.2" y="773.0" width="422.9" height="17.0" fill="#fff"/>
-<text x="759.6" y="786.0" font-size="13" text-anchor="middle">12: 打刻の結果を表示する(打刻の種類, 打刻日時, 更新後の勤務ステ</text>
-<rect x="734.3" y="790.0" width="50.5" height="17.0" fill="#fff"/>
-<text x="759.6" y="803.0" font-size="13" text-anchor="middle">ータス)</text>
+<text x="759.6" y="786.0" font-size="13" text-anchor="middle">12: 打刻の結果を渡す(打刻の種類, 打刻日時, 更新後の勤務ステータ</text>
+<rect x="747.3" y="790.0" width="24.5" height="17.0" fill="#fff"/>
+<text x="759.6" y="803.0" font-size="13" text-anchor="middle">ス)</text>
 <rect x="137.0" y="824.0" width="385.2" height="17.0" fill="#fff"/>
 <text x="329.6" y="837.0" font-size="13" text-anchor="middle">13: 打刻の種類、打刻日時、更新後の勤務ステータスを提示する</text>
 <text x="124.0" y="120.0" font-size="13" text-anchor="middle">:従業員</text>

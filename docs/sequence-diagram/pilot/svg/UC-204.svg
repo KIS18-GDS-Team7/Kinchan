@@ -126,14 +126,14 @@
 <text x="92.0" y="412.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="92.0" y="418.0" width="240.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="431.0" font-size="13" text-anchor="start">[「未処理」のシフト希望が存在しない]</text>
-<rect x="858.0" y="444.0" width="338.6" height="17.0" fill="#fff"/>
-<text x="1027.3" y="457.0" font-size="13" text-anchor="middle">5: 「未処理」のシフト希望が存在しないことを表示する</text>
+<rect x="871.0" y="444.0" width="312.6" height="17.0" fill="#fff"/>
+<text x="1027.3" y="457.0" font-size="13" text-anchor="middle">5: 「未処理」のシフト希望が存在しないことを渡す</text>
 <rect x="305.1" y="478.0" width="338.6" height="17.0" fill="#fff"/>
 <text x="474.4" y="491.0" font-size="13" text-anchor="middle">6: 「未処理」のシフト希望が存在しないことを提示する</text>
 <rect x="92.0" y="512.0" width="227.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="525.0" font-size="13" text-anchor="start">[「未処理」のシフト希望が存在する]</text>
-<rect x="890.5" y="538.0" width="273.6" height="17.0" fill="#fff"/>
-<text x="1027.3" y="551.0" font-size="13" text-anchor="middle">7: 「未処理」のシフト希望の一覧を表示する</text>
+<rect x="903.5" y="538.0" width="247.6" height="17.0" fill="#fff"/>
+<text x="1027.3" y="551.0" font-size="13" text-anchor="middle">7: 「未処理」のシフト希望の一覧を渡す</text>
 <rect x="259.2" y="572.0" width="430.4" height="17.0" fill="#fff"/>
 <text x="474.4" y="585.0" font-size="13" text-anchor="middle">8: 「未処理」のシフト希望の一覧(従業員名, 所属単位, 希望日, 希望</text>
 <rect x="330.0" y="589.0" width="288.7" height="17.0" fill="#fff"/>
@@ -154,8 +154,8 @@
 <text x="80.0" y="873.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="879.0" width="188.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="892.0" font-size="13" text-anchor="start">[期間の開始日が終了日より後]</text>
-<rect x="925.7" y="905.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="1027.3" y="918.0" font-size="13" text-anchor="middle">12: 期間の指定の誤りを表示する</text>
+<rect x="938.7" y="905.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="1027.3" y="918.0" font-size="13" text-anchor="middle">12: 期間の指定の誤りを渡す</text>
 <rect x="340.3" y="939.0" width="268.2" height="17.0" fill="#fff"/>
 <text x="474.4" y="952.0" font-size="13" text-anchor="middle">13: 期間の指定に誤りがあることを提示する</text>
 <rect x="80.0" y="973.0" width="162.1" height="17.0" fill="#fff"/>
@@ -169,14 +169,14 @@
 <text x="92.0" y="1106.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="92.0" y="1112.0" width="227.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="1125.0" font-size="13" text-anchor="start">[条件に合うシフト希望が存在しない]</text>
-<rect x="860.7" y="1138.0" width="333.2" height="17.0" fill="#fff"/>
-<text x="1027.3" y="1151.0" font-size="13" text-anchor="middle">15: 条件に合うシフト希望が存在しないことを表示する</text>
+<rect x="873.7" y="1138.0" width="307.2" height="17.0" fill="#fff"/>
+<text x="1027.3" y="1151.0" font-size="13" text-anchor="middle">15: 条件に合うシフト希望が存在しないことを渡す</text>
 <rect x="307.8" y="1172.0" width="333.2" height="17.0" fill="#fff"/>
 <text x="474.4" y="1185.0" font-size="13" text-anchor="middle">16: 条件に合うシフト希望が存在しないことを提示する</text>
 <rect x="92.0" y="1206.0" width="214.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="1219.0" font-size="13" text-anchor="start">[条件に合うシフト希望が存在する]</text>
-<rect x="893.2" y="1232.0" width="268.2" height="17.0" fill="#fff"/>
-<text x="1027.3" y="1245.0" font-size="13" text-anchor="middle">17: 条件に合うシフト希望の一覧を表示する</text>
+<rect x="906.2" y="1232.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="1027.3" y="1245.0" font-size="13" text-anchor="middle">17: 条件に合うシフト希望の一覧を渡す</text>
 <rect x="340.3" y="1266.0" width="268.2" height="17.0" fill="#fff"/>
 <text x="474.4" y="1279.0" font-size="13" text-anchor="middle">18: 条件に合うシフト希望の一覧を提示する</text>
 <rect x="346.8" y="1348.0" width="255.2" height="17.0" fill="#fff"/>
@@ -197,8 +197,8 @@
 <text x="1633.7" y="1582.0" font-size="13" text-anchor="middle">23: 希望日に登録済みの同じ所属単位のシフトを取得する</text>
 <rect x="1592.7" y="1603.0" width="82.0" height="17.0" fill="#fff"/>
 <text x="1633.7" y="1616.0" font-size="13" text-anchor="middle">シフトの一覧</text>
-<rect x="867.2" y="1637.0" width="320.2" height="17.0" fill="#fff"/>
-<text x="1027.3" y="1650.0" font-size="13" text-anchor="middle">24: シフト希望の詳細と、希望日のシフトを表示する</text>
+<rect x="880.2" y="1637.0" width="294.2" height="17.0" fill="#fff"/>
+<text x="1027.3" y="1650.0" font-size="13" text-anchor="middle">24: シフト希望の詳細と、希望日のシフトを渡す</text>
 <rect x="260.9" y="1671.0" width="427.0" height="17.0" fill="#fff"/>
 <text x="474.4" y="1684.0" font-size="13" text-anchor="middle">25: シフト希望の詳細(従業員名, 所属単位, 対象期間, 希望日, 希望</text>
 <rect x="263.0" y="1688.0" width="422.9" height="17.0" fill="#fff"/>

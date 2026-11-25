@@ -82,8 +82,8 @@
 <text x="1151.4" y="267.0" font-size="13" text-anchor="middle">3: シフト希望を取得する</text>
 <rect x="969.7" y="288.0" width="363.3" height="17.0" fill="#fff"/>
 <text x="1151.4" y="301.0" font-size="13" text-anchor="middle">希望日, 希望開始時刻, 希望終了時刻, 送信日時, 処理状態</text>
-<rect x="639.3" y="322.0" width="260.6" height="17.0" fill="#fff"/>
-<text x="769.6" y="335.0" font-size="13" text-anchor="middle">4: 取り下げるシフト希望の内容を表示する</text>
+<rect x="652.3" y="322.0" width="234.6" height="17.0" fill="#fff"/>
+<text x="769.6" y="335.0" font-size="13" text-anchor="middle">4: 取り下げるシフト希望の内容を渡す</text>
 <rect x="151.4" y="356.0" width="403.6" height="17.0" fill="#fff"/>
 <text x="353.2" y="369.0" font-size="13" text-anchor="middle">5: 取り下げるシフト希望の内容を提示し、取り下げの確認を求める</text>
 <text x="68.0" y="412.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
@@ -93,8 +93,8 @@
 <text x="353.2" y="457.0" font-size="13" text-anchor="middle">6: キャンセルボタンを押す</text>
 <rect x="691.3" y="478.0" width="156.6" height="17.0" fill="#fff"/>
 <text x="769.6" y="491.0" font-size="13" text-anchor="middle">7: キャンセルを要求する</text>
-<rect x="671.8" y="512.0" width="195.6" height="17.0" fill="#fff"/>
-<text x="769.6" y="525.0" font-size="13" text-anchor="middle">8: キャンセルの完了を表示する</text>
+<rect x="684.8" y="512.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="769.6" y="525.0" font-size="13" text-anchor="middle">8: キャンセルの完了を渡す</text>
 <rect x="229.4" y="546.0" width="247.6" height="17.0" fill="#fff"/>
 <text x="353.2" y="559.0" font-size="13" text-anchor="middle">9: キャンセルが完了したことを提示する</text>
 <rect x="238.7" y="596.0" width="229.2" height="17.0" fill="#fff"/>
@@ -110,8 +110,8 @@
 <text x="68.0" y="810.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
 <rect x="68.0" y="816.0" width="253.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="829.0" font-size="13" text-anchor="start">[処理状態が「未処理」でなくなっている]</text>
-<rect x="655.0" y="842.0" width="229.2" height="17.0" fill="#fff"/>
-<text x="769.6" y="855.0" font-size="13" text-anchor="middle">14: 取り下げできないことを表示する</text>
+<rect x="668.0" y="842.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="769.6" y="855.0" font-size="13" text-anchor="middle">14: 取り下げできないことを渡す</text>
 <rect x="147.7" y="876.0" width="411.2" height="17.0" fill="#fff"/>
 <text x="353.2" y="889.0" font-size="13" text-anchor="middle">15: 対象のシフト希望が取り下げできない状態であることを提示する</text>
 <rect x="1030.3" y="926.0" width="242.2" height="17.0" fill="#fff"/>
@@ -119,14 +119,14 @@
 <text x="68.0" y="982.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="68.0" y="988.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="1001.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="661.5" y="1014.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="769.6" y="1027.0" font-size="13" text-anchor="middle">17: 保存に失敗したことを表示する</text>
+<rect x="674.5" y="1014.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="769.6" y="1027.0" font-size="13" text-anchor="middle">17: 保存に失敗したことを渡す</text>
 <rect x="245.2" y="1048.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="353.2" y="1061.0" font-size="13" text-anchor="middle">18: 保存に失敗したことを提示する</text>
 <rect x="68.0" y="1082.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="1095.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="674.5" y="1108.0" width="190.2" height="17.0" fill="#fff"/>
-<text x="769.6" y="1121.0" font-size="13" text-anchor="middle">19: 取り下げの完了を表示する</text>
+<rect x="687.5" y="1108.0" width="164.2" height="17.0" fill="#fff"/>
+<text x="769.6" y="1121.0" font-size="13" text-anchor="middle">19: 取り下げの完了を渡す</text>
 <rect x="232.2" y="1142.0" width="242.2" height="17.0" fill="#fff"/>
 <text x="353.2" y="1155.0" font-size="13" text-anchor="middle">20: 取り下げが完了したことを提示する</text>
 <text x="124.0" y="120.0" font-size="13" text-anchor="middle">:従業員</text>

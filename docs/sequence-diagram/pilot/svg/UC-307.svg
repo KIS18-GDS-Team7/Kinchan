@@ -174,8 +174,8 @@
 <text x="68.0" y="412.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="418.0" width="188.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="431.0" font-size="13" text-anchor="start">[誤りが無くなるまで繰り返す]</text>
-<rect x="983.8" y="444.0" width="182.6" height="17.0" fill="#fff"/>
-<text x="1075.1" y="457.0" font-size="13" text-anchor="middle">5: 対象期間の各日を表示する</text>
+<rect x="996.8" y="444.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="1075.1" y="457.0" font-size="13" text-anchor="middle">5: 対象期間の各日を渡す</text>
 <rect x="276.3" y="478.0" width="338.6" height="17.0" fill="#fff"/>
 <text x="445.6" y="491.0" font-size="13" text-anchor="middle">6: 対象期間の各日を提示し、各日の希望の入力を求める</text>
 <rect x="269.8" y="512.0" width="351.6" height="17.0" fill="#fff"/>
@@ -189,14 +189,14 @@
 <text x="80.0" y="692.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="698.0" width="84.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="711.0" font-size="13" text-anchor="start">[誤りがある]</text>
-<rect x="993.1" y="724.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="1075.1" y="737.0" font-size="13" text-anchor="middle">11: 誤りの内容を表示する</text>
+<rect x="1006.1" y="724.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="1075.1" y="737.0" font-size="13" text-anchor="middle">11: 誤りの内容を渡す</text>
 <rect x="363.5" y="758.0" width="164.2" height="17.0" fill="#fff"/>
 <text x="445.6" y="771.0" font-size="13" text-anchor="middle">12: 誤りの内容を提示する</text>
 <rect x="951.0" y="824.0" width="422.9" height="17.0" fill="#fff"/>
-<text x="1162.4" y="837.0" font-size="13" text-anchor="middle">13: 入力されたシフト希望の内容を表示する(希望日, 希望開始時刻, </text>
-<rect x="1117.6" y="841.0" width="89.5" height="17.0" fill="#fff"/>
-<text x="1162.4" y="854.0" font-size="13" text-anchor="middle">希望終了時刻)</text>
+<text x="1162.4" y="837.0" font-size="13" text-anchor="middle">13: 入力されたシフト希望の内容を渡す(希望日, 希望開始時刻, 希望</text>
+<rect x="1130.6" y="841.0" width="63.5" height="17.0" fill="#fff"/>
+<text x="1162.4" y="854.0" font-size="13" text-anchor="middle">終了時刻)</text>
 <rect x="340.3" y="875.0" width="385.2" height="17.0" fill="#fff"/>
 <text x="532.9" y="888.0" font-size="13" text-anchor="middle">14: 入力されたシフト希望の内容を提示し、送信の確認を求める</text>
 <text x="80.0" y="931.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
@@ -208,8 +208,8 @@
 <text x="1162.4" y="1010.0" font-size="13" text-anchor="middle">16: キャンセルを要求する</text>
 <rect x="1401.0" y="1031.0" width="190.2" height="17.0" fill="#fff"/>
 <text x="1403.0" y="1044.0" font-size="13" text-anchor="start">17: 入力された内容を破棄する</text>
-<rect x="1060.8" y="1087.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="1162.4" y="1100.0" font-size="13" text-anchor="middle">18: キャンセルの完了を表示する</text>
+<rect x="1073.8" y="1087.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="1162.4" y="1100.0" font-size="13" text-anchor="middle">18: キャンセルの完了を渡す</text>
 <rect x="405.3" y="1121.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="532.9" y="1134.0" font-size="13" text-anchor="middle">19: キャンセルが完了したことを提示する</text>
 <text x="68.0" y="1193.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
@@ -236,14 +236,14 @@
 <text x="80.0" y="1557.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="1563.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1576.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="1054.3" y="1589.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="1162.4" y="1602.0" font-size="13" text-anchor="middle">24: 保存に失敗したことを表示する</text>
+<rect x="1067.3" y="1589.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="1162.4" y="1602.0" font-size="13" text-anchor="middle">24: 保存に失敗したことを渡す</text>
 <rect x="424.8" y="1623.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="532.9" y="1636.0" font-size="13" text-anchor="middle">25: 保存に失敗したことを提示する</text>
 <rect x="80.0" y="1657.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1670.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="1034.8" y="1683.0" width="255.2" height="17.0" fill="#fff"/>
-<text x="1162.4" y="1696.0" font-size="13" text-anchor="middle">26: 下書きとしての保存の完了を表示する</text>
+<rect x="1047.8" y="1683.0" width="229.2" height="17.0" fill="#fff"/>
+<text x="1162.4" y="1696.0" font-size="13" text-anchor="middle">26: 下書きとしての保存の完了を渡す</text>
 <rect x="379.3" y="1717.0" width="307.2" height="17.0" fill="#fff"/>
 <text x="532.9" y="1730.0" font-size="13" text-anchor="middle">27: 下書きとしての保存が完了したことを提示する</text>
 <rect x="463.8" y="1783.0" width="138.2" height="17.0" fill="#fff"/>
@@ -259,8 +259,8 @@
 <text x="80.0" y="1997.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
 <rect x="80.0" y="2003.0" width="149.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="2016.0" font-size="13" text-anchor="start">[受付期間を過ぎている]</text>
-<rect x="1060.8" y="2029.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="1162.4" y="2042.0" font-size="13" text-anchor="middle">32: 送信できないことを表示する</text>
+<rect x="1073.8" y="2029.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="1162.4" y="2042.0" font-size="13" text-anchor="middle">32: 送信できないことを渡す</text>
 <rect x="320.8" y="2063.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="532.9" y="2076.0" font-size="13" text-anchor="middle">33: 受付期間を過ぎているためシフト希望を送信できないことを提示す</text>
 <rect x="524.4" y="2080.0" width="17.0" height="17.0" fill="#fff"/>
@@ -275,8 +275,8 @@
 <text x="80.0" y="2273.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="2279.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="2292.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="1054.3" y="2305.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="1162.4" y="2318.0" font-size="13" text-anchor="middle">35: 保存に失敗したことを表示する</text>
+<rect x="1067.3" y="2305.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="1162.4" y="2318.0" font-size="13" text-anchor="middle">35: 保存に失敗したことを渡す</text>
 <rect x="424.8" y="2339.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="532.9" y="2352.0" font-size="13" text-anchor="middle">36: 保存に失敗したことを提示する</text>
 <rect x="80.0" y="2373.0" width="110.1" height="17.0" fill="#fff"/>
@@ -287,8 +287,8 @@
 <text x="1771.8" y="2446.0" font-size="13" text-anchor="middle">勤怠管理者の一覧</text>
 <rect x="1642.1" y="2467.0" width="389.3" height="17.0" fill="#fff"/>
 <text x="1836.8" y="2480.0" font-size="13" text-anchor="middle">38: 通知を登録する(勤怠管理者ごと, シフト希望が送信された)</text>
-<rect x="899.3" y="2501.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="981.4" y="2514.0" font-size="13" text-anchor="middle">39: 送信の完了を表示する</text>
+<rect x="912.3" y="2501.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="981.4" y="2514.0" font-size="13" text-anchor="middle">39: 送信の完了を渡す</text>
 <rect x="243.8" y="2535.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="351.9" y="2548.0" font-size="13" text-anchor="middle">40: 送信が完了したことを提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:従業員</text>

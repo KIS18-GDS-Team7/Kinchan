@@ -116,8 +116,8 @@
 <text x="1318.7" y="267.0" font-size="13" text-anchor="middle">3: アクターの管理先を取得する</text>
 <rect x="1277.7" y="288.0" width="82.0" height="17.0" fill="#fff"/>
 <text x="1318.7" y="301.0" font-size="13" text-anchor="middle">管理先の一覧</text>
-<rect x="936.6" y="322.0" width="130.6" height="17.0" fill="#fff"/>
-<text x="1001.9" y="335.0" font-size="13" text-anchor="middle">4: 管理先を表示する</text>
+<rect x="949.6" y="322.0" width="104.6" height="17.0" fill="#fff"/>
+<text x="1001.9" y="335.0" font-size="13" text-anchor="middle">4: 管理先を渡す</text>
 <rect x="324.1" y="356.0" width="299.6" height="17.0" fill="#fff"/>
 <text x="473.9" y="369.0" font-size="13" text-anchor="middle">5: 管理先の一覧を提示し、管理先の指定を求める</text>
 <rect x="408.6" y="390.0" width="130.6" height="17.0" fill="#fff"/>
@@ -140,8 +140,8 @@
 <text x="80.0" y="709.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="715.0" width="240.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="728.0" font-size="13" text-anchor="start">[対象期間または受付期間に誤りがある]</text>
-<rect x="919.9" y="741.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="1001.9" y="754.0" font-size="13" text-anchor="middle">12: 誤りの内容を表示する</text>
+<rect x="932.9" y="741.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="1001.9" y="754.0" font-size="13" text-anchor="middle">12: 誤りの内容を渡す</text>
 <rect x="268.3" y="775.0" width="411.2" height="17.0" fill="#fff"/>
 <text x="473.9" y="788.0" font-size="13" text-anchor="middle">13: 入力された対象期間または受付期間に誤りがあることを提示する</text>
 <rect x="80.0" y="809.0" width="84.1" height="17.0" fill="#fff"/>
@@ -153,12 +153,12 @@
 <text x="92.0" y="925.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="92.0" y="931.0" width="227.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="944.0" font-size="13" text-anchor="start">[登録済みの対象期間と重なっている]</text>
-<rect x="887.4" y="957.0" width="229.2" height="17.0" fill="#fff"/>
-<text x="1001.9" y="970.0" font-size="13" text-anchor="middle">15: 重なっている対象期間を表示する</text>
+<rect x="900.4" y="957.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="1001.9" y="970.0" font-size="13" text-anchor="middle">15: 重なっている対象期間を渡す</text>
 <rect x="359.3" y="991.0" width="229.2" height="17.0" fill="#fff"/>
 <text x="473.9" y="1004.0" font-size="13" text-anchor="middle">16: 重なっている対象期間を提示する</text>
-<rect x="861.4" y="1073.0" width="281.2" height="17.0" fill="#fff"/>
-<text x="1001.9" y="1086.0" font-size="13" text-anchor="middle">17: 入力された対象期間と受付期間を表示する</text>
+<rect x="874.4" y="1073.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="1001.9" y="1086.0" font-size="13" text-anchor="middle">17: 入力された対象期間と受付期間を渡す</text>
 <rect x="274.8" y="1107.0" width="398.2" height="17.0" fill="#fff"/>
 <text x="473.9" y="1120.0" font-size="13" text-anchor="middle">18: 入力された対象期間と受付期間を提示し、登録の確認を求める</text>
 <text x="92.0" y="1163.0" font-size="13" text-anchor="start" font-weight="bold">break</text>
@@ -170,8 +170,8 @@
 <text x="1001.9" y="1242.0" font-size="13" text-anchor="middle">20: キャンセルを要求する</text>
 <rect x="1210.1" y="1263.0" width="190.2" height="17.0" fill="#fff"/>
 <text x="1212.1" y="1276.0" font-size="13" text-anchor="start">21: 入力された内容を破棄する</text>
-<rect x="900.4" y="1319.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="1001.9" y="1332.0" font-size="13" text-anchor="middle">22: キャンセルの完了を表示する</text>
+<rect x="913.4" y="1319.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="1001.9" y="1332.0" font-size="13" text-anchor="middle">22: キャンセルの完了を渡す</text>
 <rect x="346.3" y="1353.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="473.9" y="1366.0" font-size="13" text-anchor="middle">23: キャンセルが完了したことを提示する</text>
 <rect x="411.3" y="1403.0" width="125.2" height="17.0" fill="#fff"/>
@@ -185,14 +185,14 @@
 <text x="92.0" y="1544.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="92.0" y="1550.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="1563.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="893.9" y="1576.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="1001.9" y="1589.0" font-size="13" text-anchor="middle">27: 保存に失敗したことを表示する</text>
+<rect x="906.9" y="1576.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="1001.9" y="1589.0" font-size="13" text-anchor="middle">27: 保存に失敗したことを渡す</text>
 <rect x="365.8" y="1610.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="473.9" y="1623.0" font-size="13" text-anchor="middle">28: 保存に失敗したことを提示する</text>
 <rect x="92.0" y="1644.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="94.0" y="1657.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="919.9" y="1670.0" width="164.2" height="17.0" fill="#fff"/>
-<text x="1001.9" y="1683.0" font-size="13" text-anchor="middle">29: 登録の完了を表示する</text>
+<rect x="932.9" y="1670.0" width="138.2" height="17.0" fill="#fff"/>
+<text x="1001.9" y="1683.0" font-size="13" text-anchor="middle">29: 登録の完了を渡す</text>
 <rect x="365.8" y="1704.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="473.9" y="1717.0" font-size="13" text-anchor="middle">30: 登録が完了したことを提示する</text>
 <text x="148.0" y="120.0" font-size="13" text-anchor="middle">:勤怠管理者</text>

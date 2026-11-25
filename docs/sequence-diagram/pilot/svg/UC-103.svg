@@ -119,8 +119,8 @@
 <text x="68.0" y="327.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="333.0" width="344.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="346.0" font-size="13" text-anchor="start">[アクター自身でないユーザーが指定されるまで繰り返す]</text>
-<rect x="729.8" y="359.0" width="182.6" height="17.0" fill="#fff"/>
-<text x="821.1" y="372.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を表示する</text>
+<rect x="742.8" y="359.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="821.1" y="372.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を渡す</text>
 <rect x="183.2" y="393.0" width="364.6" height="17.0" fill="#fff"/>
 <text x="365.5" y="406.0" font-size="13" text-anchor="middle">5: ユーザーの一覧を提示し、対象のユーザーの指定を求める</text>
 <rect x="274.2" y="427.0" width="182.6" height="17.0" fill="#fff"/>
@@ -132,8 +132,8 @@
 <text x="80.0" y="573.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="579.0" width="201.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="592.0" font-size="13" text-anchor="start">[対象のユーザーがアクター自身]</text>
-<rect x="723.3" y="605.0" width="195.6" height="17.0" fill="#fff"/>
-<text x="821.1" y="618.0" font-size="13" text-anchor="middle">9: 削除できないことを表示する</text>
+<rect x="736.3" y="605.0" width="169.6" height="17.0" fill="#fff"/>
+<text x="821.1" y="618.0" font-size="13" text-anchor="middle">9: 削除できないことを渡す</text>
 <rect x="153.4" y="639.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="365.5" y="652.0" font-size="13" text-anchor="middle">10: 対象のユーザーがアクター自身であるため削除できないことを提示</text>
 <rect x="350.5" y="656.0" width="30.0" height="17.0" fill="#fff"/>
@@ -152,8 +152,8 @@
 <text x="1400.1" y="905.0" font-size="13" text-anchor="middle">管理先の一覧</text>
 <rect x="608.0" y="926.0" width="426.2" height="17.0" fill="#fff"/>
 <text x="821.1" y="939.0" font-size="13" text-anchor="middle">14: 氏名・ユーザーID、翌日以降のシフトの件数、割り当てが外れる管</text>
-<rect x="773.6" y="943.0" width="95.0" height="17.0" fill="#fff"/>
-<text x="821.1" y="956.0" font-size="13" text-anchor="middle">理先を表示する</text>
+<rect x="786.6" y="943.0" width="69.0" height="17.0" fill="#fff"/>
+<text x="821.1" y="956.0" font-size="13" text-anchor="middle">理先を渡す</text>
 <rect x="152.4" y="977.0" width="426.2" height="17.0" fill="#fff"/>
 <text x="365.5" y="990.0" font-size="13" text-anchor="middle">15: 対象のユーザーの氏名・ユーザーID、勤務日が翌日以降のシフトの</text>
 <rect x="149.0" y="994.0" width="433.0" height="17.0" fill="#fff"/>
@@ -167,8 +167,8 @@
 <text x="365.5" y="1112.0" font-size="13" text-anchor="middle">16: キャンセルボタンを押す</text>
 <rect x="739.0" y="1133.0" width="164.2" height="17.0" fill="#fff"/>
 <text x="821.1" y="1146.0" font-size="13" text-anchor="middle">17: キャンセルを要求する</text>
-<rect x="719.5" y="1167.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="821.1" y="1180.0" font-size="13" text-anchor="middle">18: キャンセルの完了を表示する</text>
+<rect x="732.5" y="1167.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="821.1" y="1180.0" font-size="13" text-anchor="middle">18: キャンセルの完了を渡す</text>
 <rect x="237.9" y="1201.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="365.5" y="1214.0" font-size="13" text-anchor="middle">19: キャンセルが完了したことを提示する</text>
 <rect x="270.4" y="1251.0" width="190.2" height="17.0" fill="#fff"/>
@@ -191,14 +191,14 @@
 <text x="80.0" y="1564.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="1570.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1583.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="713.0" y="1596.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="821.1" y="1609.0" font-size="13" text-anchor="middle">26: 保存に失敗したことを表示する</text>
+<rect x="726.0" y="1596.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="821.1" y="1609.0" font-size="13" text-anchor="middle">26: 保存に失敗したことを渡す</text>
 <rect x="257.4" y="1630.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="365.5" y="1643.0" font-size="13" text-anchor="middle">27: 保存に失敗したことを提示する</text>
 <rect x="80.0" y="1664.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1677.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="706.5" y="1690.0" width="229.2" height="17.0" fill="#fff"/>
-<text x="821.1" y="1703.0" font-size="13" text-anchor="middle">28: ユーザーの削除の完了を表示する</text>
+<rect x="719.5" y="1690.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="821.1" y="1703.0" font-size="13" text-anchor="middle">28: ユーザーの削除の完了を渡す</text>
 <rect x="224.9" y="1724.0" width="281.2" height="17.0" fill="#fff"/>
 <text x="365.5" y="1737.0" font-size="13" text-anchor="middle">29: ユーザーの削除が完了したことを提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>

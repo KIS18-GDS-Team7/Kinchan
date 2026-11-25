@@ -122,8 +122,8 @@
 <text x="68.0" y="327.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
 <rect x="68.0" y="333.0" width="344.1" height="17.0" fill="#fff"/>
 <text x="70.0" y="346.0" font-size="13" text-anchor="start">[アクター自身でないユーザーが指定されるまで繰り返す]</text>
-<rect x="833.6" y="359.0" width="182.6" height="17.0" fill="#fff"/>
-<text x="924.9" y="372.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を表示する</text>
+<rect x="846.6" y="359.0" width="156.6" height="17.0" fill="#fff"/>
+<text x="924.9" y="372.0" font-size="13" text-anchor="middle">4: ユーザーの一覧を渡す</text>
 <rect x="260.6" y="393.0" width="364.6" height="17.0" fill="#fff"/>
 <text x="442.9" y="406.0" font-size="13" text-anchor="middle">5: ユーザーの一覧を提示し、対象のユーザーの指定を求める</text>
 <rect x="351.6" y="427.0" width="182.6" height="17.0" fill="#fff"/>
@@ -135,8 +135,8 @@
 <text x="80.0" y="573.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="579.0" width="201.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="592.0" font-size="13" text-anchor="start">[対象のユーザーがアクター自身]</text>
-<rect x="807.6" y="605.0" width="234.6" height="17.0" fill="#fff"/>
-<text x="924.9" y="618.0" font-size="13" text-anchor="middle">9: 権限を変更できないことを表示する</text>
+<rect x="820.6" y="605.0" width="208.6" height="17.0" fill="#fff"/>
+<text x="924.9" y="618.0" font-size="13" text-anchor="middle">9: 権限を変更できないことを渡す</text>
 <rect x="230.8" y="639.0" width="424.2" height="17.0" fill="#fff"/>
 <text x="442.9" y="652.0" font-size="13" text-anchor="middle">10: 対象のユーザーがアクター自身であるため権限を変更できないこと</text>
 <rect x="408.4" y="656.0" width="69.0" height="17.0" fill="#fff"/>
@@ -145,8 +145,8 @@
 <text x="1299.2" y="735.0" font-size="13" text-anchor="middle">11: 対象のユーザーの現在の権限のリストを取得する</text>
 <rect x="1146.6" y="756.0" width="305.1" height="17.0" fill="#fff"/>
 <text x="1299.2" y="769.0" font-size="13" text-anchor="middle">権限のリスト(マスタ管理者権限・勤怠管理者権限)</text>
-<rect x="790.9" y="790.0" width="268.2" height="17.0" fill="#fff"/>
-<text x="924.9" y="803.0" font-size="13" text-anchor="middle">12: 対象のユーザーの現在の権限を表示する</text>
+<rect x="803.9" y="790.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="924.9" y="803.0" font-size="13" text-anchor="middle">12: 対象のユーザーの現在の権限を渡す</text>
 <rect x="227.0" y="824.0" width="431.7" height="17.0" fill="#fff"/>
 <text x="442.9" y="837.0" font-size="13" text-anchor="middle">13: 対象のユーザーの現在の権限を提示し、変更後の権限(マスタ管理者</text>
 <rect x="281.1" y="841.0" width="323.5" height="17.0" fill="#fff"/>
@@ -155,13 +155,13 @@
 <text x="442.9" y="888.0" font-size="13" text-anchor="middle">14: 変更後の権限を入力する</text>
 <rect x="796.3" y="909.0" width="257.2" height="17.0" fill="#fff"/>
 <text x="924.9" y="922.0" font-size="13" text-anchor="middle">15: 変更の確認を要求する(変更後の権限)</text>
-<rect x="810.4" y="943.0" width="229.2" height="17.0" fill="#fff"/>
-<text x="924.9" y="956.0" font-size="13" text-anchor="middle">16: 変更前と変更後の権限を表示する</text>
+<rect x="823.4" y="943.0" width="203.2" height="17.0" fill="#fff"/>
+<text x="924.9" y="956.0" font-size="13" text-anchor="middle">16: 変更前と変更後の権限を渡す</text>
 <text x="80.0" y="999.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
 <rect x="80.0" y="1005.0" width="279.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1018.0" font-size="13" text-anchor="start">[変更後の権限に勤怠管理者権限が含まれない]</text>
-<rect x="784.4" y="1031.0" width="281.2" height="17.0" fill="#fff"/>
-<text x="924.9" y="1044.0" font-size="13" text-anchor="middle">17: 管理先の割り当てが外れることを表示する</text>
+<rect x="797.4" y="1031.0" width="255.2" height="17.0" fill="#fff"/>
+<text x="924.9" y="1044.0" font-size="13" text-anchor="middle">17: 管理先の割り当てが外れることを渡す</text>
 <rect x="302.3" y="1065.0" width="281.2" height="17.0" fill="#fff"/>
 <text x="442.9" y="1078.0" font-size="13" text-anchor="middle">18: 管理先の割り当てが外れることを提示する</text>
 <rect x="269.8" y="1115.0" width="346.2" height="17.0" fill="#fff"/>
@@ -175,8 +175,8 @@
 <text x="924.9" y="1250.0" font-size="13" text-anchor="middle">21: キャンセルを要求する</text>
 <rect x="1106.1" y="1271.0" width="190.2" height="17.0" fill="#fff"/>
 <text x="1108.1" y="1284.0" font-size="13" text-anchor="start">22: 入力された内容を破棄する</text>
-<rect x="823.4" y="1327.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="924.9" y="1340.0" font-size="13" text-anchor="middle">23: キャンセルの完了を表示する</text>
+<rect x="836.4" y="1327.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="924.9" y="1340.0" font-size="13" text-anchor="middle">23: キャンセルの完了を渡す</text>
 <rect x="315.3" y="1361.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="442.9" y="1374.0" font-size="13" text-anchor="middle">24: キャンセルが完了したことを提示する</text>
 <rect x="360.8" y="1411.0" width="164.2" height="17.0" fill="#fff"/>
@@ -193,14 +193,14 @@
 <text x="80.0" y="1639.0" font-size="13" text-anchor="start" font-weight="bold">alt</text>
 <rect x="80.0" y="1645.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1658.0" font-size="13" text-anchor="start">[保存に失敗した]</text>
-<rect x="816.9" y="1671.0" width="216.2" height="17.0" fill="#fff"/>
-<text x="924.9" y="1684.0" font-size="13" text-anchor="middle">29: 保存に失敗したことを表示する</text>
+<rect x="829.9" y="1671.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="924.9" y="1684.0" font-size="13" text-anchor="middle">29: 保存に失敗したことを渡す</text>
 <rect x="334.8" y="1705.0" width="216.2" height="17.0" fill="#fff"/>
 <text x="442.9" y="1718.0" font-size="13" text-anchor="middle">30: 保存に失敗したことを提示する</text>
 <rect x="80.0" y="1739.0" width="110.1" height="17.0" fill="#fff"/>
 <text x="82.0" y="1752.0" font-size="13" text-anchor="start">[保存に成功した]</text>
-<rect x="823.4" y="1765.0" width="203.2" height="17.0" fill="#fff"/>
-<text x="924.9" y="1778.0" font-size="13" text-anchor="middle">31: 権限の変更の完了を表示する</text>
+<rect x="836.4" y="1765.0" width="177.2" height="17.0" fill="#fff"/>
+<text x="924.9" y="1778.0" font-size="13" text-anchor="middle">31: 権限の変更の完了を渡す</text>
 <rect x="315.3" y="1799.0" width="255.2" height="17.0" fill="#fff"/>
 <text x="442.9" y="1812.0" font-size="13" text-anchor="middle">32: 権限の変更が完了したことを提示する</text>
 <text x="136.0" y="120.0" font-size="13" text-anchor="middle">:マスタ管理者</text>

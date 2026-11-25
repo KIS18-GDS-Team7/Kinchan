@@ -15,7 +15,7 @@
   - GitHub Actions の `pull_request` イベントから GAS の Web App を呼ぶ案。即時に反映されるが、Web App の公開 URL と共有の秘密情報が必要で、取りこぼしたイベントを再送する仕組みも別に要る。`.github/workflows/` の変更になる。
 - PR フォルダに置く範囲として、PR の head の全成果物と、PR の差分に含まれる成果物だけ、の 2 案がある。全成果物を置くと PR の数だけ同じファイルが並び、PR で何が変わったかがフォルダから判別できない。
 - リポジトリは public で、fork からの PR は誰でも出せる。fork の PR を対象にすると、外部の内容が学校の Drive に置かれる。
-- GitHub API は認証なしだと送信元 IP ごとに 1 時間 60 回までで、GAS の送信元 IP は他の利用者と共有される。10 分ごとの実行では、変化が無いときでも 1 回あたり 2 回 (`main` の head と PR の一覧) を呼ぶ。
+- GitHub API は認証なしだと送信元 IP ごとに 1 時間 60 回までで、GAS の送信元 IP は他の利用者と共有される。10 分ごとの実行では、変化が無いときでも 1 回あたり 2 回 (`main` の head と PR の一覧) を呼ぶ。2026/11/25 の初回の運用で、token 無しの `poll` が rate limit による HTTP 403 で失敗した。
 - Drive の `appProperties` は作成したアプリ (GAS プロジェクト) からしか読めない。`properties` はどのアプリからも読める。
 - 共有ドライブのゴミ箱に移したファイルは 30 日間は戻せる。
 - GAS の 1 回の実行時間の上限は 6 分。
@@ -30,5 +30,5 @@
 - GAS の時間トリガー (10 分ごと) で GitHub の状態と Drive の状態を突き合わせる。`main` と各 PR の head が前回と同じなら何もしない。内容 (git の blob SHA) が同じファイルは更新しない。
 - フォルダとファイルの識別には Drive の `properties` を使う。対象から外れたファイルは script が置いたものに限りゴミ箱に移し、人が置いたものは更新も削除もしない。
 - 不完全な情報でファイルを消さない。PR の一覧の取得に失敗した場合は何も消さない。`main` で manifest に一致するファイルが 0 件の場合は `成果物/` を変えずにエラーにする。
-- `GITHUB_TOKEN` (public repo の読み取りのみの fine-grained PAT) の設定を必須とする。2026/11/25 の初回の運用で、token 無しの `poll` が rate limit による HTTP 403 で失敗した。
+- `GITHUB_TOKEN` (public repo の読み取りのみの fine-grained PAT) の設定を必須とする。
 - 手順は [tools/drive-delivery/README.md](../../tools/drive-delivery/README.md) に書く。

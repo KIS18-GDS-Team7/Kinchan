@@ -91,12 +91,10 @@ function forceResync() {
 // GitHub API の認証の有無と残り回数、リポジトリを読めることを確認する (/rate_limit は回数に数えられない)
 function checkGitHub() {
   const cfg = config_();
-  const token = prop_("GITHUB_TOKEN", "");
   const core = JSON.parse(githubFetch_("https://api.github.com/rate_limit").getContentText()).resources.core;
   const reset = Utilities.formatDate(new Date(core.reset * 1000), "Asia/Tokyo", "HH:mm");
-  Logger.log("GITHUB_TOKEN: " + (token ? "set" : "NOT set") + " / core: limit=" + core.limit + " remaining=" + core.remaining + " reset=" + reset + " JST");
-  if (!token) Logger.log("WARNING: set GITHUB_TOKEN; the unauthenticated limit (60/h) is shared with other Apps Script users");
-  else if (core.limit <= 60) Logger.log("WARNING: GITHUB_TOKEN is set but the limit is the unauthenticated one; check the token");
+  Logger.log("core: limit=" + core.limit + " remaining=" + core.remaining + " reset=" + reset + " JST");
+  if (core.limit <= 60) Logger.log("WARNING: the limit is the unauthenticated one; check GITHUB_TOKEN");
   Logger.log("repo: " + ghJson_(cfg, "").full_name + " (readable)");
 }
 
@@ -570,17 +568,17 @@ function ghPaged_(cfg, path, maxPages) {
   throw new Error("Too many items: " + path);
 }
 
-// GitHub への HTTP 呼び出し。GITHUB_TOKEN があれば付ける (raw=true では Accept を付けない)
+// GitHub への HTTP 呼び出し。GITHUB_TOKEN は必須 (raw=true では Accept を付けない)
 function githubFetch_(url, opts) {
   const raw = opts && opts.raw;
   const headers = { "User-Agent": "kinchan-drive-delivery" };
   if (!raw) headers["Accept"] = "application/vnd.github+json";
-  const token = prop_("GITHUB_TOKEN", "");
-  if (token) headers["Authorization"] = "Bearer " + token;
+  // 認証なしの上限 (送信元 IP ごとに 60 回/時) は GAS では他の利用者と共有され、すぐに尽きる
+  headers["Authorization"] = "Bearer " + prop_("GITHUB_TOKEN", null, true);
   const res = UrlFetchApp.fetch(url, { headers: headers, muteHttpExceptions: true });
   const code = res.getResponseCode();
   if (code < 200 || code >= 300) {
-    const err = new Error("HTTP " + code + " for " + url + describeGithubError_(res, !!token));
+    const err = new Error("HTTP " + code + " for " + url + describeGithubError_(res));
     err.httpCode = code;
     throw err;
   }
@@ -588,7 +586,7 @@ function githubFetch_(url, opts) {
 }
 
 // エラー応答から原因の手がかり (GitHub の message、rate limit の上限と回復時刻) を取り出す
-function describeGithubError_(res, authed) {
+function describeGithubError_(res) {
   const h = {};
   const raw = res.getHeaders() || {};
   Object.keys(raw).forEach(k => { h[k.toLowerCase()] = String(raw[k]); });
@@ -604,7 +602,6 @@ function describeGithubError_(res, authed) {
   if (h["x-ratelimit-remaining"] === "0") {
     const reset = new Date(Number(h["x-ratelimit-reset"]) * 1000);
     parts.push("rate limit " + h["x-ratelimit-limit"] + "/h exhausted until " + Utilities.formatDate(reset, "Asia/Tokyo", "HH:mm") + " JST");
-    if (!authed) parts.push("GITHUB_TOKEN is not set: unauthenticated requests share 60/h per IP with other Apps Script users");
   }
   return parts.length ? " (" + parts.join("; ") + ")" : "";
 }

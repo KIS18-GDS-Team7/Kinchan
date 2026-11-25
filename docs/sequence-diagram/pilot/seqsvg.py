@@ -187,7 +187,10 @@ def layout_x(d):
                 req(i, j, w)
         elif isinstance(it, Fragment):
             pass
-    xs = [MARGIN + 20 + head_w[0] / 2]
+    # 左端のライフラインを囲む断片の枠が図の外に出ないよう、入れ子の深さぶん右にずらす
+    depth0 = max([frag_span(f, idx)[2] + 1 for f in walk(d.items)
+                  if isinstance(f, Fragment) and frag_span(f, idx)[0] == 0] or [0])
+    xs = [MARGIN + 20 + max(head_w[0] / 2, 40 + 22 + 12 * depth0)]
     for j in range(1, n):
         x = xs[j - 1] + max(head_w[j - 1] / 2 + head_w[j] / 2 + 30, 130)
         for i in range(j):

@@ -75,7 +75,7 @@
 <line x1="1042.0" y1="1523.0" x2="1765.1" y2="1523.0" stroke="#222" stroke-width="1"/>
 <polygon points="1766.1,1523.0 1756.1,1518.0 1756.1,1528.0" fill="#222"/>
 <line x1="1766.1" y1="1523.0" x2="1856.1" y2="1523.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="1020.0" y="1457.0" width="822.0" height="82.0" rx="0" fill="none" stroke="#222"/>
+<rect x="1020.0" y="1457.0" width="810.0" height="82.0" rx="0" fill="none" stroke="#222"/>
 <line x1="1042.0" y1="1573.0" x2="590.0" y2="1573.0" stroke="#222" stroke-width="1"/>
 <polygon points="589.0,1573.0 599.0,1568.0 599.0,1578.0" fill="#222"/>
 <line x1="589.0" y1="1607.0" x2="137.0" y2="1607.0" stroke="#222" stroke-width="1"/>

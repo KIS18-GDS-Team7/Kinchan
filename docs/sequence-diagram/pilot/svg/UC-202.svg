@@ -119,7 +119,7 @@
 <line x1="1064.2" y1="2403.0" x2="2079.7" y2="2403.0" stroke="#222" stroke-width="1"/>
 <polygon points="2080.7,2403.0 2070.7,2398.0 2070.7,2408.0" fill="#222"/>
 <line x1="2080.7" y1="2403.0" x2="2170.7" y2="2403.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="1042.2" y="2337.0" width="1114.5" height="82.0" rx="0" fill="none" stroke="#222"/>
+<rect x="1042.2" y="2337.0" width="1102.5" height="82.0" rx="0" fill="none" stroke="#222"/>
 <line x1="1064.2" y1="2453.0" x2="608.8" y2="2453.0" stroke="#222" stroke-width="1"/>
 <polygon points="607.8,2453.0 617.8,2448.0 617.8,2458.0" fill="#222"/>
 <line x1="607.8" y1="2487.0" x2="149.0" y2="2487.0" stroke="#222" stroke-width="1"/>

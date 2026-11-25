@@ -210,6 +210,16 @@ def layout_x(d):
     return idx, xs
 
 
+def guard_need(f):
+    """断片の左端から測った、ガードの文字が収まる幅 (内側の断片のガードを含む)。"""
+    need = max(text_width(f"[{g}]") for g, _ in f.operands) + 70
+    for _, sub in f.operands:
+        for it in sub:
+            if isinstance(it, Fragment):
+                need = max(need, guard_need(it) + 12)
+    return need
+
+
 def frag_span(f, idx):
     """断片が触れるライフラインの範囲と、内側の入れ子の深さ。"""
     lo, hi, depth = 10 ** 6, -1, 0
@@ -301,13 +311,13 @@ def render(d):
         c.line(anchor_x, anchor_y, note_x, ny + min(12, h / 2), dash=True)
         return ny + h
 
-    def draw_items(items):
+    def draw_items(items, level=0):
         nonlocal y
         for it in items:
             if isinstance(it, Message):
                 draw_msg(it)
             elif isinstance(it, Fragment):
-                draw_frag(it)
+                draw_frag(it, level)
             elif isinstance(it, Note):
                 bottom = place_note(it.text, xs[-1], y)
                 y += 10
@@ -343,7 +353,7 @@ def render(d):
         for n in m.notes:
             bottom = place_note(n, end_x, end_y)
 
-    def draw_frag(f):
+    def draw_frag(f, level):
         nonlocal y
         lo, hi, depth = frag_span(f, idx)
         pad = 22 + 12 * depth
@@ -351,9 +361,10 @@ def render(d):
         right_base = xs[int(hi)] if hi == int(hi) else xs[int(hi)] + 150
         right = right_base + pad + (60 if hi == int(hi) else 0)
         guard0 = f"[{f.operands[0][0]}]"
-        right = max(right, left + text_width(guard0) + 70)
+        right = max(right, left + guard_need(f))
         # ノート列にかからないようにする
-        right = min(right, note_x - 14)
+        # 入れ子の右端が重ならないよう、深さごとに内側へずらす
+        right = min(right, note_x - 14 - 12 * level)
         y += 22
         y0 = y
         # 見出し (五角形)
@@ -369,7 +380,7 @@ def render(d):
                 y += 4
             c.text(left + 8, y + 12, f"[{guard}]", bg=True)
             y += 10
-            draw_items(sub)
+            draw_items(sub, level + 1)
         y += 16
         c.rect(left, y0, right - left, y - y0)
         for sy in sep:

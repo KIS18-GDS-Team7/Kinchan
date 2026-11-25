@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1832" height="850" viewBox="0 0 1832 850" font-family="&#x27;Noto Sans CJK JP&#x27;,&#x27;Noto Sans JP&#x27;,&#x27;Hiragino Sans&#x27;,&#x27;Yu Gothic&#x27;,&#x27;Meiryo&#x27;,&#x27;IPAGothic&#x27;,sans-serif">
+<title>UC-301 ログインする</title>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="10" y="10" width="1811.6" height="830.0" fill="none" stroke="#222"/><path d="M10 10 H203.2 V24 L193.2 34 H10 Z" fill="#fff" stroke="#222"/>
+<line x1="136.0" y1="188.0" x2="457.2" y2="188.0" stroke="#222" stroke-width="1"/>
+<polygon points="458.2,188.0 448.2,183.0 448.2,193.0" fill="#222"/>
+<line x1="458.2" y1="188.0" x2="1237.3" y2="188.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M62 210 H116.16 V222 L108.16 230 H62 Z" fill="#fff" stroke="#222"/>
+<line x1="458.2" y1="276.0" x2="137.0" y2="276.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,276.0 146.0,271.0 146.0,281.0" fill="#222"/>
+<line x1="136.0" y1="310.0" x2="457.2" y2="310.0" stroke="#222" stroke-width="1"/>
+<polygon points="458.2,310.0 448.2,305.0 448.2,315.0" fill="#222"/>
+<line x1="136.0" y1="344.0" x2="457.2" y2="344.0" stroke="#222" stroke-width="1"/>
+<polygon points="458.2,344.0 448.2,339.0 448.2,349.0" fill="#222"/>
+<line x1="458.2" y1="378.0" x2="821.9" y2="378.0" stroke="#222" stroke-width="1"/>
+<polygon points="822.9,378.0 812.9,373.0 812.9,383.0" fill="#222"/>
+<line x1="822.9" y1="412.0" x2="1146.3" y2="412.0" stroke="#222" stroke-width="1"/>
+<polygon points="1147.3,412.0 1137.3,407.0 1137.3,417.0" fill="#222"/>
+<line x1="1147.3" y1="446.0" x2="823.9" y2="446.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="832.9,441.0 822.9,446.0 832.9,451.0" fill="none" stroke="#222"/>
+<line x1="1147.3" y1="446.0" x2="1237.3" y2="446.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="822.9399999999999,480 852.9399999999999,480 852.9399999999999,502 823.9399999999999,502" fill="none" stroke="#222"/>
+<polygon points="823.9,502.0 833.9,497.0 833.9,507.0" fill="#222"/>
+<line x1="852.9" y1="480.0" x2="1237.3" y2="500.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M74 524 H120.62 V536 L112.62 544 H74 Z" fill="#fff" stroke="#222"/>
+<line x1="822.9" y1="590.0" x2="459.2" y2="590.0" stroke="#222" stroke-width="1"/>
+<polygon points="458.2,590.0 468.2,585.0 468.2,595.0" fill="#222"/>
+<line x1="458.2" y1="624.0" x2="137.0" y2="624.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,624.0 146.0,619.0 146.0,629.0" fill="#222"/>
+<line x1="458.2" y1="624.0" x2="1237.3" y2="624.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="74.0" y="524.0" width="830.9" height="116.0" rx="0" fill="none" stroke="#222"/>
+<rect x="62.0" y="210.0" width="1161.3" height="446.0" rx="0" fill="none" stroke="#222"/>
+<polyline points="822.9399999999999,690 852.9399999999999,690 852.9399999999999,712 823.9399999999999,712" fill="none" stroke="#222"/>
+<polygon points="823.9,712.0 833.9,707.0 833.9,717.0" fill="#222"/>
+<line x1="822.9" y1="746.0" x2="607.8" y2="746.0" stroke="#222" stroke-width="1"/>
+<polygon points="606.8,746.0 616.8,741.0 616.8,751.0" fill="#222"/>
+<line x1="822.9" y1="746.0" x2="1237.3" y2="746.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="606.8" y1="780.0" x2="137.0" y2="780.0" stroke="#222" stroke-width="1"/>
+<polygon points="136.0,780.0 146.0,775.0 146.0,785.0" fill="#222"/>
+<circle cx="136" cy="70" r="6" fill="#fefbd8" stroke="#222"/>
+<path d="M136 76 V88 M126 81 H146 M136 88 L128 98 M136 88 L144 98" fill="none" stroke="#222"/>
+<line x1="136.0" y1="130.0" x2="136.0" y2="810.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="463.24" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M450.24 82 H440.24 M440.24 71 V93" fill="none" stroke="#222"/>
+<line x1="458.2" y1="130.0" x2="458.2" y2="810.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="611.78" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M598.78 82 H588.78 M588.78 71 V93" fill="none" stroke="#222"/>
+<line x1="606.8" y1="130.0" x2="606.8" y2="810.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="822.9399999999999" cy="82" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M823.9399999999999 69 l6 -5 M823.9399999999999 69 l6 5" fill="none" stroke="#222"/>
+<line x1="822.9" y1="130.0" x2="822.9" y2="810.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="1147.26" cy="80" r="13" fill="#fefbd8" stroke="#222"/>
+<path d="M1134.26 95 H1160.26" fill="none" stroke="#222"/>
+<line x1="1147.3" y1="130.0" x2="1147.3" y2="810.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="225.3" y="169.0" width="143.6" height="17.0" fill="#fff"/>
+<text x="297.1" y="182.0" font-size="13" text-anchor="middle">1: ログインを要求する</text>
+<text x="68.0" y="225.0" font-size="13" text-anchor="start" font-weight="bold">loop</text>
+<rect x="68.0" y="231.0" width="307.2" height="17.0" fill="#fff"/>
+<text x="70.0" y="244.0" font-size="13" text-anchor="start">[ユーザーIDとパスワードが一致するまで繰り返す]</text>
+<rect x="165.8" y="257.0" width="262.7" height="17.0" fill="#fff"/>
+<text x="297.1" y="270.0" font-size="13" text-anchor="middle">2: ユーザーIDとパスワードの入力を求める</text>
+<rect x="178.8" y="291.0" width="236.7" height="17.0" fill="#fff"/>
+<text x="297.1" y="304.0" font-size="13" text-anchor="middle">3: ユーザーIDとパスワードを入力する</text>
+<rect x="152.8" y="325.0" width="288.7" height="17.0" fill="#fff"/>
+<text x="297.1" y="338.0" font-size="13" text-anchor="middle">4: ログインボタンを押す(ログインを指示する)</text>
+<rect x="487.7" y="359.0" width="305.9" height="17.0" fill="#fff"/>
+<text x="640.6" y="372.0" font-size="13" text-anchor="middle">5: ログインを要求する(ユーザーID, パスワード)</text>
+<rect x="839.7" y="393.0" width="290.8" height="17.0" fill="#fff"/>
+<text x="985.1" y="406.0" font-size="13" text-anchor="middle">6: ユーザーIDで従業員を探す(削除済みを除く)</text>
+<rect x="923.6" y="427.0" width="123.1" height="17.0" fill="#fff"/>
+<text x="985.1" y="440.0" font-size="13" text-anchor="middle">従業員(パスワード)</text>
+<rect x="828.9" y="461.0" width="301.7" height="17.0" fill="#fff"/>
+<text x="830.9" y="474.0" font-size="13" text-anchor="start">7: 入力されたユーザーIDとパスワードを検証する</text>
+<text x="80.0" y="539.0" font-size="13" text-anchor="start" font-weight="bold">opt</text>
+<rect x="80.0" y="545.0" width="268.2" height="17.0" fill="#fff"/>
+<text x="82.0" y="558.0" font-size="13" text-anchor="start">[ユーザーIDまたはパスワードが誤っている]</text>
+<rect x="529.8" y="571.0" width="221.6" height="17.0" fill="#fff"/>
+<text x="640.6" y="584.0" font-size="13" text-anchor="middle">8: ログインできないことを表示する</text>
+<rect x="186.3" y="605.0" width="221.6" height="17.0" fill="#fff"/>
+<text x="297.1" y="618.0" font-size="13" text-anchor="middle">9: ログインできないことを提示する</text>
+<rect x="828.9" y="671.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="830.9" y="684.0" font-size="13" text-anchor="start">10: アクターをログインした状態にする</text>
+<rect x="619.8" y="727.0" width="190.2" height="17.0" fill="#fff"/>
+<text x="714.9" y="740.0" font-size="13" text-anchor="middle">11: ログインの完了を表示する</text>
+<rect x="250.3" y="761.0" width="242.2" height="17.0" fill="#fff"/>
+<text x="371.4" y="774.0" font-size="13" text-anchor="middle">12: ログインが完了したことを提示する</text>
+<text x="136.0" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<text x="458.2" y="120.0" font-size="13" text-anchor="middle">:ログイン画面</text>
+<text x="606.8" y="120.0" font-size="13" text-anchor="middle">:従業員ホーム画面</text>
+<text x="822.9" y="120.0" font-size="13" text-anchor="middle">:ログイン制御</text>
+<text x="1147.3" y="120.0" font-size="13" text-anchor="middle">:従業員</text>
+<path d="M1237.26 176 H1495.1999999999998 L1505.1999999999998 186 V204 H1237.26 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1245.3" y="196.0" font-size="13" text-anchor="start">権限によらず同じ手順(備考1、ADR-0012)</text>
+<path d="M1237.26 434 H1598.42 L1608.42 444 V480 H1237.26 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1245.3" y="454.0" font-size="13" text-anchor="start">ユーザーIDは概念クラス図にない(暫定)。削除済みを表す属</text>
+<text x="1245.3" y="472.0" font-size="13" text-anchor="start">性もない(ADR-0013、暫定)</text>
+<path d="M1237.26 488 H1597.1200000000001 L1607.1200000000001 498 V534 H1237.26 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1245.3" y="508.0" font-size="13" text-anchor="start">登録されていないユーザーIDと削除済みユーザーも Alt-1 </text>
+<text x="1245.3" y="526.0" font-size="13" text-anchor="start">と同じ扱い(備考2、#86)</text>
+<path d="M1237.26 612 H1595.04 L1605.04 622 V658 H1237.26 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1245.3" y="632.0" font-size="13" text-anchor="start">Alt-1。メインフロー2に戻る。試行回数の制限は設けない(</text>
+<text x="1245.3" y="650.0" font-size="13" text-anchor="start">備考3、A-14)</text>
+<path d="M1237.26 734 H1601.8 L1611.8 744 V780 H1237.26 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1245.3" y="754.0" font-size="13" text-anchor="start">ログイン画面のログインボタンから従業員ホーム画面に移る(</text>
+<text x="1245.3" y="772.0" font-size="13" text-anchor="start">画面遷移図)</text>
+<path d="M1641.8 40 H1791.58 L1801.58 50 V86 H1641.8 Z" fill="#fde2e2" stroke="#222"/>
+<text x="1649.8" y="60.0" font-size="13" text-anchor="start">UC-301 ログインする</text>
+<text x="1649.8" y="78.0" font-size="13" text-anchor="start">(メインフロー、Alt-1)</text>
+<text x="16" y="27" font-size="14"><tspan font-weight="bold">sd</tspan> UC-301 ログインする</text>
+</svg>

@@ -91,7 +91,7 @@
 <line x1="1001.3" y1="1854.0" x2="1649.6" y2="1854.0" stroke="#222" stroke-width="1"/>
 <polygon points="1650.6,1854.0 1640.6,1849.0 1640.6,1859.0" fill="#222"/>
 <line x1="1650.6" y1="1854.0" x2="1740.6" y2="1854.0" stroke="#222" stroke-width="1" stroke-dasharray="6 4"/>
-<rect x="979.3" y="1788.0" width="747.3" height="82.0" rx="0" fill="none" stroke="#222"/>
+<rect x="979.3" y="1788.0" width="735.3" height="82.0" rx="0" fill="none" stroke="#222"/>
 <line x1="1001.3" y1="1904.0" x2="615.0" y2="1904.0" stroke="#222" stroke-width="1"/>
 <polygon points="614.0,1904.0 624.0,1899.0 624.0,1909.0" fill="#222"/>
 <line x1="614.0" y1="1938.0" x2="149.0" y2="1938.0" stroke="#222" stroke-width="1"/>

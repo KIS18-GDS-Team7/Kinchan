@@ -40,6 +40,21 @@
             "src": "docs/screen-transition-diagram/screen_transition_diagram.*",
             "dest": "04画面遷移図/",
             "convert": "none"
+        },
+        {
+            "src": "mock/**",
+            "dest": "05画面レイアウト/",
+            "convert": "none"
+        },
+        {
+            "src": "docs/sequence-diagram/*.png",
+            "dest": "06シーケンス図/",
+            "convert": "none"
+        },
+        {
+            "src": "docs/sequence-diagram/*.svg",
+            "dest": "06シーケンス図/",
+            "convert": "none"
         }
     ]
 }

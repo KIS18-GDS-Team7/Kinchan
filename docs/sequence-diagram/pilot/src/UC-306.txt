@@ -1,5 +1,5 @@
 title UC-306 勤怠修正申請を送信する
-scope メインフロー、Alt-2〜4、Ex-1、Ex-2。Alt-1 は別図(試作の対象外)
+scope メインフロー、Alt-2〜4、Ex-1、Ex-2。Alt-1(「未処理」の申請の変更)と Alt-5〜7、Ex-3 は別図(UC-306-alt1)
 
 actor A 従業員
 boundary RL 勤怠記録一覧表示画面

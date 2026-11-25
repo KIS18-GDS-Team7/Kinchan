@@ -2,7 +2,7 @@
 
 ## ステータス
 
-決定
+決定。`approved/*` タグを教員の承認の記録として残す点は [ADR-0043](./0043-review-on-drive-without-tags.md) で置き換え
 
 ## 背景
 

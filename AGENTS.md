@@ -13,7 +13,7 @@
 ## ブランチと PR
 
 - `main` と `dev/` 配下には直接 push しない。作業ブランチから PR を出す。
-- 作業ブランチは `<type>/<topic>` (`docs/` `feat/` `fix/` `ci/`)。PR の base は `main`。複数 PR で進める feature だけ `dev/feat/<name>` を base にする。
+- 作業ブランチは `<type>/<topic>` (`docs/` `feat/` `fix/` `ci/`)。PR の base は `main`。`main` への PR の head ブランチを base にした stacked PR も可 (他のメンバーのブランチに出した PR は、そのブランチの作者がマージする)。`dev/feat/<name>` は任意の統合ブランチ。
 - `dev/` 配下は保護された統合ブランチ。指示なく新設しない。
 - 1 PR 1 関心事。PR 本文は `.github/pull_request_template.md` に従う。他チームの管轄 (`frontend/` `backend/` `.github/` `database/` `deploy/`、Dockerfile など) に触れた場合はその旨を書く。
 - コミットメッセージは日本語。1 行目に何をしたかを書く。
@@ -21,7 +21,7 @@
 
 ## 触らないもの
 
-- `review/*` `approved/*` タグと GitHub Release。教員レビューの記録で、PM だけが作る。
+- `review/*` `approved/*` タグと GitHub Release。過去の教員レビューの記録で、新たには作らない (ADR-0043)。
 - `.github/rulesets/` `.github/CODEOWNERS` `.github/workflows/`。変更が必要なら提案に留め、PR で platform チームのレビューを受ける。
 - `.asta` `.png` などのバイナリ。手で編集しない。
 

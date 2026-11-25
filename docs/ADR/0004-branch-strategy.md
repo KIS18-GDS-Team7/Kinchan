@@ -2,7 +2,7 @@
 
 ## ステータス
 
-決定
+決定。複数 PR にまたがる feature の進め方は [ADR-0044](./0044-allow-stacked-prs.md)、教員レビューの閲覧先と記録 (`review/*` `approved/*` タグと Release) は [ADR-0043](./0043-review-on-drive-without-tags.md) で置き換え
 
 ## 背景
 

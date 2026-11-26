@@ -33,7 +33,6 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
-      pull-requests: read
     steps:
       - uses: actions/checkout@v6
         with:
@@ -107,6 +106,10 @@ jobs:
       - name: fork からの PR では画像が最新か確かめる
         if: steps.files.outputs.count != '0' && github.event.pull_request.head.repo.full_name != github.repository
         run: |
+          # 新しく追加された図の画像は untracked になり git diff に出ないので、intent-to-add で差分に含める
+          while IFS= read -r src; do
+            git add -N -- "${src%.puml}.png" "${src%.puml}.svg"
+          done < "$RUNNER_TEMP/puml.txt"
           if ! git diff --quiet; then
             git status --short
             echo "::error::PlantUML から書き出した画像がコミットされた画像と違う。手元で書き出してコミットする"

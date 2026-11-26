@@ -7,7 +7,9 @@
 # - 起動方式: pull_request で .puml が変わったときだけ動く。main は保護されていて push できないので、
 #   PR のブランチに書き出しをコミットし、マージで main に入れる
 # - 対象: PR で追加・変更された .puml だけを書き出す (変更のない図の画像を差分に出さないため)
-# - fork からの PR: GITHUB_TOKEN で push できないので書き出しはせず、画像が古ければ失敗させる
+# - fork からの PR は対象外 (ジョブを実行しない)。全員がこのリポジトリのブランチで作業する (AGENTS.md)。
+#   fork には GITHUB_TOKEN で push できず、clone に base のコミットが無いと差分も取れない。
+#   手元で書き出した画像と CI の画像は、Graphviz やフォントが違うと一致しないので、鮮度の判定もしない
 # - ループ: GITHUB_TOKEN による push では workflow が起動しないので、書き出しのコミットで再実行されない
 # - 日本語: Noto Sans CJK JP を入れ、既定のフォントにする (PNG で文字化けさせないため)
 # - PlantUML は版を固定し、SHA-256 を検証する (版が変わると出力が変わり、差分が出るため)
@@ -29,6 +31,7 @@ env:
 
 jobs:
   render:
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -37,7 +40,6 @@ jobs:
       - uses: actions/checkout@v6
         with:
           ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
 
       - name: 変更された .puml を列挙する
@@ -87,7 +89,7 @@ jobs:
           done < "$RUNNER_TEMP/puml.txt"
 
       - name: 書き出した画像をコミットする
-        if: steps.files.outputs.count != '0' && github.event.pull_request.head.repo.full_name == github.repository
+        if: steps.files.outputs.count != '0'
         env:
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
@@ -102,16 +104,3 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "PlantUML の図を PNG と SVG に書き出す"
           git push origin "HEAD:$HEAD_REF"
-
-      - name: fork からの PR では画像が最新か確かめる
-        if: steps.files.outputs.count != '0' && github.event.pull_request.head.repo.full_name != github.repository
-        run: |
-          # 新しく追加された図の画像は untracked になり git diff に出ないので、intent-to-add で差分に含める
-          while IFS= read -r src; do
-            git add -N -- "${src%.puml}.png" "${src%.puml}.svg"
-          done < "$RUNNER_TEMP/puml.txt"
-          if ! git diff --quiet; then
-            git status --short
-            echo "::error::PlantUML から書き出した画像がコミットされた画像と違う。手元で書き出してコミットする"
-            exit 1
-          fi

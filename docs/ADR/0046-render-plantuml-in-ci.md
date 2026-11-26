@@ -18,6 +18,6 @@
 
 - 図は PlantUML (`*.puml`) で書いてよい。教員には、書き出した PNG と SVG を見せる。概念クラス図は PlantUML に移し、移した後は `.asta` を置かない。
 - `<name>.puml` から、同じディレクトリに `<name>.png` と `<name>.svg` を書き出す。1 ファイルには図を 1 つだけ書く。
-- 書き出しは PR の CI (`.github/workflows/plantuml-render.yml`) で行い、書き出した画像を PR のブランチにコミットする。PlantUML の版は CI で固定する。fork からの PR では、コミットされた画像が古ければ CI を失敗させる。
+- 書き出しは PR の CI (`.github/workflows/plantuml-render.yml`) で行い、書き出した画像を PR のブランチにコミットする。PlantUML の版は CI で固定する。全員がこのリポジトリのブランチで作業するので、fork からの PR は書き出しの対象にしない。
 - SVG の文字は `<text>` 要素の UTF-8 の文字として出力し、検索・diff・自動レビューで読めるようにする (ADR-0034 と同じ考え方)。
 - ユースケース図 (ADR-0025)、シーケンス図 (ADR-0034)、画面遷移図の作り方はこの ADR では変えない。

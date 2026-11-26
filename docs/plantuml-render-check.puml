@@ -1,6 +1,0 @@
-@startuml
-' workflow の動作確認用。確認後に消す
-class 従業員 {
-  - 氏名 : string
-}
-@enduml

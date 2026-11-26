@@ -1,0 +1,64 @@
+# ADR の番号の重複を検知し、PR の head commit に status (adr-number) を付ける。
+#
+# 設計判断 (ADR-0045):
+# - 判定は .github/scripts/adr_numbers.py。main と open な PR (draft を含む) が docs/ADR/ に
+#   追加する ADR を集めて比べる
+#   - failure: ファイル名が NNNN-<slug>.md でない / main の別のファイルと番号が重複 / PR 内で重複
+#   - success に注記: 他の open な PR と番号が重複。先に merge した方が番号を使い、
+#     main が進んだ時点で残った方が failure になる。PR 間の重複を failure にすると、
+#     先に merge できる PR まで止まるため
+# - 結果は job の成否ではなく commit status で返し、status を Rulesets の必須の check にする。
+#   pull_request の check は head への push でしか再実行されず、main が進んだ後に他の PR の
+#   結果を付け直すには、その PR の head commit に status を書くしかないため
+# - 起動:
+#   - pull_request (opened / synchronize / reopened): その PR だけを判定する。
+#     必須の check なので、ADR を変えない PR にも status を付ける (paths で絞らない)
+#   - main への push (docs/ADR/** の変更): 全 open PR を判定し直す。main 自体の重複もここで検知する
+#   - workflow_dispatch: 手動で全 open PR を判定し直す。判定の取りこぼしを直すときに使う
+#     (main への push と PR の push がほぼ同時だと、古い判定が後から書かれることがある)
+# - コメントは書かない。status の説明と Details (job summary) にだけ出す (ADR-0027 のノイズの方針)
+# - 権限: statuses: write (status の作成)、pull-requests: read (open PR と変更ファイルの取得)、
+#   contents: read (main の docs/ADR の取得と checkout)。
+#   fork からの PR では token が read-only で status を書けないため、job の成否だけで返す
+# - script は PR 側の版を使う。.github/ の変更は platform の承認が必須なので、
+#   判定を無効にする変更はそこで止まる
+name: ADR number check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+    paths: ['docs/ADR/**']
+  workflow_dispatch:
+
+concurrency:
+  group: adr-number-${{ github.event.pull_request.number || 'all' }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+      statuses: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: .github/scripts
+          persist-credentials: false
+
+      - name: Check ADR numbers
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ -n "$PR_NUMBER" ]; then
+            python3 .github/scripts/adr_numbers.py --pr "$PR_NUMBER" --post-status
+          else
+            python3 .github/scripts/adr_numbers.py --post-status
+          fi

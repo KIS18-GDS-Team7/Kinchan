@@ -1,0 +1,106 @@
+# PR で変更された PlantUML (*.puml) から PNG と SVG を書き出し、PR のブランチにコミットする。
+#
+# 設計判断:
+# - 出力: <name>.puml と同じディレクトリに <name>.png と <name>.svg を置く。
+#   ファイル名は @startuml の後の名前ではなく .puml のファイル名に揃える (-pipe で書き出す)。
+#   そのため 1 ファイルには図を 1 つだけ書く
+# - 起動方式: pull_request で .puml が変わったときだけ動く。main は保護されていて push できないので、
+#   PR のブランチに書き出しをコミットし、マージで main に入れる
+# - 対象: PR で追加・変更された .puml だけを書き出す (変更のない図の画像を差分に出さないため)
+# - fork からの PR は対象外 (ジョブを実行しない)。全員がこのリポジトリのブランチで作業する (AGENTS.md)。
+#   fork には GITHUB_TOKEN で push できず、clone に base のコミットが無いと差分も取れない。
+#   手元で書き出した画像と CI の画像は、Graphviz やフォントが違うと一致しないので、鮮度の判定もしない
+# - ループ: GITHUB_TOKEN による push では workflow が起動しないので、書き出しのコミットで再実行されない
+# - 日本語: Noto Sans CJK JP を入れ、既定のフォントにする (PNG で文字化けさせないため)
+# - PlantUML は版を固定し、SHA-256 を検証する (版が変わると出力が変わり、差分が出るため)
+name: Render PlantUML
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "**/*.puml"
+
+concurrency:
+  group: plantuml-render-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  PLANTUML_VERSION: "1.2025.4"
+  PLANTUML_SHA256: "26518e14a3a04100cd76c0d96cab2d1171f36152215edd9790a28d20268200c1"
+
+jobs:
+  render:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: 変更された .puml を列挙する
+        id: files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git -c core.quotePath=false diff --name-only --diff-filter=AMR "$BASE_SHA"...HEAD -- '*.puml' > "$RUNNER_TEMP/puml.txt"
+          cat "$RUNNER_TEMP/puml.txt"
+          echo "count=$(wc -l < "$RUNNER_TEMP/puml.txt")" >> "$GITHUB_OUTPUT"
+
+      - name: PlantUML と Graphviz・日本語フォントを入れる
+        if: steps.files.outputs.count != '0'
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends graphviz fonts-noto-cjk
+          curl -sSfL -o "$RUNNER_TEMP/plantuml.jar" \
+            "https://github.com/plantuml/plantuml/releases/download/v${PLANTUML_VERSION}/plantuml-${PLANTUML_VERSION}.jar"
+          echo "${PLANTUML_SHA256}  $RUNNER_TEMP/plantuml.jar" | sha256sum -c -
+
+      - name: PNG と SVG を書き出す
+        if: steps.files.outputs.count != '0'
+        run: |
+          set -euo pipefail
+          while IFS= read -r src; do
+            out="${src%.puml}"
+            for fmt in png svg; do
+              java -Djava.awt.headless=true -jar "$RUNNER_TEMP/plantuml.jar" \
+                -charset UTF-8 -SdefaultFontName="Noto Sans CJK JP" \
+                -failfast2 -pipe -t"$fmt" < "$src" > "$out.$fmt"
+            done
+            # PlantUML は SVG の非 ASCII 文字を &#NNNN; で出力する。検索・diff で読めるよう UTF-8 の文字に戻す
+            # (< & > " ' は XML の構文に関わるので戻さない)
+            python3 - "$out.svg" <<'PY'
+          import re, sys
+          path = sys.argv[1]
+          with open(path, encoding="utf-8") as f:
+              svg = f.read()
+          def unescape(m):
+              c = chr(int(m.group(1)))
+              return m.group(0) if c in "<&>\"'" or ord(c) < 0x20 else c
+          svg = re.sub(r"&#(\d+);", unescape, svg)
+          with open(path, "w", encoding="utf-8") as f:
+              f.write(svg)
+          PY
+            echo "$src -> $out.png, $out.svg"
+          done < "$RUNNER_TEMP/puml.txt"
+
+      - name: 書き出した画像をコミットする
+        if: steps.files.outputs.count != '0'
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          while IFS= read -r src; do
+            git add -- "${src%.puml}.png" "${src%.puml}.svg"
+          done < "$RUNNER_TEMP/puml.txt"
+          if git diff --cached --quiet; then
+            echo "書き出した画像に変更はない"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "PlantUML の図を PNG と SVG に書き出す"
+          git push origin "HEAD:$HEAD_REF"

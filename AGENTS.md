@@ -6,7 +6,7 @@
 
 - `docs/requirements/`: 要件定義書
 - `docs/usecase/`: ユースケース図とユースケース記述
-- `docs/ADR/`: 設計判断の記録。形式は `docs/ADR/0001-record-ADR.md` に従う。見出しは `# タイトル` `## ステータス` `## 背景` `## 決定` の 4 つだけ。番号は 4 桁の連番で、欠番と重複を作らない
+- `docs/ADR/`: 設計判断の記録。形式は `docs/ADR/0001-record-ADR.md` に従う。見出しは `# タイトル` `## ステータス` `## 背景` `## 決定` の 4 つだけ。番号は 4 桁で、`main` と open な PR (draft を含む) で使われている最大の番号 + 1 を使う (`python3 .github/scripts/adr_numbers.py` が表示する)。ADR を書き始めたら draft でも早めに PR を開く。重複したら後から merge する側が番号を変える。open な PR や close された PR の番号による欠番は残してよい (ADR-0045)
 - `.github/`: workflows、CODEOWNERS、PR テンプレート、Rulesets の JSON
 - 今後追加予定: `frontend/` `backend/` `database/` `deploy/`
 
@@ -38,3 +38,4 @@
 - PR を開くと Claude Code Review が自動で走る。再レビューは `claude-review` ラベルを付け直す。
 - Issue や PR のコメントで `@claude` と書くと Claude が応答する (読み取りとコメントのみ)。
 - Issue を開くと重複チェックが走る。
+- PR を開く・push する・再オープンすると、ADR の番号を検査して status `adr-number` を設定する (コメントはしない)。failure の PR は merge できない。failure になったら、status の説明に表示された次の番号にファイル名を変え、その ADR を指す参照 (`ADR-NNNN` の表記とリンク) を書き換える。

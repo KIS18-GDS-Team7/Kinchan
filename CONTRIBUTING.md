@@ -42,6 +42,24 @@ Kinchan リポジトリでの作業の決まり。設計の経緯は [ADR-0004](
 - マージ方法は merge / squash / rebase のいずれも可。これまでの PR は merge commit で揃えている。
 - Repository admin (PM) は緊急時に限り、PR のマージ時にルールを bypass できる。直接 push はできない。
 
+### ADR の番号
+
+設計の経緯は [ADR-0045](docs/ADR/0045-detect-adr-number-collisions.md) を参照。
+
+- 新しい ADR は、`main` と open な PR (draft を含む) で使われている最大の番号 + 1 を使う。次の番号は次のコマンドで表示できる (`gh` のログインが必要)。
+
+  ```sh
+  python3 .github/scripts/adr_numbers.py            # main の番号、open な PR の ADR、重複、次の番号
+  python3 .github/scripts/adr_numbers.py --pr 120   # 1 つの PR だけ判定する
+  ```
+
+- 番号は PR を開いた時点で他のメンバーから見える。ADR を書き始めたら、draft でも早めに PR を開く。
+- PR には status `adr-number` が付き、failure の PR は `main` にマージできない。
+  - failure: ファイル名が `NNNN-<slug>.md` でない、番号が `main` の別のファイルと重複している、PR の中で番号が重複している。
+  - success で注記あり: 番号が他の open な PR と重複している。先にマージされた方が番号を使い、`main` が進むと他方は failure になる。
+- 重複したら、後からマージする側が番号を変える。ファイル名を status の説明に表示された次の番号に変え、その ADR を指す参照 (`ADR-NNNN` の表記と `docs/ADR/NNNN-slug.md` などのリンク) を書き換える。
+- open な PR が使っている番号は `main` で欠番に見えてもよい。close された PR の番号による欠番は埋めない。
+
 ## 教員レビュー
 
 教員は Google Drive の成果物フォルダ (後述) を読む。Markdown は Google Docs に変換して置かれる。教員は GitHub の PR やタグを操作しない。
@@ -68,6 +86,7 @@ Apps Script が 10 分ごとに GitHub を読み、Shared Drive の指定フォ�
 | `Review required` / `Waiting on required reviewers` | 必須レビュアーの承認が足りない | 表示されたチームのメンバーに依頼する |
 | `GH013: Repository rule violations found` | Rulesets に違反した。続く行に理由がある | 理由に従う |
 | 承認が消えた | 承認後に push した | 再度レビューを依頼する |
+| `adr-number` が failure | ADR のファイル名が形式に合わない、または番号が `main` か PR 内で重複している | status の説明に表示された次の番号にファイル名を変え、参照を書き換える ([ADR の番号](#adr-の番号)) |
 
 ## 自動化
 
@@ -76,6 +95,7 @@ Apps Script が 10 分ごとに GitHub を読み、Shared Drive の指定フォ�
 | Claude Code Review | PR を開く、draft を解除する、再オープンする、`claude-review` ラベルを付ける (ラベルは draft の PR でも動く) | 差分をレビューし、inline comment と総評を書く。push では動かない。ラベルは実行後に自動で外れるので、再レビューはラベルを付け直す |
 | Claude Code | Issue / PR のコメント、PR のレビュー、Issue の本文かタイトル (作成時・assign 時) に `@claude` と書く | 質問に答える、調査する。承認・編集・close はしない。write 権限のあるメンバーのみ起動できる |
 | Issue duplicate check | Issue を開く | 既存 Issue との重複を判定し、重複があればコメントする |
+| ADR number check | PR を開く、PR に push する、再オープンする。`docs/ADR/**` を変える `main` への push と手動の実行では open な PR をすべて判定し直す | ADR の番号を判定し、PR の head に status `adr-number` を設定する。コメントはしない。詳細は status のリンク先の job summary にある |
 
 ## 設定の変更
 
@@ -101,4 +121,5 @@ CODEOWNERS (`.github/CODEOWNERS`) は所有の宣言と review request の自動
 - [ADR-0042 Google Drive の成果物フォルダを main と PR ごとに分けて置く](docs/ADR/0042-deliver-main-and-pr-to-drive.md)
 - [ADR-0043 教員レビューを Google Drive の成果物フォルダで受け、タグと Release の記録をやめる](docs/ADR/0043-review-on-drive-without-tags.md)
 - [ADR-0044 main への PR の head に stacked PR を出してよい](docs/ADR/0044-allow-stacked-prs.md)
+- [ADR-0045 ADR の番号の重複を status check で検知する](docs/ADR/0045-detect-adr-number-collisions.md)
 - [AGENTS.md](AGENTS.md): AI コーディングエージェント向けの決まり

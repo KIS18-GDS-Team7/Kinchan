@@ -23,7 +23,7 @@
 
 ## 決定
 
-- backend の Python のバージョン、仮想環境、依存パッケージは uv で管理する。pip・venv・Poetry などで直接管理せず、`requirements.txt` は作らない。
+- backend の Python のバージョン、仮想環境、依存パッケージは uv で管理する。pip や venv で直接管理せず、`requirements.txt` は作らない。
   - `pyproject.toml` と `.python-version` は `backend/` に置く。
   - 依存は `uv add` で追加する。開発にだけ使うもの (Ruff など) は、dev の依存グループ (`uv add --dev`) に入れる。
   - `uv.lock` を commit する。`.gitignore` に `!uv.lock` などの例外を追加する。

@@ -14,10 +14,10 @@ class "User" as user {
 abstract class "Role" as role
 
 ' マスタ管理者
-class "MasterDataManager" as mdMan
+class "MasterDataManager" as masterMgr
 
 ' 勤怠管理者
-class "AttendanceManager" as attMan
+class "AttendanceManager" as attendMgr
 
 ' 所属単位: 名称
 class "OrganizationUnit" as orgUnit {
@@ -39,7 +39,7 @@ class "Notification" as notif {
 }
 
 ' 勤怠記録: 対象日
-class "AttendanceRecord" as attRec {
+class "AttendanceRecord" as attendRec {
   - targetDate : date
 }
 
@@ -51,7 +51,7 @@ class "Punch" as punch {
 
 ' 勤怠修正申請: 対象日, 申請理由, 送信日時, 処理状態[未処理,承認済,却下,取り下げ], 却下理由, 修正後の勤怠
 ' 「修正後の勤怠」の型 []勤怠管理 は概念クラス図の表記のまま。図に「勤怠管理」というクラスは無い
-class "AttendanceCorrectionRequest" as attCorReq {
+class "AttendanceCorrectionRequest" as attendCorReq {
   - targetDate : date
   - requestReason : string
   - submittedAt : datetime
@@ -61,7 +61,7 @@ class "AttendanceCorrectionRequest" as attCorReq {
 }
 
 ' 勤怠修正履歴: 修正前内容, 修正日時, 修正理由
-class "AttendanceCorrectionHistory" as attCorHist {
+class "AttendanceCorrectionHistory" as attendCorHist {
   - previousContent : string
   - correctedAt : datetime
   - correctionReason : string
@@ -97,7 +97,7 @@ class "ShiftRescheduleRequest" as shiftReSchedReq {
 }
 
 ' シフト変更履歴: 変更前内容, 操作日時
-class "ShiftChangeHistory" as shiftChHist{
+class "ShiftChangeHistory" as shiftChHist {
   - previousContent : string
   - operatedAt : datetime
 }
@@ -110,35 +110,35 @@ class "ShiftDeletionHistory" as shiftDelHist {
 }
 
 ' 汎化
-"MasterDataManager" --|> "Role"
-"AttendanceManager" --|> "Role"
+masterMgr --|> role
+attendMgr --|> role
 
 ' 関連 (多重度は概念クラス図のまま)
-"User" "1" -- "0..2" "Role"
-"User" "0..*" -- "0..1" "OrganizationUnit"
-"AttendanceManager" "0..*" -- "0..*" "OrganizationUnit"
-"OrganizationUnit" "1" -- "0..*" "ShiftPreferencePeriod"
+user "1" -- "0..2" role
+user "0..*" -- "0..1" orgUnit
+attendMgr "0..*" -- "0..*" orgUnit
+orgUnit "1" -- "0..*" spp
 
-"User" "1" -- "0..*" "Notification"
+user "1" -- "0..*" notif
 
-"User" "1" -- "0..*" "AttendanceRecord"
-"User" "1" -- "0..*" "AttendanceCorrectionRequest"
-"User" "1" -- "0..*" "AttendanceCorrectionHistory"
-"AttendanceRecord" "1" -- "0..*" "Punch"
-"AttendanceRecord" "0..1" -- "0..*" "AttendanceCorrectionRequest"
-"AttendanceRecord" "1" -- "0..*" "AttendanceCorrectionHistory"
+user "1" -- "0..*" attendRec
+user "1" -- "0..*" attendCorReq
+user "1" -- "0..*" attendCorHist
+attendRec "1" -- "0..*" punch
+attendRec "0..1" -- "0..*" attendCorReq
+attendRec "1" -- "0..*" attendCorHist
 
-"User" "1" -- "0..*" "ShiftPreference"
-"User" "1" -- "0..*" "Shift"
-"User" "1" -- "0..*" "ShiftChangeHistory"
-"User" "1" -- "0..*" "ShiftDeletionHistory"
-"ShiftPreference" "0..1" -- "0..1" "Shift"
-"Shift" "1" -- "0..*" "ShiftRescheduleRequest"
-"Shift" "1" -- "0..*" "ShiftChangeHistory"
-"Shift" "1" -- "0..1" "ShiftDeletionHistory"
+user "1" -- "0..*" shiftPref
+user "1" -- "0..*" shift
+user "1" -- "0..*" shiftChHist
+user "1" -- "0..*" shiftDelHist
+shiftPref "0..1" -- "0..1" shift
+shift "1" -- "0..*" shiftReSchedReq
+shift "1" -- "0..*" shiftChHist
+shift "1" -- "0..1" shiftDelHist
 
 ' ノート
-note "処理状態メモ\n却下：勤怠管理者\n取り下げ：従業員" as StatusMemo
-note right of "AttendanceRecord" : 日次の勤怠記録
+note "処理状態メモ\n却下：勤怠管理者\n取り下げ：従業員" as statMemo
+note right of attendRec : 日次の勤怠記録
 
 @enduml

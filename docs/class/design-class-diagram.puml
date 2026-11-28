@@ -109,33 +109,37 @@ class "ShiftDeletionHistory" as shiftDelHist {
   - deletionReason : string
 }
 
-' 汎化
-masterMgr --|> role
-attendMgr --|> role
+' 配置: User を中央に置き、上にシフト、下に勤怠を並べる
+' 「A -- B」は B を A の 1 段下に、「A --- B」は 2 段下に、「A -right- B」は同じ段の右に置く
 
-' 関連 (多重度は概念クラス図のまま)
-user "1" -- "0..2" role
+' 汎化
+role <|-- masterMgr
+role <|-- attendMgr
+
+' 権限・所属・通知
+role "0..2" -- "1" user
 user "0..*" -- "0..1" orgUnit
 attendMgr "0..*" -- "0..*" orgUnit
 orgUnit "1" -- "0..*" shiftPrefPeriod
+user "1" -right- "0..*" notif
 
-user "1" -- "0..*" notif
-
-user "1" -- "0..*" attendRec
-user "1" -- "0..*" attendCorReq
-user "1" -- "0..*" attendCorHist
-attendRec "1" -- "0..*" punch
-attendRec "0..1" -- "0..*" attendCorReq
-attendRec "1" -- "0..*" attendCorHist
-
-user "1" -- "0..*" shiftPref
-user "1" -- "0..*" shift
-user "1" -- "0..*" shiftChHist
-user "1" -- "0..*" shiftDelHist
-shiftPref "0..1" -- "0..1" shift
-shift "1" -- "0..*" shiftReSchedReq
+' シフト (User の上)
+shiftReSchedReq "0..*" -- "1" shift
+shift "0..1" -- "0..1" shiftPref
 shift "1" -- "0..*" shiftChHist
 shift "1" -- "0..1" shiftDelHist
+shift "0..*" --- "1" user
+shiftPref "0..*" -- "1" user
+shiftChHist "0..*" -- "1" user
+shiftDelHist "0..*" -- "1" user
+
+' 勤怠 (User の下)
+user "1" -- "0..*" attendCorReq
+user "1" -- "0..*" attendCorHist
+user "1" --- "0..*" attendRec
+attendCorReq "0..*" -- "0..1" attendRec
+attendCorHist "0..*" -- "1" attendRec
+attendRec "1" -- "0..*" punch
 
 ' ノート
 note "処理状態メモ\n却下：勤怠管理者\n取り下げ：従業員" as statMemo

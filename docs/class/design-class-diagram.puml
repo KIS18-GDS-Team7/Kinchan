@@ -25,7 +25,7 @@ class "OrganizationUnit" as orgUnit {
 }
 
 ' シフト対象受付期間: 対象期間開始日, 対象期間終了日, 受付期間開始日時, 受付期間終了日時
-class "ShiftPreferencePeriod" as spp {
+class "ShiftPreferencePeriod" as shiftPrefPeriod {
   - targetStartDate : date
   - targetEndDate : date
   - acceptanceStartAt : datetime
@@ -117,7 +117,7 @@ attendMgr --|> role
 user "1" -- "0..2" role
 user "0..*" -- "0..1" orgUnit
 attendMgr "0..*" -- "0..*" orgUnit
-orgUnit "1" -- "0..*" spp
+orgUnit "1" -- "0..*" shiftPrefPeriod
 
 user "1" -- "0..*" notif
 

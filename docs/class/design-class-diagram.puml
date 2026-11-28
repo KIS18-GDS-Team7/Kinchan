@@ -1,0 +1,148 @@
+@startuml
+
+' 概念クラス図から移植してきた奴ら
+' 各クラスの上のコメントは、概念クラス図での名前と属性 (上から順)
+
+' 従業員: 氏名, 従業員ID, パスワード
+class "User" as user {
+  - name : string
+  - userId : string
+  - password : string
+}
+
+' 権限
+abstract class "Role" as role
+
+' マスタ管理者
+class "MasterDataManager" as masterMgr
+
+' 勤怠管理者
+class "AttendanceManager" as attendMgr
+
+' 所属単位: 名称
+class "OrganizationUnit" as orgUnit {
+  - name : string
+}
+
+' シフト対象受付期間: 対象期間開始日, 対象期間終了日, 受付期間開始日時, 受付期間終了日時
+class "ShiftPreferencePeriod" as shiftPrefPeriod {
+  - targetStartDate : date
+  - targetEndDate : date
+  - acceptanceStartAt : datetime
+  - acceptanceEndAt : datetime
+}
+
+' 通知: 内容, 作成日時
+class "Notification" as notif {
+  - content : string
+  - createdAt : datetime
+}
+
+' 勤怠記録: 対象日
+class "AttendanceRecord" as attendRec {
+  - targetDate : date
+}
+
+' 打刻: 打刻種類[出勤,退勤,休憩開始,休憩終了], 打刻日時
+class "Punch" as punch {
+  - type[clockIn, clockOut, breakStart, breakEnd] : string
+  - punchedAt : datetime
+}
+
+' 勤怠修正申請: 対象日, 申請理由, 送信日時, 処理状態[未処理,承認済,却下,取り下げ], 却下理由, 修正後の勤怠
+' 「修正後の勤怠」の型 []勤怠管理 は概念クラス図の表記のまま。図に「勤怠管理」というクラスは無い
+class "AttendanceCorrectionRequest" as attendCorReq {
+  - targetDate : date
+  - requestReason : string
+  - submittedAt : datetime
+  - status[pending, approved, rejected, withdrawn] : int
+  - rejectionReason : string
+  - correctedAttendance : []勤怠管理
+}
+
+' 勤怠修正履歴: 修正前内容, 修正日時, 修正理由
+class "AttendanceCorrectionHistory" as attendCorHist {
+  - previousContent : string
+  - correctedAt : datetime
+  - correctionReason : string
+}
+
+' シフト希望: 希望日, 希望開始時刻, 希望終了時刻, 送信日時, 処理状態[下書き,未処理,承認済,却下,取り下げ], 却下理由
+class "ShiftPreference" as shiftPref {
+  - preferredDate : date
+  - preferredStartTime : time
+  - preferredEndTime : time
+  - submittedAt : datetime
+  - status[draft, pending, approved, rejected, withdrawn] : string
+  - rejectionReason : string
+}
+
+' シフト: 勤務日, 開始時刻, 終了時刻, 状態[下書き,公開]
+class "Shift" as shift {
+  - workDate : date
+  - startTime : time
+  - endTime : time
+  - status[draft, published] : string
+}
+
+' シフト日時変更申請: 変更後勤務日, 変更後開始時刻, 変更後終了時刻, 申請理由, 送信日時, 処理状態[未処理,承認済,却下,取り下げ], 却下理由
+class "ShiftRescheduleRequest" as shiftReSchedReq {
+  - newWorkDate : date
+  - newStartTime : time
+  - newEndTime : time
+  - requestReason : string
+  - submittedAt : datetime
+  - status[pending, approved, rejected, withdrawn] : string
+  - rejectionReason : string
+}
+
+' シフト変更履歴: 変更前内容, 操作日時
+class "ShiftChangeHistory" as shiftChHist {
+  - previousContent : string
+  - operatedAt : datetime
+}
+
+' シフト削除履歴: 操作日時, 削除シフト日時, 削除理由
+class "ShiftDeletionHistory" as shiftDelHist {
+  - operatedAt : datetime
+  - deletedShiftDateTime : string
+  - deletionReason : string
+}
+
+' 配置: User を中央に置き、上にシフト、下に勤怠を並べる
+' 「A -- B」は B を A の 1 段下に、「A --- B」は 2 段下に、「A -right- B」は同じ段の右に置く
+
+' 汎化
+role <|-- masterMgr
+role <|-- attendMgr
+
+' 権限・所属・通知
+role "0..2" -- "1" user
+user "0..*" -- "0..1" orgUnit
+attendMgr "0..*" -- "0..*" orgUnit
+orgUnit "1" -- "0..*" shiftPrefPeriod
+user "1" -right- "0..*" notif
+
+' シフト (User の上)
+shiftReSchedReq "0..*" -- "1" shift
+shift "0..1" -- "0..1" shiftPref
+shift "1" -- "0..*" shiftChHist
+shift "1" -- "0..1" shiftDelHist
+shift "0..*" --- "1" user
+shiftPref "0..*" -- "1" user
+shiftChHist "0..*" -- "1" user
+shiftDelHist "0..*" -- "1" user
+
+' 勤怠 (User の下)
+user "1" -- "0..*" attendCorReq
+user "1" -- "0..*" attendCorHist
+user "1" --- "0..*" attendRec
+attendCorReq "0..*" -- "0..1" attendRec
+attendCorHist "0..*" -- "1" attendRec
+attendRec "1" -- "0..*" punch
+
+' ノート
+note "処理状態メモ\n却下：勤怠管理者\n取り下げ：従業員" as statMemo
+note right of attendRec : 日次の勤怠記録
+
+@enduml
